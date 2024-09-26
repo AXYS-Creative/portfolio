@@ -5,15 +5,25 @@
   padding-block: 380px;
 
   @include mq-max("xxl") {
-    padding-block: 320px;
+    padding-block: 296px;
   }
 
-  h1,
-  p {
-    text-align: center;
+  h1 {
+    @include column-center;
+
+    .word {
+      display: inline-flex;
+    }
   }
 
   p {
     opacity: 0.5;
+  }
+
+  // make this global?
+  .emoji {
+    font-size: 0.5em;
+    display: inline-block;
+    translate: 0 -25%;
   }
 }

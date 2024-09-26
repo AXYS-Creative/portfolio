@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-family-body;
+  font-family: $font-family-secondary;
 
   // Autofill for form fields: input, textarea, select, etc. Feel free to delete if there are no forms
   &:-webkit-autofill,
@@ -28,8 +28,6 @@ body {
 }
 
 header {
-  $logo-text-width: 73px;
-
   & > * {
     z-index: 5;
     position: fixed;
@@ -41,7 +39,7 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
 
     @include mq-min("xxxl") {
       left: calc(50% - calc(1920px / 2) + $body-padding);
@@ -52,24 +50,11 @@ header {
     }
 
     &__icon {
-      width: 40px;
+      width: 32px;
       transition: 0.2s ease;
 
       @include mq-max("xxl") {
-        width: 48px;
-      }
-    }
-
-    .logo-text {
-      width: $logo-text-width;
-      height: 20px;
-      object-fit: cover;
-      object-position: left;
-      transition: 0.2s ease;
-
-      @include mq-max("xxl") {
-        scale: 0.8;
-        transform-origin: left;
+        width: 28px;
       }
     }
   }
@@ -173,19 +158,15 @@ header {
     }
   }
 
-  &.menu-active {
-    .header-logo {
-      .logo-text {
-        width: $logo-text-width;
-        transition: 0.2s ease 0.65s;
-      }
-    }
+  // &.menu-active {
+  //   .header-logo {
+  //   }
 
-    // .menu-btn-wrapper {
-    //   opacity: 1;
-    //   pointer-events: all;
-    // }
-  }
+  //   .menu-btn-wrapper {
+  //     opacity: 1;
+  //     pointer-events: all;
+  //   }
+  // }
 }
 
 // MAKE THE NAV STARTER TEMPLATE WORTHY
@@ -236,7 +217,7 @@ nav {
 
     li {
       a {
-        font-family: $font-family-body;
+        font-family: $font-family-secondary;
       }
     }
   }
@@ -260,7 +241,6 @@ nav {
 
     .nav-link {
       @extend .h2;
-      text-transform: uppercase;
       line-height: 100%;
       height: 100%;
       translate: 0 100%;
@@ -338,7 +318,7 @@ nav {
     bottom: 0;
     width: 100vw;
     height: 0px;
-    background: $black;
+    background: var(--background-color);
     animation: nav-abstract-default 0.75s ease 0s forwards;
   }
 
@@ -414,7 +394,6 @@ footer {
     translate: calc(-50% - 6px) 50%;
     font-size: 12px;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
 
     @include mq-max("lg") {
       left: auto;
@@ -468,12 +447,12 @@ p,
 a,
 ul {
   color: var(--primary-font-color);
-  font-family: $font-family-body;
-  font-size: 16px;
-  font-weight: 500;
+  font-family: $font-family-primary;
+  font-size: 18px;
+  font-weight: 400;
 
   @include mq-max("xxl") {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   @include mq-max("md") {
@@ -482,7 +461,6 @@ ul {
 }
 
 a {
-  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -497,21 +475,6 @@ ul {
 }
 
 // Components
-
-.cta-wrapper {
-  @include row-center;
-  gap: 24px;
-  flex-shrink: 0;
-
-  .cta-1 {
-    border: 2px solid var(--primary-font-color);
-    padding: 12px 24px;
-
-    @include mq-max("sm") {
-      padding: 10px 20px;
-    }
-  }
-}
 
 .social-media-links {
   display: flex;
@@ -562,4 +525,8 @@ ul {
       }
     }
   }
+}
+
+.magnet {
+  transition: 0.8s $cubic-ease-slow-finish;
 }

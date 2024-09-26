@@ -1,24 +1,29 @@
-$font-family-heading: "Satoshi", sans-serif;
-$font-family-body: "Satoshi", sans-serif;
+$font-family-primary: "Safiro", sans-serif;
+$font-family-secondary: "Atyp Display", sans-serif;
 
-$black: #111;
-$grey-dark: #313131;
-$grey-light: #c0c0c0;
-$white: #fefefe;
+$navy: #1e2932;
+$blue: #7366c1;
+$bluey: #8bc5eb;
+$bingo: #fab071;
+$green: #5ce15c;
+$pink: #ff94a7;
+$white: #ffffff;
 
 :root {
-  --background-color: #{$black};
+  --background-color: #{$navy};
   --primary-font-color: #{$white};
-  --secondary-font-color: #{$grey-light};
+  // --secondary-font-color: #{$grey-light};
+  --primary-accent-color: #{$blue};
+  --secondary-accent-color: #{$green};
 
-  --link-color: #{$grey-light};
+  --link-color: #{$white};
   --link-color-hover: #{$white};
 }
 
 // If you add a dark/light theme
 // @media (prefers-color-scheme: dark) {
 //   :root {
-//     --background-color: #{$black};
+//     --background-color: #{$navy};
 //     --primary-font-color: #{$white};
 //   }
 // }
@@ -32,6 +37,8 @@ $body-padding-md: 24px;
 
 // $vertical-section-padding: 196px;
 // $horizontal-section-padding: 148px;
+
+$radius: 64px;
 
 // Easing
 $cubic-ease: cubic-bezier(0.18, 0.97, 0.47, 1);
