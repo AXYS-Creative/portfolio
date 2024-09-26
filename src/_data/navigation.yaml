@@ -2,5 +2,19 @@
 items:
   - text: Home
     url: "/"
-  - text: Blog
-    url: "/blog"
+    target: ""
+  - text: Work
+    url: "/work"
+    target: ""
+  - text: About
+    url: "/about"
+    target: ""
+  - text: Contact
+    url: "/contact"
+    target: ""
+  - text: Resume
+    url: "/"
+    target: ""
+  - text: AXYS Creative
+    url: "https://axyscreative.com"
+    target: "_blank"

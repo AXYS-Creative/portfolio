@@ -1,10 +1,13 @@
 links:
   - title: Instagram
-    url: https://www.instagram.com/axyscreative/
+    url: https://www.instagram.com
     src: ../static/img/icon-instagram.svg
-  - title: Twitter
-    url: https://twitter.com/AXYSCreative
-    src: /static/img/icon-twitter-x.svg
-  - title: Facebook
-    url: https://facebook.com
-    src: /static/img/icon-facebook.svg
+  - title: Dribbble
+    url: https://dribbble.com
+    src: /static/img/icon-dribbble.svg
+  - title: X
+    url: https://x.com/
+    src: /static/img/icon-x.svg
+  - title: LinkedIn
+    url: https://linkedin.com
+    src: /static/img/icon-linkedin.svg

@@ -12,12 +12,30 @@
   <ul class="header-links">
     {% for item in navigation.items %}
     <li class="">
-      <a class="header-links__link classic-link" href="{{ item.url }}">
+      <a
+        class="header-links__link classic-link"
+        href="{{ item.url }}"
+        target="{{ item.target }}"
+      >
         {{ item.text }}
       </a>
     </li>
     {% endfor %}
   </ul>
+
+  <aside class="strap">
+    <img class="strap-img" src="../../static/img/icon-share-nodes.svg" alt="" />
+
+    <ul class="social-media-links">
+      {% for link in social_media.links %}
+      <li>
+        <a href="{{ link.url }}" target="_blank">
+          <img src="{{ link.src }}" alt="{{ link.title }}" />
+        </a>
+      </li>
+      {% endfor%}
+    </ul>
+  </aside>
 
   {% endif %}
 
@@ -35,3 +53,5 @@
     </button>
   </div>
 </header>
+
+{% if item.text | lower != path %} {% endif %}
