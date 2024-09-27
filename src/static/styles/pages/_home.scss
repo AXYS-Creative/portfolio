@@ -9,7 +9,13 @@
   }
 
   h1 {
-    @include column-center;
+    @include mq-min("md") {
+      @include column-center;
+    }
+    @include mq-max("md") {
+      display: inline;
+      text-align: center;
+    }
 
     .word {
       display: inline-flex;

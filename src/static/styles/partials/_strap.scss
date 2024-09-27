@@ -1,0 +1,45 @@
+.strap {
+  @include row-center;
+  position: fixed;
+  top: 32px;
+  right: 0;
+  margin-right: -40px;
+  background: var(--primary-accent-color);
+  border-radius: $radius;
+  padding: 12px;
+  padding-right: 48px;
+
+  @include mq-min("xxxl") {
+    right: calc(50% - calc($content-width / 2));
+  }
+
+  @include mq-max("xl") {
+    top: auto;
+    bottom: 48px;
+    scale: 0.8;
+    transform-origin: right;
+    margin-right: -28px;
+    translate: 45% 0;
+
+    @include mq-motion-allow {
+      transition: 0.4s $cubic-ease;
+    }
+  }
+
+  &-img {
+    background: var(--background-color);
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  &-header {
+    @include mq-max("xl") {
+      display: none;
+    }
+  }
+
+  // .social-media-links {
+  //   border: $test;
+  // }
+}

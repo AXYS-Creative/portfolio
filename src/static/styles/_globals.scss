@@ -67,7 +67,11 @@ header {
     gap: 48px;
     transition: 0.3s ease 0.1s;
 
-    @include mq-max("lg") {
+    @include mq-max("xxl") {
+      gap: 32px;
+    }
+
+    @include mq-max("xl") {
       display: none;
     }
 
@@ -81,33 +85,10 @@ header {
     }
   }
 
-  .strap {
-    @include row-center;
-    position: fixed;
-    top: 40px;
-    right: 0;
-    translate: 40px 0;
-    background: var(--primary-accent-color);
-    border-radius: $radius;
-    padding: 12px;
-    padding-right: 48px;
-
-    &-img {
-      background: var(--background-color);
-      padding: 12px;
-      border-radius: 50%;
-      margin-right: 12px;
-    }
-
-    // .social-media-links {
-    //   border: $test;
-    // }
-  }
-
   .menu-btn-wrapper {
     display: none;
 
-    @include mq-max("lg") {
+    @include mq-max("xl") {
       @include right-spacing;
       top: 74px;
       translate: 0 -50%;
@@ -182,20 +163,19 @@ header {
     }
   }
 
-  // &.menu-active {
-  //   .header-logo {
-  //   }
+  &.nav-active {
+    .menu-btn-wrapper {
+      rotate: 12deg;
+    }
 
-  //   .menu-btn-wrapper {
-  //     opacity: 1;
-  //     pointer-events: all;
-  //   }
-  // }
+    .strap {
+      translate: 0 0;
+    }
+  }
 }
 
 // MAKE THE NAV STARTER TEMPLATE WORTHY
 nav {
-  display: none;
   position: fixed;
   top: 0;
   // background: transparent;
@@ -209,8 +189,8 @@ nav {
   z-index: 4;
   // transition: background 0s ease 0.4s, opacity 0s ease 0.75s;
 
-  @include mq-max("lg") {
-    display: block;
+  @include mq-min("xl") {
+    display: none;
   }
 
   .width-constraint {
@@ -337,24 +317,11 @@ nav {
     }
   }
 
-  .nav-abstract {
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 0px;
-    background: var(--background-color);
-    animation: nav-abstract-default 0.75s ease 0s forwards;
-  }
-
-  &.menu-active {
+  &[aria-hidden="false"] {
     opacity: 1;
     pointer-events: all;
     background: var(--background-color);
     transition: background 0s ease;
-
-    .nav-abstract {
-      animation: nav-abstract-open 0.75s ease 0s forwards;
-    }
 
     .nav-links {
       @for $i from 2 through 10 {
@@ -552,5 +519,5 @@ ul {
 }
 
 .magnet {
-  transition: 0.8s $cubic-ease-slow-finish;
+  transition: translate 0.8s $cubic-ease-slow-finish;
 }
