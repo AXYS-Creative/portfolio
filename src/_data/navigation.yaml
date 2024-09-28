@@ -9,9 +9,6 @@ items:
   - text: About
     url: "/about"
     target: ""
-  - text: Contact
-    url: "/contact"
-    target: ""
   - text: Resume
     url: "/"
     target: ""

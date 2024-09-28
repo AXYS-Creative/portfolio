@@ -1,10 +1,12 @@
-<aside class="strap strap-{{ strap_class }}">
-  <img class="strap-img" src="../../static/img/icon-share-nodes.svg" alt="" />
-
+<aside class="strap strap--{{ location }}">
   <ul class="social-media-links">
     {% for link in social_media.links %}
     <li>
-      <a class="tab-element-nav" href="{{ link.url }}" target="_blank">
+      <a
+        class="tab-element-{{ location }}"
+        href="{{ link.url }}"
+        target="_blank"
+      >
         <img src="{{ link.src }}" alt="{{ link.title }}" />
       </a>
     </li>

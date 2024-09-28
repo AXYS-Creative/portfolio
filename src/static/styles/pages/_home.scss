@@ -1,7 +1,6 @@
 .hero {
   @include column-center;
   gap: 24px;
-
   padding-block: 380px;
 
   @include mq-max("xxl") {
