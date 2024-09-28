@@ -38,22 +38,8 @@
       </li>
     </ul>
 
-    <aside class="strap strap-nav">
-      <img
-        class="strap-img"
-        src="../../static/img/icon-share-nodes.svg"
-        alt=""
-      />
-
-      <ul class="social-media-links">
-        {% for link in social_media.links %}
-        <li>
-          <a class="tab-element-nav" href="{{ link.url }}" target="_blank">
-            <img src="{{ link.src }}" alt="{{ link.title }}" />
-          </a>
-        </li>
-        {% endfor%}
-      </ul>
-    </aside>
+    <!-- prettier-ignore -->
+    {% set strap_class = 'nav' %}
+    {% include "./strap.html" %}
   </div>
 </nav>

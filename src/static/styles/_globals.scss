@@ -347,6 +347,11 @@ nav {
         translate: 0 0;
       }
     }
+
+    // see strap partial
+    .strap {
+      translate: 0 0;
+    }
   }
 }
 
@@ -447,7 +452,7 @@ ul {
   }
 
   @include mq-max("md") {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -520,4 +525,28 @@ ul {
 
 .magnet {
   transition: translate 0.8s $cubic-ease-slow-finish;
+}
+
+.portrait-sm {
+  $size: 96px;
+
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: inline-block;
+  translate: 0 20%;
+
+  @include mq-max("xxl") {
+    $size-xxl: 6vw;
+
+    width: $size-xxl;
+    height: $size-xxl;
+  }
+
+  @include mq-max("md") {
+    $size-md: 8vw;
+
+    width: $size-md;
+    height: $size-md;
+  }
 }

@@ -9,9 +9,13 @@
   }
 
   h1 {
+    margin-block-end: 48px;
+    line-height: 1.2;
+
     @include mq-min("md") {
       @include column-center;
     }
+
     @include mq-max("md") {
       display: inline;
       text-align: center;
