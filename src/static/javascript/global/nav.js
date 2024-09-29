@@ -1,6 +1,8 @@
 const siteHeader = document.querySelector(".site-header"),
   navMenu = document.querySelector(".nav-menu"),
-  menuBtn = document.querySelector(".menu-btn");
+  menuBtn = document.querySelector(".menu-btn"),
+  skipToContent = document.querySelector("#skip-to-content"),
+  contentStart = document.querySelector("#content-start");
 
 const navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
@@ -29,7 +31,7 @@ const toggleNav = () => {
     el.setAttribute("tabindex", isNavOpen ? "0" : "-1")
   );
 
-  console.log("toggleNav, isNavOpen", isNavOpen);
+  document.body.style.overflowY = isNavOpen ? "hidden" : "auto";
 };
 
 const closeNav = () => {
@@ -42,7 +44,7 @@ const closeNav = () => {
   tabElementsPage.forEach((el) => el.setAttribute("tabindex", "0"));
   tabElementsNav.forEach((el) => el.setAttribute("tabindex", "-1"));
 
-  console.log("closeNav");
+  document.body.style.overflowY = "auto";
 };
 
 [...navLinks, ...navFooterLinks].forEach((link) => {
@@ -52,3 +54,7 @@ const closeNav = () => {
 });
 
 menuBtn.addEventListener("click", toggleNav);
+
+skipToContent.addEventListener("click", () => {
+  contentStart.focus();
+});

@@ -1,20 +1,20 @@
 ---
 title: Aaron Garcia Creative
 description: CHANGE ME
-author: CHANGE ME
+author: Aaron Garcia
 
 layout: app
 path: home
 ---
 
 <section id="hero" class="hero">
-  <h1 class="h1">
-    <span>
-      <span class="emoji" aria-hidden="true">👋</span>
+  <h1 class="h1" aria-label="Your partner in web design & development">
+    <span aria-hidden="true">
+      <span class="emoji">👋</span>
       <span class="magnet-text">Your partner in web</span>
       <img class="portrait-sm" src="./static/img/portrait.avif" alt="" />
     </span>
-    <span class="magnet-text">design & development</span>
+    <span class="magnet-text" aria-hidden="true">design & development</span>
   </h1>
 
   <!-- prettier-ignore -->
@@ -22,6 +22,7 @@ path: home
   {% set cta_1_url = '#cta-1' %}
   {% set cta_2_text = 'Book a call' %}
   {% set cta_2_url = '#cta-2' %}
+  {% set content_start = true %}
   {% include "./_includes/partials/cta-group.html" %}
   <!-- prettier-ignore -->
 </section>

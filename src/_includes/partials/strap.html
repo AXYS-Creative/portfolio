@@ -1,11 +1,12 @@
 <aside class="strap strap--{{ location }}">
-  <ul class="social-media-links">
+  <ul class="social-media-links" aria-label="social media links">
     {% for link in social_media.links %}
     <li>
       <a
         class="tab-element-{{ location }}"
         href="{{ link.url }}"
         target="_blank"
+        aria-label="{{ link.title }}"
       >
         <img src="{{ link.src }}" alt="{{ link.title }}" />
       </a>

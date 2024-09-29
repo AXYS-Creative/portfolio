@@ -1,6 +1,10 @@
 <div class="cta-group">
   {% if cta_1_text %}
+  <!-- prettier-ignore -->
   <a
+    {% if content_start %}
+    id="content-start"
+    {% endif %}
     class="cta-1 tab-element-page magnet magnet-wide-btn"
     href="{{ cta_1_url }}"
   >

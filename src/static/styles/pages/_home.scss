@@ -7,6 +7,10 @@
     padding-block: 296px;
   }
 
+  @include mq-max("sm") {
+    padding-block: 248px;
+  }
+
   h1 {
     margin-block-end: 48px;
     line-height: 1.2;
