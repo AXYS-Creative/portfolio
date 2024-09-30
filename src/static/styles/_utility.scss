@@ -31,7 +31,7 @@
 }
 
 //
-// Media Query Utility // Be mindful these may not work well with screen readers
+// Media Query Utility // Be mindful to use aria-hidden to avoid a break in speech.
 //
 
 @media all {

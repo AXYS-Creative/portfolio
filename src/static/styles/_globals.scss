@@ -39,6 +39,7 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 4px;
     // mix-blend-mode: difference;
 
     @include mq-min("xxxl") {
@@ -86,15 +87,14 @@ header {
   }
 
   .menu-btn-wrapper {
-    display: none;
+    @include right-spacing;
+    top: 72px;
+    translate: 0 -50%;
+    // transition: 0.6s $cubic-ease;
+    // mix-blend-mode: color-dodge; // play with something other than difference
 
-    @include mq-max("xl") {
-      @include right-spacing;
-      display: block;
-      top: 74px;
-      translate: 0 -50%;
-      transition: 0.6s $cubic-ease;
-      // mix-blend-mode: color-dodge; // play with something other than difference
+    @include mq-min("xl") {
+      display: none;
     }
 
     @include mq-max("md") {
@@ -102,7 +102,9 @@ header {
     }
 
     .menu-btn {
-      $line-space: 5px;
+      $line-space: 4px;
+      // $line-shift: 3px;
+      $line-shift: 0px;
 
       width: 36px;
       height: 36px;
@@ -120,23 +122,23 @@ header {
 
       .menu-btn-line-wrapper {
         position: relative;
-        transition: 0.2s $cubic-ease;
+        transition: 0.6s $cubic-ease;
       }
 
       &-line {
         @include absolute-center;
         width: 28px;
-        height: 4px;
+        height: 3px;
         background: $white;
         transition: rotate 0.6s $cubic-ease, 0.2s ease;
 
         &:first-of-type {
-          translate: -60% calc(-50% - $line-space);
+          translate: calc(-50% + $line-shift) calc(-50% - $line-space);
           border-radius: $radius $radius 0 0;
         }
 
         &:last-of-type {
-          translate: -40% calc(-50% + $line-space);
+          translate: calc(-50% - $line-shift) calc(-50% + $line-space);
           border-radius: 0 0 $radius $radius;
         }
       }
@@ -156,12 +158,11 @@ header {
   }
 
   &.nav-active {
-    .menu-btn-wrapper {
+    .menu-btn-line-wrapper {
       rotate: 90deg;
 
       .menu-btn-line {
-        // border-radius: $radius;
-        border-radius: 0;
+        border-radius: $radius;
 
         &:first-of-type,
         &:last-of-type {
@@ -169,7 +170,8 @@ header {
           rotate: 45deg;
         }
         &:last-of-type {
-          rotate: -45deg;
+          // rotate: -45deg;
+          rotate: -225deg;
         }
       }
     }
@@ -222,7 +224,7 @@ nav {
     }
 
     .nav-link {
-      @extend .h2;
+      @extend .h1;
       line-height: 100%;
       height: 100%;
       translate: 0 100%;

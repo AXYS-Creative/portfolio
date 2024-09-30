@@ -7,56 +7,56 @@
   --link-color-hover: #ffffff;
 }
 
-.h1, h1 {
+.h1, h1, nav .nav-links .nav-link {
   font-family: "Safiro", sans-serif;
   font-size: 80px;
   font-weight: 400;
   line-height: 1;
 }
 @media screen and (max-width: 1512px) {
-  .h1, h1 {
+  .h1, h1, nav .nav-links .nav-link {
     font-size: 5.4vw;
   }
 }
 @media screen and (max-width: 1024px) {
-  .h1, h1 {
+  .h1, h1, nav .nav-links .nav-link {
     font-size: 6.4vw;
   }
 }
 @media screen and (max-width: 768px) {
-  .h1, h1 {
+  .h1, h1, nav .nav-links .nav-link {
     font-size: 7vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .h1, h1 {
+  .h1, h1, nav .nav-links .nav-link {
     font-size: 40px;
   }
 }
 
-.h2, h2, nav .nav-links .nav-link {
+.h2, h2 {
   font-family: "Safiro", sans-serif;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
 }
 @media screen and (max-width: 1512px) {
-  .h2, h2, nav .nav-links .nav-link {
+  .h2, h2 {
     font-size: 4.4vw;
   }
 }
 @media screen and (max-width: 1024px) {
-  .h2, h2, nav .nav-links .nav-link {
+  .h2, h2 {
     font-size: 4.4vw;
   }
 }
 @media screen and (max-width: 768px) {
-  .h2, h2, nav .nav-links .nav-link {
+  .h2, h2 {
     font-size: 6.4vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .h2, h2, nav .nav-links .nav-link {
+  .h2, h2 {
     font-size: 32px;
   }
 }
@@ -206,6 +206,7 @@ header .header-logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 4px;
 }
 @media screen and (min-width: 1921px) {
   header .header-logo {
@@ -265,30 +266,28 @@ header .header-links__link:hover::after, header .header-links__link:focus-visibl
   background: var(--primary-font-color);
 }
 header .menu-btn-wrapper {
-  display: none;
+  right: 64px;
+  top: 72px;
+  translate: 0 -50%;
 }
-@media screen and (max-width: 1200px) {
-  header .menu-btn-wrapper {
-    right: 64px;
-    display: block;
-    top: 74px;
-    translate: 0 -50%;
-    transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
-  }
-}
-@media screen and (max-width: 1200px) and (min-width: 1921px) {
+@media screen and (min-width: 1921px) {
   header .menu-btn-wrapper {
     right: calc(50% - 896px);
   }
 }
-@media screen and (max-width: 1200px) and (max-width: 1512px) {
+@media screen and (max-width: 1512px) {
   header .menu-btn-wrapper {
     right: 40px;
   }
 }
-@media screen and (max-width: 1200px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   header .menu-btn-wrapper {
     right: 24px;
+  }
+}
+@media screen and (min-width: 1201px) {
+  header .menu-btn-wrapper {
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {
@@ -310,7 +309,7 @@ header .menu-btn-wrapper .menu-btn:active {
 }
 header .menu-btn-wrapper .menu-btn .menu-btn-line-wrapper {
   position: relative;
-  transition: 0.2s cubic-bezier(0.18, 0.97, 0.47, 1);
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 header .menu-btn-wrapper .menu-btn-line {
   position: absolute;
@@ -318,16 +317,16 @@ header .menu-btn-wrapper .menu-btn-line {
   left: 50%;
   translate: -50% -50%;
   width: 28px;
-  height: 4px;
+  height: 3px;
   background: #ffffff;
   transition: rotate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), 0.2s ease;
 }
 header .menu-btn-wrapper .menu-btn-line:first-of-type {
-  translate: -60% calc(-50% - 5px);
+  translate: calc(-50% + 0px) calc(-50% - 4px);
   border-radius: 64px 64px 0 0;
 }
 header .menu-btn-wrapper .menu-btn-line:last-of-type {
-  translate: -40% calc(-50% + 5px);
+  translate: calc(-50% - 0px) calc(-50% + 4px);
   border-radius: 0 0 64px 64px;
 }
 header .menu-btn-wrapper.menu-wrapper-page-top {
@@ -336,18 +335,18 @@ header .menu-btn-wrapper.menu-wrapper-page-top {
 header.away-from-top .header-logo .logo-text {
   width: 0px;
 }
-header.nav-active .menu-btn-wrapper {
+header.nav-active .menu-btn-line-wrapper {
   rotate: 90deg;
 }
-header.nav-active .menu-btn-wrapper .menu-btn-line {
-  border-radius: 0;
+header.nav-active .menu-btn-line-wrapper .menu-btn-line {
+  border-radius: 64px;
 }
-header.nav-active .menu-btn-wrapper .menu-btn-line:first-of-type, header.nav-active .menu-btn-wrapper .menu-btn-line:last-of-type {
+header.nav-active .menu-btn-line-wrapper .menu-btn-line:first-of-type, header.nav-active .menu-btn-line-wrapper .menu-btn-line:last-of-type {
   translate: -50% -50%;
   rotate: 45deg;
 }
-header.nav-active .menu-btn-wrapper .menu-btn-line:last-of-type {
-  rotate: -45deg;
+header.nav-active .menu-btn-line-wrapper .menu-btn-line:last-of-type {
+  rotate: -225deg;
 }
 header.nav-active .strap {
   translate: 0 0;
@@ -883,9 +882,14 @@ ul {
 @media screen and (max-width: 1200px) {
   .strap--nav {
     top: auto;
-    bottom: 24px;
+    bottom: 40px;
     scale: 0.8;
     margin-inline-end: -64px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .strap--nav {
+    bottom: 24px;
   }
 }
 @media screen and (max-width: 480px) {
