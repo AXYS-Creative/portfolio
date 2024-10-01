@@ -101,7 +101,7 @@
     @media all {
       @include mq-motion-allow {
         translate: 45% 0;
-        transition: translate 0.4s $cubic-ease;
+        transition: translate 2s $cubic-ease 0s;
       }
 
       @include mq-max("xl") {
@@ -116,7 +116,7 @@
       }
 
       @include mq-max("sm") {
-        margin-inline-end: -68px;
+        margin-inline-end: -72px;
       }
     }
   }

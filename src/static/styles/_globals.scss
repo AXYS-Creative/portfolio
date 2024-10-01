@@ -184,18 +184,25 @@ header {
 
 // TYPE - Mobile only
 nav {
+  $default-transition: translate 0.72s $cubic-ease 0s;
+  $active-transition: translate 0.72s $cubic-ease;
+  $nav-radius: 24px;
+
   position: fixed;
   top: 0;
-  background: var(--background-color);
+  // background: var(--background-color);
+  background: #271f1f;
   width: 100vw;
   height: 100vh;
   height: 100dvh;
   min-height: 420px;
   overflow: auto;
-  opacity: 0;
-  pointer-events: none;
   z-index: 4;
-  transition: opacity 0.6s ease;
+
+  translate: 100% 0;
+  border-top-left-radius: $nav-radius;
+  border-bottom-left-radius: $nav-radius;
+  transition: $default-transition;
 
   @include mq-min("xl") {
     display: none;
@@ -214,30 +221,70 @@ nav {
     gap: 12px;
 
     li {
-      display: flex;
-      overflow: hidden;
+      translate: 64px 0;
+      opacity: 0;
 
-      // &:focus-within {
-      //   border-radius: 4px;
-      //   box-shadow: 0 0 0 3px rgba(#2353c1, 0.75), 0 0 0 5px rgba(#fff, 0.75);
-      // }
+      @for $i from 1 through 4 {
+        $delay: 0.06s * $i;
+
+        &:nth-of-type(#{$i}) {
+          transition: 0s ease 1s;
+        }
+      }
     }
 
     .nav-link {
       @extend .h1;
-      line-height: 100%;
-      height: 100%;
-      translate: 0 100%;
-      border-left: 4px solid transparent;
-      // transition: 0.2s ease, translate 0.3s ease 0.6s;
+      position: relative;
+      display: inline-block;
+
+      @include mq-motion-allow {
+        transition: 0.5s $cubic-ease;
+      }
 
       &:hover,
       &:focus-visible {
-        padding-left: 24px;
-        border-color: var(--primary-accent-color);
+        translate: 20px 0;
 
-        @include mq-max("xxl") {
-          padding-left: 16px;
+        @include mq-max("md") {
+          translate: 16px 0;
+        }
+
+        &::before {
+          opacity: 1;
+          translate: -32px -50%;
+
+          @include mq-max("md") {
+            translate: -24px -50%;
+          }
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        translate: 0 -50%;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: var(--secondary-accent-color);
+        z-index: -1;
+        opacity: 0;
+
+        @include mq-motion-allow {
+          transition: 0.5s $cubic-ease;
+        }
+
+        @include mq-max("md") {
+          width: 14px;
+          height: 14px;
+        }
+
+        @include mq-max("sm") {
+          width: 12px;
+          height: 12px;
         }
       }
     }
@@ -246,11 +293,7 @@ nav {
   .nav-footer-links {
     @include row-center;
     bottom: $body-padding;
-    gap: 48px;
-
-    @include mq-max("lg") {
-      gap: 24px;
-    }
+    gap: 24px;
 
     @include mq-max("md") {
       @include column-start;
@@ -259,55 +302,65 @@ nav {
     }
 
     @include mq-max("sm") {
-      gap: 4px;
-      bottom: $body-padding-md;
+      bottom: 36px;
     }
 
     li {
-      .nav-footer-link {
-        padding: 4px;
-        border-bottom: 2px solid transparent;
-        transition: 0.2s ease;
+      translate: 0 24px;
+      opacity: 0;
 
-        &:hover,
-        &:focus-visible {
-          border-color: var(--primary-accent-color);
+      @for $i from 1 through 4 {
+        $delay: 0.06s * $i;
+
+        &:nth-of-type(#{$i}) {
+          transition: 0s ease 1s;
         }
+      }
+
+      .nav-footer-link {
+        padding: 3px;
       }
     }
   }
 
   &[aria-hidden="false"] {
-    opacity: 1;
-    pointer-events: all;
+    translate: 0 0;
+    transition: $active-transition;
 
     .nav-links {
-      @for $i from 2 through 10 {
-        &:nth-of-type(#{$i}) {
-          $transition: 0.25s + ($i - 2) * 0.2s;
-          $delay: 0.65s + ($i - 2) * 0.05s;
+      li {
+        opacity: 1;
+        translate: 0 0;
+        @for $i from 1 through 4 {
+          $delay: 0.12s * $i;
 
-          // .nav-link {
-          //   transition: 0.2s ease, translate $transition ease $delay;
-          // }
+          &:nth-of-type(#{$i}) {
+            transition: 1.2s $cubic-ease 0.08s + $delay;
+          }
         }
       }
     }
 
-    .nav-links,
     .nav-footer-links {
-      opacity: 1;
-      pointer-events: all;
-      // transition: opacity 0s ease 0.3s;
-
-      .nav-link {
+      li {
+        opacity: 1;
         translate: 0 0;
+        @for $i from 1 through 4 {
+          $delay: 0.12s * $i;
+
+          &:nth-of-type(#{$i}) {
+            transition: 1.2s $cubic-ease 0.3s + $delay;
+          }
+        }
       }
     }
 
     // State change from nav.js
     .strap {
-      translate: 0 0;
+      @include mq-motion-allow {
+        translate: 0 0;
+        transition: translate 0.8s $cubic-ease 0.08s;
+      }
     }
   }
 }
@@ -460,17 +513,27 @@ ul {
   display: inline-block;
   translate: 0 20%;
 
-  @include mq-max("xxl") {
-    $size-xxl: 6vw;
+  @media all {
+    @include mq-max("xxl") {
+      $size-xxl: 6vw;
 
-    width: $size-xxl;
-    height: $size-xxl;
-  }
+      width: $size-xxl;
+      height: $size-xxl;
+    }
 
-  @include mq-max("md") {
-    $size-md: 8vw;
+    @include mq-max("md") {
+      $size-md: 8vw;
 
-    width: $size-md;
-    height: $size-md;
+      width: $size-md;
+      height: $size-md;
+    }
+
+    @include mq-max("sm") {
+      $size-sm: 10vw;
+
+      width: $size-sm;
+      height: $size-sm;
+      translate: 0 16%;
+    }
   }
 }

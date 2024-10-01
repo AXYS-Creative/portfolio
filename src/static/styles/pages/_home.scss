@@ -24,6 +24,15 @@
       text-align: center;
     }
 
+    & > .magnet-text {
+      .word:first-of-type {
+        color: $bluey;
+      }
+      .word:last-of-type {
+        color: $bingo;
+      }
+    }
+
     .word {
       display: inline-flex;
     }
