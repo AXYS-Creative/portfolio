@@ -732,6 +732,49 @@ ul {
   }
 }
 
+.availability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.availability__text {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+@media screen and (max-width: 1512px) {
+  .availability__text {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .availability__text {
+    font-size: 12px;
+  }
+}
+.availability__dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--secondary-accent-color);
+  filter: brightness(1.1);
+  animation: glow-dot 5s linear infinite alternate;
+}
+.availability__dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 12px;
+  height: 12px;
+  background-color: var(--secondary-accent-color);
+  z-index: -1;
+  filter: blur(5px);
+  animation: glow-dot-blur 5s linear infinite alternate;
+}
+
 .classic-link {
   position: relative;
 }
@@ -829,38 +872,20 @@ ul {
   src: url("../fonts/AtypDisplay-Medium.otf") format("opentype");
   font-weight: 500;
 }
-@keyframes classic-link-default {
-  0% {
-    right: auto;
-    left: 0;
-    width: 100%;
+@keyframes glow-dot {
+  from {
+    opacity: 1;
   }
-  20% {
-    right: 0;
-    left: auto;
-    width: 100%;
-  }
-  100% {
-    right: 0;
-    left: auto;
-    width: 0;
+  to {
+    opacity: 0.75;
   }
 }
-@keyframes classic-link-hover {
-  0% {
-    right: auto;
-    left: 0;
-    width: 0;
+@keyframes glow-dot-blur {
+  from {
+    opacity: 0.5;
   }
-  80% {
-    right: auto;
-    left: 0;
-    width: 100%;
-  }
-  100% {
-    right: 0;
-    left: auto;
-    width: 100%;
+  to {
+    opacity: 0;
   }
 }
 .cta-1 {
@@ -1000,12 +1025,17 @@ ul {
 }
 @media screen and (max-width: 1512px) {
   .hero {
-    padding-block: 296px;
+    padding-block: 264px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .hero {
+    padding-block: 236px;
   }
 }
 @media screen and (max-width: 480px) {
   .hero {
-    padding-block: 248px;
+    padding-block: 212px;
   }
 }
 .hero h1 {
@@ -1034,9 +1064,6 @@ ul {
 }
 .hero h1 .word {
   display: inline-flex;
-}
-.hero p {
-  opacity: 0.5;
 }
 .hero .emoji {
   font-size: 0.5em;

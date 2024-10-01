@@ -1,39 +1,17 @@
-//
-// Utility
-//
-
-@keyframes classic-link-default {
-  0% {
-    right: auto;
-    left: 0;
-    width: 100%;
+@keyframes glow-dot {
+  from {
+    opacity: 1;
   }
-  20% {
-    right: 0;
-    left: auto;
-    width: 100%;
-  }
-  100% {
-    right: 0;
-    left: auto;
-    width: 0;
+  to {
+    opacity: 0.75;
   }
 }
 
-@keyframes classic-link-hover {
-  0% {
-    right: auto;
-    left: 0;
-    width: 0;
+@keyframes glow-dot-blur {
+  from {
+    opacity: 0.5;
   }
-  80% {
-    right: auto;
-    left: 0;
-    width: 100%;
-  }
-  100% {
-    right: 0;
-    left: auto;
-    width: 100%;
+  to {
+    opacity: 0;
   }
 }

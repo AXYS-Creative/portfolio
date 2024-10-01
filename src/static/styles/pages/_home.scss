@@ -3,12 +3,18 @@
   gap: 24px;
   padding-block: 380px;
 
-  @include mq-max("xxl") {
-    padding-block: 296px;
-  }
+  @media all {
+    @include mq-max("xxl") {
+      padding-block: 264px;
+    }
 
-  @include mq-max("sm") {
-    padding-block: 248px;
+    @include mq-max("xl") {
+      padding-block: 236px;
+    }
+
+    @include mq-max("sm") {
+      padding-block: 212px;
+    }
   }
 
   h1 {
@@ -36,10 +42,6 @@
     .word {
       display: inline-flex;
     }
-  }
-
-  p {
-    opacity: 0.5;
   }
 
   // make this global?
