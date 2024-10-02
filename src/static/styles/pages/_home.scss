@@ -50,4 +50,49 @@
     display: inline-block;
     translate: 0 -25%;
   }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    filter: url(#nnnoise-filer);
+
+    .noise {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      scale: 2;
+      display: none;
+    }
+
+    .glow-ball {
+      position: absolute;
+      width: 12vw;
+      height: 12vw;
+      border-radius: 50%;
+      filter: blur(96px);
+      // filter: blur(128px);
+      // opacity: 0.5;
+      z-index: -2;
+
+      &:first-of-type {
+        background: $bluey;
+        top: 50%;
+        left: 8%;
+
+        @include mq-max("md") {
+          left: 0;
+        }
+      }
+
+      &:last-of-type {
+        background: $bingo;
+        top: 32%;
+        right: 8%;
+      }
+    }
+  }
 }

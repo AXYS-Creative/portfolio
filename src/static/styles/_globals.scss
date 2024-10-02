@@ -122,7 +122,7 @@ header {
 
       .menu-btn-line-wrapper {
         position: relative;
-        transition: 0.6s $cubic-ease;
+        transition: 0.5s $cubic-ease;
       }
 
       &-line {
@@ -130,7 +130,7 @@ header {
         width: 28px;
         height: 3px;
         background: $white;
-        transition: rotate 0.6s $cubic-ease, 0.2s ease;
+        transition: 0.5s $cubic-ease, translate 0.3s ease;
 
         &:first-of-type {
           translate: calc(-50% + $line-shift) calc(-50% - $line-space);
@@ -184,8 +184,8 @@ header {
 
 // TYPE - Mobile only
 nav {
-  $default-transition: translate 0.72s $cubic-ease 0s;
-  $active-transition: translate 0.72s $cubic-ease;
+  $default-transition: translate 0.9s $cubic-ease 0s;
+  $active-transition: translate 0.9s $cubic-ease;
   $nav-radius: 24px;
 
   position: fixed;
@@ -543,8 +543,11 @@ ul {
   gap: 12px;
 
   &__text {
-    text-transform: uppercase;
+    // font-family: $font-family-secondary;
     font-size: 14px;
+    // font-weight: 400;
+    text-transform: uppercase;
+    // letter-spacing: 0.1ch;
 
     @include mq-max("xxl") {
       font-size: 13px;
@@ -556,7 +559,7 @@ ul {
   }
 
   &__dot {
-    $duration: 5s;
+    $duration: 2s;
 
     position: relative;
     width: 8px;
