@@ -1,0 +1,12 @@
+.mission-statement {
+  .section-title {
+    margin-block: 40px; // Keep an eye on this, might become global
+  }
+
+  &__paragraph {
+    @include column-start;
+    gap: 24px;
+    width: 40%; // revisit this
+    text-wrap: balance;
+  }
+}

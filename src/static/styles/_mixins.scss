@@ -176,14 +176,14 @@ $min-breakpoints: (
 
 // Section Title Only
 .h2 {
-  @include heading(64px, 4.4vw, 4.4vw, 6.4vw, 32px);
+  @include heading(80px, 4.4vw, 4.4vw, 6.4vw, 32px);
   font-family: $font-family-secondary;
   text-transform: uppercase;
 }
 
 // Text Block Partial & Image Slider
 .h3 {
-  @include heading(48px, 3vw, 3vw, 24px, 20px);
+  @include heading(64px, 3vw, 3vw, 24px, 20px);
   font-weight: 700;
 }
 
@@ -195,7 +195,7 @@ $min-breakpoints: (
 
 // Price Card Title Only
 .h5 {
-  @include heading(40px, 32px, 32px, 12px, 12px);
+  @include heading(20px, 20px, 20px, 20px, 20px);
 }
 
 // FAQ Accordion Question Only

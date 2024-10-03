@@ -484,6 +484,10 @@ small {
   font-family: $font-family-primary;
 }
 
+abbr[title] {
+  text-decoration: underline solid;
+}
+
 // Components
 
 #skip-to-content {
