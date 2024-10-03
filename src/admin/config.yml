@@ -36,3 +36,30 @@ collections:
         name: "image"
         widget: "image"
         required: false
+  - name: "home_page"
+    label: "Page - Home"
+    description: >
+      Edit the site content here.
+      Have questions or need to add a new config? Visit your Trello board to add a new request.
+      Don't have a Trello board? Reach out to Aaron or Bailey → help@axyscreative.com
+    files:
+      - name: "marquee"
+        label: "Marquee"
+        file: "src/_data/marquee.yaml"
+        preview_path: "#"
+        editor:
+          preview: false
+        fields:
+          - name: "marquee_toggle"
+            label: "Marquee Toggle"
+            widget: "boolean"
+            hint: "Hide or show the discount marquee."
+          - name: "marquee_text"
+            label: "Marquee Text"
+            widget: "string"
+            required: true
+          - name: "marquee_text_speech"
+            label: "Marquee Text Speech"
+            widget: "string"
+            hint: "For accessibility, add your message here without any symbols, tokens or classes."
+            required: true

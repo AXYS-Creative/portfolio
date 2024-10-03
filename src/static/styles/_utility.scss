@@ -30,6 +30,18 @@
   list-style: initial;
 }
 
+.stroke-text {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+.accent-color {
+  color: var(--primary-accent-color);
+}
+.accent-color-alt {
+  color: var(--secondary-accent-color);
+}
+
 //
 // Media Query Utility // Be mindful to use aria-hidden to avoid a break in speech.
 //
@@ -82,4 +94,13 @@
       display: flex;
     }
   }
+}
+
+//
+// CMS Tokens
+//
+
+.text-stroke {
+  -webkit-text-stroke: 1px var(--primary-font-color);
+  color: transparent;
 }

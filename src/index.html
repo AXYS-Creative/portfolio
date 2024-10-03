@@ -1,6 +1,6 @@
 ---
 title: Aaron Garcia Creative
-description: CHANGE ME
+description: Your partner in web design & development. Together, we'll set the standards high.
 author: Aaron Garcia
 
 layout: app
@@ -28,21 +28,13 @@ path: home
   {% include "./_includes/partials/cta-group.html" %}
   <!-- prettier-ignore -->
 
-  <div class="hero__background" aria-hidden="true">
-    <svg class="noise" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 700 700" width="700" height="700" opacity="1">'
-      <defs>
-        <filter id="nnnoise-filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
-          <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="4" seed="15" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence>
-          <feSpecularLighting lighting-color="#1e2932" surfaceScale="12" specularConstant="1.3" specularExponent="20" x="0%" y="0%" width="100%" height="100%" in="turbulence" result="specularLighting">
-            <feDistantLight azimuth="3" elevation="96"></feDistantLight>
-          </feSpecularLighting>
-        </filter>
-      </defs>
-      <rect width="700" height="700" fill="transparent"></rect>
-      <rect width="700" height="700" fill="#1e2932" filter="url(#nnnoise-filter)"></rect>
-    </svg>
-    
-    <div class="glow-ball"></div>
-    <div class="glow-ball"></div>
-  </div>
+  <!-- <div class="hero__background" aria-hidden="true">
+    <div class="hero__background-ball"></div>
+    <div class="hero__background-ball"></div>
+  </div> -->
 </section>
+
+<!-- prettier-ignore -->
+{% set marquee_text = marquee.marquee_text %}
+{% set marquee_text_speech = marquee.marquee_text_speech %}
+{% include "./_includes/partials/marquee.html" %}

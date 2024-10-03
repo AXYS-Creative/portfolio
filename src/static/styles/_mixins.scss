@@ -177,6 +177,8 @@ $min-breakpoints: (
 // Section Title Only
 .h2 {
   @include heading(64px, 4.4vw, 4.4vw, 6.4vw, 32px);
+  font-family: $font-family-secondary;
+  text-transform: uppercase;
 }
 
 // Text Block Partial & Image Slider

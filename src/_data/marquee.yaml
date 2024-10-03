@@ -1,0 +1,3 @@
+marquee_toggle: true
+marquee_text: "[%span.accent-color-alt%]//[%span%] [%span.text-stroke%]Design[%span%] with purpose [%span.accent-color-alt%]//[%span%] [%span.text-stroke%]Development[%span%] with precision"
+marquee_text_speech: Design with purpose, development with precision
