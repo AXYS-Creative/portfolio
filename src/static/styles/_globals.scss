@@ -149,10 +149,27 @@ header {
     }
   }
 
-  &.away-from-top {
-    .header-logo {
-      .logo-text {
-        width: 0px;
+  // &.away-from-top {
+
+  // }
+
+  &.scrolling-down {
+    .header-links {
+      translate: -50% -128px;
+
+      &:focus-within {
+        translate: -50% 0;
+      }
+    }
+
+    .strap {
+      @include mq-max("xxxl") {
+        translate: 50% 0;
+
+        &:hover,
+        &:focus-within {
+          translate: 0 0;
+        }
       }
     }
   }
@@ -451,6 +468,7 @@ h6 {
 
 p,
 a,
+button,
 ul {
   color: var(--primary-font-color);
   font-family: $font-family-primary;

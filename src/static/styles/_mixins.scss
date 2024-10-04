@@ -77,17 +77,16 @@ $min-breakpoints: (
 
 @mixin section-padding($thin: false) {
   @if $thin {
-    border: $test;
     padding: 256px 148px;
   } @else {
-    padding: 196px 128px;
+    padding: 256px 128px;
   }
 
   @include mq-max("xxl") {
     @if $thin {
-      padding: 228px 148px;
+      padding: 232px 148px;
     } @else {
-      padding: 148px 96px;
+      padding: 232px 96px;
     }
   }
 
@@ -172,25 +171,24 @@ $min-breakpoints: (
 // Hero & Prefooter
 .h1 {
   @include heading(80px, 5.4vw, 6.4vw, 7vw, 40px);
+  letter-spacing: -2px;
 }
 
 // Section Title Only
 .h2 {
-  @include heading(80px, 4.4vw, 4.4vw, 6.4vw, 32px);
+  @include heading(80px, 4.8vw, 4.8vw, 6.4vw, 32px);
   font-family: $font-family-secondary;
   text-transform: uppercase;
 }
 
 // Text Block Partial & Image Slider
 .h3 {
-  @include heading(64px, 3vw, 3vw, 24px, 20px);
-  font-weight: 700;
+  @include heading(64px, 4vw, 4vw, 24px, 20px);
 }
 
 // Services & Prices
 .h4 {
   @include heading(36px, 2vw, 2.8vw, 3.8vw, 12px);
-  font-weight: 400;
 }
 
 // Price Card Title Only

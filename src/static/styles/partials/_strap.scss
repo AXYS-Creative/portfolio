@@ -12,12 +12,16 @@
   border-radius: $radius;
   overflow: hidden;
 
+  @include mq-motion-allow {
+    transition: 0.6s $cubic-ease;
+  }
+
   &::before {
     content: "";
     background-image: url(../../static/img/icon-nodes.svg);
     background-repeat: no-repeat;
     background-position: center;
-    grid-area: 1 / 1;
+    // grid-area: 1 / 1;
     box-shadow: 0 0 0 250px var(--primary-accent-color);
     padding: $padding;
     border-radius: 50%;

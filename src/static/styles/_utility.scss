@@ -30,11 +30,6 @@
   list-style: initial;
 }
 
-.stroke-text {
-  -webkit-text-stroke: 1px white;
-  color: transparent;
-}
-
 .accent-color {
   color: var(--primary-accent-color);
 }
@@ -102,5 +97,5 @@
 
 .text-stroke {
   -webkit-text-stroke: 1px var(--primary-font-color);
-  color: transparent;
+  -webkit-text-fill-color: var(--background-color);
 }

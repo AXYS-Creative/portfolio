@@ -4,11 +4,24 @@
   {% include "./section-title.html" %}
 
   <p class="mission-statement__paragraph h3">
-    <span>Your brand deserves a strong web experience.</span>
     <span>
-      My goal is to deliver quality impressions & memorable
-      <abbr title="User Experience">UX</abbr>.
+      Your brand deserves a
+      <br aria-hidden="true" />
+      strong web experience.
     </span>
-    <span>Together, we’ll set the standards high.</span>
+    <span>
+      My goal is to deliver <br aria-hidden="true" />
+      quality impressions <br aria-hidden="true" />
+      & memorable
+      <abbr title="User experience" aria-label="User experience">UX</abbr>.
+    </span>
+    <span>
+      Together, we’ll set <br aria-hidden="true" />
+      the standards high.
+    </span>
   </p>
+
+  <!-- prettier-ignore -->
+  {% set content_start = false %} 
+  {% include "./cta-group.html" %}
 </section>

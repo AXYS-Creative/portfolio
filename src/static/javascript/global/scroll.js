@@ -7,12 +7,14 @@ const scrollFromTop = (() => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > 120) {
+      siteHeader.classList.add("away-from-top");
+
       if (currentScrollY > lastScrollY) {
         // Scrolling down
-        siteHeader.classList.add("away-from-top");
+        siteHeader.classList.add("scrolling-down");
       } else {
         // Scrolling up
-        siteHeader.classList.remove("away-from-top");
+        siteHeader.classList.remove("scrolling-down");
       }
     } else {
       siteHeader.classList.remove("away-from-top"); // Restore on scroll up
