@@ -1,6 +1,7 @@
 .work-section {
   &__header {
     @include row-center(space-between);
+    margin-block-end: 64px;
   }
 
   &__projects {
@@ -10,16 +11,24 @@
     .work-item {
       @include row-center(space-between);
       padding: 48px 0;
+      gap: 64px;
+      height: 228px; // Keep an eye on this
+
+      @include mq-max("lg") {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+      }
 
       &__title {
         // border: $test;
-        flex: 2;
+        flex: 1;
       }
 
       &__badges {
         // border: $test;
-        @include row-center;
         flex: 1;
+        max-width: 400px;
       }
     }
   }

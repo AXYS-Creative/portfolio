@@ -9,10 +9,12 @@
   <!-- prettier-ignore -->
   <div class="work-section__projects">
      {% for project in work_section.work_items %}
-     <div class="work-item">
-       <h3 class="work-item__title">{{ project.title }}</h3>
+     <hr class="service-divider gsap-animate" aria-hidden="true">
 
-       <ul class="work-item__badges">
+     <div class="work-item">
+       <h3 class="work-item__title h4">{{ project.title }}</h3>
+
+       <ul class="badge-list  work-item__badges">
         {% for badge in project.badges %}
         <li class="badge">{{ badge }}</li> 
         {% endfor %}
@@ -26,6 +28,13 @@
        Visit site
       </a>
      </div>
+
+      {% if loop.last %}
+      <hr
+        class="service-divider service-divider--last gsap-animate"
+        aria-hidden="true"
+      >
+      {% endif %}
      {% endfor %}
    </div>
 </section>

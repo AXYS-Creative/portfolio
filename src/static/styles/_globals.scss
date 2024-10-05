@@ -502,67 +502,17 @@ small {
   font-family: $font-family-primary;
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background: $bluey;
+}
+
 abbr[title] {
   text-decoration: underline solid;
 }
 
 // Components
-
-#skip-to-content {
-  position: fixed;
-  top: -40px;
-  left: 0;
-  color: #fff;
-  padding: 8px;
-  z-index: 100;
-  transition: top 0.3s ease;
-
-  &:focus {
-    top: 0;
-  }
-
-  @include mq-max("xl") {
-    display: none;
-  }
-}
-
-.magnet {
-  transition: translate 0.8s $cubic-ease-slow-finish;
-}
-
-.portrait-sm {
-  $size: 96px;
-
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-  display: inline-block;
-  translate: 0 20%;
-
-  @media all {
-    @include mq-max("xxl") {
-      $size-xxl: 6vw;
-
-      width: $size-xxl;
-      height: $size-xxl;
-    }
-
-    @include mq-max("md") {
-      $size-md: 8vw;
-
-      width: $size-md;
-      height: $size-md;
-    }
-
-    @include mq-max("sm") {
-      $size-sm: 10vw;
-
-      width: $size-sm;
-      height: $size-sm;
-      translate: 0 16%;
-    }
-  }
-}
 
 .availability {
   @include row-center;
@@ -604,6 +554,84 @@ abbr[title] {
       z-index: -1;
       filter: blur(6px);
       animation: glow-dot-blur $duration linear infinite alternate;
+    }
+  }
+}
+
+.badge-list {
+  @include row-center(flex-start);
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .badge {
+    border: 1px solid $bluey;
+    border-radius: 24px;
+    padding: 8px 24px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+}
+
+.cta-1 {
+  background: var(--primary-accent-color);
+  padding: 12px 28px;
+  border-radius: $radius;
+}
+
+.cta-group {
+  @include row-center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+#skip-to-content {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+
+  &:focus {
+    top: 0;
+  }
+
+  @include mq-max("xl") {
+    display: none;
+  }
+}
+
+.portrait-sm {
+  $size: 96px;
+
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: inline-block;
+  translate: 0 20%;
+
+  @media all {
+    @include mq-max("xxl") {
+      $size-xxl: 6vw;
+
+      width: $size-xxl;
+      height: $size-xxl;
+    }
+
+    @include mq-max("md") {
+      $size-md: 8vw;
+
+      width: $size-md;
+      height: $size-md;
+    }
+
+    @include mq-max("sm") {
+      $size-sm: 10vw;
+
+      width: $size-sm;
+      height: $size-sm;
+      translate: 0 16%;
     }
   }
 }
