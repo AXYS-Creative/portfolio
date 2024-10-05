@@ -1,0 +1,31 @@
+<section class="work-section" id="work-section">
+  {% if include_header %}
+  <header class="work-section__header">
+    {% include "./section-title.html" %}
+
+    <a class="classic-link tab-element-page" href="#">View all projects</a>
+  </header>
+  {% endif %}
+  <!-- prettier-ignore -->
+  <div class="work-section__projects">
+     {% for project in work_section.work_items %}
+     <div class="work-item">
+       <h3 class="work-item__title">{{ project.title }}</h3>
+
+       <ul class="work-item__badges">
+        {% for badge in project.badges %}
+        <li class="badge">{{ badge }}</li> 
+        {% endfor %}
+       </ul>
+
+       <a 
+        class="cta-1 magnet magnet-wide-btn tab-element-page" 
+        href="{{ project.url }}" 
+        target="_blank"
+       >
+       Visit site
+      </a>
+     </div>
+     {% endfor %}
+   </div>
+</section>

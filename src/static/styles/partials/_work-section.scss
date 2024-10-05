@@ -1,0 +1,26 @@
+.work-section {
+  &__header {
+    @include row-center(space-between);
+  }
+
+  &__projects {
+    display: flex;
+    flex-direction: column;
+
+    .work-item {
+      @include row-center(space-between);
+      padding: 48px 0;
+
+      &__title {
+        // border: $test;
+        flex: 2;
+      }
+
+      &__badges {
+        // border: $test;
+        @include row-center;
+        flex: 1;
+      }
+    }
+  }
+}

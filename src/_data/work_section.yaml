@@ -1,0 +1,13 @@
+work_items:
+  - title: Flavors of [%br%] Alchemy
+    image:
+    url: https://flavorsofalchemy.netlify.app
+    badges: ["UX Design", "Development"]
+  - title: Join Sunder
+    image:
+    url: https://joinsunder.com
+    badges: ["UX Design"]
+  - title: ESSENCE
+    image:
+    url: https://essentialism.netlify.app
+    badges: ["UX Design"]

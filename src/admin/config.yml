@@ -5,9 +5,9 @@ backend:
   repo: "https://github.com/AXYS-Creative/portfolio"
 media_folder: "src/static/img"
 public_folder: "/static/img"
-site_url: https://CHANGEME.netlify.app # On admin login page, this adds a 'go back to site' link. Also added in the corner when logged in.
-display_url: https://CHANGEME.netlify.app # In admin dashboard, this addes the URL in the corner. Used with 'preview_path' for collection viewing.
-logo_url: https://CHANGEME.netlify.app/static/img/admin-logo.svg # On admin login page, this adds a custom logo.
+site_url: https://aarongarciacreative1.netlify.app # On admin login page, this adds a 'go back to site' link. Also added in the corner when logged in.
+display_url: https://aarongarciacreative1.netlify.app # In admin dashboard, this addes the URL in the corner. Used with 'preview_path' for collection viewing.
+logo_url: https://aarongarciacreative1.netlify.app/static/img/admin-logo.svg # On admin login page, this adds a custom logo.
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
@@ -63,3 +63,51 @@ collections:
             widget: "string"
             hint: "For accessibility, add your message here without any symbols, tokens or classes."
             required: true
+      - name: "work_section"
+        label: "Work Section"
+        file: "src/_data/work_section.yaml"
+        preview_path: "#work-section"
+        editor:
+          preview: false
+        fields:
+          - name: "work_items"
+            label: "Work Items"
+            label_singular: "Work Item"
+            widget: "list"
+            collapsed: false
+            fields:
+              - {
+                  name: "title",
+                  label: "Title",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "image",
+                  label: "Image Source",
+                  widget: "image",
+                  required: true,
+                }
+              - {
+                  name: "url",
+                  label: "Site URL",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "badges",
+                  label: "Badges",
+                  widget: "select",
+                  multiple: true,
+                  options:
+                    [
+                      "UX Design",
+                      "Visual Design",
+                      "Interaction Design",
+                      "Development",
+                      "CMS Setup",
+                      "Site Analytics",
+                    ],
+                  default: ["UX Design", "Development"],
+                  required: true,
+                }
