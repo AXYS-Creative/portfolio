@@ -577,7 +577,7 @@ section {
 }
 @media screen and (max-width: 1512px) {
   section {
-    padding: 24px 96px;
+    padding: 96px 96px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -961,9 +961,26 @@ abbr[title] {
   }
 }
 .marquee {
+  padding: 256px 128px;
+  padding-inline: 0;
   overflow: hidden;
   width: 100vw;
   max-width: 1920px;
+}
+@media screen and (max-width: 1512px) {
+  .marquee {
+    padding: 96px 96px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .marquee {
+    padding: 96px 48px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .marquee {
+    padding: 96px 12px;
+  }
 }
 .marquee-inner {
   padding-inline-end: 24px;
