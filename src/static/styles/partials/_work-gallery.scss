@@ -1,0 +1,12 @@
+.work-gallery {
+  @include invert-colors;
+
+  &__header {
+    @include invert-colors;
+    @include row-center(space-between);
+
+    &-description {
+      width: 596px;
+    }
+  }
+}

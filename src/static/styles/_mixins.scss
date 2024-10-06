@@ -86,7 +86,7 @@ $min-breakpoints: (
     @if $thin {
       padding: 232px 148px;
     } @else {
-      padding: 232px 96px;
+      padding: 24px 96px;
     }
   }
 
@@ -184,6 +184,7 @@ $min-breakpoints: (
 // Text Block Partial & Image Slider
 .h3 {
   @include heading(64px, 4vw, 4vw, 24px, 20px);
+  text-transform: initial;
 }
 
 // Services & Prices
@@ -256,9 +257,26 @@ $min-breakpoints: (
   align-items: flex-end;
 }
 
+//
+// Positioning
+//
+
 @mixin absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+}
+
+//
+// Color
+//
+
+@mixin invert-colors {
+  background: var(--primary-font-color);
+  color: var(--background-color);
+
+  * {
+    color: var(--background-color);
+  }
 }

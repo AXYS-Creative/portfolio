@@ -1,18 +1,18 @@
 .work-section {
   &__header {
     @include row-center(space-between);
-    margin-block-end: 64px;
   }
 
   &__projects {
     display: flex;
     flex-direction: column;
+    margin-block: 64px;
 
     .work-item {
       @include row-center(space-between);
-      padding: 48px 0;
+      padding-block: 48px;
+      padding-inline-end: 48px;
       gap: 64px;
-      height: 228px; // Keep an eye on this
 
       @include mq-max("lg") {
         flex-direction: column;
@@ -20,9 +20,13 @@
         height: auto;
       }
 
-      &__title {
+      &__logo {
         // border: $test;
         flex: 1;
+
+        img {
+          width: 250px;
+        }
       }
 
       &__badges {
@@ -31,5 +35,9 @@
         max-width: 400px;
       }
     }
+  }
+
+  &__footer {
+    @include row-center;
   }
 }

@@ -386,7 +386,7 @@ section {
   @include section-padding;
 }
 
-footer {
+footer.site-footer {
   @include row-center(space-between);
   position: relative;
   padding: $body-padding;

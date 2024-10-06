@@ -1,40 +1,51 @@
 <section class="work-section" id="work-section">
-  {% if include_header %}
+  {% if section_title_text %}
   <header class="work-section__header">
     {% include "./section-title.html" %}
 
-    <a class="classic-link tab-element-page" href="#">View all projects</a>
+    <a class="classic-link tab-element-page" href="/work">View all projects</a>
   </header>
   {% endif %}
-  <!-- prettier-ignore -->
+
   <div class="work-section__projects">
-     {% for project in work_section.work_items %}
-     <hr class="service-divider gsap-animate" aria-hidden="true">
+    {% for project in work_section.work_items %}
+    <hr class="service-divider gsap-animate" aria-hidden="true" />
 
-     <div class="work-item">
-       <h3 class="work-item__title h4">{{ project.title }}</h3>
+    <div class="work-item">
+      <figure class="work-item__logo">
+        <img src="{{ project.image }}" alt="{{ project.title }}" />
+      </figure>
 
-       <ul class="badge-list  work-item__badges">
+      <img src="" alt="" class="work-item__showcase" />
+
+      <ul class="badge-list work-item__badges">
         {% for badge in project.badges %}
-        <li class="badge">{{ badge }}</li> 
+        <li class="badge">{{ badge }}</li>
         {% endfor %}
-       </ul>
+      </ul>
 
-       <a 
-        class="cta-1 magnet magnet-wide-btn tab-element-page" 
-        href="{{ project.url }}" 
+      <a
+        class="cta-1 magnet magnet-wide-btn tab-element-page"
+        href="{{ project.url }}"
         target="_blank"
-       >
-       Visit site
-      </a>
-     </div>
-
-      {% if loop.last %}
-      <hr
-        class="service-divider service-divider--last gsap-animate"
-        aria-hidden="true"
       >
-      {% endif %}
-     {% endfor %}
-   </div>
+        Visit site
+      </a>
+    </div>
+
+    {% if loop.last %}
+    <hr
+      class="service-divider service-divider--last gsap-animate"
+      aria-hidden="true"
+    />
+    {% endif %} {% endfor %}
+  </div>
+
+  {% if section_cta_text %}
+  <footer class="work-section__footer">
+    <a href="{{ section_cta_url }}" class="cta-1 magnet magnet-wide-btn">
+      {{ section_cta_text }}
+    </a>
+  </footer>
+  {% endif %}
 </section>
