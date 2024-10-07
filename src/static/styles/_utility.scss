@@ -97,7 +97,7 @@
 }
 
 //
-// Invert colors, planning to use js as well with this class
+// Invert colors, Using with JS
 //
 
 .invert-colors {
@@ -112,6 +112,10 @@
     height: 100%;
     z-index: -1;
   }
+}
+
+.swap-color {
+  mix-blend-mode: difference;
 }
 
 //

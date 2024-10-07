@@ -7,10 +7,11 @@ responsiveGsap.add(
     maxSm: "(max-width: 480px)",
     maxMd: "(max-width: 768px)",
     maxXl: "(max-width: 1200px)",
+    maxXxl: "(max-width: 1512px)",
     minMd: "(min-width: 769px)",
   },
   (context) => {
-    let { maxSm, maxMd, maxXl, minMd } = context.conditions;
+    let { maxSm, maxMd, maxXl, maxXxl, minMd } = context.conditions;
 
     // TEMPLATE TWEEN - SCRUB
     gsap.fromTo(
@@ -74,20 +75,24 @@ responsiveGsap.add(
       }
     })();
 
-    // Handle color contrast for header elements against a light background -- figure out why it's not working
-    // const colorContrast = (() => {
-    //   gsap.to(".header-logo", {
-    //     scrollTrigger: {
-    //       trigger: ".invert-colors",
-    //       start: "top 8%",
-    //       end: "bottom top",
-    //       onEnter: () => targetElem.classList.add("swap-color"),
-    //       onLeave: () => targetElem.classList.remove("swap-color"),
-    //       onEnterBack: () => targetElem.classList.add("swap-color"),
-    //       onLeaveBack: () => targetElem.classList.remove("swap-color"),
-    //       markers: true,
-    //     },
-    //   });
-    // })();
+    // Handle color contrast for header elements against a light background
+    const colorContrast = (() => {
+      const targetElements = document.querySelectorAll(".color-swap");
+
+      targetElements.forEach((el) => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: ".invert-colors",
+            start: maxXxl ? "top 80px" : "top 96px",
+            end: "bottom top",
+            onEnter: () => el.classList.add("swap-color"),
+            onLeave: () => el.classList.remove("swap-color"),
+            onEnterBack: () => el.classList.add("swap-color"),
+            onLeaveBack: () => el.classList.remove("swap-color"),
+            // markers: true,
+          },
+        });
+      });
+    })();
   }
 );

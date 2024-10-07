@@ -1,7 +1,7 @@
 <header class="site-header" aria-label="Site Header">
   <button id="skip-to-content">Skip to main content</button>
 
-  <a class="header-logo" href="{{ settings.url }}">
+  <a class="header-logo color-swap" href="{{ settings.url }}">
     <img
       class="header-logo__icon"
       src="../../static/img/logo-light.svg"
@@ -10,7 +10,7 @@
   </a>
 
   {% if navigation.items %}
-  <ul class="header-links">
+  <ul class="header-links color-swap">
     {% for item in navigation.items %}
     <li class="">
       <a
@@ -25,7 +25,7 @@
   </ul>
   {% endif %}
 
-  <div class="menu-btn-wrapper">
+  <div class="menu-btn-wrapper color-swap">
     <button
       class="menu-btn"
       aria-controls="site-navigation"

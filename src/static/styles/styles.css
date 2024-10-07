@@ -372,8 +372,9 @@ header.site-header.nav-active .strap {
 nav {
   position: fixed;
   top: 0;
+  right: 0;
   background: #271f1f;
-  width: 100vw;
+  width: 620px;
   height: 100vh;
   height: 100dvh;
   min-height: 420px;
@@ -387,6 +388,12 @@ nav {
 @media screen and (min-width: 1201px) {
   nav {
     display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100vw;
+    border-radius: 0;
   }
 }
 nav .nav-links,
@@ -974,6 +981,10 @@ abbr[title] {
 }
 .invert-colors::before * {
   color: var(--background-color);
+}
+
+.swap-color {
+  mix-blend-mode: difference;
 }
 
 .text-stroke {

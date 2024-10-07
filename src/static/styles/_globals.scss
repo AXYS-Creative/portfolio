@@ -211,14 +211,16 @@ nav {
 
   position: fixed;
   top: 0;
+  right: 0;
   // background: var(--background-color);
   background: #271f1f;
-  width: 100vw;
+  width: 620px;
   height: 100vh;
   height: 100dvh;
   min-height: 420px;
   overflow: auto;
   z-index: 4;
+  // box-shadow: 0 0 12px #212121b2;
 
   translate: 100% 0;
   border-top-left-radius: $radius;
@@ -227,6 +229,11 @@ nav {
 
   @include mq-min("xl") {
     display: none;
+  }
+
+  @include mq-max("md") {
+    width: 100vw;
+    border-radius: 0;
   }
 
   .nav-links,

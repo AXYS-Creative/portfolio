@@ -24,7 +24,7 @@
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
   
-          {% if file_extension == 'avif' or file_extension == 'png' %}
+        {% if file_extension == 'avif' or file_extension == 'png' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
@@ -35,7 +35,6 @@
         <div class="showreel-slider__asset {{ asset.class }}">
           <video
             src="{{ asset.media }}"
-            type="video/{{ file_extension }}"
             autoplay
             playsinline
             loop

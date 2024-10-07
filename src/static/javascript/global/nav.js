@@ -11,8 +11,10 @@ const navLinks = document.querySelectorAll(".nav-link"),
 
 tabElementsNav.forEach((elem) => elem.setAttribute("tabIndex", "-1"));
 
+let isNavOpen = false;
+
 const toggleNav = () => {
-  const isNavOpen = navMenu.getAttribute("aria-hidden") === "true";
+  isNavOpen = navMenu.getAttribute("aria-hidden") === "true";
 
   siteHeader.classList.toggle("nav-active");
 
@@ -35,6 +37,8 @@ const toggleNav = () => {
 };
 
 const closeNav = () => {
+  isNavOpen = false;
+
   navMenu.setAttribute("aria-hidden", "true");
   menuBtn.setAttribute("aria-expanded", "false");
 
@@ -47,6 +51,14 @@ const closeNav = () => {
   document.body.style.overflowY = "auto";
 };
 
+// Click event listener for closing the nav when clicking outside of it
+document.body.addEventListener("click", (e) => {
+  if (isNavOpen && !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    closeNav();
+  }
+});
+
+// Close nav when clicking on any nav link (except those with prevent-nav-close class)
 [...navLinks, ...navFooterLinks].forEach((link) => {
   if (!link.classList.contains("prevent-nav-close")) {
     link.addEventListener("click", closeNav);

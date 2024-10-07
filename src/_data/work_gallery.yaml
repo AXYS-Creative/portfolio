@@ -3,8 +3,7 @@ showreel_assets:
     media: /static/img/gallery-img-foa.avif
     class: ""
   - title: sunder video
-    # media: /static/vid/gallery-vid-sunder.mp4
-    media: /static/img/sunder-vid.mov
+    media: /static/img/gallery-vid-sunder.mp4
     class: "sunder-video"
   - title: sunder image
     media: /static/img/gallery-img-sunder.avif
