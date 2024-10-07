@@ -2,12 +2,13 @@ showreel_assets:
   - title: foa
     media: /static/img/gallery-img-foa.avif
     class: ""
-  - title: axys
-    media: /static/vid/gallery-vid-sunder.mp4
+  - title: sunder video
+    # media: /static/vid/gallery-vid-sunder.mp4
+    media: /static/img/sunder-vid.mov
     class: "sunder-video"
-  - title: foa
+  - title: sunder image
     media: /static/img/gallery-img-sunder.avif
     class: ""
-  - title: axys
-    media: /static/vid/gallery-vid-axys.mp4
+  - title: axys video
+    media: /static/img/gallery-vid-axys.mp4
     class: ""
