@@ -63,10 +63,10 @@ collections:
             widget: "string"
             hint: "For accessibility, add your message here without any symbols, tokens or classes."
             required: true
-      - name: "work_section"
+      - name: "work_list"
         label: "Work Section"
-        file: "src/_data/work_section.yaml"
-        preview_path: "#work-section"
+        file: "src/_data/work_list.yaml"
+        preview_path: "#work-list"
         editor:
           preview: false
         fields:
@@ -111,4 +111,36 @@ collections:
                     ],
                   default: ["UX Design", "Development"],
                   required: true,
+                }
+      - name: "work_gallery"
+        label: "Work Gallery"
+        file: "src/_data/work_gallery.yaml"
+        preview_path: "#work-gallery"
+        editor:
+          preview: false
+        fields:
+          - name: "showreel_assets"
+            label: "Showreel Assets"
+            label_singular: "Showreel Asset"
+            widget: "list"
+            collapsed: false
+            fields:
+              - {
+                  name: "title",
+                  label: "Title",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "media",
+                  label: "Media Source",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "class",
+                  label: "Custom Class",
+                  widget: "string",
+                  required: false,
+                  hint: Target work item for unique styling,
                 }

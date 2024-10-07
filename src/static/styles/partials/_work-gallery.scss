@@ -1,12 +1,69 @@
 .work-gallery {
   @include invert-colors;
+  position: relative;
+  overflow: hidden; // Yo this sucks for ultra wide
+
+  &::before {
+    @include absolute-center;
+    @include invert-colors;
+    content: "";
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+  }
 
   &__header {
     @include invert-colors;
     @include row-center(space-between);
+    margin-block-end: 64px;
 
     &-description {
       width: 596px;
+    }
+  }
+
+  &__showreel {
+    // border: $test;
+    padding: 12px;
+    // width: 100%;
+
+    .showreel-slider {
+      @include row-center;
+      gap: 64px;
+
+      @include mq-max("xxl") {
+        gap: 40px;
+      }
+
+      &__figure {
+        background: $pink;
+        padding: 64px 48px;
+
+        @include mq-max("xxl") {
+          padding: 40px 24px;
+        }
+      }
+
+      &__asset {
+        width: 400px;
+
+        &.sunder-video {
+          // position: relative;
+
+          &::before {
+            content: "hello";
+            border: $test;
+            // font-size: 90px;
+            // position: absolute;
+            // bottom: 0;
+            // left: 0;
+            width: 400px;
+            height: 200px;
+            // background-color: blue;
+            // z-index: 1;
+          }
+        }
+      }
     }
   }
 }

@@ -59,6 +59,11 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  // Add a custom split filter
+  eleventyConfig.addFilter("split", function (str, separator) {
+    return str.split(separator);
+  });
+
   // Token Replacement at build time vs client (prevent tokens from showing up briefly)
   eleventyConfig.addTransform("tokenReplace", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {

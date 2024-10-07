@@ -1,14 +1,14 @@
-<section class="work-section" id="work-section">
+<section class="work-list" id="work-list">
   {% if section_title_text %}
-  <header class="work-section__header">
+  <header class="work-list__header">
     {% include "./section-title.html" %}
 
     <a class="classic-link tab-element-page" href="/work">View all projects</a>
   </header>
   {% endif %}
 
-  <div class="work-section__projects">
-    {% for project in work_section.work_items %}
+  <div class="work-list__projects">
+    {% for project in work_list.work_items %}
     <hr class="service-divider gsap-animate" aria-hidden="true" />
 
     <div class="work-item">
@@ -42,7 +42,7 @@
   </div>
 
   {% if section_cta_text %}
-  <footer class="work-section__footer">
+  <footer class="work-list__footer">
     <a href="{{ section_cta_url }}" class="cta-1 magnet magnet-wide-btn">
       {{ section_cta_text }}
     </a>
