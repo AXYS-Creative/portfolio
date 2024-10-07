@@ -75,35 +75,55 @@ $min-breakpoints: (
 // Site Scaffolding
 //
 
-@mixin section-padding($thin: false) {
-  @if $thin {
-    padding: 256px 148px;
-  } @else {
-    padding: 256px 128px;
-  }
+// @mixin section-padding($thin: false) {
+//   @if $thin {
+//     padding: $vertical-padding 148px;
+//   } @else {
+//     padding: $vertical-padding 128px;
+//   }
+
+//   @include mq-max("xxl") {
+//     @if $thin {
+//       padding: $vertical-padding-xxl 148px;
+//     } @else {
+//       padding: $vertical-padding-xxl 96px;
+//     }
+//   }
+
+//   @include mq-max("md") {
+//     @if $thin {
+//       padding: 128px 96px;
+//     } @else {
+//       padding: 96px 48px;
+//     }
+//   }
+
+//   @include mq-max("sm") {
+//     @if $thin {
+//       padding: 128px 96px;
+//     } @else {
+//       padding: 96px 12px;
+//     }
+//   }
+// }
+
+@mixin vertical-padding {
+  padding-block: $vertical-padding;
 
   @include mq-max("xxl") {
-    @if $thin {
-      padding: 96px 148px;
-    } @else {
-      padding: 96px 96px;
-    }
+    padding-block: $vertical-padding-xxl;
+  }
+}
+
+@mixin horizontal-padding {
+  padding-inline: $body-padding * 2.5;
+
+  @include mq-max("xxl") {
+    padding-inline: $body-padding-xxl * 3;
   }
 
   @include mq-max("md") {
-    @if $thin {
-      padding: 128px 96px;
-    } @else {
-      padding: 96px 48px;
-    }
-  }
-
-  @include mq-max("sm") {
-    @if $thin {
-      padding: 128px 96px;
-    } @else {
-      padding: 96px 12px;
-    }
+    padding-inline: $body-padding-md;
   }
 }
 
@@ -183,7 +203,7 @@ $min-breakpoints: (
 
 // Text Block Partial & Image Slider
 .h3 {
-  @include heading(64px, 4vw, 4vw, 24px, 20px);
+  @include heading(64px, 3.4vw, 4vw, 24px, 20px);
   text-transform: initial;
 }
 

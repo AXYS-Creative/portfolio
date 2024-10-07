@@ -1,6 +1,5 @@
 .marquee {
-  @include section-padding;
-  padding-inline: 0 !important;
+  @include vertical-padding;
   overflow: hidden;
   width: 100vw;
   max-width: $content-width;

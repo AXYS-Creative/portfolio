@@ -7,6 +7,10 @@
     @include column-start;
     gap: 64px;
     text-wrap: balance;
+
+    @include mq-max("xl") {
+      gap: 48px;
+    }
   }
 
   .cta-group {

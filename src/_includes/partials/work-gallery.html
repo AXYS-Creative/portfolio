@@ -1,4 +1,4 @@
-<section class="work-gallery" id="work-gallery">
+<section class="work-gallery invert-colors" id="work-gallery">
   <header class="work-gallery__header">
     <h2 class="work-gallery__header-title h3">
       Awe inspiring results.
@@ -17,14 +17,14 @@
     </p>
   </header>
 
-  <div class="work-gallery__showreel">
+  <div class="work-gallery__showreel escape-padding">
     <div class="showreel-slider">
       {% for asset in work_gallery.showreel_assets %}
       <figure class="showreel-slider__figure">
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
-
-        {% if file_extension == 'avif' or file_extension == 'png' %}
+  
+          {% if file_extension == 'avif' or file_extension == 'png' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
@@ -32,15 +32,45 @@
           loading="lazy"
         />
         {% elseif file_extension == 'mov' or file_extension == 'mp4' %}
-        <video
+        <div class="showreel-slider__asset {{ asset.class }}">
+          <video
+            src="{{ asset.media }}"
+            type="video/{{ file_extension }}"
+            autoplay
+            playsinline
+            loop
+            loading="lazy"
+          ></video>
+        </div>
+        {% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+
+    <div class="showreel-slider">
+      {% for asset in work_gallery.showreel_assets %}
+      <figure class="showreel-slider__figure">
+        <!-- prettier-ignore -->
+        {% set file_extension = asset.media | split('.') | last %}
+  
+          {% if file_extension == 'avif' or file_extension == 'png' %}
+        <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
-          type="video/{{ file_extension }}"
-          autoplay
-          playsinline
-          loop
+          alt="{{ asset.title }}"
           loading="lazy"
-        ></video>
+        />
+        {% elseif file_extension == 'mov' or file_extension == 'mp4' %}
+        <div class="showreel-slider__asset {{ asset.class }}">
+          <video
+            src="{{ asset.media }}"
+            type="video/{{ file_extension }}"
+            autoplay
+            playsinline
+            loop
+            loading="lazy"
+          ></video>
+        </div>
         {% endif %}
       </figure>
       {% endfor %}

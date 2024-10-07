@@ -1,42 +1,37 @@
 .work-gallery {
-  @include invert-colors;
-  position: relative;
-  overflow: hidden; // Yo this sucks for ultra wide
-
-  &::before {
-    @include absolute-center;
-    @include invert-colors;
-    content: "";
-    width: 100vw;
-    height: 100%;
-    z-index: -1;
-  }
-
   &__header {
     @include invert-colors;
     @include row-center(space-between);
-    margin-block-end: 64px;
+    margin-block-end: $content-spacing;
 
     &-description {
-      width: 596px;
+      width: 664px;
+
+      @include mq-max("xxl") {
+        width: 50%;
+      }
     }
   }
 
   &__showreel {
-    // border: $test;
-    padding: 12px;
-    // width: 100%;
+    overflow: hidden;
 
     .showreel-slider {
+      --showreel-gap: 64px;
+
       @include row-center;
-      gap: 64px;
+      gap: var(--showreel-gap);
 
       @include mq-max("xxl") {
-        gap: 40px;
+        --showreel-gap: 48px;
+      }
+
+      &:first-of-type {
+        margin-block-end: var(--showreel-gap);
       }
 
       &__figure {
-        background: $pink;
+        background: #ebe9e9;
         padding: 64px 48px;
 
         @include mq-max("xxl") {
@@ -45,22 +40,22 @@
       }
 
       &__asset {
-        width: 400px;
+        height: 216px;
+
+        video {
+          height: 100%;
+        }
 
         &.sunder-video {
-          // position: relative;
+          position: relative;
 
           &::before {
-            content: "hello";
-            border: $test;
-            // font-size: 90px;
-            // position: absolute;
-            // bottom: 0;
-            // left: 0;
-            width: 400px;
-            height: 200px;
-            // background-color: blue;
-            // z-index: 1;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 80px;
+            height: 8px;
+            background-color: #000014;
           }
         }
       }

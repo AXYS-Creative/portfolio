@@ -97,6 +97,24 @@
 }
 
 //
+// Invert colors, planning to use js as well with this class
+//
+
+.invert-colors {
+  @include invert-colors;
+  position: relative;
+
+  &::before {
+    @include invert-colors;
+    @include absolute-center;
+    content: "";
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+//
 // CMS Tokens
 //
 

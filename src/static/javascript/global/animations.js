@@ -59,5 +59,21 @@ responsiveGsap.add(
         });
       }
     })();
+
+    // Handle color contrast for header elements against a light background -- figure out why it's not working
+    // const colorContrast = (() => {
+    //   gsap.to(".header-logo", {
+    //     scrollTrigger: {
+    //       trigger: ".invert-colors",
+    //       start: "top 8%",
+    //       end: "bottom top",
+    //       onEnter: () => targetElem.classList.add("swap-color"),
+    //       onLeave: () => targetElem.classList.remove("swap-color"),
+    //       onEnterBack: () => targetElem.classList.add("swap-color"),
+    //       onLeaveBack: () => targetElem.classList.remove("swap-color"),
+    //       markers: true,
+    //     },
+    //   });
+    // })();
   }
 );

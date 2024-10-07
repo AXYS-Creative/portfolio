@@ -29,15 +29,17 @@ $white: #ffffff;
 // }
 
 // Site Scaffolding
-
 $content-width: 1920px;
+$content-spacing: 64px; // section title and content, etc.
+
 $body-padding: 64px;
 $body-padding-xxl: 40px;
 $body-padding-md: 24px;
 
-// $vertical-section-padding: 196px;
-// $horizontal-section-padding: 148px;
+$vertical-padding: 128px;
+$vertical-padding-xxl: 96px;
 
+// Border
 $radius: 64px;
 
 // Easing
@@ -48,6 +50,5 @@ $cubic-ease-sudden-back-strong: cubic-bezier(0.77, -0.43, 0.11, 1.11);
 $cubic-ease-slow-finish: cubic-bezier(0.09, 0.9, 0.5, 1);
 
 // Debugging
-
 $test: 2px dashed rgba(limegreen, 0.75);
 $test-bg: rgba(navy, 0.75);
