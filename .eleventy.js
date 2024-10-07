@@ -32,6 +32,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/static/styles");
   eleventyConfig.addPassthroughCopy("./src/static/fonts");
   eleventyConfig.addPassthroughCopy("./src/static/img");
+  eleventyConfig.addPassthroughCopy("./src/static/vid");
   eleventyConfig.addPassthroughCopy("./src/static/javascript");
   eleventyConfig.addPassthroughCopy("./src/robots.txt");
 
