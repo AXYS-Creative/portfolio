@@ -83,7 +83,7 @@ responsiveGsap.add(
         gsap.to(el, {
           scrollTrigger: {
             trigger: ".invert-colors",
-            start: maxXxl ? "top 80px" : "top 96px",
+            start: maxSm ? "top 64px" : maxXxl ? "top 80px" : "top 96px",
             end: "bottom top",
             onEnter: () => el.classList.add("swap-color"),
             onLeave: () => el.classList.remove("swap-color"),

@@ -122,6 +122,10 @@ $min-breakpoints: (
     padding-inline: $body-padding-xxl * 3;
   }
 
+  @include mq-max("xl") {
+    padding-inline: $body-padding-xxl * 2.4;
+  }
+
   @include mq-max("md") {
     padding-inline: $body-padding-md;
   }

@@ -11,11 +11,15 @@
     .work-item {
       @include row-center(space-between);
       padding-block: 48px;
-      padding-inline-end: 48px;
+      // padding-inline-end: 48px;
       gap: 64px;
 
       @include mq-max("xxl") {
         gap: 40px;
+      }
+
+      @include mq-max("xl") {
+        gap: 16px;
       }
 
       @include mq-max("lg") {
@@ -24,23 +28,78 @@
         height: auto;
       }
 
+      // &:hover {
+      //   .work-item__logo,
+      //   .work-item__badges {
+      //     opacity: 0.5;
+      //   }
+      // }
+
       &__logo {
-        // border: $test;
-        flex: 1;
+        // not using flex for mouse image hover. Flex extended element
+        margin-inline-end: 24%;
+        translate: -28px 0;
+
+        @media all {
+          @include mq-motion-allow {
+            transition: 0.6s $cubic-ease;
+          }
+
+          @include mq-max("xxl") {
+            translate: -24px 0;
+            margin-inline-end: 20%;
+          }
+
+          @include mq-max("xl") {
+            translate: -20px 0;
+          }
+        }
 
         img {
           width: 250px;
 
           @include mq-max("xxl") {
-            width: 196px;
+            width: 216px;
+          }
+
+          @include mq-max("xl") {
+            width: 180px;
           }
         }
       }
 
+      &__showcase {
+        display: none;
+
+        @include mq-max("lg") {
+          background-color: lightblue;
+          display: block;
+          width: min(100%, 520px);
+          object-fit: cover;
+          aspect-ratio: 2 / 1;
+          padding: 12px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
       &__badges {
-        // border: $test;
-        flex: 1;
-        max-width: 400px;
+        width: 340px;
+        flex-shrink: 0;
+
+        // @include mq-max("xl") {
+        //   flex: 0.5;
+        // }
+
+        @include mq-motion-allow {
+          transition: 0.6s $cubic-ease;
+        }
+      }
+
+      &__cta {
+        flex-shrink: 0;
       }
     }
   }

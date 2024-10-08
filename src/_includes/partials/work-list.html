@@ -13,10 +13,19 @@
 
     <div class="work-item">
       <figure class="work-item__logo">
-        <img src="{{ project.image }}" alt="{{ project.title }}" />
+        <img
+          src="{{ project.logo }}"
+          alt="{{ project.title }} businesses logo"
+        />
       </figure>
 
-      <img src="" alt="" class="work-item__showcase" />
+      <figure class="work-item__showcase">
+        <img
+          class="work-item__showcase-img"
+          src="{{ project.image }}"
+          alt="{{ project.title }} hero section"
+        />
+      </figure>
 
       <ul class="badge-list work-item__badges">
         {% for badge in project.badges %}
@@ -25,7 +34,7 @@
       </ul>
 
       <a
-        class="cta-1 magnet magnet-wide-btn tab-element-page"
+        class="work-item__cta cta-1 magnet magnet-wide-btn tab-element-page"
         href="{{ project.url }}"
         target="_blank"
       >

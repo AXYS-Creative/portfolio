@@ -83,8 +83,14 @@ collections:
                   required: true,
                 }
               - {
+                  name: "logo",
+                  label: "Business Logo",
+                  widget: "image",
+                  required: true,
+                }
+              - {
                   name: "image",
-                  label: "Image Source",
+                  label: "Showcase Image",
                   widget: "image",
                   required: true,
                 }
