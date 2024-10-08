@@ -60,19 +60,6 @@ responsiveGsap.add(
           },
         });
       });
-
-      // GAME CHANGER!!!
-      // Refresh ScrollTrigger instances on page load and resize
-      window.addEventListener("load", () => {
-        ScrollTrigger.refresh();
-      });
-
-      // Greater than 520 so it doesn't refresh on  mobile(dvh)
-      if (window.innerWidth > 520) {
-        window.addEventListener("resize", () => {
-          ScrollTrigger.refresh();
-        });
-      }
     })();
 
     // Handle color contrast for header elements against a light background
@@ -83,7 +70,7 @@ responsiveGsap.add(
         gsap.to(el, {
           scrollTrigger: {
             trigger: ".invert-colors",
-            start: maxSm ? "top 64px" : maxXxl ? "top 80px" : "top 96px",
+            start: maxSm ? "top 64px" : maxXxl ? "top 84px" : "top 88px",
             end: "bottom top",
             onEnter: () => el.classList.add("swap-color"),
             onLeave: () => el.classList.remove("swap-color"),
@@ -94,5 +81,18 @@ responsiveGsap.add(
         });
       });
     })();
+
+    // GAME CHANGER!!!
+    // Refresh ScrollTrigger instances on page load and resize
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+    // Greater than 520 so it doesn't refresh on  mobile(dvh)
+    if (window.innerWidth > 520) {
+      window.addEventListener("resize", () => {
+        ScrollTrigger.refresh();
+      });
+    }
   }
 );

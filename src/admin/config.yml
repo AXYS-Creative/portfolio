@@ -95,6 +95,15 @@ collections:
                   required: true,
                 }
               - {
+                  name: "background",
+                  label: "Background",
+                  widget: "select",
+                  multiple: false,
+                  options: ["dark-bg", "grey-bg", "light-bg", "navy-bg"],
+                  default: ["UX Design", "Development"],
+                  required: true,
+                }
+              - {
                   name: "url",
                   label: "Site URL",
                   widget: "string",

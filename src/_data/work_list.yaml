@@ -1,17 +1,20 @@
 work_items:
   - title: Flavors of Alchemy
-    logo: /static/img/work-foa.svg
+    logo: /static/img/list-logo-foa.svg
     image: /static/img/list-img-foa.png
+    background: "light-bg"
     url: https://flavorsofalchemy.netlify.app
     badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
   - title: Join Sunder
-    logo: /static/img/work-sunder.svg
+    logo: /static/img/list-logo-sunder.svg
     image: /static/img/list-img-sunder.png
+    background: "navy-bg"
     url: https://joinsunder.com
     badges:
       ["Interaction Design", "Form Handling", "Development", "Site Analytics"]
   - title: ESSENCE
-    logo: /static/img/work-essence.svg
+    logo: /static/img/list-logo-essence.svg
     image: /static/img/list-img-essence.png
+    background: "grey-bg"
     url: https://essentialism.netlify.app
     badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]

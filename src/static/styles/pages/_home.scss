@@ -12,6 +12,10 @@
       padding-block: 236px;
     }
 
+    @include mq-max("lg") {
+      padding-block-end: 128px;
+    }
+
     @include mq-max("sm") {
       padding-block: 212px;
     }

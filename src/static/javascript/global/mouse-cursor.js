@@ -75,7 +75,7 @@ if (window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
 
   workItem.forEach((item) => {
     // Add the class when entering any child element
-    item.querySelectorAll("figure, ul, a").forEach((child) => {
+    item.querySelectorAll("img, ul, a").forEach((child) => {
       child.addEventListener("mouseenter", () => {
         cursor.classList.add("cursor-contrast");
       });

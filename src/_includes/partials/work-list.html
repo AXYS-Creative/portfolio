@@ -12,14 +12,13 @@
     <hr class="service-divider gsap-animate" aria-hidden="true" />
 
     <div class="work-item">
-      <figure class="work-item__logo">
-        <img
-          src="{{ project.logo }}"
-          alt="{{ project.title }} businesses logo"
-        />
-      </figure>
+      <img
+        class="work-item__logo"
+        src="{{ project.logo }}"
+        alt="{{ project.title }} businesses logo"
+      />
 
-      <figure class="work-item__showcase">
+      <figure class="work-item__showcase {{ project.background }}">
         <img
           class="work-item__showcase-img"
           src="{{ project.image }}"

@@ -11,21 +11,23 @@
     .work-item {
       @include row-center(space-between);
       padding-block: 48px;
-      // padding-inline-end: 48px;
       gap: 64px;
 
-      @include mq-max("xxl") {
-        gap: 40px;
-      }
+      @media all {
+        @include mq-max("xxl") {
+          gap: 40px;
+        }
 
-      @include mq-max("xl") {
-        gap: 16px;
-      }
+        @include mq-max("xl") {
+          gap: 16px;
+        }
 
-      @include mq-max("lg") {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
+        @include mq-max("lg") {
+          flex-direction: column;
+          align-items: flex-start;
+          height: auto;
+          gap: 40px;
+        }
       }
 
       // &:hover {
@@ -37,33 +39,34 @@
 
       &__logo {
         // not using flex for mouse image hover. Flex extended element
+        width: 250px;
         margin-inline-end: 24%;
-        translate: -28px 0;
+        padding-inline-end: 48px;
 
         @media all {
-          @include mq-motion-allow {
-            transition: 0.6s $cubic-ease;
+          @include mq-min("xl") {
+            // min-mq
+            padding-block: 32px;
           }
 
           @include mq-max("xxl") {
-            translate: -24px 0;
             margin-inline-end: 20%;
-          }
-
-          @include mq-max("xl") {
-            translate: -20px 0;
-          }
-        }
-
-        img {
-          width: 250px;
-
-          @include mq-max("xxl") {
             width: 216px;
           }
 
           @include mq-max("xl") {
+            margin-inline-end: auto;
             width: 180px;
+            padding-block: initial;
+            padding-inline-end: 16px;
+          }
+
+          @include mq-max("lg") {
+            width: 28%;
+          }
+
+          @include mq-max("md") {
+            width: 200px;
           }
         }
       }
@@ -72,16 +75,30 @@
         display: none;
 
         @include mq-max("lg") {
-          background-color: lightblue;
           display: block;
+          // width: min(100%, 592px);
           width: min(100%, 520px);
           object-fit: cover;
-          aspect-ratio: 2 / 1;
-          padding: 12px;
+          // padding: 48px;
         }
 
         img {
           width: 100%;
+        }
+
+        @media all {
+          &.dark-bg {
+            background-color: #121212;
+          }
+          &.grey-bg {
+            background-color: #e3cece;
+          }
+          &.light-bg {
+            background-color: #f9e9e9;
+          }
+          &.navy-bg {
+            background-color: #58718c;
+          }
         }
       }
 
@@ -89,9 +106,14 @@
         width: 340px;
         flex-shrink: 0;
 
-        // @include mq-max("xl") {
-        //   flex: 0.5;
-        // }
+        @include mq-max("xl") {
+          scale: 0.9;
+        }
+
+        @include mq-max("lg") {
+          width: 100%;
+          scale: 1;
+        }
 
         @include mq-motion-allow {
           transition: 0.6s $cubic-ease;

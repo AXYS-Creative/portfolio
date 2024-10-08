@@ -198,30 +198,30 @@ $min-breakpoints: (
   letter-spacing: -2px;
 }
 
-// Section Title Only
+// Marquee... maybe share with h1?
 .h2 {
   @include heading(80px, 4.8vw, 4.8vw, 6.4vw, 32px);
   font-family: $font-family-secondary;
   text-transform: uppercase;
 }
 
-// Text Block Partial & Image Slider
+// Mission statement & work gallery title
 .h3 {
-  @include heading(64px, 3.4vw, 4vw, 24px, 20px);
+  @include heading(64px, 3.4vw, 4vw, 40px, 24px);
   text-transform: initial;
 }
 
-// Services & Prices
+// ?
 .h4 {
   @include heading(48px, 2.8vw, 2.8vw, 3.8vw, 12px);
 }
 
-// Price Card Title Only
+// Little title
 .h5 {
-  @include heading(20px, 20px, 20px, 20px, 20px);
+  @include heading(20px, 18px, 1.8vw, 18px, 16px);
 }
 
-// FAQ Accordion Question Only
+// ?
 .h6 {
   @include heading(32px, 20px, 20px, 12px, 12px);
   font-weight: 600;
