@@ -744,6 +744,7 @@ small {
 
 figure {
   font-size: 0;
+  overflow: hidden;
 }
 
 img,
@@ -1491,6 +1492,14 @@ abbr[title] {
 }
 @media screen and (max-width: 1200px) {
   .work-list__projects .work-item__logo {
+    margin-inline-end: auto;
+    width: 180px;
+    padding-block: initial;
+    padding-inline-end: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .work-list__projects .work-item__logo {
     display: none;
   }
 }
@@ -1503,6 +1512,7 @@ abbr[title] {
     width: min(100%, 520px);
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 1.64/1;
   }
 }
 .work-list__projects .work-item__showcase img {

@@ -55,20 +55,15 @@
           }
 
           @include mq-max("xl") {
-            // margin-inline-end: auto;
-            // width: 180px;
-            // padding-block: initial;
-            // padding-inline-end: 16px;
-            display: none;
+            margin-inline-end: auto;
+            width: 180px;
+            padding-block: initial;
+            padding-inline-end: 16px;
           }
 
-          // @include mq-max("lg") {
-          //   width: 28%;
-          // }
-
-          // @include mq-max("md") {
-          //   width: 200px;
-          // }
+          @include mq-max("lg") {
+            display: none;
+          }
         }
       }
 
@@ -77,10 +72,9 @@
 
         @include mq-max("lg") {
           display: block;
-          // width: min(100%, 592px);
           width: min(100%, 520px);
           object-fit: cover;
-          // padding: 48px;
+          aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
         }
 
         img {

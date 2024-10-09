@@ -523,6 +523,7 @@ small {
 
 figure {
   font-size: 0; // Chrome's user agent stylesheet adds 1em padding-block-end
+  overflow: hidden;
 }
 
 img,
