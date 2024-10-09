@@ -812,12 +812,34 @@ abbr[title] {
   flex-wrap: wrap;
   gap: 12px;
 }
+@media screen and (max-width: 768px) {
+  .badge-list {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .badge-list {
+    gap: 8px;
+  }
+}
 .badge-list .badge {
   border: 1px solid #8bc5eb;
   border-radius: 24px;
   padding: 8px 24px;
   font-size: 14px;
   flex-shrink: 0;
+}
+@media screen and (max-width: 768px) {
+  .badge-list .badge {
+    font-size: 13px;
+    padding: 6px 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .badge-list .badge {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
 }
 
 .cta-1 {
@@ -1469,20 +1491,7 @@ abbr[title] {
 }
 @media screen and (max-width: 1200px) {
   .work-list__projects .work-item__logo {
-    margin-inline-end: auto;
-    width: 180px;
-    padding-block: initial;
-    padding-inline-end: 16px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .work-list__projects .work-item__logo {
-    width: 28%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .work-list__projects .work-item__logo {
-    width: 200px;
+    display: none;
   }
 }
 .work-list__projects .work-item__showcase {

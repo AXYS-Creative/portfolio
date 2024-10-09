@@ -591,12 +591,30 @@ abbr[title] {
   flex-wrap: wrap;
   gap: 12px;
 
+  @include mq-max("md") {
+    gap: 10px;
+  }
+
+  @include mq-max("sm") {
+    gap: 8px;
+  }
+
   .badge {
     border: 1px solid $bluey;
     border-radius: 24px;
     padding: 8px 24px;
     font-size: 14px;
     flex-shrink: 0;
+
+    @include mq-max("md") {
+      font-size: 13px;
+      padding: 6px 18px;
+    }
+
+    @include mq-max("sm") {
+      font-size: 12px;
+      padding: 4px 12px;
+    }
   }
 }
 

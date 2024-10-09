@@ -39,9 +39,7 @@ collections:
   - name: "home_page"
     label: "Page - Home"
     description: >
-      Edit the site content here.
-      Have questions or need to add a new config? Visit your Trello board to add a new request.
-      Don't have a Trello board? Reach out to Aaron or Bailey → help@axyscreative.com
+      Edit the site's content here.
     files:
       - name: "marquee"
         label: "Marquee"
@@ -53,7 +51,7 @@ collections:
           - name: "marquee_toggle"
             label: "Marquee Toggle"
             widget: "boolean"
-            hint: "Hide or show the discount marquee."
+            hint: "Hide or show the marquee."
           - name: "marquee_text"
             label: "Marquee Text"
             widget: "string"
@@ -151,6 +149,7 @@ collections:
                   label: "Media Source",
                   widget: "string",
                   required: true,
+                  hint: /static/img/path-to-asset.avif,
                 }
               - {
                   name: "class",

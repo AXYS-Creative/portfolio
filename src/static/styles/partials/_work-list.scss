@@ -55,19 +55,20 @@
           }
 
           @include mq-max("xl") {
-            margin-inline-end: auto;
-            width: 180px;
-            padding-block: initial;
-            padding-inline-end: 16px;
+            // margin-inline-end: auto;
+            // width: 180px;
+            // padding-block: initial;
+            // padding-inline-end: 16px;
+            display: none;
           }
 
-          @include mq-max("lg") {
-            width: 28%;
-          }
+          // @include mq-max("lg") {
+          //   width: 28%;
+          // }
 
-          @include mq-max("md") {
-            width: 200px;
-          }
+          // @include mq-max("md") {
+          //   width: 200px;
+          // }
         }
       }
 
