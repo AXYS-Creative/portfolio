@@ -7,12 +7,12 @@
   position: fixed;
   top: 32px;
   right: 0;
-  margin-inline-end: -40px;
+  margin-inline-end: var(--strap-right-offset);
   padding: $padding;
   padding-inline-end: 48px;
   border-radius: $radius;
   overflow: hidden;
-  // mix-blend-mode: color-dodge;
+  background-color: transparent;
 
   @include mq-motion-allow {
     transition: 0.6s $cubic-ease;
@@ -20,17 +20,17 @@
 
   &::before {
     content: "";
-    background-image: url(../../static/img/icon-nodes.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: difference;
-
-    // grid-area: 1 / 1;
     box-shadow: 0 0 0 250px $fill-color;
     padding: $padding;
     border-radius: 50%;
     width: $clip-size;
     height: $clip-size;
+
+    @include mq-max("xl") {
+      background-image: url(../../static/img/icon-nodes.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   .social-media-links {
@@ -93,12 +93,6 @@
         right: calc(50% - calc($content-width / 2));
       }
 
-      @include mq-max("xxl") {
-        scale: 0.9;
-        transform-origin: right;
-        margin-right: -36px;
-      }
-
       @include mq-max("xl") {
         display: none;
       }
@@ -127,5 +121,35 @@
         margin-inline-end: -72px;
       }
     }
+  }
+}
+
+.strap-icon {
+  // border: $test;
+  position: absolute;
+  top: var(--icon-top-distance);
+  right: 0;
+  margin-inline-end: var(--strap-right-offset);
+  width: var(--strap-width); // set via js, see scroll.js
+  height: 32px;
+  padding-inline-start: 24px;
+
+  @media all {
+    @include mq-motion-allow {
+      transition: 0.6s $cubic-ease;
+    }
+
+    @include mq-min("xxxl") {
+      right: calc(50% - calc($content-width / 2));
+    }
+
+    @include mq-max("xl") {
+      display: none;
+    }
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
   }
 }

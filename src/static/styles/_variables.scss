@@ -18,6 +18,10 @@ $white: #ffffff;
 
   --link-color: #{$white};
   --link-color-hover: #{$white};
+
+  // Site Header
+  --icon-top-distance: 56px;
+  --strap-right-offset: -40px;
 }
 
 // If you add a dark/light theme

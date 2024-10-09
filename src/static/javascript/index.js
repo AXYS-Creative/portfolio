@@ -7,5 +7,6 @@ import "./global/nav.js";
 import "./global/scroll.js";
 
 import "./partials/marquee.js";
+import "./partials/strap.js";
 
 import "./content/tokens.js";

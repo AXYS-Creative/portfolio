@@ -58,6 +58,13 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
+const handleResize = () => {
+  if (isNavOpen && window.innerWidth > 1220) {
+    closeNav();
+  }
+};
+window.addEventListener("resize", handleResize);
+
 // Close nav when clicking on any nav link (except those with prevent-nav-close class)
 [...navLinks, ...navFooterLinks].forEach((link) => {
   if (!link.classList.contains("prevent-nav-close")) {

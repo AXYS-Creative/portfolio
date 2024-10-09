@@ -35,12 +35,11 @@ header.site-header {
 
   .header-logo {
     @include left-spacing;
-    top: 56px;
+    top: var(--icon-top-distance);
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 4px;
-    // mix-blend-mode: difference;
 
     @include mq-min("xxxl") {
       left: calc(50% - calc(1920px / 2) + $body-padding);
@@ -162,18 +161,16 @@ header.site-header {
       }
     }
 
-    .strap {
+    .strap,
+    .strap-icon {
       @include mq-max("xxxl") {
         translate: 58% 0;
 
         &:hover,
-        &:focus-within {
+        &:focus-within,
+        &.strap-hover {
           translate: 0 0;
         }
-      }
-
-      @include mq-max("xxl") {
-        translate: 50% 0;
       }
     }
   }
