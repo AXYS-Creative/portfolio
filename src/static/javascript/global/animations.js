@@ -46,7 +46,7 @@ responsiveGsap.add(
     })();
 
     // SCOPED - Only for one 'get in touch' instance per page
-    const getInTouchAnimation = (() => {
+    const getInTouchAnimations = (() => {
       // Pinning
       gsap.to(".get-in-touch", {
         scrollTrigger: {
@@ -61,7 +61,7 @@ responsiveGsap.add(
       gsap.fromTo(
         ".gsap-scale",
         {
-          scale: 1.2,
+          scale: 1.25,
         },
         {
           scale: 1,
@@ -76,11 +76,11 @@ responsiveGsap.add(
 
       // Text Sliding
       let slideDistance = "12%";
-      let filterBlur = maxSm ? "4px" : "10px";
+      let filterBlur = maxSm ? 4 : 10;
 
       gsap.fromTo(
         ".bg-text span:nth-of-type(odd)",
-        { x: `${slideDistance}`, filter: `blur(${filterBlur})` },
+        { x: `${slideDistance}`, filter: `blur(${filterBlur})px` },
         {
           x: `-${slideDistance}`,
           filter: "blur(0px)",
@@ -95,7 +95,7 @@ responsiveGsap.add(
       );
       gsap.fromTo(
         ".bg-text span:nth-of-type(even)",
-        { x: `-${slideDistance}`, filter: `blur(${filterBlur})` },
+        { x: `-${slideDistance}`, filter: `blur(${filterBlur})px` },
         {
           x: `${slideDistance}`,
           filter: "blur(0px)",
@@ -105,6 +105,28 @@ responsiveGsap.add(
             start: "top bottom",
             end: "100% top",
             scrub: 1.2,
+          },
+        }
+      );
+
+      // Button rotating
+      gsap.fromTo(
+        ".large-cta-wrapper",
+        {
+          rotate: maxSm ? "64deg" : "50deg",
+          scale: 1.25,
+          filter: `blur(${filterBlur / 2})px`,
+        },
+        {
+          rotate: "0deg",
+          scale: 1,
+          filter: "blur(0px)",
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".get-in-touch",
+            start: "top bottom",
+            end: "50% top",
+            scrub: 1.5,
           },
         }
       );

@@ -150,29 +150,34 @@
 
 .h6, h6, .cta-1--large {
   font-family: "Safiro", sans-serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1;
-  font-weight: 600;
 }
 @media screen and (max-width: 1512px) {
   .h6, h6, .cta-1--large {
-    font-size: 20px;
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 1024px) {
   .h6, h6, .cta-1--large {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 768px) {
   .h6, h6, .cta-1--large {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 480px) {
   .h6, h6, .cta-1--large {
-    font-size: 18px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .h6, h6, .cta-1--large {
+    font-weight: 900;
+    letter-spacing: -0.5px;
   }
 }
 
@@ -1126,7 +1131,6 @@ abbr[title] {
 .get-in-touch .gsap-scale {
   position: relative;
   height: 100vh;
-  height: 100dvh;
   min-height: 480px;
   scale: 1.2;
 }
@@ -1153,9 +1157,19 @@ abbr[title] {
     line-height: 1.25;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1200px) {
   .get-in-touch .bg-text__text {
     line-height: 1.25;
+  }
+}
+@media screen and (max-width: 768px) {
+  .get-in-touch .bg-text__text {
+    line-height: 1.25;
+    font-size: 16vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .get-in-touch .bg-text__text {
     font-size: 20vw;
   }
 }
@@ -1169,6 +1183,24 @@ abbr[title] {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  width: 120vw;
+  height: 100vh;
+  transform-origin: left top;
+}
+@media screen and (max-width: 1512px) {
+  .get-in-touch .large-cta-wrapper {
+    gap: 36px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .get-in-touch .large-cta-wrapper {
+    gap: 24px;
+  }
 }
 
 .marquee {
@@ -1476,7 +1508,7 @@ abbr[title] {
   background: #ebe9e9;
   aspect-ratio: 3/2;
   width: var(--figure-width);
-  padding: calc(var(--figure-width) / 10);
+  padding: calc(var(--figure-width) / 14);
 }
 @media screen and (max-width: 1512px) {
   .work-gallery .showreel .showreel-slider__figure {

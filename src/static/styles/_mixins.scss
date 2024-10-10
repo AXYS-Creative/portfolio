@@ -224,8 +224,12 @@ $min-breakpoints: (
 
 // ?
 .h6 {
-  @include heading(24px, 20px, 20px, 18px, 18px);
-  font-weight: 600;
+  @include heading(32px, 28px, 24px, 20px, 20px);
+
+  @include mq-max("sm") {
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
 }
 
 @mixin body-font-styles {

@@ -8,7 +8,7 @@
   .gsap-scale {
     position: relative;
     height: 100vh;
-    height: 100dvh;
+    // height: 100dvh;
     min-height: 480px;
     scale: 1.2;
   }
@@ -29,8 +29,16 @@
         line-height: 1.25;
       }
 
-      @include mq-max("sm") {
+      @include mq-max("xl") {
         line-height: 1.25;
+      }
+
+      @include mq-max("md") {
+        line-height: 1.25;
+        font-size: 16vw;
+      }
+
+      @include mq-max("md") {
         font-size: 20vw;
       }
 
@@ -45,5 +53,18 @@
 
   .large-cta-wrapper {
     @include absolute-center;
+    @include column-center;
+    gap: 48px;
+    width: 120vw;
+    height: 100vh;
+    transform-origin: left top;
+
+    @include mq-max("xxl") {
+      gap: 36px;
+    }
+
+    @include mq-max("md") {
+      gap: 24px;
+    }
   }
 }

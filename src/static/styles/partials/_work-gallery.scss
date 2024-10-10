@@ -63,7 +63,7 @@
         background: #ebe9e9;
         aspect-ratio: 3 / 2;
         width: var(--figure-width);
-        padding: calc(var(--figure-width) / 10);
+        padding: calc(var(--figure-width) / 14);
 
         @include mq-max("xxl") {
           --figure-width: 420px;
