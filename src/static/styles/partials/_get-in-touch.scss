@@ -51,6 +51,15 @@
     }
   }
 
+  .availability-wrapper {
+    @include absolute-center;
+    translate: -50% -102px;
+
+    @include mq-max("xxl") {
+      translate: -50% -96px;
+    }
+  }
+
   .large-cta-wrapper {
     @include absolute-center;
     @include column-center;

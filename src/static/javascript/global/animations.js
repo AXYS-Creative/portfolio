@@ -15,11 +15,13 @@ responsiveGsap.add(
 
     // SCOPED - Only for one work gallery instance per page
     const workGalleryAnimation = (() => {
+      let gallerAssetDistance = maxSm ? 16 : 5;
+
       gsap.fromTo(
         ".showreel-slider:first-of-type",
-        { x: "5%" },
+        { x: `${gallerAssetDistance}%` },
         {
-          x: "-5%",
+          x: `-${gallerAssetDistance}%`,
           ease: "linear",
           scrollTrigger: {
             trigger: ".showreel",
@@ -31,9 +33,9 @@ responsiveGsap.add(
       );
       gsap.fromTo(
         ".showreel-slider:last-of-type",
-        { x: "-5%" },
+        { x: `-${gallerAssetDistance}%` },
         {
-          x: "5%",
+          x: `${gallerAssetDistance}%`,
           ease: "linear",
           scrollTrigger: {
             trigger: ".showreel",
@@ -75,7 +77,7 @@ responsiveGsap.add(
       );
 
       // Text Sliding
-      let slideDistance = "12%";
+      let slideDistance = "18%";
       let filterBlur = maxSm ? 4 : 10;
 
       gsap.fromTo(
@@ -125,6 +127,26 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".get-in-touch",
             start: "top bottom",
+            end: "50% top",
+            scrub: 1.5,
+          },
+        }
+      );
+
+      // Availability fading
+      gsap.fromTo(
+        ".availability-wrapper",
+        {
+          filter: `blur(${filterBlur / 2})px`,
+          opacity: 0,
+        },
+        {
+          filter: "blur(0px)",
+          opacity: 1,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".get-in-touch",
+            start: "100% bottom",
             end: "50% top",
             scrub: 1.5,
           },
