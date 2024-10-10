@@ -19,11 +19,13 @@ path: home
     <span class="magnet-text" aria-hidden="true">design & development</span>
   </h1>
 
+  <!-- CTA link props carry down to other sections -->
   <!-- prettier-ignore -->
   {% set cta_1_text = 'Contact me' %}
-  {% set cta_1_url = '#cta-1' %}
+  {% set cta_1_url = '/contact' %}
   {% set cta_2_text = 'Book a call' %}
-  {% set cta_2_url = '#cta-2' %}
+  {% set cta_2_url = 'https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10' %}
+  {% set cta_2_target = '_blank' %}
   {% set content_start = true %}
   {% include "./_includes/partials/cta-group.html" %}
   <!-- prettier-ignore -->
@@ -50,3 +52,6 @@ path: home
 {% include "./_includes/partials/work-list.html" %}
 
 {% include "./_includes/partials/work-gallery.html" %}
+
+{% set cta_large_url = "/contact" %}
+{% include "./_includes/partials/get-in-touch.html" %}

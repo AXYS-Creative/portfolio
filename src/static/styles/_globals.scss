@@ -623,6 +623,15 @@ abbr[title] {
   background: var(--primary-accent-color);
   padding: 12px 28px;
   border-radius: $radius;
+
+  &--large {
+    @extend h6;
+    background-color: var(--primary-font-color);
+    padding: 24px 40px;
+    color: var(--background-color);
+    display: inline-flex;
+    white-space: nowrap;
+  }
 }
 
 .cta-group {

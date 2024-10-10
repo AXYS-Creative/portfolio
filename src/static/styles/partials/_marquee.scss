@@ -1,8 +1,11 @@
 .marquee {
   @include vertical-padding;
-  overflow: hidden;
   width: 100vw;
   max-width: $content-width;
+
+  @include mq-max("xxxl") {
+    overflow: hidden;
+  }
 
   &-inner {
     padding-inline-end: 24px;

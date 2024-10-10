@@ -13,35 +13,102 @@ responsiveGsap.add(
   (context) => {
     let { maxSm, maxMd, maxXl, maxXxl, minMd } = context.conditions;
 
-    // TEMPLATE TWEEN - SCRUB
-    gsap.fromTo(
-      ".showreel-slider:first-of-type",
-      { x: "5%" },
-      {
-        x: "-5%",
+    // SCOPED - Only for one work gallery instance per page
+    const workGalleryAnimation = (() => {
+      gsap.fromTo(
+        ".showreel-slider:first-of-type",
+        { x: "5%" },
+        {
+          x: "-5%",
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".showreel",
+            start: "top bottom",
+            end: "100% top",
+            scrub: 0.8,
+          },
+        }
+      );
+      gsap.fromTo(
+        ".showreel-slider:last-of-type",
+        { x: "-5%" },
+        {
+          x: "5%",
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".showreel",
+            start: "top bottom",
+            end: "100% top",
+            scrub: 0.8,
+          },
+        }
+      );
+    })();
+
+    // SCOPED - Only for one 'get in touch' instance per page
+    const getInTouchAnimation = (() => {
+      // Pinning
+      gsap.to(".get-in-touch", {
         scrollTrigger: {
-          trigger: ".showreel",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.8,
-          // markers: true,
+          trigger: ".get-in-touch",
+          pin: true,
+          start: "top top",
+          end: "+=100%",
         },
-      }
-    );
-    gsap.fromTo(
-      ".showreel-slider:last-of-type",
-      { x: "-5%" },
-      {
-        x: "5%",
-        scrollTrigger: {
-          trigger: ".showreel",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.8,
-          // markers: true,
+      });
+
+      // Scaling
+      gsap.fromTo(
+        ".gsap-scale",
+        {
+          scale: 1.2,
         },
-      }
-    );
+        {
+          scale: 1,
+          scrollTrigger: {
+            trigger: ".get-in-touch",
+            scrub: 0.5,
+            start: "top top",
+            end: "+=100%",
+          },
+        }
+      );
+
+      // Text Sliding
+      let slideDistance = "12%";
+      let filterBlur = maxSm ? "4px" : "10px";
+
+      gsap.fromTo(
+        ".bg-text span:nth-of-type(odd)",
+        { x: `${slideDistance}`, filter: `blur(${filterBlur})` },
+        {
+          x: `-${slideDistance}`,
+          filter: "blur(0px)",
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".get-in-touch",
+            start: "top bottom",
+            end: "100% top",
+            scrub: 1.2,
+          },
+        }
+      );
+      gsap.fromTo(
+        ".bg-text span:nth-of-type(even)",
+        { x: `-${slideDistance}`, filter: `blur(${filterBlur})` },
+        {
+          x: `${slideDistance}`,
+          filter: "blur(0px)",
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".get-in-touch",
+            start: "top bottom",
+            end: "100% top",
+            scrub: 1.2,
+          },
+        }
+      );
+    })();
 
     // GLOBAL - Easily toggle an 'animate' class on any element with '.gsap-animate' class
     const globalGenerateAnimate = (() => {
@@ -62,8 +129,8 @@ responsiveGsap.add(
       });
     })();
 
-    // Handle color contrast for header elements against a light background
-    const colorContrast = (() => {
+    // GLOBAL - Temporarily add mix-blend-mod to any element. Partially global, per one .invert-colors element per page
+    const colorSwap = (() => {
       const targetElements = document.querySelectorAll(".color-swap");
 
       targetElements.forEach((el) => {
@@ -71,7 +138,7 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".invert-colors",
             start: maxSm ? "top 64px" : maxXxl ? "top 84px" : "top 88px",
-            end: "bottom top",
+            end: maxSm ? "bottom 40px" : "bottom 56px",
             onEnter: () => el.classList.add("swap-color"),
             onLeave: () => el.classList.remove("swap-color"),
             onEnterBack: () => el.classList.add("swap-color"),
@@ -82,7 +149,7 @@ responsiveGsap.add(
       });
     })();
 
-    // GAME CHANGER!!!
+    // Game Changer! Keep in mind the scope of IIFE might affect whether it refreshes.
     // Refresh ScrollTrigger instances on page load and resize
     window.addEventListener("load", () => {
       ScrollTrigger.refresh();

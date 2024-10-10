@@ -13,7 +13,11 @@
   {% endif %}
   <!-- prettier-ignore -->
   {% if cta_2_text %}
-  <a class="tab-element-page classic-link" href="{{ cta_2_url }}">
+  <a
+    class="tab-element-page classic-link"
+    href="{{ cta_2_url }}"
+    target="{{ cta_2_target}}"
+  >
     {{ cta_2_text }}
   </a>
   {% endif %}

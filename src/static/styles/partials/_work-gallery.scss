@@ -32,10 +32,13 @@
     --showreel-gap: 64px;
 
     @include column-center;
-    overflow: hidden;
     gap: var(--showreel-gap);
 
     @media all {
+      @include mq-max("xxxl") {
+        overflow: hidden;
+      }
+
       @include mq-max("xxl") {
         --showreel-gap: 48px;
       }

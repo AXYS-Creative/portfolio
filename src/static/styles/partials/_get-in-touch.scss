@@ -1,0 +1,49 @@
+.get-in-touch {
+  padding: 0;
+
+  @include mq-max("xxxl") {
+    overflow: hidden;
+  }
+
+  .gsap-scale {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 480px;
+    scale: 1.2;
+  }
+
+  .bg-text {
+    @include absolute-center;
+    @include column-center;
+
+    &__text {
+      font-family: $font-family-primary;
+      font-size: min(12vw, 256px);
+      display: inline-flex;
+      text-wrap: nowrap;
+      opacity: 0.025;
+      line-height: 1;
+
+      @include mq-min("xxxl") {
+        line-height: 1.25;
+      }
+
+      @include mq-max("sm") {
+        line-height: 1.25;
+        font-size: 20vw;
+      }
+
+      &:nth-last-of-type(1),
+      &:nth-last-of-type(2) {
+        @include mq-min("sm") {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .large-cta-wrapper {
+    @include absolute-center;
+  }
+}

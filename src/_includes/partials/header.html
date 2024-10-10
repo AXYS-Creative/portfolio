@@ -1,5 +1,5 @@
 <header class="site-header" aria-label="Site Header">
-  <button id="skip-to-content">Skip to main content</button>
+  <button class="color-swap" id="skip-to-content">Skip to main content</button>
 
   <a class="header-logo color-swap" href="{{ settings.url }}">
     <img
@@ -43,5 +43,3 @@
   {% set location = 'page' %}
   {% include "./strap.html" %}
 </header>
-
-{% if item.text | lower != path %} {% endif %}
