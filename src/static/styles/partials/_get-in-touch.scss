@@ -1,9 +1,6 @@
 .get-in-touch {
   padding: 0;
-
-  @include mq-max("xxxl") {
-    overflow: hidden;
-  }
+  overflow: hidden;
 
   .gsap-scale {
     position: relative;

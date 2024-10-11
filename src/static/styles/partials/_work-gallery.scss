@@ -1,15 +1,6 @@
 .work-gallery {
-  isolation: isolate;
-
-  svg.noise-bg {
-    // element selector for specificity
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding-inline: 0;
-    z-index: -1;
-  }
+  // utility class 'invert-colors'
+  // globals section:has('.noise-bg')
 
   &__header {
     @include invert-colors;
@@ -46,12 +37,9 @@
 
     @include column-center;
     gap: var(--showreel-gap);
+    overflow: hidden;
 
     @media all {
-      @include mq-max("xxxl") {
-        overflow: hidden;
-      }
-
       @include mq-max("xxl") {
         --showreel-gap: 48px;
       }
