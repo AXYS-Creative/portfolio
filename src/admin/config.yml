@@ -136,6 +136,7 @@ collections:
             label: "Showreel Assets"
             label_singular: "Showreel Asset"
             widget: "list"
+            max: 8
             collapsed: false
             fields:
               - {

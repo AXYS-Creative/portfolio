@@ -19,11 +19,11 @@
 
   <div class="showreel escape-padding">
     <div class="showreel-slider">
-      {% for asset in work_gallery.showreel_assets %}
+      {% for asset in work_gallery.showreel_assets | slice(0, 4) %}
       <figure class="showreel-slider__figure">
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
-  
+    
         {% if file_extension == 'avif' or file_extension == 'png' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
@@ -47,12 +47,12 @@
     </div>
 
     <div class="showreel-slider">
-      {% for asset in work_gallery.showreel_assets %}
+      {% for asset in work_gallery.showreel_assets | slice(-4) %}
       <figure class="showreel-slider__figure">
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
-  
-          {% if file_extension == 'avif' or file_extension == 'png' %}
+    
+        {% if file_extension == 'avif' or file_extension == 'png' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
@@ -63,7 +63,6 @@
         <div class="showreel-slider__asset {{ asset.class }}">
           <video
             src="{{ asset.media }}"
-            type="video/{{ file_extension }}"
             autoplay
             playsinline
             loop
