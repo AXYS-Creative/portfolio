@@ -1,12 +1,9 @@
 .work-gallery {
-  // utility class 'invert-colors'
+  // utility class 'invert-colors' (uses js for mix-blend-mode)
   // globals section:has('.noise-bg')
 
   &__header {
-    @include invert-colors;
     @include row-center(space-between);
-    background-color: transparent;
-    // margin-block-end: $content-spacing;
     margin-block-end: $vertical-padding;
 
     @include mq-max("xxl") {

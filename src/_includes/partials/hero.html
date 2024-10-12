@@ -1,0 +1,36 @@
+<section
+  class="{%if hero == true%}hero hero-{{ page }}{%else%}pre-footer pre-footer-{{ page }}{%endif%}"
+  id="{{ id }}"
+>
+  {% include "./availability.html" %}
+
+  <div class="heading-wrapper">
+    {%if hero == true%}
+    <h1 class="h1" aria-label="{{ heading_aria_label }}">
+      {{ heading_markup | safe}}
+    </h1>
+    {%else%}
+    <h2 class="h1" aria-label="{{ heading_aria_label }}">
+      {{ heading_markup | safe}}
+    </h2>
+    {%endif%}
+
+    <div class="background-ball" aria-hidden="true">
+      <div class="background-ball__glow"></div>
+    </div>
+    <div class="background-ball" aria-hidden="true">
+      <div class="background-ball__glow"></div>
+    </div>
+  </div>
+
+  <!-- CTA link props carry down to other sections -->
+  <!-- prettier-ignore -->
+  {% set cta_1_text = 'Contact me' %}
+  {% set cta_1_url = '/contact' %}
+  {% set cta_2_text = 'Book a call' %}
+  {% set cta_2_url = 'https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10' %}
+  {% set cta_2_target = '_blank' %}
+  {% set content_start = true %}
+  {% include "./cta-group.html" %}
+  <!-- prettier-ignore -->
+</section>

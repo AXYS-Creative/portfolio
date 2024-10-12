@@ -7,34 +7,23 @@ layout: app
 path: home
 ---
 
-<section id="hero-home" class="hero-home">
-  {% include "./_includes/partials/availability.html" %}
-
-  <h1 class="h1" aria-label="Your partner in web design & development">
-    <span aria-hidden="true">
-      <span class="emoji">👋</span>
-      <span class="magnet-text">Your partner in web</span>
-      <img class="portrait-sm" src="./static/img/portrait.avif" alt="" />
-    </span>
-    <span class="magnet-text" aria-hidden="true">design & development</span>
-  </h1>
-
-  <!-- CTA link props carry down to other sections -->
-  <!-- prettier-ignore -->
-  {% set cta_1_text = 'Contact me' %}
-  {% set cta_1_url = '/contact' %}
-  {% set cta_2_text = 'Book a call' %}
-  {% set cta_2_url = 'https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10' %}
-  {% set cta_2_target = '_blank' %}
-  {% set content_start = true %}
-  {% include "./_includes/partials/cta-group.html" %}
-  <!-- prettier-ignore -->
-
-  <!-- <div class="hero__background" aria-hidden="true">
-    <div class="hero__background-ball"></div>
-    <div class="hero__background-ball"></div>
-  </div> -->
-</section>
+<!-- prettier-ignore -->
+{% set hero = true %}
+{% set page = 'home' %}
+{% set id = 'hero-home' %}
+{% set heading_markup = '
+<span aria-hidden="true">
+  <span class="emoji">👋</span>
+  <span class="magnet-text">Your partner in web</span>
+  <img class="portrait-sm" src="./static/img/portrait.avif" alt="" />
+</span>
+<span class="magnet-text colorful-text" aria-hidden="true">
+  design & development
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Your partner in web design & development' %}
+{% include "./_includes/partials/hero.html" %}
 
 <!-- prettier-ignore -->
 {% set marquee_text = marquee.marquee_text %}
@@ -51,7 +40,26 @@ path: home
 {% set section_cta_url = "/work" %}
 {% include "./_includes/partials/work-list.html" %}
 
+<!-- prettier-ignore -->
+{% set noise_type = 'dunes' %}
 {% include "./_includes/partials/work-gallery.html" %}
 
+<!-- prettier-ignore -->
 {% set cta_large_url = "/contact" %}
 {% include "./_includes/partials/get-in-touch.html" %}
+
+<!-- prettier-ignore -->
+{% set hero = false %}
+{% set page = 'home' %}
+{% set id = 'prefooter-home' %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Have a project in mind?</span>
+<span aria-hidden="true">
+  <img class="portrait-sm" src="./static/img/portrait.avif" alt="" />
+  <span class="magnet-text colorful-text">Let’s collaborate!</span>
+  <span class="emoji">🤝</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Have a project in mind? Let’s collaborate' %}
+{% include "./_includes/partials/hero.html" %}

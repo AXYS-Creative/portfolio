@@ -1,8 +1,7 @@
-<svg class="noise-bg" style="opacity: 0.25">
+<svg class="noise-bg">
   <defs>
     <filter id="turb1">
-      <!-- Basic Spots - Use feComponentTransfer to alter rgb. Also adjust svg inline opacity -->
-
+      <!-- default -->
       <feTurbulence
         baseFrequency="0.9"
         numOctaves="2"
@@ -12,15 +11,11 @@
 
       <feComponentTransfer>
         <feFuncR type="linear" slope="1" />
-        <!-- Red channel -->
         <feFuncG type="linear" slope="1" />
-        <!-- Green channel -->
         <feFuncB type="linear" slope="1" />
-        <!-- Blue channel -->
       </feComponentTransfer>
 
-      <!-- Pearl Dunes -->
-
+      <!-- dunes -->
       <!-- <feTurbulence baseFrequency="0.02" result="noise" />
 
       <feDiffuseLighting in="noise" lighting-color="white" surfaceScale="2">

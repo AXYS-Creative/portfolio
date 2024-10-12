@@ -1,40 +1,6 @@
 .hero-home {
-  @include column-center;
-  gap: 24px;
-  padding-block: 380px;
-
-  @media all {
-    @include mq-max("xxl") {
-      padding-block: 264px;
-    }
-
-    @include mq-max("xl") {
-      padding-block: 236px;
-    }
-
-    @include mq-max("lg") {
-      padding-block-end: 128px;
-    }
-
-    @include mq-max("sm") {
-      padding-block: 212px;
-    }
-  }
-
   h1 {
-    margin-block-end: 48px;
-    line-height: 1.2;
-
-    @include mq-min("md") {
-      @include column-center;
-    }
-
-    @include mq-max("md") {
-      display: inline;
-      text-align: center;
-    }
-
-    & > .magnet-text {
+    .colorful-text {
       .word:first-of-type {
         color: $bluey;
       }
@@ -42,77 +8,18 @@
         color: $bingo;
       }
     }
+  }
+}
 
-    .word {
-      display: inline-flex;
+.pre-footer-home {
+  h2 {
+    .colorful-text {
+      .word:first-of-type {
+        color: $bluey;
+      }
+      .word:last-of-type {
+        color: $bingo;
+      }
     }
   }
-
-  // make this global?
-  .emoji {
-    font-size: 0.5em;
-    display: inline-block;
-    translate: 0 -25%;
-  }
-
-  // &__background {
-  //   position: absolute;
-  //   top: 0;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   z-index: -1;
-
-  //   &-ball {
-  //     $ball-size: 12vw;
-
-  //     position: absolute;
-  //     width: $ball-size;
-  //     height: $ball-size;
-  //     border-radius: 50%;
-  //     filter: blur(96px);
-
-  //     @media all {
-  //       @include mq-max("xxl") {
-  //         filter: blur(80px);
-  //       }
-
-  //       @include mq-max("md") {
-  //         filter: blur(48px);
-  //       }
-  //     }
-
-  //     // &::after {
-  //     //   @include absolute-center;
-  //     //   content: "";
-  //     //   width: 100%;
-  //     //   height: 100%;
-  //     //   border-radius: 50%;
-  //     //   filter: blur(48px);
-  //     //   z-index: -1;
-  //     //   // opacity: 0.2;
-  //     // }
-
-  //     &:first-of-type {
-  //       // background: $navy;
-  //       background: $bluey;
-  //       top: 24%;
-  //       left: 12%;
-
-  //       // &::after {
-  //       //   background: $bluey;
-  //       // }
-  //     }
-
-  //     &:last-of-type {
-  //       // background: $navy;
-  //       background: $bingo;
-  //       top: 42%;
-  //       right: 12%;
-
-  //       // &::after {
-  //       //   background: $bingo;
-  //       // }
-  //     }
-  //   }
-  // }
 }

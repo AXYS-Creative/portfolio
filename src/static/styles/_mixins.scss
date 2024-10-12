@@ -196,6 +196,7 @@ $min-breakpoints: (
 .h1 {
   @include heading(80px, 5.4vw, 6.4vw, 7vw, 40px);
   letter-spacing: -2px;
+  text-transform: initial;
 }
 
 // Marquee... maybe share with h1?

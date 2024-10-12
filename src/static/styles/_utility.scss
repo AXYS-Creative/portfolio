@@ -97,7 +97,7 @@
 }
 
 //
-// Invert colors, Uses Javascript
+// Color swap/inversion, Uses Javascript
 //
 
 .invert-colors {
@@ -112,9 +112,14 @@
     height: 100%;
     z-index: -1;
   }
+
+  > {
+    color: var(--background-color);
+  }
 }
 
 .swap-color {
+  // Looks for .invert-colors as target
   mix-blend-mode: difference;
 }
 
