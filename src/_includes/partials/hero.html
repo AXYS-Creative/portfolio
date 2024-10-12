@@ -1,6 +1,15 @@
 <section
-  class="{%if hero == true%}hero hero-{{ page }}{%else%}pre-footer pre-footer-{{ page }}{%endif%}"
-  id="{{ id }}"
+  class="
+  {%if hero == true%}
+    hero hero-{{ page }}
+  {%else%}
+    pre-footer pre-footer-{{ page }}
+  {%endif%} 
+  {%if left_align == true %}
+    left-align
+  {%endif%}
+  "
+  id="{%if hero == true%}hero-{{ page }}{%else%}pre-footer-{{ page }}{%endif%}"
 >
   {% include "./availability.html" %}
 

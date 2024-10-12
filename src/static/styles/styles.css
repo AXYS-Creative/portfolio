@@ -993,6 +993,16 @@ abbr[title] {
     filter: blur(24px);
   }
 }
+.hero.left-align,
+.pre-footer.left-align {
+  align-items: flex-start;
+}
+.hero.left-align h1,
+.hero.left-align h2,
+.pre-footer.left-align h1,
+.pre-footer.left-align h2 {
+  align-items: flex-start;
+}
 
 @media screen and (max-width: 768px) {
   .pre-footer {

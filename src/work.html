@@ -1,20 +1,43 @@
 ---
 title: Work // Aaron Garcia Creative
-description: CHANGE ME
+description: Explore the different projects I've worked on.
 author: Aaron Garcia
 
 layout: app
 path: work
 ---
 
-<section id="work-hero" class="work-hero">
-  <h1 class="h1">Work</h1>
+<!-- prettier-ignore -->
+{% set hero = true %}
+{% set page = 'work' %}
+{% set left_align = true %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Creating memorable</span>
+<span aria-hidden="true">
+  <span class="magnet-text colorful-text">web experiences</span>
+  <span class="emoji">💡</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Creating memorable web experiences' %}
+{% include "./_includes/partials/hero.html" %}
 
-  <!-- prettier-ignore -->
-  {% set cta_1_text = 'Contact me' %}
-  {% set cta_1_url = '#' %}
-  {% set cta_2_text = 'Book a call' %}
-  {% set cta_2_url = '#' %}
-  {% include "./_includes/partials/cta-group.html" %}
-  <!-- prettier-ignore -->
-</section>
+<!-- prettier-ignore -->
+{% set cta_large_url = "/contact" %}
+{% include "./_includes/partials/get-in-touch.html" %}
+
+<!-- prettier-ignore -->
+{% set hero = false %}
+{% set page = 'work' %}
+{% set left_align = false %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Have a project in mind?</span>
+<span aria-hidden="true">
+  <img class="portrait-sm" src="./static/img/portrait.avif" alt="" />
+  <span class="magnet-text colorful-text">Let’s collaborate!</span>
+  <span class="emoji">🤝</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Have a project in mind? Let’s collaborate' %}
+{% include "./_includes/partials/hero.html" %}

@@ -745,6 +745,15 @@ abbr[title] {
       }
     }
   }
+
+  &.left-align {
+    align-items: flex-start;
+
+    h1,
+    h2 {
+      align-items: flex-start;
+    }
+  }
 }
 
 .pre-footer {

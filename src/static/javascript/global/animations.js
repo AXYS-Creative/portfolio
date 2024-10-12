@@ -15,36 +15,39 @@ responsiveGsap.add(
 
     // SCOPED - Only for one work gallery instance per page
     const workGalleryAnimation = (() => {
-      let gallerAssetDistance = maxSm ? 16 : 5;
+      const showreel = document.querySelector(".showreel-slider");
+      const gallerAssetDistance = maxSm ? 16 : 5;
 
-      gsap.fromTo(
-        ".showreel-slider:first-of-type",
-        { x: `${gallerAssetDistance}%` },
-        {
-          x: `-${gallerAssetDistance}%`,
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".showreel",
-            start: "top bottom",
-            end: "100% top",
-            scrub: 0.8,
-          },
-        }
-      );
-      gsap.fromTo(
-        ".showreel-slider:last-of-type",
-        { x: `-${gallerAssetDistance}%` },
-        {
-          x: `${gallerAssetDistance}%`,
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".showreel",
-            start: "top bottom",
-            end: "100% top",
-            scrub: 0.8,
-          },
-        }
-      );
+      if (showreel) {
+        gsap.fromTo(
+          ".showreel-slider:first-of-type",
+          { x: `${gallerAssetDistance}%` },
+          {
+            x: `-${gallerAssetDistance}%`,
+            ease: "linear",
+            scrollTrigger: {
+              trigger: ".showreel",
+              start: "top bottom",
+              end: "100% top",
+              scrub: 0.8,
+            },
+          }
+        );
+        gsap.fromTo(
+          ".showreel-slider:last-of-type",
+          { x: `-${gallerAssetDistance}%` },
+          {
+            x: `${gallerAssetDistance}%`,
+            ease: "linear",
+            scrollTrigger: {
+              trigger: ".showreel",
+              start: "top bottom",
+              end: "100% top",
+              scrub: 0.8,
+            },
+          }
+        );
+      }
     })();
 
     // SCOPED - Only for one 'get in touch' instance per page
@@ -175,22 +178,25 @@ responsiveGsap.add(
 
     // GLOBAL - Temporarily add mix-blend-mod to any element. Partially global, per one .invert-colors element per page
     const colorSwap = (() => {
-      const targetElements = document.querySelectorAll(".color-swap");
+      const targetElements = document.querySelectorAll(".color-swap"),
+        invertColorsTarget = document.querySelector(".invert-colors");
 
-      targetElements.forEach((el) => {
-        gsap.to(el, {
-          scrollTrigger: {
-            trigger: ".invert-colors",
-            start: maxSm ? "top 64px" : maxXxl ? "top 84px" : "top 88px",
-            end: maxSm ? "bottom 40px" : "bottom 56px",
-            onEnter: () => el.classList.add("swap-color"),
-            onLeave: () => el.classList.remove("swap-color"),
-            onEnterBack: () => el.classList.add("swap-color"),
-            onLeaveBack: () => el.classList.remove("swap-color"),
-            // markers: true,
-          },
+      if (invertColorsTarget) {
+        targetElements.forEach((el) => {
+          gsap.to(el, {
+            scrollTrigger: {
+              trigger: invertColorsTarget,
+              start: maxSm ? "top 64px" : maxXxl ? "top 84px" : "top 88px",
+              end: maxSm ? "bottom 40px" : "bottom 56px",
+              onEnter: () => el.classList.add("swap-color"),
+              onLeave: () => el.classList.remove("swap-color"),
+              onEnterBack: () => el.classList.add("swap-color"),
+              onLeaveBack: () => el.classList.remove("swap-color"),
+              // markers: true,
+            },
+          });
         });
-      });
+      }
     })();
 
     // Game Changer! Keep in mind the scope of IIFE might affect whether it refreshes.
