@@ -23,3 +23,17 @@ const scrollFromTop = (() => {
     lastScrollY = currentScrollY;
   });
 })();
+
+// Keyboard tabbing for gsap pinned section (large cta)
+
+const largeCta = document.querySelector(".cta-1--large"),
+  preFooter = document.querySelector(".pre-footer");
+
+largeCta.addEventListener("focus", () => {
+  const preFooterTop = preFooter.getBoundingClientRect().top;
+
+  window.scrollTo({
+    top: window.scrollY + preFooterTop - window.innerHeight,
+    behavior: "smooth",
+  });
+});
