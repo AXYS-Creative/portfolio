@@ -512,18 +512,7 @@ p,
 a,
 button,
 ul {
-  color: var(--primary-font-color);
-  font-family: $font-family-primary;
-  font-size: 18px;
-  font-weight: 400;
-
-  @include mq-max("xxl") {
-    font-size: 16px;
-  }
-
-  @include mq-max("md") {
-    font-size: 14px;
-  }
+  @include body-font-styles;
 }
 
 a {
@@ -859,7 +848,7 @@ abbr[title] {
   pointer-events: none;
   transition: 0.6s $cubic-ease, opacity 0.3s ease;
   opacity: 0;
-  // z-index: -1;
+  z-index: -1;
 
   @media all {
     @include mq-touch {

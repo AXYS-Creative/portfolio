@@ -159,3 +159,52 @@ collections:
                   required: false,
                   hint: Target work item for unique styling,
                 }
+  - name: "partials"
+    label: "partials"
+    description: >
+      Reusable partials to scale your site.
+    files:
+      - name: "focus_cards"
+        label: "Focus Cards"
+        file: "src/_data/focus_cards.yaml"
+        # preview_path: "#"
+        editor:
+          preview: false
+        fields:
+          - name: "section_title"
+            label: "Section title"
+            widget: "string"
+            required: true
+          - name: "cards"
+            label: "Cards"
+            label_singular: "Card"
+            widget: "list"
+            required: true
+            fields:
+              - {
+                  name: "title",
+                  label: "Title",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "title_color",
+                  label: "Title Color",
+                  widget: "select",
+                  multiple: false,
+                  options: ["bluey", "bingo", "pink"],
+                  default: "bluey",
+                  required: false,
+                }
+              - {
+                  name: "subtitle",
+                  label: "Subtitle",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "description",
+                  label: "Description",
+                  widget: "string",
+                  required: true,
+                }

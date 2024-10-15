@@ -1,10 +1,10 @@
 work_items:
-  - title: Flavors of Alchemy
-    logo: /static/img/list-logo-foa.svg
-    image: /static/img/list-img-foa.png
-    background: "light-bg"
-    url: https://flavorsofalchemy.netlify.app
-    badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
+  - title: AXYS Creative
+    logo: /static/img/list-logo-axys.svg
+    image: /static/img/list-img-axys.png
+    background: ""
+    url: https://axyscreative.com
+    badges: ["UX Design", "Visual Design", "Development", "Form Handling"]
   - title: Join Sunder
     logo: /static/img/list-logo-sunder.svg
     image: /static/img/list-img-sunder.png
@@ -18,12 +18,12 @@ work_items:
     background: "grey-bg"
     url: https://essentialism.netlify.app
     badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
-  - title: AXYS Creative
-    logo: /static/img/list-logo-axys.svg
-    image: /static/img/list-img-axys.png
-    background: ""
-    url: https://axyscreative.com
-    badges: ["UX Design", "Visual Design", "Development", "Form Handling"]
+  - title: Flavors of Alchemy
+    logo: /static/img/list-logo-foa.svg
+    image: /static/img/list-img-foa.png
+    background: "light-bg"
+    url: https://flavorsofalchemy.netlify.app
+    badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
   - title: CORE
     logo: /static/img/list-logo-core.svg
     image: /static/img/list-img-core.png

@@ -53,6 +53,18 @@
   color: var(--secondary-accent-color);
 }
 
+.bluey {
+  color: $bluey;
+}
+
+.bingo {
+  color: $bingo;
+}
+
+.pink {
+  color: $pink;
+}
+
 //
 // Media Query Utility // Be mindful to use aria-hidden to avoid a break in speech.
 //

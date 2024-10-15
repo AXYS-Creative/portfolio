@@ -212,9 +212,9 @@ $min-breakpoints: (
   text-transform: initial;
 }
 
-// ?
+// Focus Cards
 .h4 {
-  @include heading(48px, 2.8vw, 2.8vw, 3.8vw, 12px);
+  @include heading(40px, 2.4vw, 2.4vw, 3.8vw, 12px);
 }
 
 // Little title
@@ -236,10 +236,14 @@ $min-breakpoints: (
 @mixin body-font-styles {
   color: var(--primary-font-color);
   font-family: $font-family-secondary;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 
   @include mq-max("xxl") {
+    font-size: 16px;
+  }
+
+  @include mq-max("md") {
     font-size: 14px;
   }
 }

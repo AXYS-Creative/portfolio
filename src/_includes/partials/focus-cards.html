@@ -1,0 +1,15 @@
+<section class="focus-cards">
+  <h2 class="focus-cards__title h3">{{ focus_cards.section_title | safe }}</h2>
+
+  <div class="focus-cards__group">
+    {%for card in focus_cards.cards %}
+    <div class="focus-card">
+      <h3 class="focus-card__title h4 {{ card.title_color }}">
+        {{ card.title | safe }}
+      </h3>
+      <h4 class="focus-card__subtitle">{{ card.subtitle | safe }}</h4>
+      <p class="focus-card__description">{{ card.description | safe }}</p>
+    </div>
+    {%endfor%}
+  </div>
+</section>

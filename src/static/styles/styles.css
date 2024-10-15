@@ -97,18 +97,18 @@
 
 .h4, h4 {
   font-family: "Safiro", sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1;
 }
 @media screen and (max-width: 1512px) {
   .h4, h4 {
-    font-size: 2.8vw;
+    font-size: 2.4vw;
   }
 }
 @media screen and (max-width: 1024px) {
   .h4, h4 {
-    font-size: 2.8vw;
+    font-size: 2.4vw;
   }
 }
 @media screen and (max-width: 768px) {
@@ -725,7 +725,7 @@ a,
 button,
 ul {
   color: var(--primary-font-color);
-  font-family: "Safiro", sans-serif;
+  font-family: "Atyp Display", sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
@@ -1079,6 +1079,7 @@ abbr[title] {
   pointer-events: none;
   transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0.3s ease;
   opacity: 0;
+  z-index: -1;
 }
 @media (hover: none) and (pointer: coarse) {
   .mouse-cursor {
@@ -1210,6 +1211,18 @@ abbr[title] {
 
 .accent-color-alt {
   color: var(--secondary-accent-color);
+}
+
+.bluey {
+  color: #8bc5eb;
+}
+
+.bingo {
+  color: #fab071;
+}
+
+.pink {
+  color: #ff94a7;
 }
 
 @media all {
@@ -1363,6 +1376,54 @@ abbr[title] {
     translate: 140% 0;
   }
 }
+.focus-cards__title {
+  text-align: center;
+  margin-block-end: 64px;
+}
+.focus-cards__title .color-text {
+  color: #5ce15c;
+}
+.focus-cards__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+}
+@media screen and (max-width: 1512px) {
+  .focus-cards__group {
+    gap: 24px;
+  }
+}
+.focus-cards .focus-card {
+  background-color: #271f1f;
+  padding: 40px;
+}
+@media screen and (max-width: 1512px) {
+  .focus-cards .focus-card {
+    padding: 24px;
+  }
+}
+.focus-cards .focus-card__title {
+  margin-block-end: 24px;
+}
+.focus-cards .focus-card__subtitle {
+  color: var(--primary-font-color);
+  font-family: "Atyp Display", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-block-end: 48px;
+}
+@media screen and (max-width: 1512px) {
+  .focus-cards .focus-card__subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .focus-cards .focus-card__subtitle {
+    font-size: 14px;
+  }
+}
+
 .get-in-touch {
   padding: 0;
   overflow: hidden;

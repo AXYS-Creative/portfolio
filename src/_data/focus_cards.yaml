@@ -1,0 +1,15 @@
+section_title: Areas I focus on, to help you <span class="color-text">stand out</span>
+
+cards:
+  - title: Design <span class="emoji">✍️</span>
+    title_color: "bluey"
+    subtitle: <span class="accent-color-alt">//</span> Responsive and accessible web design
+    description: Design is the foundation of everything, it’s crucial to get it right the first time. Many brands struggle to communicate their offer and get overlooked in the mainstream.
+  - title: Development <span class="emoji">🛠️</span>
+    title_color: "bingo"
+    subtitle: <span class="accent-color-alt">//</span> Responsive and accessible web design
+    description: Development is my other core passion that complements design. I never feel satisfied just composing a mock up, I  needed to build it out and see it live.
+  - title: Social Media <span class="emoji">✍️</span>
+    title_color: "pink"
+    subtitle: <span class="accent-color-alt">//</span> Responsive and accessible web design
+    description: Design is the foundation of everything, it’s crucial to get it right the first time. Many brands struggle to communicate their offer and get overlooked in the mainstream.

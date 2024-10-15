@@ -1,0 +1,40 @@
+.focus-cards {
+  &__title {
+    text-align: center;
+    margin-block-end: $content-spacing;
+
+    .color-text {
+      color: $green;
+    }
+  }
+
+  &__group {
+    @include row-center(space-between);
+    gap: $content-spacing;
+
+    @include mq-max("xxl") {
+      gap: 24px;
+    }
+  }
+
+  .focus-card {
+    background-color: $black;
+    padding: 40px;
+
+    @include mq-max("xxl") {
+      padding: 24px;
+    }
+
+    &__title {
+      margin-block-end: 24px;
+    }
+
+    &__subtitle {
+      @include body-font-styles;
+      margin-block-end: 48px;
+    }
+
+    // &__description {
+    // }
+  }
+}
