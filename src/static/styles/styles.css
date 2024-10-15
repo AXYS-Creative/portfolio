@@ -905,7 +905,7 @@ abbr[title] {
   translate: -140% 0;
 }
 .cta-1--large:hover .cta-1--large-emoji, .cta-1--large:focus-visible .cta-1--large-emoji {
-  animation: cta-emoji-jump 2s ease infinite alternate;
+  animation: cta-emoji-jump 2s ease infinite;
 }
 .cta-1--large:hover .cta-1--large-arrow-group span, .cta-1--large:focus-visible .cta-1--large-arrow-group span {
   animation: cta-arrow-1 2s cubic-bezier(0.18, 0.97, 0.47, 1) infinite;
@@ -1338,11 +1338,11 @@ abbr[title] {
   }
 }
 @keyframes cta-emoji-jump {
-  0%, 40%, 60%, 100% {
+  0%, 20%, 100% {
     translate: 0 0;
     rotate: 0deg;
   }
-  50% {
+  10% {
     translate: 0 -25%;
     rotate: 12deg;
   }
@@ -1351,10 +1351,7 @@ abbr[title] {
   0% {
     translate: -140% 0;
   }
-  40% {
-    translate: -140% 0;
-  }
-  100% {
+  50%, 100% {
     translate: 0 0;
   }
 }
@@ -1362,10 +1359,7 @@ abbr[title] {
   0% {
     translate: 0 0;
   }
-  40% {
-    translate: 0 0;
-  }
-  100% {
+  50%, 100% {
     translate: 140% 0;
   }
 }
