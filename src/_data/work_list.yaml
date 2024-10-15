@@ -18,3 +18,16 @@ work_items:
     background: "grey-bg"
     url: https://essentialism.netlify.app
     badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
+  - title: AXYS Creative
+    logo: /static/img/list-logo-axys.svg
+    image: /static/img/list-img-axys.png
+    background: ""
+    url: https://axyscreative.com
+    badges: ["UX Design", "Visual Design", "Development", "Form Handling"]
+  - title: CORE
+    logo: /static/img/list-logo-core.svg
+    image: /static/img/list-img-core.png
+    background: ""
+    url: https://coreapp.netlify.app
+    badges:
+      ["Visual Design", "Interaction Design", "Development", "Form Handling"]
