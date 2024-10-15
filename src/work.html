@@ -23,6 +23,11 @@ path: work
 {% include "./_includes/partials/hero.html" %}
 
 <!-- prettier-ignore -->
+{% set marquee_text = marquee.marquee_text %}
+{% set marquee_text_speech = marquee.marquee_text_speech %}
+{% include "./_includes/partials/marquee.html" %}
+
+<!-- prettier-ignore -->
 {% set cta_large_url = "/contact" %}
 {% include "./_includes/partials/get-in-touch.html" %}
 
@@ -33,7 +38,7 @@ path: work
 {% set heading_markup = '
 <span class="magnet-text" aria-hidden="true">Have a project in mind?</span>
 <span aria-hidden="true">
-  <img class="portrait-sm" src="./static/img/portrait.avif" alt="" />
+  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
   <span class="magnet-text colorful-text">Let’s collaborate!</span>
   <span class="emoji">🤝</span>
 </span>

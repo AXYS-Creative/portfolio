@@ -52,13 +52,20 @@ responsiveGsap.add(
 
     // SCOPED - Only for one 'get in touch' instance per page
     const getInTouchAnimations = (() => {
+      const pinDuration = "+=100%";
+      // const pinDuration = "+=50%";
+      const slideDuration = "100%";
+      // const slideDuration = "50%";
+      const showBtnDuration = "50%";
+      // const showBtnDuration = "25%";
+
       // Pinning
       gsap.to(".get-in-touch", {
         scrollTrigger: {
           trigger: ".get-in-touch",
           pin: true,
           start: "top top",
-          end: "+=100%",
+          end: pinDuration,
         },
       });
 
@@ -74,14 +81,14 @@ responsiveGsap.add(
             trigger: ".get-in-touch",
             scrub: 0.5,
             start: "top top",
-            end: "+=100%",
+            end: pinDuration,
           },
         }
       );
 
       // Text Sliding
-      let slideDistance = "18%";
-      let filterBlur = maxSm ? 4 : 10;
+      const slideDistance = "18%";
+      const filterBlur = maxSm ? 4 : 10;
 
       gsap.fromTo(
         ".bg-text span:nth-of-type(odd)",
@@ -93,7 +100,7 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".get-in-touch",
             start: "top bottom",
-            end: "100% top",
+            end: `${slideDuration} top`,
             scrub: 1.2,
           },
         }
@@ -108,7 +115,7 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".get-in-touch",
             start: "top bottom",
-            end: "100% top",
+            end: `${slideDuration} top`,
             scrub: 1.2,
           },
         }
@@ -130,7 +137,7 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".get-in-touch",
             start: "top bottom",
-            end: "50% top",
+            end: `${showBtnDuration} top`,
             scrub: 1.5,
           },
         }
@@ -150,7 +157,7 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".get-in-touch",
             start: "100% bottom",
-            end: "50% top",
+            end: `${showBtnDuration} top`,
             scrub: 1.5,
           },
         }

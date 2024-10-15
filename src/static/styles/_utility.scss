@@ -1,6 +1,10 @@
 .classic-link {
   position: relative;
 
+  @include mq-motion-allow {
+    transition: 0.32s ease;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -18,10 +22,13 @@
 
   &:hover,
   &:focus-visible {
+    color: $pink;
+
     &::before {
       width: 0;
       left: auto;
       right: 0;
+      background-color: $pink;
     }
   }
 }
@@ -31,7 +38,11 @@
 }
 
 .magnet {
-  transition: translate 0.8s $cubic-ease-slow-finish;
+  transition: 0.3s ease, translate 0.8s $cubic-ease-slow-finish;
+
+  // &.cta-1--large {
+  //   transition: 0.3s ease, translate 0.8s $cubic-ease-slow-finish;
+  // }
 }
 
 .accent-color {

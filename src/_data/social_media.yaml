@@ -1,7 +1,7 @@
 links:
   - title: Instagram
     url: https://www.instagram.com
-    src: ../static/img/icon-instagram.svg
+    src: /static/img/icon-instagram.svg
   - title: Dribbble
     url: https://dribbble.com
     src: /static/img/icon-dribbble.svg
@@ -9,5 +9,5 @@ links:
     url: https://x.com/
     src: /static/img/icon-x.svg
   - title: LinkedIn
-    url: https://linkedin.com
+    url: https://www.linkedin.com/in/aaron-garcia-3b7081211/
     src: /static/img/icon-linkedin.svg

@@ -84,14 +84,9 @@ header.site-header {
       display: none;
     }
 
-    &__link {
-      &:hover,
-      &:focus-visible {
-        &::after {
-          background: var(--primary-font-color);
-        }
-      }
-    }
+    // &__link {
+    //   // see classic-link in _utility.scss
+    // }
   }
 
   .menu-btn-wrapper {
@@ -197,7 +192,6 @@ header.site-header {
           rotate: 45deg;
         }
         &:last-of-type {
-          // rotate: -45deg;
           rotate: -225deg;
         }
       }
@@ -575,6 +569,7 @@ abbr[title] {
 .availability {
   @include row-center;
   gap: 12px;
+  white-space: nowrap;
 
   &__text {
     // font-family: $font-family-secondary;
@@ -649,17 +644,85 @@ abbr[title] {
 }
 
 .cta-1 {
+  position: relative;
   background: var(--primary-accent-color);
   padding: 12px 28px;
   border-radius: $radius;
+
+  // &::after {
+  //   @include absolute-center;
+  //   content: "";
+  //   width: 100%;
+  //   height: 100%;
+  //   border-radius: $radius;
+  //   border: 1px solid transparent;
+  // }
+
+  &:hover,
+  &:focus-visible {
+    background-color: $pink;
+
+    @include mq-motion-allow {
+      // animation: cta-pop 0.4s $cubic-ease forwards;
+      animation: cta-pop 0.24s linear forwards;
+    }
+
+    // &::after {
+    //   width: 120%;
+    //   height: 160%;
+    //   opacity: 0;
+    //   border: 1px solid $pink;
+    //   transition: 0.32s ease;
+    // }
+  }
 
   &--large {
     @extend h6;
     background-color: var(--primary-font-color);
     padding: 24px 40px;
     color: var(--background-color);
-    display: inline-flex;
     white-space: nowrap;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    &-emoji {
+      display: inline-flex;
+    }
+
+    &-arrow-group {
+      display: grid;
+      padding: 0 2px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      span {
+        grid-area: 1 / 1;
+
+        &:first-of-type {
+          translate: -140% 0;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      $duration: 2s;
+
+      .cta-1--large-emoji {
+        animation: cta-emoji-jump $duration ease infinite alternate;
+      }
+      .cta-1--large-arrow-group {
+        span {
+          animation: cta-arrow-1 $duration $cubic-ease infinite;
+
+          &:first-of-type {
+            animation: cta-arrow-2 $duration $cubic-ease infinite;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -749,9 +812,19 @@ abbr[title] {
   &.left-align {
     align-items: flex-start;
 
+    @include mq-max("md") {
+      align-items: center;
+      text-wrap: balance;
+    }
+
     h1,
     h2 {
       align-items: flex-start;
+
+      @include mq-max("md") {
+        align-items: center;
+        text-wrap: balance;
+      }
     }
   }
 }
@@ -763,6 +836,17 @@ abbr[title] {
 
   @include mq-max("sm") {
     padding-block-start: 148px;
+  }
+
+  h2 {
+    .colorful-text {
+      .word:first-of-type {
+        color: $bluey;
+      }
+      .word:last-of-type {
+        color: $bingo;
+      }
+    }
   }
 }
 

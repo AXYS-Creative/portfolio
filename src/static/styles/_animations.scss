@@ -15,3 +15,50 @@
     opacity: 0;
   }
 }
+
+@keyframes cta-pop {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.075;
+  }
+}
+
+@keyframes cta-emoji-jump {
+  0%,
+  40%,
+  60%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  50% {
+    translate: 0 -25%;
+    rotate: 12deg;
+  }
+}
+
+@keyframes cta-arrow-1 {
+  0% {
+    translate: -140% 0;
+  }
+  40% {
+    translate: -140% 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+@keyframes cta-arrow-2 {
+  0% {
+    translate: 0 0;
+  }
+  40% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 140% 0;
+  }
+}

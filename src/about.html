@@ -7,14 +7,42 @@ layout: app
 path: about
 ---
 
-<section id="hero" class="hero">
-  <h1 class="h1">About me</h1>
+<!-- prettier-ignore -->
+{% set hero = true %}
+{% set page = 'about' %}
+{% set left_align = true %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Dedicated, self-taught</span>
+<span aria-hidden="true">
+  <span class="magnet-text colorful-text">designer & developer</span>
+  <span class="emoji">💻</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Dedicated, self-taught designer and developer' %}
+{% include "./_includes/partials/hero.html" %}
 
-  <!-- prettier-ignore -->
-  {% set cta_1_text = 'Contact me' %}
-  {% set cta_1_url = '#' %}
-  {% set cta_2_text = 'Book a call' %}
-  {% set cta_2_url = '#' %}
-  {% include "./_includes/partials/cta-group.html" %}
-  <!-- prettier-ignore -->
-</section>
+<!-- prettier-ignore -->
+{% set marquee_text = marquee.marquee_text %}
+{% set marquee_text_speech = marquee.marquee_text_speech %}
+{% include "./_includes/partials/marquee.html" %}
+
+<!-- prettier-ignore -->
+{% set cta_large_url = "/contact" %}
+{% include "./_includes/partials/get-in-touch.html" %}
+
+<!-- prettier-ignore -->
+{% set hero = false %}
+{% set page = 'about' %}
+{% set left_align = false %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Have a project in mind?</span>
+<span aria-hidden="true">
+  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+  <span class="magnet-text colorful-text">Let’s collaborate!</span>
+  <span class="emoji">🤝</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Have a project in mind? Let’s collaborate' %}
+{% include "./_includes/partials/hero.html" %}

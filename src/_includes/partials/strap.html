@@ -1,17 +1,24 @@
 <figure class="strap-icon color-swap">
   <img src="../../static/img/icon-nodes.svg" alt="" />
 </figure>
-<aside class="strap strap--{{ location }}">
+<aside class="strap strap--{{ strap_location }}">
   <ul class="social-media-links" aria-label="social media links">
     {% for link in social_media.links %}
-    <li>
+    <li class="magnet">
       <a
-        class="tab-element-{{ location }}"
+        class="social-media-link tab-element-{{ strap_location }}"
         href="{{ link.url }}"
         target="_blank"
         aria-label="{{ link.title }}"
       >
-        <img src="{{ link.src }}" alt="{{ link.title }}" />
+        <span
+          class="social-media-icon"
+          style="mask-image: url('{{ link.src }}');"
+        ></span>
+        <span
+          class="social-media-icon"
+          style="mask-image: url('{{ link.src }}');"
+        ></span>
       </a>
     </li>
     {% endfor%}

@@ -1,0 +1,9 @@
+.hero-work {
+  h1 {
+    .colorful-text {
+      .word:last-of-type {
+        color: $pink;
+      }
+    }
+  }
+}
