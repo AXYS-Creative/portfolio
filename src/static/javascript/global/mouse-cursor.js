@@ -56,7 +56,7 @@ if (window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
 
   workItem.forEach((el, index) => {
     el.addEventListener("mousemove", () => {
-      cursor.classList.add("service-active");
+      cursor.classList.add("img-active");
 
       cursor.querySelectorAll(".mouse-cursor__image").forEach((img) => {
         img.style.opacity = 0;
@@ -70,7 +70,7 @@ if (window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
     });
 
     el.addEventListener("mouseleave", () => {
-      cursor.classList.remove("service-active");
+      cursor.classList.remove("img-active");
     });
   });
 

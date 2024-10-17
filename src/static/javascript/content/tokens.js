@@ -1,3 +1,9 @@
+/* 
+  Not all clients will be allowed to user the "| safe" guard in njk. 
+  These tokens provide a nice alternative to enriching text.
+*
+*/
+
 // Handles the replacement logic for [%br%] tokens
 const brTokenHandler = (() => {
   const processBrToken = (inputString) => {

@@ -9,18 +9,20 @@
     flex-direction: column;
 
     .work-item {
-      @include row-center(space-between);
+      // @include row-center(space-between);
+      display: flex;
+      align-items: center;
       padding-block: 48px;
-      gap: 64px;
+      // gap: 64px;
 
       @media all {
-        @include mq-max("xxl") {
-          gap: 40px;
-        }
+        // @include mq-max("xxl") {
+        //   gap: 40px;
+        // }
 
-        @include mq-max("xl") {
-          gap: 16px;
-        }
+        // @include mq-max("xl") {
+        //   gap: 16px;
+        // }
 
         @include mq-max("lg") {
           flex-direction: column;
@@ -30,15 +32,8 @@
         }
       }
 
-      // &:hover {
-      //   .work-item__logo,
-      //   .work-item__badges {
-      //     opacity: 0.5;
-      //   }
-      // }
-
       &__logo {
-        // not using flex for mouse image hover. Flex extended element
+        // not using flex: 1 0 250px for mouse image hover. Flex extended element
         width: 250px;
         margin-inline-end: 24%;
         padding-inline-end: 48px;
@@ -74,32 +69,24 @@
           display: block;
           width: min(100%, 520px);
           object-fit: cover;
-          aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
+          // aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
         }
 
         img {
           width: 100%;
         }
-
-        @media all {
-          &.dark-bg {
-            background-color: #121212;
-          }
-          &.grey-bg {
-            background-color: #e3cece;
-          }
-          &.light-bg {
-            background-color: #f9e9e9;
-          }
-          &.navy-bg {
-            background-color: #58718c;
-          }
-        }
       }
 
       &__badges {
-        width: 340px;
+        margin-left: auto;
+        width: 520px;
+        padding-inline-end: 128px;
         flex-shrink: 0;
+
+        @include mq-max("xxl") {
+          width: 420px;
+          padding-inline-end: 48px;
+        }
 
         @include mq-max("xl") {
           scale: 0.9;

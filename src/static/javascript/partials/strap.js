@@ -3,11 +3,13 @@ const strap = document.querySelector(".strap"),
 
 const rootElem = document.documentElement; // For CSS variables
 
-const updateIconWidth = (() => {
+const updateIconWidth = () => {
   let strapWidth = strap.getBoundingClientRect().width;
-
   rootElem.style.setProperty("--strap-width", `${strapWidth}px`);
-})();
+};
+
+updateIconWidth(); // Invoke on page load
+window.addEventListener("resize", updateIconWidth); // Invoke on window resize
 
 // Strap hover
 strap.addEventListener("mousemove", () => {
@@ -20,7 +22,7 @@ strap.addEventListener("mouseleave", () => {
 
 // Strap focus-within
 strap.addEventListener("focusin", () => {
-  strapIcon.classList.add("strap-hover"); // or use a different class if needed
+  strapIcon.classList.add("strap-hover");
 });
 
 strap.addEventListener("focusout", () => {
