@@ -1,24 +1,38 @@
 $font-family-primary: "Safiro", sans-serif;
 $font-family-secondary: "Atyp Display", sans-serif;
 
+$black: #271f1f;
+$white: #ffffff;
 $navy: #1e2932;
 $blue: #7366c1;
 $bluey: #8bc5eb;
 $bingo: #fab071;
 $green: #5ce15c;
 $pink: #ff94a7;
-$white: #ffffff;
-$black: #271f1f;
 
 :root {
   --background-color: #{$navy};
-  --primary-font-color: #{$white};
-  // --secondary-font-color: #{$grey-light};
-  --primary-accent-color: #{$blue};
-  --secondary-accent-color: #{$green};
+  --font-color-primary: #{$white};
+  // --font-color-secondary: #{$grey-light};
 
-  --link-color: #{$white};
-  --link-color-hover: #{$white};
+  --neutral-dark: #{$black};
+  --neutral-light: #{$white};
+
+  --hero-color--primary: #{$blue};
+  --hero-color--secondary: #{$green};
+
+  --accent-color--primary: #{$bluey};
+  --accent-color--secondary: #{$bingo};
+  --accent-color--tertiary: #{$pink};
+
+  // Buttons & Links
+  --cta-color-bg: var(--hero-color--primary);
+  --cta-color-bg--hover: var(--accent-color--tertiary);
+  --cta-color-text: var(--font-color-primary);
+  --cta-color-text--hover: var(--font-color-primary);
+
+  --link-color: var(--font-color-primary);
+  --link-color-hover: var(--accent-color--tertiary);
 
   // Site Header
   --icon-top-distance: 56px;
@@ -29,7 +43,7 @@ $black: #271f1f;
 // @media (prefers-color-scheme: dark) {
 //   :root {
 //     --background-color: #{$navy};
-//     --primary-font-color: #{$white};
+//     --font-color-primary: #{$white};
 //   }
 // }
 

@@ -1,15 +1,17 @@
 .focus-cards {
   &__title {
-    text-align: center;
     margin-block-end: $content-spacing;
 
-    .color-text {
-      color: $green;
+    @include mq-min("lg") {
+      // mq-min
+      text-align: center;
     }
   }
 
   &__group {
     @include row-center(space-between);
+    align-items: stretch;
+    flex-wrap: wrap;
     gap: $content-spacing;
 
     @include mq-max("xxl") {
@@ -18,11 +20,24 @@
   }
 
   .focus-card {
-    background-color: $black;
-    padding: 40px;
+    background-color: var(--neutral-dark);
+    // padding: 32px;
+    padding: 48px;
 
-    @include mq-max("xxl") {
-      padding: 24px;
+    @media all {
+      @include mq-max("xxl") {
+        // padding: 24px;
+        padding: 36px;
+      }
+
+      @include mq-max("md") {
+        padding: 20px;
+      }
+
+      @include mq-min("md") {
+        // mq-min
+        flex: 1 0 400px;
+      }
     }
 
     &__title {
@@ -31,7 +46,11 @@
 
     &__subtitle {
       @include body-font-styles;
-      margin-block-end: 48px;
+      margin-block-end: 40px;
+
+      @include mq-max("md") {
+        margin-block-end: 32px;
+      }
     }
 
     // &__description {

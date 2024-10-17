@@ -14,7 +14,7 @@ path: work
 {% set heading_markup = '
 <span class="magnet-text" aria-hidden="true">Creating memorable</span>
 <span aria-hidden="true">
-  <span class="magnet-text colorful-text">web experiences</span>
+  <span class="magnet-text color-text">web experiences</span>
   <span class="emoji">💡</span>
 </span>
 ' %}
@@ -31,6 +31,10 @@ path: work
 {% include "./_includes/partials/focus-cards.html" %}
 
 <!-- prettier-ignore -->
+{% set noise_type = 'dunes' %}
+{% include "./_includes/partials/work-gallery.html" %}
+
+<!-- prettier-ignore -->
 {% set cta_large_url = "/contact" %}
 {% include "./_includes/partials/get-in-touch.html" %}
 
@@ -42,7 +46,7 @@ path: work
 <span class="magnet-text" aria-hidden="true">Have a project in mind?</span>
 <span aria-hidden="true">
   <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
-  <span class="magnet-text colorful-text">Let’s collaborate!</span>
+  <span class="magnet-text color-text">Let’s collaborate!</span>
   <span class="emoji">🤝</span>
 </span>
 ' %}

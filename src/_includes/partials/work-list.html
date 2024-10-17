@@ -6,10 +6,9 @@
   <header class="work-list__header">
     {% include "./section-title.html" %}
 
-    <!-- prettier-ignore -->
-    {% if show_all == false %}
-    <a class="classic-link tab-element-page" href="/work">View all projects</a>
-    {%endif%}
+    <a class="classic-link tab-element-page" href="/archive">
+      Visit archive ({{ work_list.work_items.length }})
+    </a>
   </header>
   {% endif %}
 
@@ -21,7 +20,7 @@
       <img
         class="work-item__logo"
         src="{{ project.logo }}"
-        alt="{{ project.title }} businesses logo"
+        alt="{{ project.title }} logo"
       />
 
       <figure class="work-item__showcase {{ project.background }}">

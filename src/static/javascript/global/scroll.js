@@ -29,7 +29,7 @@ const scrollFromTop = (() => {
 const largeCta = document.querySelector(".cta-1--large"),
   preFooter = document.querySelector(".pre-footer");
 
-largeCta.addEventListener("focus", () => {
+largeCta?.addEventListener("focus", () => {
   const preFooterTop = preFooter.getBoundingClientRect().top;
 
   window.scrollTo({

@@ -1,7 +1,8 @@
 if (window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
-  const cursor = document.querySelector(".mouse-cursor");
-  const workItem = document.querySelectorAll(".work-item");
-  const workShowcase = document.querySelectorAll(".work-item__showcase-img");
+  const cursor = document.querySelector(".mouse-cursor"),
+    workItem = document.querySelectorAll(".work-item"),
+    workShowcase = document.querySelectorAll(".work-item__showcase-img"),
+    workItemLogo = document.querySelectorAll(".work-item__logo");
 
   const imageSources = [];
   workShowcase.forEach((img) => imageSources.push(img.src));

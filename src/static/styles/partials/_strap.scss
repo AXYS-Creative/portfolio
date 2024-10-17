@@ -1,5 +1,5 @@
 .strap {
-  $fill-color: var(--primary-accent-color);
+  $fill-color: var(--hero-color--primary);
   $clip-size: 32px;
   $padding: 12px; // Doesn't NEED to be shared, but it works.
 
@@ -63,7 +63,7 @@
         height: 32px;
         mask-size: 100%;
         mask-repeat: no-repeat;
-        background-color: var(--primary-font-color);
+        background-color: var(--font-color-primary);
 
         @include mq-motion-allow {
           transition: all 0.48s $cubic-ease, background 0.48s $cubic-ease 0.2s;
@@ -82,7 +82,7 @@
       &:focus-visible {
         .social-media-icon {
           translate: 0 -100%;
-          background-color: $green;
+          background-color: var(--hero-color--secondary);
 
           &:last-of-type {
             translate: 0 0;

@@ -208,13 +208,13 @@ $min-breakpoints: (
 
 // Mission statement & work gallery title
 .h3 {
-  @include heading(64px, 3.4vw, 4vw, 40px, 24px);
+  @include heading(64px, 3.4vw, 4vw, 40px, 7.2vw);
   text-transform: initial;
 }
 
-// Focus Cards
+// Focus card titles
 .h4 {
-  @include heading(40px, 2.4vw, 2.4vw, 3.8vw, 12px);
+  @include heading(40px, 32px, 32px, 32px, 6.8vw);
 }
 
 // Little title
@@ -234,7 +234,7 @@ $min-breakpoints: (
 }
 
 @mixin body-font-styles {
-  color: var(--primary-font-color);
+  color: var(--font-color-primary);
   font-family: $font-family-secondary;
   font-size: 18px;
   font-weight: 400;
@@ -307,7 +307,7 @@ $min-breakpoints: (
 //
 
 @mixin invert-colors {
-  background: var(--primary-font-color);
+  background: var(--font-color-primary);
   color: var(--background-color);
 
   * {

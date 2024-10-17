@@ -1,11 +1,11 @@
 .hero-about {
   h1 {
-    .colorful-text {
+    .color-text {
       .word:first-of-type {
-        color: $bluey;
+        color: var(--accent-color--primary);
       }
       .word:last-of-type {
-        color: $bingo;
+        color: var(--accent-color--secondary);
       }
     }
   }

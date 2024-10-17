@@ -52,6 +52,8 @@ responsiveGsap.add(
 
     // SCOPED - Only for one 'get in touch' instance per page
     const getInTouchAnimations = (() => {
+      const getInTouchSection = document.querySelector(".get-in-touch");
+
       const pinDuration = "+=100%";
       // const pinDuration = "+=50%";
       const slideDuration = "100%";
@@ -59,109 +61,118 @@ responsiveGsap.add(
       const showBtnDuration = "50%";
       // const showBtnDuration = "25%";
 
-      // Pinning
-      gsap.to(".get-in-touch", {
-        scrollTrigger: {
-          trigger: ".get-in-touch",
-          pin: true,
-          start: "top top",
-          end: pinDuration,
-        },
-      });
-
-      // Scaling
-      gsap.fromTo(
-        ".gsap-scale",
-        {
-          scale: 1.25,
-        },
-        {
-          scale: 1,
+      if (getInTouchSection) {
+        // Pinning
+        gsap.to(".get-in-touch", {
           scrollTrigger: {
             trigger: ".get-in-touch",
-            scrub: 0.5,
+            pin: true,
             start: "top top",
             end: pinDuration,
           },
-        }
-      );
+        });
 
-      // Text Sliding
-      const slideDistance = "18%";
-      const filterBlur = maxSm ? 4 : 10;
+        // Scaling
+        gsap.fromTo(
+          ".gsap-scale",
+          {
+            scale: 1.25,
+          },
+          {
+            scale: 1,
+            scrollTrigger: {
+              trigger: ".get-in-touch",
+              scrub: 0.5,
+              start: "top top",
+              end: pinDuration,
+            },
+          }
+        );
 
-      gsap.fromTo(
-        ".bg-text span:nth-of-type(odd)",
-        { x: `${slideDistance}`, filter: `blur(${filterBlur})px` },
-        {
-          x: `-${slideDistance}`,
-          filter: "blur(0px)",
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".get-in-touch",
-            start: "top bottom",
-            end: `${slideDuration} top`,
-            scrub: 1.2,
-          },
-        }
-      );
-      gsap.fromTo(
-        ".bg-text span:nth-of-type(even)",
-        { x: `-${slideDistance}`, filter: `blur(${filterBlur})px` },
-        {
-          x: `${slideDistance}`,
-          filter: "blur(0px)",
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".get-in-touch",
-            start: "top bottom",
-            end: `${slideDuration} top`,
-            scrub: 1.2,
-          },
-        }
-      );
+        // Text Sliding
+        const slideDistance = "18%";
+        const filterBlur = maxSm ? 4 : 10;
 
-      // Button rotating
-      gsap.fromTo(
-        ".large-cta-wrapper",
-        {
-          rotate: maxSm ? "64deg" : "50deg",
-          scale: 1.25,
-          filter: `blur(${filterBlur / 2})px`,
-        },
-        {
-          rotate: "0deg",
-          scale: 1,
-          filter: "blur(0px)",
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".get-in-touch",
-            start: "top bottom",
-            end: `${showBtnDuration} top`,
-            scrub: 1.5,
-          },
-        }
-      );
+        gsap.fromTo(
+          ".bg-text span:nth-of-type(odd)",
+          { x: `${slideDistance}`, filter: `blur(${filterBlur})px` },
+          {
+            x: `-${slideDistance}`,
+            filter: "blur(0px)",
+            ease: "linear",
+            scrollTrigger: {
+              trigger: ".get-in-touch",
+              start: "top bottom",
+              end: `${slideDuration} top`,
+              scrub: 1.2,
+            },
+          }
+        );
+        gsap.fromTo(
+          ".bg-text span:nth-of-type(even)",
+          { x: `-${slideDistance}`, filter: `blur(${filterBlur})px` },
+          {
+            x: `${slideDistance}`,
+            filter: "blur(0px)",
+            ease: "linear",
+            scrollTrigger: {
+              trigger: ".get-in-touch",
+              start: "top bottom",
+              end: `${slideDuration} top`,
+              scrub: 1.2,
+            },
+          }
+        );
 
-      // Availability fading
-      gsap.fromTo(
-        ".availability-wrapper",
-        {
-          filter: `blur(${filterBlur / 2})px`,
-          opacity: 0,
-        },
-        {
-          filter: "blur(0px)",
-          opacity: 1,
-          ease: "linear",
-          scrollTrigger: {
-            trigger: ".get-in-touch",
-            start: "100% bottom",
-            end: `${showBtnDuration} top`,
-            scrub: 1.5,
+        // Button rotating
+        gsap.fromTo(
+          ".large-cta-wrapper",
+          {
+            rotate: maxSm ? "64deg" : "50deg",
+            scale: 1.25,
+            filter: `blur(${filterBlur / 2})px`,
           },
+          {
+            rotate: "0deg",
+            scale: 1,
+            filter: "blur(0px)",
+            ease: "linear",
+            scrollTrigger: {
+              trigger: ".get-in-touch",
+              start: "top bottom",
+              end: `${showBtnDuration} top`,
+              scrub: 1.5,
+            },
+          }
+        );
+
+        // Availability fading
+        gsap.fromTo(
+          ".availability-wrapper",
+          {
+            filter: `blur(${filterBlur / 2})px`,
+            opacity: 0,
+          },
+          {
+            filter: "blur(0px)",
+            opacity: 1,
+            ease: "linear",
+            scrollTrigger: {
+              trigger: ".get-in-touch",
+              start: "100% bottom",
+              end: `${showBtnDuration} top`,
+              scrub: 1.5,
+            },
+          }
+        );
+
+        // ScrollTrigger Refresh
+        if (window.innerWidth > 520) {
+          window.addEventListener("resize", () => {
+            ScrollTrigger.refresh();
+          });
         }
-      );
+      }
     })();
 
     // GLOBAL - Easily toggle an 'animate' class on any element with '.gsap-animate' class

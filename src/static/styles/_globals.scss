@@ -8,7 +8,7 @@
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus-visible {
-    -webkit-text-fill-color: var(--primary-font-color);
+    -webkit-text-fill-color: var(--font-color-primary);
     -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
   }
 }
@@ -19,7 +19,7 @@ html {
 
 body {
   background: var(--background-color);
-  color: var(--primary-font-color);
+  color: var(--font-color-primary);
 
   & > * {
     max-width: $content-width;
@@ -132,7 +132,7 @@ header.site-header {
         @include absolute-center;
         width: 28px;
         height: 3px;
-        background: $white;
+        background: var(--neutral-light);
         transition: 0.5s $cubic-ease, translate 0.3s ease;
 
         &:first-of-type {
@@ -297,7 +297,7 @@ nav {
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background-color: var(--secondary-accent-color);
+        background-color: var(--hero-color--secondary);
         z-index: -1;
         opacity: 0;
 
@@ -426,6 +426,11 @@ section {
       }
     }
   }
+
+  &:has(+ .invert-colors) {
+    // This is a tough one. *2 creates too much space, *1 needs more space.
+    padding-block-end: $vertical-padding * 1.5;
+  }
 }
 
 footer.site-footer {
@@ -546,7 +551,7 @@ video {
 hr {
   border: none;
   height: 2px;
-  background: $bluey;
+  background: var(--accent-color--primary);
 }
 
 abbr[title] {
@@ -583,7 +588,7 @@ abbr[title] {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--secondary-accent-color);
+    background: var(--hero-color--secondary);
     filter: brightness(1.1);
     animation: glow-dot $duration linear infinite alternate;
 
@@ -592,7 +597,7 @@ abbr[title] {
       @include absolute-center;
       width: 12px;
       height: 12px;
-      background-color: var(--secondary-accent-color);
+      background-color: var(--hero-color--secondary);
       z-index: -1;
       filter: blur(6px);
       animation: glow-dot-blur $duration linear infinite alternate;
@@ -614,7 +619,7 @@ abbr[title] {
   }
 
   .badge {
-    border: 1px solid $bluey;
+    border: 1px solid var(--accent-color--primary);
     border-radius: 24px;
     padding: 8px 24px;
     font-size: 14px;
@@ -634,7 +639,7 @@ abbr[title] {
 
 .cta-1 {
   position: relative;
-  background: var(--primary-accent-color);
+  background: var(--cta-color-bg);
   padding: 12px 28px;
   border-radius: $radius;
 
@@ -649,7 +654,7 @@ abbr[title] {
 
   &:hover,
   &:focus-visible {
-    background-color: $pink;
+    background-color: var(--cta-color-bg--hover);
 
     @include mq-motion-allow {
       // animation: cta-pop 0.4s $cubic-ease forwards;
@@ -660,14 +665,14 @@ abbr[title] {
     //   width: 120%;
     //   height: 160%;
     //   opacity: 0;
-    //   border: 1px solid $pink;
+    //   border: 1px solid var(--cta-color-bg--hover);
     //   transition: 0.32s ease;
     // }
   }
 
   &--large {
     @extend h6;
-    background-color: var(--primary-font-color);
+    background-color: var(--neutral-light);
     padding: 24px 40px;
     color: var(--background-color);
     white-space: nowrap;
@@ -828,12 +833,12 @@ abbr[title] {
   }
 
   h2 {
-    .colorful-text {
+    .color-text {
       .word:first-of-type {
-        color: $bluey;
+        color: var(--accent-color--primary);
       }
       .word:last-of-type {
-        color: $bingo;
+        color: var(--accent-color--secondary);
       }
     }
   }

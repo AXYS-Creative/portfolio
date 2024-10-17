@@ -1,8 +1,8 @@
 .hero-work {
   h1 {
-    .colorful-text {
+    .color-text {
       .word:last-of-type {
-        color: $pink;
+        color: var(--accent-color--tertiary);
       }
     }
   }

@@ -1,15 +1,15 @@
-section_title: Areas I focus on, to help you <span class="color-text">stand out</span>
+section_title: Areas I focus on, to help you <span class="hero-color--secondary">stand out</span>
 
 cards:
   - title: Design <span class="emoji">✍️</span>
-    title_color: "bluey"
-    subtitle: <span class="accent-color-alt">//</span> Responsive and accessible web design
-    description: Design is the foundation of everything, it’s crucial to get it right the first time. Many brands struggle to communicate their offer and get overlooked in the mainstream.
+    title_color: "primary"
+    subtitle: <span class="hero-color--secondary">//</span> Responsive and accessible web design, all focused around your users' experience.
+    description: Design is the foundation of everything, it’s crucial to get it right the first time. Too many brands struggle to communicate their offer and get overlooked as a side-effect.
   - title: Development <span class="emoji">🛠️</span>
-    title_color: "bingo"
-    subtitle: <span class="accent-color-alt">//</span> Responsive and accessible web design
+    title_color: "secondary"
+    subtitle: <span class="hero-color--secondary">//</span> Modern and performance web development, essentials in captivating your audience.
     description: Development is my other core passion that complements design. I never feel satisfied just composing a mock up, I  needed to build it out and see it live.
-  - title: Social Media <span class="emoji">✍️</span>
-    title_color: "pink"
-    subtitle: <span class="accent-color-alt">//</span> Responsive and accessible web design
-    description: Design is the foundation of everything, it’s crucial to get it right the first time. Many brands struggle to communicate their offer and get overlooked in the mainstream.
+  # - title: Full Package <span class="emoji">✨</span>
+  #   title_color: "tertiary"
+  #   subtitle: <span class="hero-color--secondary">//</span> Get a website from concept to launch.
+  #   description: My passion for design and development go hand-in-hand in bringing to life strong and memorable web experiences. Reach out to get started!

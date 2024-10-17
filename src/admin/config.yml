@@ -192,9 +192,10 @@ collections:
                   label: "Title Color",
                   widget: "select",
                   multiple: false,
-                  options: ["bluey", "bingo", "pink"],
-                  default: "bluey",
+                  options: ["primary", "secondary", "tertiary"],
+                  default: "",
                   required: false,
+                  hint: "primary = bluey, secondary = bingo, tertiary = pink",
                 }
               - {
                   name: "subtitle",
