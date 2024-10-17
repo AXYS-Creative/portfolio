@@ -1952,12 +1952,14 @@ abbr[title] {
 }
 @media screen and (max-width: 1512px) {
   .work-list__projects .work-item__badges {
-    width: 420px;
-    padding-inline-end: 48px;
+    width: 456px;
+    padding-inline-end: 96px;
   }
 }
 @media screen and (max-width: 1200px) {
   .work-list__projects .work-item__badges {
+    width: 420px;
+    padding-inline-end: 64px;
     scale: 0.9;
   }
 }
@@ -1965,11 +1967,6 @@ abbr[title] {
   .work-list__projects .work-item__badges {
     width: 100%;
     scale: 1;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .work-list__projects .work-item__badges {
-    transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
   }
 }
 .work-list__projects .work-item__cta {
