@@ -219,7 +219,7 @@ $min-breakpoints: (
 
 // Little title
 .h5 {
-  @include heading(20px, 18px, 1.8vw, 18px, 16px);
+  @include heading(20px, 18px, 18px, 18px, 16px);
   // font-family: $font-family-secondary;
 }
 
@@ -235,7 +235,7 @@ $min-breakpoints: (
 
 @mixin body-font-styles {
   color: var(--font-color-primary);
-  font-family: $font-family-secondary;
+  font-family: $font-family-primary;
   font-size: 18px;
   font-weight: 400;
 

@@ -55,7 +55,7 @@
 
         @include mq-max("lg") {
           display: block;
-          width: min(100%, 520px);
+          width: min(100%, 500px);
           object-fit: cover;
           // aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
         }

@@ -7,12 +7,29 @@ const getCurrentYear = (() => {
   yearText.setAttribute("datetime", currentYear);
 })();
 
-// For any 'return to top' link
-const handleReturnToTop = (() => {
-  const returnToTop = document.querySelector(".return-to-top"),
-    logo = document.querySelector(".header-logo");
+// Fetch local time
+const getLocalTime = (() => {
+  const timeElement = document.querySelector("[data-timezone]");
 
-  returnToTop.addEventListener("click", (e) => {
-    logo.focus();
-  });
+  const timezone = timeElement.getAttribute("data-timezone");
+
+  const updateTime = () => {
+    const now = new Date();
+    const options = {
+      timeZone: timezone,
+      hour: "2-digit",
+      minute: "2-digit",
+      // second: "2-digit",
+      hour12: true, // Toggle for 12 hour vs 24 hour clock
+    };
+    const timeString = new Intl.DateTimeFormat([], options).format(now);
+    const isoString = now.toISOString();
+
+    timeElement.textContent = `${timeString}`;
+    timeElement.setAttribute("datetime", isoString);
+  };
+
+  updateTime();
+
+  setInterval(updateTime, 1000);
 })();

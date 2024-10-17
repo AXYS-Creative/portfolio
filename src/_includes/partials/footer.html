@@ -1,17 +1,36 @@
 <footer class="site-footer">
-  <a href="#" class="return-to-top classic-link tab-element-page">
-    Return to top
-  </a>
-  <small class="copyright">
-    <span>&copy;<time class="year-text"></time> Business Name Here</span>
-    <span class="lg-screen-and-up" aria-hidden="true">•</span>
-    <span class="lg-screen-and-up">All Rights Reserved</span>
-  </small>
-  <a
-    href="https://axyscreative.com"
-    target="_blank"
-    class="axys-link classic-link tab-element-page"
-  >
-    Made by AXYS Creative
-  </a>
+  <ul class="site-footer__links">
+    {% for item in navigation.items %}{% if item.text != 'Resumé' %}
+    <li>
+      <a
+        class="header-links__link classic-link"
+        href="{{ item.url }}"
+        target="{{ item.target }}"
+      >
+        {{ item.text }}
+      </a>
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
+
+  <p class="copyright">
+    &copy;&nbsp;<span class="year-text"></span>&nbsp;| aarongarciacreative
+  </p>
+
+  <div class="site-footer__details">
+    <div class="details-block">
+      <h3 class="details-block__header h5">
+        <span class="hero-color--secondary">//</span> Location
+      </h3>
+      <p>SLC, UT</p>
+    </div>
+    <div class="details-block">
+      <h3 class="details-block__header h5">
+        <span class="hero-color--secondary">//</span> Local Time
+      </h3>
+      <time datetime="" data-timezone="America/Denver">
+        Local time loading...
+      </time>
+    </div>
+  </div>
 </footer>

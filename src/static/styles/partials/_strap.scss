@@ -130,7 +130,7 @@
 }
 
 .strap-icon {
-  position: absolute;
+  position: fixed;
   top: var(--icon-top-distance);
   right: 0;
   margin-inline-end: var(--strap-right-offset);
