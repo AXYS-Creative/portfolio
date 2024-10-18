@@ -1,11 +1,7 @@
 .goal-oriented {
-  .section-title {
-    margin-block-end: 64px; // Keep an eye on this, might become global
-  }
-
   &__paragraph {
     @include column-start;
-    gap: 64px;
+    gap: var(--content-spacing);
     text-wrap: balance;
 
     @include mq-max("xl") {
@@ -15,6 +11,6 @@
 
   .cta-group {
     justify-content: flex-start;
-    margin-block-start: 64px;
+    margin-block-start: var(--content-spacing);
   }
 }

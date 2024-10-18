@@ -10,3 +10,38 @@
     }
   }
 }
+
+.about-me {
+  @include row-center(space-between);
+
+  @include mq-max("lg") {
+    flex-direction: column;
+    gap: var(--content-spacing);
+  }
+
+  > * {
+    width: 44%;
+
+    @include mq-max("lg") {
+      width: auto;
+    }
+  }
+
+  &__text {
+    &-title {
+      margin-block-end: var(--content-spacing);
+    }
+    &-description {
+      margin-block-end: var(--content-spacing);
+    }
+
+    .cta-group {
+      justify-content: flex-start;
+      margin-block-start: var(--content-spacing);
+    }
+  }
+
+  // &__figure {
+  //   border: $test;
+  // }
+}

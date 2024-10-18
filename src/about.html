@@ -29,13 +29,35 @@ cta_2_target: _blank
 {% set heading_aria_label = 'Dedicated, self-taught designer and developer' %}
 {% include "./_includes/partials/hero.html" %}
 
-<!-- prettier-ignore -->
-{% include "./_includes/partials/about-me.html" %}
+<section class="about-me">
+  <div class="about-me__text">
+    <!-- prettier-ignore -->
+    {% set section_title_text = "About me" %}
+    {% include "./_includes/partials/section-title.html" %}
+
+    <h3 class="about-me__text-title">Aaron Garcia</h3>
+    <p class="about-me__text-description">
+      Hey, I’m Aaron 👋 a passionate designer and developer with an urge to make
+      websites more user-friendly, accessible, and performant — key factors in
+      converting traffic and business growth.
+      <br aria-hidden="true" />
+      <br aria-hidden="true" />
+      Too many websites fall short when it comes to performance and
+      accessibility standards. This is where I come in. Get started below!
+    </p>
+
+    <!-- prettier-ignore -->
+    {% set content_start = false %}
+    {% include "./_includes/partials/cta-group.html" %}
+  </div>
+
+  <figure class="about-me__figure">
+    <img src="/static/img/portrait.avif" alt="" />
+  </figure>
+</section>
 
 <!-- prettier-ignore -->
-{% set marquee_text = marquee.marquee_text %}
-{% set marquee_text_speech = marquee.marquee_text_speech %}
-{% include "./_includes/partials/marquee.html" %}
+{% include "./_includes/partials/focus-cards.html" %}
 
 <!-- prettier-ignore -->
 {% set cta_large_url = "/contact" %}

@@ -963,6 +963,10 @@ abbr[title] {
     }
   }
 
+  .section-title {
+    margin-block-end: var(--content-spacing);
+  }
+
   #skip-to-content {
     position: fixed;
     top: -40px;
