@@ -1,10 +1,17 @@
 ---
+layout: app
+path: about
+
 title: About // Aaron Garcia Creative
 description: CHANGE ME
 author: Aaron Garcia
 
-layout: app
-path: about
+# master props for cta-group
+cta_1_text: Contact me
+cta_1_url: /contact
+cta_2_text: Book a call
+cta_2_url: https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10
+cta_2_target: _blank
 ---
 
 <!-- prettier-ignore -->
@@ -21,6 +28,9 @@ path: about
 <!-- prettier-ignore -->
 {% set heading_aria_label = 'Dedicated, self-taught designer and developer' %}
 {% include "./_includes/partials/hero.html" %}
+
+<!-- prettier-ignore -->
+{% include "./_includes/partials/about-me.html" %}
 
 <!-- prettier-ignore -->
 {% set marquee_text = marquee.marquee_text %}

@@ -1,10 +1,17 @@
 ---
+layout: app
+path: home
+
 title: Aaron Garcia // Creative Web Design & Development
 description: Aaron Garcia is your partner in web design & development. Together, we'll set the standards high.
 author: Aaron Garcia
 
-layout: app
-path: home
+# master props for cta-group
+cta_1_text: Contact me
+cta_1_url: /contact
+cta_2_text: Book a call
+cta_2_url: https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10
+cta_2_target: _blank
 ---
 
 <!-- prettier-ignore -->
@@ -31,7 +38,7 @@ path: home
 
 <!-- prettier-ignore -->
 {% set section_title_text = "Goal oriented" %}
-{% include "./_includes/partials/mission-statement.html" %}
+{% include "./_includes/partials/goal-oriented.html" %}
 
 <!-- prettier-ignore -->
 {% set section_title_text = "Selected work" %}
