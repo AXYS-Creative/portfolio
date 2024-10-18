@@ -1,6 +1,6 @@
 .focus-cards {
   &__title {
-    margin-block-end: $content-spacing;
+    margin-block-end: var(--content-spacing);
 
     @include mq-min("lg") {
       // mq-min
@@ -12,7 +12,7 @@
     @include row-center(space-between);
     align-items: stretch;
     flex-wrap: wrap;
-    gap: $content-spacing;
+    gap: var(--content-spacing);
 
     @include mq-max("xxl") {
       gap: 24px;

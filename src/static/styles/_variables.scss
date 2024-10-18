@@ -37,6 +37,13 @@ $pink: #ff94a7;
   // Site Header
   --icon-top-distance: 56px;
   --strap-right-offset: -40px;
+
+  // Scaffolding
+  --content-spacing: 64px;
+
+  @media (max-width: 1024px) {
+    --content-spacing: 48px;
+  }
 }
 
 // If you add a dark/light theme

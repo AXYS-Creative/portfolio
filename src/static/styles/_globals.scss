@@ -430,6 +430,10 @@ section {
   &:has(+ .invert-colors) {
     // This is a tough one. *2 creates too much space, *1 needs more space.
     padding-block-end: $vertical-padding * 1.5;
+
+    @include mq-max("xxl") {
+      padding-block-end: $vertical-padding;
+    }
   }
 }
 

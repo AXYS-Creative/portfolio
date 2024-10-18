@@ -13,7 +13,7 @@
     @include mq-max("lg") {
       flex-direction: column;
       align-items: flex-start;
-      gap: $content-spacing;
+      gap: var(--content-spacing);
     }
 
     &-description {

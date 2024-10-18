@@ -1,7 +1,9 @@
 .work-list {
+  // for padding bottom, see 'section' in globals
+
   &__header {
     @include row-center(space-between);
-    margin-block-end: $content-spacing;
+    margin-block-end: var(--content-spacing);
   }
 
   &__projects {
@@ -98,7 +100,7 @@
 
   &__footer {
     @include row-center;
-    margin-block-start: $content-spacing;
+    margin-block-start: var(--content-spacing);
   }
 
   // Only show three work items unless specified with 'show_all'
