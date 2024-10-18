@@ -22,21 +22,18 @@
       opacity: 0.025;
       line-height: 1;
 
-      @include mq-min("xxxl") {
-        line-height: 1.25;
-      }
+      @media all {
+        @include mq-min("xxxl") {
+          line-height: 1.25;
+        }
 
-      @include mq-max("xl") {
-        line-height: 1.25;
-      }
+        @include mq-max("xl") {
+          line-height: 1.25;
+        }
 
-      @include mq-max("md") {
-        line-height: 1.25;
-        font-size: 16vw;
-      }
-
-      @include mq-max("md") {
-        font-size: 20vw;
+        @include mq-max("md") {
+          font-size: 20vw;
+        }
       }
 
       &:nth-last-of-type(1),
