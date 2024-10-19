@@ -1,4 +1,8 @@
 .goal-oriented {
+  .section-title {
+    margin-block-end: var(--content-spacing);
+  }
+
   &__paragraph {
     @include column-start;
     gap: var(--content-spacing);

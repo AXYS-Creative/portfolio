@@ -2,7 +2,8 @@
   // for padding bottom, see 'section' in globals
 
   &__header {
-    @include row-start(space-between);
+    @include row-center(space-between);
+    margin-block-end: var(--content-spacing);
   }
 
   &__projects {
