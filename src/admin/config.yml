@@ -123,9 +123,9 @@ collections:
         editor:
           preview: false
         fields:
-          - name: "showreel_assets"
-            label: "Showreel Assets"
-            label_singular: "Showreel Asset"
+          - name: "axys_clients"
+            label: "AXYS Clients"
+            label_singular: "AXYS Client"
             widget: "list"
             max: 8
             collapsed: false
@@ -150,6 +150,33 @@ collections:
                   required: false,
                   hint: Target work item for unique styling,
                 }
+          - name: "rainfocus_clients"
+            label: "Rainfocus Clients"
+            label_singular: "Rainfocus Client"
+            widget: "list"
+            max: 8
+            collapsed: false
+            fields:
+              - {
+                  name: "title",
+                  label: "Title",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  name: "media",
+                  label: "Media Source",
+                  widget: "string",
+                  required: true,
+                  hint: /static/img/path-to-asset.avif,
+                }
+              # - {
+              #     name: "class",
+              #     label: "Custom Class",
+              #     widget: "string",
+              #     required: false,
+              #     hint: Target work item for unique styling,
+              #   }
   - name: "partials"
     label: "partials"
     description: >

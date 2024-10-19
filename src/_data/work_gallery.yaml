@@ -1,4 +1,30 @@
-showreel_assets:
+axys_clients:
+  - title: Flavors of Alchemy
+    media: /static/img/gallery-img-foa.avif
+    class: ""
+  - title: Join Sunder
+    media: /static/img/gallery-vid-sunder.mp4
+    class: "sunder-video"
+  - title: Essence
+    media: /static/img/gallery-img-essence.avif
+    class: ""
+  - title: AXYS Creative
+    media: /static/img/gallery-vid-axys.mp4
+    class: ""
+  - title: Essence
+    media: /static/img/gallery-vid-essence.mp4
+    class: ""
+  - title: AXYS Creative
+    media: /static/img/gallery-img-axys.avif
+    class: ""
+  - title: Flavors of Alchemy
+    media: /static/img/gallery-vid-foa.mp4
+    class: ""
+  - title: Join Sunder
+    media: /static/img/gallery-img-sunder.avif
+    class: ""
+
+rainfocus_clients:
   - title: Flavors of Alchemy
     media: /static/img/gallery-img-foa.avif
     class: ""

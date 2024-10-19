@@ -3,30 +3,62 @@
 
   <header class="work-gallery__header">
     <h2 class="work-gallery__header-title h3">
-      Awe inspiring results.
+      <!-- prettier-ignore -->
+      {%if show_brands %} 
+        Brands I’ve been 
+      {%else%} 
+        Awe inspiring results.
+      {%endif%}
       <br aria-hidden="true" />
-      Every time.
+      <!-- prettier-ignore -->
+      {%if show_brands %} 
+        honored to work with. 
+      {%else%} 
+        Every time. 
+      {%endif%}
     </h2>
 
     <p class="work-gallery__header-description">
-      I focus on the small details that make a big difference, ensuring every
-      project is WCAG-compliant for accessibility and optimized for high
-      performance with strong Lighthouse scores.
+      <!-- prettier-ignore -->
+      {%if show_brands %}
+        As a UI developer at Rainfocus, I’ve been privileged
+        to work with prestigious companies and businesses from across the globe.
+      {%else%}
+        I focus on the small details that make a big difference, ensuring
+        every project is WCAG-compliant for accessibility and optimized for high
+        performance with strong Lighthouse scores.
+      {%endif%}
+
       <br aria-hidden="true" />
       <br aria-hidden="true" />
-      It’s all driven by my passion for design and development—while tackling
-      challenges and solving problems that help businesses thrive.
+
+      <!-- prettier-ignore -->
+      {%if show_brands %}
+        A major role has been styling the Rainfocus platform
+        to meet the client’s brand and design guidelines, which requires diligent
+        attention to detail, strong organization in the code, and a keen focus on
+        communication — all to ensure a seamless experience for the client’s (and
+        developer’s) experience.
+      {%else%}
+        It’s all driven by my passion for design
+        and development—while tackling challenges and solving problems that help
+        businesses thrive.
+      {%endif%}
     </p>
   </header>
 
   <div class="showreel escape-padding">
+    <!-- prettier-ignore -->
+    {%if show_brands %}
+      show dem brands bruh
+    {%else%}
     <div class="showreel-slider">
-      {% for asset in work_gallery.showreel_assets | slice(0, 4) %}
+      {% for asset in work_gallery.axys_clients | slice(0, 4) %}
       <figure class="showreel-slider__figure">
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
-    
-        {% if file_extension == 'avif' or file_extension == 'png' %}
+      
+          {% if file_extension == 'avif' or file_extension == 'png' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
@@ -51,12 +83,12 @@
     </div>
 
     <div class="showreel-slider">
-      {% for asset in work_gallery.showreel_assets | slice(-4) %}
+      {% for asset in work_gallery.axys_clients | slice(-4) %}
       <figure class="showreel-slider__figure">
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
-    
-        {% if file_extension == 'avif' or file_extension == 'png' %}
+      
+          {% if file_extension == 'avif' or file_extension == 'png' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
@@ -79,4 +111,5 @@
       {% endfor %}
     </div>
   </div>
+  {%endif%}
 </section>
