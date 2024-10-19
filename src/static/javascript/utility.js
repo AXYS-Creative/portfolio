@@ -1,3 +1,5 @@
+export const root = document.documentElement;
+
 // Get Current Year for Copyright
 const getCurrentYear = (() => {
   const yearText = document.querySelector(".year-text");

@@ -10,50 +10,6 @@ $bingo: #fab071;
 $green: #5ce15c;
 $pink: #ff94a7;
 
-:root {
-  --background-color: #{$navy};
-  --font-color-primary: #{$white};
-  // --font-color-secondary: #{$grey-light};
-
-  --neutral-dark: #{$black};
-  --neutral-light: #{$white};
-
-  --hero-color--primary: #{$blue};
-  --hero-color--secondary: #{$green};
-
-  --accent-color--primary: #{$bluey};
-  --accent-color--secondary: #{$bingo};
-  --accent-color--tertiary: #{$pink};
-
-  // Buttons & Links
-  --cta-color-bg: var(--hero-color--primary);
-  --cta-color-bg--hover: var(--accent-color--tertiary);
-  --cta-color-text: var(--font-color-primary);
-  --cta-color-text--hover: var(--font-color-primary);
-
-  --link-color: var(--font-color-primary);
-  --link-color-hover: var(--accent-color--tertiary);
-
-  // Site Header
-  --icon-top-distance: 56px;
-  --strap-right-offset: -40px;
-
-  // Scaffolding
-  --content-spacing: 64px;
-
-  @media (max-width: 1024px) {
-    --content-spacing: 48px;
-  }
-}
-
-// If you add a dark/light theme
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --background-color: #{$navy};
-//     --font-color-primary: #{$white};
-//   }
-// }
-
 // Site Scaffolding
 $content-width: 1920px;
 $content-spacing: 64px; // section title and content, etc.
@@ -78,3 +34,55 @@ $cubic-ease-slow-finish: cubic-bezier(0.09, 0.9, 0.5, 1);
 // Debugging
 $test: 2px dashed rgba(limegreen, 0.75);
 $test-bg: rgba(navy, 0.75);
+
+:root {
+  --background-color: #{$navy};
+  --font-color--primary: #{$white};
+  // --font-color-secondary: #{$grey-light};
+
+  --neutral-dark: #{$black};
+  --neutral-light: #{$white};
+
+  --hero-color--primary: #{$blue};
+  --hero-color--secondary: #{$green};
+
+  --accent-color--primary: #{$bluey};
+  --accent-color--secondary: #{$bingo};
+  --accent-color--tertiary: #{$pink};
+
+  // Buttons & Links
+  --cta-color-bg: var(--hero-color--primary);
+  --cta-color-bg--hover: var(--accent-color--tertiary);
+  --cta-color-text: var(--font-color--primary);
+  --cta-color-text--hover: var(--font-color--primary);
+
+  --link-color: var(--font-color--primary);
+  --link-color-hover: var(--accent-color--tertiary);
+
+  // Site Header
+  --icon-top-distance: 56px;
+  --strap-right-offset: -40px;
+
+  // Scaffolding
+  --content-spacing: 64px;
+  --carousel-gap: 48px; // Used by JS. See also _work-gallery.scss
+
+  @media (max-width: 1512px) {
+    --carousel-gap: 36px; // Used by JS. See also _work-gallery.scss
+  }
+
+  @media (max-width: 1024px) {
+    --content-spacing: 48px;
+  }
+
+  // Easing
+  --cubic-ease: #{$cubic-ease}; // Used by JS
+}
+
+// If you add a dark/light theme
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background-color: #{$navy};
+//     --font-color--primary: #{$white};
+//   }
+// }

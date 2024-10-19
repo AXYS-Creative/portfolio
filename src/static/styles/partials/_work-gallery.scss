@@ -29,12 +29,17 @@
     }
   }
 
+  .showreel,
+  .carousel {
+    @include column-center;
+    overflow: hidden;
+  }
+
+  // axys clients
   .showreel {
     --showreel-gap: 64px;
 
-    @include column-center;
     gap: var(--showreel-gap);
-    overflow: hidden;
 
     @media all {
       @include mq-max("xxl") {
@@ -94,6 +99,50 @@
             background-color: #000014;
           }
         }
+      }
+    }
+  }
+
+  // rainfocus clients
+  .carousel {
+    gap: var(--carousel-gap);
+
+    &-slider {
+      --negative-margin: -12.8vw;
+      @include row-center(flex-start);
+      gap: var(--carousel-gap);
+      margin-inline-start: var(--negative-margin);
+      width: 100vw;
+
+      @include mq-max("xxl") {
+        --negative-margin: -19.8vw;
+      }
+
+      &:nth-of-type(even) {
+        justify-content: flex-end;
+        margin-inline-start: unset;
+        margin-inline-end: var(--negative-margin);
+      }
+
+      &__figure {
+        @include row-center;
+        border: 2px solid var(--background-color);
+        width: 16.7%;
+        flex-shrink: 0;
+        aspect-ratio: 2 / 1.64;
+
+        @include mq-max("xxl") {
+          width: 18%;
+        }
+      }
+
+      &__img {
+        width: 80%;
+        height: 100%;
+        background-color: var(--background-color);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
       }
     }
   }

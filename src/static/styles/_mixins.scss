@@ -234,7 +234,7 @@ $min-breakpoints: (
 }
 
 @mixin body-font-styles {
-  color: var(--font-color-primary);
+  color: var(--font-color--primary);
   font-family: $font-family-primary;
   font-size: 18px;
   font-weight: 400;
@@ -307,10 +307,22 @@ $min-breakpoints: (
 //
 
 @mixin invert-colors {
-  background: var(--font-color-primary);
+  background: var(--font-color--primary);
   color: var(--background-color);
 
   * {
-    color: var(--background-color);
+    color: currentColor;
+
+    // any classic-links
+    &::before {
+      background-color: currentColor;
+    }
   }
+
+  // a {
+  //   &:hover,
+  //   &:focus {
+  //     color: var(--hero-color--primary);
+  //   }
+  // }
 }

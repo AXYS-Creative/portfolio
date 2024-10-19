@@ -8,7 +8,7 @@
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus-visible {
-    -webkit-text-fill-color: var(--font-color-primary);
+    -webkit-text-fill-color: var(--font-color--primary);
     -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
   }
 }
@@ -19,7 +19,7 @@ html {
 
 body {
   background: var(--background-color);
-  color: var(--font-color-primary);
+  color: var(--font-color--primary);
 
   & > * {
     max-width: $content-width;

@@ -25,27 +25,57 @@ axys_clients:
     class: ""
 
 rainfocus_clients:
-  - title: Flavors of Alchemy
-    media: /static/img/gallery-img-foa.avif
+  - title: akamai
+    media: /static/img/rf-client-akamai.svg
     class: ""
-  - title: Join Sunder
-    media: /static/img/gallery-vid-sunder.mp4
-    class: "sunder-video"
-  - title: Essence
-    media: /static/img/gallery-img-essence.avif
+  - title: arm
+    media: /static/img/rf-client-arm.svg
     class: ""
-  - title: AXYS Creative
-    media: /static/img/gallery-vid-axys.mp4
+  - title: blueyonder
+    media: /static/img/rf-client-blueyonder.svg
     class: ""
-  - title: Essence
-    media: /static/img/gallery-vid-essence.mp4
+  - title: cyberark
+    media: /static/img/rf-client-cyberark.svg
     class: ""
-  - title: AXYS Creative
-    media: /static/img/gallery-img-axys.avif
+  - title: fis
+    media: /static/img/rf-client-fis.svg
     class: ""
-  - title: Flavors of Alchemy
-    media: /static/img/gallery-vid-foa.mp4
+  - title: gartner
+    media: /static/img/rf-client-gartner.svg
     class: ""
-  - title: Join Sunder
-    media: /static/img/gallery-img-sunder.avif
+  - title: github
+    media: /static/img/rf-client-github.svg
+    class: ""
+  - title: rainfocus
+    media: /static/img/rf-client-rainfocus.svg
+    class: ""
+  - title: redgate
+    media: /static/img/rf-client-redgate.svg
+    class: ""
+  - title: rsna
+    media: /static/img/rf-client-rsna.svg
+    class: ""
+  - title: salesforce
+    media: /static/img/rf-client-salesforce.svg
+    class: ""
+  - title: samsara
+    media: /static/img/rf-client-samsara.svg
+    class: ""
+  - title: sap
+    media: /static/img/rf-client-sap.svg
+    class: ""
+  - title: servicenow
+    media: /static/img/rf-client-servicenow.svg
+    class: ""
+  - title: sitecore
+    media: /static/img/rf-client-sitecore.svg
+    class: ""
+  - title: snowflake
+    media: /static/img/rf-client-snowflake.svg
+    class: ""
+  - title: workday
+    media: /static/img/rf-client-workday.svg
+    class: ""
+  - title: ww
+    media: /static/img/rf-client-ww.svg
     class: ""

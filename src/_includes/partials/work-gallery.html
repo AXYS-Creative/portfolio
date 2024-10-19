@@ -21,12 +21,13 @@
     <p class="work-gallery__header-description">
       <!-- prettier-ignore -->
       {%if show_brands %}
-        As a UI developer at Rainfocus, I’ve been privileged
-        to work with prestigious companies and businesses from across the globe.
-      {%else%}
-        I focus on the small details that make a big difference, ensuring
-        every project is WCAG-compliant for accessibility and optimized for high
-        performance with strong Lighthouse scores.
+        As a UI developer at
+      <a href="https://rainfocus.com" target="_blank" class="classic-link">
+        Rainfocus</a
+      >, I’ve been privileged to work with prestigious companies and businesses
+      from across the globe. {%else%} I focus on the small details that make a
+      big difference, ensuring every project is WCAG-compliant for accessibility
+      and optimized for high performance with strong Lighthouse scores.
       {%endif%}
 
       <br aria-hidden="true" />
@@ -47,11 +48,56 @@
     </p>
   </header>
 
-  <div class="showreel escape-padding">
+  <div
+    class="{%if show_brands %}carousel{%else%}showreel{%endif%} escape-padding"
+  >
     <!-- prettier-ignore -->
     {%if show_brands %}
-      show dem brands bruh
+
+    <div class="carousel-slider">
+      {% for client in work_gallery.rainfocus_clients %}
+      <figure class="carousel-slider__figure">
+        <span
+          class="carousel-slider__img"
+          style="mask-image: url({{client.media}});"
+        ></span>
+      </figure>
+      {% endfor %}
+      <!-- prettier-ignore -->
+      <!-- duplicating for marquee -->
+      {% for client in work_gallery.rainfocus_clients %}
+      <figure class="carousel-slider__figure">
+        <span
+          class="carousel-slider__img"
+          style="mask-image: url({{client.media}});"
+        ></span>
+      </figure>
+      {% endfor %}
+    </div>
+
+    <div class="carousel-slider">
+      {% for client in work_gallery.rainfocus_clients %}
+      <figure class="carousel-slider__figure">
+        <span
+          class="carousel-slider__img"
+          style="mask-image: url({{client.media}});"
+        ></span>
+      </figure>
+      {% endfor %}
+      <!-- prettier-ignore -->
+      <!-- duplicating for marquee -->
+      {% for client in work_gallery.rainfocus_clients %}
+      <figure class="carousel-slider__figure">
+        <span
+          class="carousel-slider__img"
+          style="mask-image: url({{client.media}});"
+        ></span>
+      </figure>
+      {% endfor %}
+    </div>
+
     {%else%}
+
     <div class="showreel-slider">
       {% for asset in work_gallery.axys_clients | slice(0, 4) %}
       <figure class="showreel-slider__figure">
@@ -110,6 +156,7 @@
       </figure>
       {% endfor %}
     </div>
+
+    {%endif%}
   </div>
-  {%endif%}
 </section>
