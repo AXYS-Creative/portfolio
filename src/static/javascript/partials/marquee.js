@@ -41,45 +41,46 @@ const marqueeTweens = initializeMarquee(
 // Work Gallery Carousel
 const carouselHandler = (() => {
   const cubicEase = getComputedStyle(root).getPropertyValue("--cubic-ease"),
-    carouselFigureGap =
-      getComputedStyle(root).getPropertyValue("--carousel-gap");
+    carouselGap = getComputedStyle(root).getPropertyValue("--carousel-gap");
 
-  // Convert the gap to a number from string
-  const gapValue = parseFloat(carouselFigureGap);
+  const gapValue = parseFloat(carouselGap); // Convert the gap to a number from string with 'px'
 
-  // Select all carousel sliders
   const sliders = document.querySelectorAll(".carousel-slider");
 
-  sliders.forEach((slider) => {
+  sliders.forEach((slider, index) => {
+    const figuresCount =
+      slider.querySelectorAll(".carousel-slider__figure").length / 2;
+
     const sliderFigure = slider.querySelector(".carousel-slider__figure");
     const sliderFigureWidth = sliderFigure.getBoundingClientRect().width;
-    const sliderWidth = slider.scrollWidth / 2;
-
     const step = sliderFigureWidth + gapValue;
+    const sliderWidth =
+      sliderFigureWidth * figuresCount + gapValue * (figuresCount - 2);
 
     let currentOffset = 0;
+    const direction = index % 2 === 0 ? -1 : 1; // Reverse direction for even-indexed sliders
 
-    // Set initial transition for each slider
-    slider.style.transition = `transform 0.8s ${cubicEase}`;
+    // Set initial transition
+    slider.style.transition = `transform 1.8s ${cubicEase}`;
 
     const moveSlider = () => {
-      currentOffset -= step;
+      currentOffset += direction * step; // Apply direction to offset
 
+      // Adjust reset logic based on slider width and step
       if (Math.abs(currentOffset) >= sliderWidth + step) {
         slider.style.transition = "none";
         currentOffset = 0;
 
         slider.style.transform = `translateX(${currentOffset}px)`;
 
-        slider.offsetHeight; // Trigger reflow
+        slider.offsetHeight; // This snaps the reset vs vintage rewind
 
-        slider.style.transition = `transform 1.2s ${cubicEase}`;
+        slider.style.transition = `transform 1.8s ${cubicEase}`;
       } else {
         slider.style.transform = `translateX(${currentOffset}px)`;
       }
     };
 
-    // Move each slider at intervals
     setInterval(moveSlider, 2400);
   });
 })();

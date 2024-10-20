@@ -67,16 +67,24 @@ $test-bg: rgba(navy, 0.75);
   --content-spacing: 64px;
   --carousel-gap: 48px; // Used by JS. See also _work-gallery.scss
 
+  // Easing
+  --cubic-ease: #{$cubic-ease}; // Used by JS
+
   @media (max-width: 1512px) {
     --carousel-gap: 36px; // Used by JS. See also _work-gallery.scss
+  }
+
+  @media (max-width: 1200px) {
+    --carousel-gap: 28px; // Used by JS. See also _work-gallery.scss
   }
 
   @media (max-width: 1024px) {
     --content-spacing: 48px;
   }
 
-  // Easing
-  --cubic-ease: #{$cubic-ease}; // Used by JS
+  @media (max-width: 768px) {
+    --carousel-gap: 16px; // Used by JS. See also _work-gallery.scss
+  }
 }
 
 // If you add a dark/light theme

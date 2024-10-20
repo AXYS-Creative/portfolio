@@ -108,31 +108,30 @@
     gap: var(--carousel-gap);
 
     &-slider {
-      --negative-margin: -12.8vw;
       @include row-center(flex-start);
       gap: var(--carousel-gap);
-      margin-inline-start: var(--negative-margin);
-      width: 100vw;
 
-      @include mq-max("xxl") {
-        --negative-margin: -19.8vw;
-      }
+      width: 100vw;
 
       &:nth-of-type(even) {
         justify-content: flex-end;
         margin-inline-start: unset;
-        margin-inline-end: var(--negative-margin);
       }
 
       &__figure {
         @include row-center;
         border: 2px solid var(--background-color);
-        width: 16.7%;
+        width: 20%;
         flex-shrink: 0;
         aspect-ratio: 2 / 1.64;
 
-        @include mq-max("xxl") {
-          width: 18%;
+        @include mq-max("xl") {
+          width: 24%;
+        }
+
+        @include mq-max("md") {
+          width: 28%;
+          border-width: 1px;
         }
       }
 
