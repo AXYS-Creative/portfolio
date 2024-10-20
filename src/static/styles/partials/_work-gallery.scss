@@ -133,6 +133,10 @@
           width: 28%;
           border-width: 1px;
         }
+
+        @include mq-max("sm") {
+          width: 26%;
+        }
       }
 
       &__img {

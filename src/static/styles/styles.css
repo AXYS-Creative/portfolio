@@ -1979,6 +1979,11 @@ abbr[title] {
     border-width: 1px;
   }
 }
+@media screen and (max-width: 480px) {
+  .work-gallery .carousel-slider__figure {
+    width: 26%;
+  }
+}
 .work-gallery .carousel-slider__img {
   width: 80%;
   height: 100%;
