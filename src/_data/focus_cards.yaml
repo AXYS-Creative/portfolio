@@ -4,12 +4,12 @@ section_title: Areas I focus on, to help you stand out!
 cards:
   - title: Design <span class="emoji">✍️</span>
     title_color: "primary"
-    subtitle: <span class="hero-color--secondary">//</span> Responsive and accessible web design, all focused around your users' experience.
-    description: Design is the foundation of everything, it’s crucial to get it right the first time. Too many brands struggle to communicate their offer and often get overlooked as a result.
+    subtitle: <span class="hero-color--secondary">//</span> Responsive and accessible web design, centered around your users' experience.
+    description: Design is the foundation of everything—it’s essential to get it right from the start. Too many brands struggle to communicate their value and get overlooked as a result.
   - title: Development <span class="emoji">🛠️</span>
     title_color: "secondary"
-    subtitle: <span class="hero-color--secondary">//</span> Modern and performant web development, essentials in captivating your audience.
-    description: Development is my other core passion that complements design. I never feel satisfied just composing a mock up, I need to build it out and see it live on the web.
+    subtitle: <span class="hero-color--secondary">//</span> Modern and high-performing web development, critical for captivating your audience.
+    description: Development is my other core passion that enhances design. I’m never satisfied with just a mockup; I need to build it and bring it to life on the web.
   # - title: Full Package <span class="emoji">✨</span>
   #   title_color: "tertiary"
   #   subtitle: <span class="hero-color--secondary">//</span> Get a website from concept to launch.

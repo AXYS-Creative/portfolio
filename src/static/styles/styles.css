@@ -2161,11 +2161,6 @@ abbr[title] {
     width: 98%;
   }
 }
-@media screen and (max-width: 480px) {
-  .about-me__poster {
-    width: 96%;
-  }
-}
 .about-me__poster-figure {
   --gap: 6px;
 }
@@ -2183,6 +2178,11 @@ abbr[title] {
 @media screen and (max-width: 1024px) {
   .about-me__poster-figure {
     --gap: 8px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-me__poster-figure {
+    --gap: 4px;
   }
 }
 .about-me__poster-figure:nth-of-type(1) {

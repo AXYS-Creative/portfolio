@@ -54,10 +54,6 @@
       width: 98%;
     }
 
-    @include mq-max("sm") {
-      width: 96%;
-    }
-
     &-figure {
       --gap: 6px;
 
@@ -74,6 +70,10 @@
 
       @include mq-max("lg") {
         --gap: 8px;
+      }
+
+      @include mq-max("sm") {
+        --gap: 4px;
       }
 
       &:nth-of-type(1) {
