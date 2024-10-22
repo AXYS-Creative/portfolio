@@ -27,15 +27,6 @@ body {
   }
 }
 
-// .noise-bg {
-//   position: fixed;
-//   top: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   pointer-events: none;
-//   z-index: -1;
-// }
-
 .site-header {
   & > * {
     z-index: 5;
@@ -405,10 +396,16 @@ section {
       // restore padding for all direct children without 'escape-padding' utility
       @include horizontal-padding;
     }
+
+    .noise-bg {
+      opacity: 0.5;
+    }
   }
 
   &:has(.noise-bg) {
+    position: relative;
     isolation: isolate;
+    overflow: hidden;
 
     .noise-bg {
       position: absolute;
@@ -419,10 +416,11 @@ section {
       height: 100%;
       padding-inline: 0;
       z-index: -1;
-      opacity: 0.2;
+      scale: 1.6;
 
-      @include mq-max("xxl") {
-        opacity: 0.3;
+      rect {
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -962,10 +960,6 @@ abbr[title] {
       }
     }
   }
-
-  // .section-title {
-  //   margin-block-end: var(--content-spacing);
-  // }
 
   #skip-to-content {
     position: fixed;

@@ -665,8 +665,13 @@ section:has(.escape-padding) > *:not(.escape-padding) {
     padding-inline: 24px;
   }
 }
+section:has(.escape-padding) .noise-bg {
+  opacity: 0.5;
+}
 section:has(.noise-bg) {
+  position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 section:has(.noise-bg) .noise-bg {
   position: absolute;
@@ -677,12 +682,11 @@ section:has(.noise-bg) .noise-bg {
   height: 100%;
   padding-inline: 0;
   z-index: -1;
-  opacity: 0.2;
+  scale: 1.6;
 }
-@media screen and (max-width: 1512px) {
-  section:has(.noise-bg) .noise-bg {
-    opacity: 0.3;
-  }
+section:has(.noise-bg) .noise-bg rect {
+  width: 100%;
+  height: 100%;
 }
 section:has(+ .invert-colors) {
   padding-block-end: 192px;
