@@ -38,30 +38,26 @@ largeCta?.addEventListener("focus", () => {
   });
 });
 
-// Trying to fix broken pinning for large-cta
+// Fix broken pinning for large-cta
+const pinningCorrection = (() => {
+  let isHoveringLargeCta = false;
+  let scrollTimeout;
 
-// const pinningCorrection = (() => {
-//   let isHoveringLargeCta = false;
-//   let scrollTimeout;
+  largeCta?.addEventListener("mouseenter", () => {
+    isHoveringLargeCta = true;
+  });
+  largeCta?.addEventListener("mouseleave", () => {
+    isHoveringLargeCta = false;
+  });
 
-//   largeCta?.addEventListener("mouseenter", () => {
-//     isHoveringLargeCta = true;
-//   });
-//   largeCta?.addEventListener("mouseleave", () => {
-//     isHoveringLargeCta = false;
-//     largeCta.style.pointerEvents = "";
-//   });
+  // Listen for scroll events
+  window.addEventListener("scroll", () => {
+    if (isHoveringLargeCta) {
+      largeCta.classList.add("no-interaction");
 
-//   // Listen for scroll events
-//   window.addEventListener("scroll", () => {
-//     if (isHoveringLargeCta) {
-//       largeCta.style.pointerEvents = "none";
-
-//       clearTimeout(scrollTimeout);
-
-//       scrollTimeout = setTimeout(() => {
-//         largeCta.style.pointerEvents = "";
-//       }, 250);
-//     }
-//   });
-// })();
+      setTimeout(() => {
+        largeCta.classList.remove("no-interaction");
+      }, 400);
+    }
+  });
+})();

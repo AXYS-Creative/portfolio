@@ -751,6 +751,11 @@ abbr[title] {
           }
         }
       }
+
+      // Fixes an issue when hovering large-cta and scrolling (gsap pinning issue)
+      &.no-interaction {
+        pointer-events: none;
+      }
     }
   }
 

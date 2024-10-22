@@ -992,6 +992,9 @@ abbr[title] {
 :root .cta-1--large:hover .cta-1--large-arrow-group span:first-of-type, :root .cta-1--large:focus-visible .cta-1--large-arrow-group span:first-of-type {
   animation: cta-arrow-2 2s cubic-bezier(0.18, 0.97, 0.47, 1) infinite;
 }
+:root .cta-1--large.no-interaction {
+  pointer-events: none;
+}
 :root .cta-group {
   display: flex;
   justify-content: center;
