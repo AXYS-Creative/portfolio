@@ -79,3 +79,6 @@ rainfocus_clients:
   - title: ww
     media: /static/img/rf-client-ww.svg
     class: ""
+  - title: zscaler
+    media: /static/img/rf-client-zscaler.svg
+    class: ""

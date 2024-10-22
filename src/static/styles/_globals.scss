@@ -84,8 +84,6 @@ body {
     @include right-spacing;
     top: 72px;
     translate: 0 -50%;
-    // transition: 0.6s $cubic-ease;
-    // mix-blend-mode: color-dodge; // play with something other than difference
 
     @include mq-min("xl") {
       display: none;
@@ -117,6 +115,10 @@ body {
       .menu-btn-line-wrapper {
         position: relative;
         transition: 0.5s $cubic-ease;
+
+        @include mq-max("sm") {
+          transition: 0.7s $cubic-ease;
+        }
       }
 
       &-line {
@@ -125,6 +127,10 @@ body {
         height: 3px;
         background: var(--neutral-light);
         transition: 0.5s $cubic-ease, translate 0.3s ease;
+
+        @include mq-max("sm") {
+          transition: 0.7s $cubic-ease, translate 0.3s ease;
+        }
 
         &:first-of-type {
           translate: calc(-50% + $line-shift) calc(-50% - $line-space);
@@ -397,8 +403,14 @@ section {
       @include horizontal-padding;
     }
 
+    // Light section noise, using 'escape-padding' :|
     .noise-bg {
+      // You won't see a border becuase of the scale
       opacity: 0.5;
+
+      @include mq-max("sm") {
+        opacity: 0.1;
+      }
     }
   }
 
@@ -448,21 +460,21 @@ section {
       --side-group-gap-y: 20px;
       --side-group-gap-x: 36px;
     }
-
     @include mq-max("lg") {
       --side-group-gap-x: 24px;
 
       padding-block: $body-padding * 1.5;
     }
-
     @include mq-max("md") {
       --side-group-gap-y: 8px;
 
       padding-inline: $body-padding-md;
     }
-
     @include mq-max("sm") {
-      padding-inline: $body-padding-xxl;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 56px;
+      padding-inline: 48px;
       padding-block: $body-padding-md $body-padding * 2;
     }
   }
@@ -473,18 +485,16 @@ section {
     gap: var(--side-group-gap-y) var(--side-group-gap-x);
     width: 240px;
 
-    @include mq-max("xxl") {
-      width: 200px;
-    }
-
-    @include mq-max("md") {
-      width: 180px;
-    }
-
-    @include mq-max("sm") {
-      width: auto;
-      flex-direction: column;
-      flex-wrap: nowrap;
+    @media all {
+      @include mq-max("xxl") {
+        width: 200px;
+      }
+      @include mq-max("md") {
+        width: 180px;
+      }
+      @include mq-max("sm") {
+        width: 100%;
+      }
     }
   }
 
@@ -494,14 +504,18 @@ section {
     left: 50%;
     translate: -50% 0;
 
-    @include mq-max("xl") {
-      font-size: 14px;
-    }
-    @include mq-max("lg") {
-      bottom: $body-padding-xxl;
-    }
-    @include mq-max("sm") {
-      bottom: $body-padding;
+    @media all {
+      @include mq-max("xl") {
+        font-size: 14px;
+      }
+      @include mq-max("lg") {
+        bottom: $body-padding-xxl;
+      }
+      @include mq-max("sm") {
+        bottom: $body-padding;
+        left: 48px;
+        translate: 0 12px;
+      }
     }
   }
 
@@ -513,10 +527,8 @@ section {
       scale: 0.9;
       transform-origin: bottom right;
     }
-
     @include mq-max("sm") {
-      flex-direction: column;
-      align-items: flex-start;
+      transform-origin: bottom left;
     }
 
     .details-block {

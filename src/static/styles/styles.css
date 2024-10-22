@@ -349,6 +349,11 @@ body > * {
   position: relative;
   transition: 0.5s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
+@media screen and (max-width: 480px) {
+  .site-header .menu-btn-wrapper .menu-btn .menu-btn-line-wrapper {
+    transition: 0.7s cubic-bezier(0.18, 0.97, 0.47, 1);
+  }
+}
 .site-header .menu-btn-wrapper .menu-btn-line {
   position: absolute;
   top: 50%;
@@ -358,6 +363,11 @@ body > * {
   height: 3px;
   background: var(--neutral-light);
   transition: 0.5s cubic-bezier(0.18, 0.97, 0.47, 1), translate 0.3s ease;
+}
+@media screen and (max-width: 480px) {
+  .site-header .menu-btn-wrapper .menu-btn-line {
+    transition: 0.7s cubic-bezier(0.18, 0.97, 0.47, 1), translate 0.3s ease;
+  }
 }
 .site-header .menu-btn-wrapper .menu-btn-line:first-of-type {
   translate: calc(-50% + 0px) calc(-50% - 4px);
@@ -668,6 +678,11 @@ section:has(.escape-padding) > *:not(.escape-padding) {
 section:has(.escape-padding) .noise-bg {
   opacity: 0.5;
 }
+@media screen and (max-width: 480px) {
+  section:has(.escape-padding) .noise-bg {
+    opacity: 0.1;
+  }
+}
 section:has(.noise-bg) {
   position: relative;
   isolation: isolate;
@@ -726,7 +741,10 @@ section:has(+ .invert-colors) {
 }
 @media screen and (max-width: 480px) {
   .site-footer {
-    padding-inline: 40px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 56px;
+    padding-inline: 48px;
     padding-block: 24px 128px;
   }
 }
@@ -748,9 +766,7 @@ section:has(+ .invert-colors) {
 }
 @media screen and (max-width: 480px) {
   .site-footer__links {
-    width: auto;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    width: 100%;
   }
 }
 .site-footer .copyright {
@@ -774,6 +790,8 @@ section:has(+ .invert-colors) {
 @media screen and (max-width: 480px) {
   .site-footer .copyright {
     bottom: 64px;
+    left: 48px;
+    translate: 0 12px;
   }
 }
 .site-footer__details {
@@ -790,8 +808,7 @@ section:has(+ .invert-colors) {
 }
 @media screen and (max-width: 480px) {
   .site-footer__details {
-    flex-direction: column;
-    align-items: flex-start;
+    transform-origin: bottom left;
   }
 }
 .site-footer__details .details-block h3 {
