@@ -25,17 +25,19 @@ const scrollFromTop = (() => {
 })();
 
 // Keyboard tabbing for gsap pinned section (large cta)
-
+// Also addressing a bug when clicking with mouse, the section scrolls into view rather than rerouting the user
 const largeCta = document.querySelector(".cta-1--large"),
   preFooter = document.querySelector(".pre-footer");
 
 largeCta?.addEventListener("focus", () => {
-  const preFooterTop = preFooter.getBoundingClientRect().top;
+  if (largeCta.matches(":focus-visible")) {
+    const preFooterTop = preFooter.getBoundingClientRect().top;
 
-  window.scrollTo({
-    top: window.scrollY + preFooterTop - window.innerHeight,
-    behavior: "smooth",
-  });
+    window.scrollTo({
+      top: window.scrollY + preFooterTop - window.innerHeight,
+      behavior: "smooth",
+    });
+  }
 });
 
 // Fix broken pinning for large-cta

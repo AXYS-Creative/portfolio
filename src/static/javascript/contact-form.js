@@ -1,12 +1,85 @@
+const contactForm = document.querySelector(".contact-form"),
+  statusMessage = document.querySelector(".status-message"),
+  emailInput = document.querySelector(".email-input");
+
+const errorClasses = ["error-message", "active"];
+const successClasses = ["success-message", "active"];
+
+if (contactForm) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const email = emailInput.value;
+    let submittedEmails =
+      JSON.parse(localStorage.getItem("submittedEmails")) || [];
+
+    if (submittedEmails.includes(email)) {
+      statusMessage.innerHTML = `
+        ⚠️ Error! This email has already been submitted.
+      `;
+      statusMessage.classList.add(...errorClasses);
+
+      setTimeout(function () {
+        statusMessage.classList.remove("active");
+      }, 8000);
+
+      setTimeout(function () {
+        statusMessage.innerHTML = "";
+        statusMessage.classList.remove("error-message");
+      }, 9000);
+
+      return;
+    } else {
+      submittedEmails.push(email);
+      localStorage.setItem("submittedEmails", JSON.stringify(submittedEmails));
+    }
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        statusMessage.innerHTML = `
+          ✅ Message recieved! I’ll get back to you shortly.
+        `;
+        statusMessage.classList.add(...successClasses);
+
+        setTimeout(function () {
+          statusMessage.classList.remove("active");
+        }, 8000);
+
+        setTimeout(function () {
+          statusMessage.innerHTML = "";
+          statusMessage.classList.remove("success-message");
+        }, 9000);
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+        alert(error);
+      });
+  };
+
+  contactForm.addEventListener("submit", handleSubmit);
+}
+
+//
 // Textarea max character count
+//
+
 const textareaCount = (() => {
   const textarea = document.getElementById("message");
   const charCountLabel = document.querySelector(".remaining-characters");
-  const maxLength = textarea.maxLength;
+  const maxLength = textarea?.maxLength;
 
-  charCountLabel.textContent = maxLength;
+  if (maxLength) {
+    charCountLabel.textContent = maxLength;
+  }
 
-  textarea.addEventListener("input", () => {
+  textarea?.addEventListener("input", () => {
     const remaining = maxLength - textarea.value.length;
     charCountLabel.textContent = remaining;
   });

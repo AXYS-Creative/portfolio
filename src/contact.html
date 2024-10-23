@@ -51,7 +51,7 @@ path: contact
 
     <div class="form-block">
       <input
-        class="input"
+        class="input email-input"
         id="email"
         type="text"
         aria-label="Please enter your email address"
@@ -81,13 +81,27 @@ path: contact
       </label>
     </div>
 
-    <button
-      class="cta-1 magnet magnet-wide-btn"
-      type="submit"
-      aria-label="Send your message"
-    >
-      Send message
-    </button>
+    <div class="form-footer">
+      <button
+        class="cta-1 magnet magnet-wide-btn"
+        type="submit"
+        aria-label="Send your message"
+      >
+        Send message
+      </button>
+
+      <div class="form-message-container">
+        <p
+          class="status-message"
+          id="status-message"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          Test
+        </p>
+      </div>
+    </div>
   </form>
 
   <aside class="contact-details">

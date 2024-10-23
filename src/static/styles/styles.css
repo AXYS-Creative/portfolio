@@ -2408,8 +2408,25 @@ textarea {
   visibility: visible;
   transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.4s;
 }
-.contact-form .cta-1 {
+.contact-form .form-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
   margin-block-start: calc(var(--content-spacing) - var(--form-gap));
+}
+.contact-form .form-footer .cta-1 {
+  flex-shrink: 0;
+}
+.contact-form .form-footer .status-message {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
+}
+.contact-form .form-footer .status-message.active {
+  opacity: 1;
+  visibility: visible;
 }
 .contact-details {
   display: flex;
