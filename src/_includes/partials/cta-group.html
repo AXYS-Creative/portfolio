@@ -7,6 +7,9 @@
     {% endif %}
     class="cta-1 tab-element-page magnet magnet-wide-btn"
     href="{{ cta_1_url }}"
+    {% if cta_1_target %}
+    target="{{ cta_1_target }}"
+    {% endif %}
   >
     {{ cta_1_text }}
   </a>

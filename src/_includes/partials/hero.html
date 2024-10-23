@@ -1,15 +1,15 @@
 <section
   class="
   {%if hero == true%}
-    hero hero-{{ page }}
+    hero hero-{{ path }}
   {%else%}
-    pre-footer pre-footer-{{ page }}
+    pre-footer pre-footer-{{ path }}
   {%endif%} 
   {%if left_align == true %}
     left-align
   {%endif%}
   "
-  id="{%if hero == true%}hero-{{ page }}{%else%}pre-footer-{{ page }}{%endif%}"
+  id="{%if hero == true%}hero-{{ path }}{%else%}pre-footer-{{ path }}{%endif%}"
 >
   <!-- prettier-ignore -->
   {% include "./availability.html" %}

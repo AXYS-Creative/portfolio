@@ -44,6 +44,10 @@
   // &.cta-1--large {
   //   transition: 0.3s ease, translate 0.8s $cubic-ease-slow-finish;
   // }
+
+  &:is(span) {
+    transition: translate 0.8s $cubic-ease-slow-finish; // slow-finish
+  }
 }
 
 // CTA and double slanted dash (//)

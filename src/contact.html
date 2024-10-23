@@ -7,14 +7,112 @@ layout: app
 path: contact
 ---
 
-<section id="hero" class="hero">
-  <h1 class="h1">Contact me</h1>
+<!-- prettier-ignore -->
+{% set hero = true %}
+{% set page = path %}
+{% set heading_markup = '
+<span aria-hidden="true" class="color-text">
+  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+  <span class="magnet-text">Let’s get started!</span>
+  <span class="emoji">🚀</span>
+</span>
+<span class="magnet-text" aria-hidden="true">Fill out the form below</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Let’s get started! Fill out the form below.' %}
+{% include "./_includes/partials/hero.html" %}
 
-  <!-- prettier-ignore -->
-  {% set cta_1_text = 'Contact me' %}
-  {% set cta_1_url = '#' %}
-  {% set cta_2_text = 'Book a call' %}
-  {% set cta_2_url = '#' %}
-  {% include "./_includes/partials/cta-group.html" %}
-  <!-- prettier-ignore -->
+<section class="contact">
+  <form
+    class="contact-form"
+    action="/"
+    method="post"
+    name="aaron-garcia-creative-contact-form"
+    netlify
+    netlify-honeypot="bot-field"
+  >
+    <!-- prettier-ignore -->
+    {% set section_title_text = "Message me" %}
+    {% include "./_includes/partials/section-title.html" %}
+
+    <input type="hidden" name="bot-field" />
+
+    <div class="form-block">
+      <input class="input" id="name" type="text" required />
+      <label class="label" for="name">Name</label>
+    </div>
+
+    <div class="form-block">
+      <input class="input" id="email" type="text" required />
+      <label class="label" for="email">Email</label>
+    </div>
+
+    <div class="form-block">
+      <textarea class="input textarea" id="message" required></textarea>
+      <label class="label" for="message">Message</label>
+    </div>
+
+    <button
+      class="cta-1 magnet magnet-wide-btn"
+      type="submit"
+      aria-label="Send your message"
+    >
+      Send message
+    </button>
+  </form>
+
+  <aside class="contact-details">
+    <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+
+    <div class="contact-details__group">
+      <!-- prettier-ignore -->
+      {% set section_title_text = "General inquiries" %}
+      {% include "./_includes/partials/section-title.html" %}
+
+      <a class="classic-link" href="mailto:aaronegarcia1@gmail.com">
+        aaronegarcia1@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-details__group">
+      <!-- prettier-ignore -->
+      {% set section_title_text = "Social Media" %}
+      {% include "./_includes/partials/section-title.html" %}
+
+      {% for social in social_media.links %}
+      <a class="classic-link" href="{{ social.url }}" target="_blank">
+        {{ social.title }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="contact-details__group">
+      <!-- prettier-ignore -->
+      {% set section_title_text = "AXYS Creative Clients" %}
+      {% include "./_includes/partials/section-title.html" %}
+
+      <a class="classic-link" href="mailto:info@axyscreative.com">
+        info@axyscreative.com
+      </a>
+    </div>
+  </aside>
 </section>
+
+<!-- prettier-ignore -->
+{% set cta_1_text = "Book a call" %}
+{% set cta_1_url = "https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10" %}
+{% set cta_1_target = "_blank" %}
+{% set cta_2_text = "Return home" %}
+{% set cta_2_url = "/" %}
+{% set hero = false %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Book a call with me</span>
+<span aria-hidden="true">
+  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+  <span class="magnet-text color-text">to learn more</span>
+  <span class="emoji">🗓️</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Book a call with me to learn more' %}
+{% include "./_includes/partials/hero.html" %}
