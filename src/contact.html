@@ -66,7 +66,8 @@ path: contact
 
     <div class="contact-details__group">
       <!-- prettier-ignore -->
-      {% set section_title_text = "General inquiries" %}
+      {% set section_title_text = "General Inquiries" %}
+      {% set use_h3 = true %}
       {% include "./_includes/partials/section-title.html" %}
 
       <a class="classic-link" href="mailto:aaronegarcia1@gmail.com">
@@ -77,6 +78,7 @@ path: contact
     <div class="contact-details__group">
       <!-- prettier-ignore -->
       {% set section_title_text = "Social Media" %}
+      {% set use_h3 = true %}
       {% include "./_includes/partials/section-title.html" %}
 
       {% for social in social_media.links %}
@@ -89,6 +91,7 @@ path: contact
     <div class="contact-details__group">
       <!-- prettier-ignore -->
       {% set section_title_text = "AXYS Creative Clients" %}
+      {% set use_h3 = true %}
       {% include "./_includes/partials/section-title.html" %}
 
       <a class="classic-link" href="mailto:info@axyscreative.com">

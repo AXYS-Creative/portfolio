@@ -1,6 +1,15 @@
 {% if section_title_text %}
+<!-- prettier-ignore -->
+{% if use_h3 %}
+<h3 class="section-title section-title--h3 h5">
+  <span class="section-title__abstract" aria-hidden="true">//</span>
+  {{ section_title_text }}
+</h3>
+{% else %}
 <h2 class="section-title h5">
-  <span class="hero-color--secondary" aria-hidden="true">//</span>
+  <span class="section-title__abstract" aria-hidden="true">//</span>
   {{ section_title_text }}
 </h2>
+{% endif %}
+<!-- prettier-ignore -->
 {% endif %}

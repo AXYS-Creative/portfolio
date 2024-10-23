@@ -19,15 +19,17 @@
 
   <div class="site-footer__details">
     <div class="details-block">
-      <h3 class="details-block__header h5">
-        <span class="hero-color--secondary">//</span> Location
-      </h3>
+      <!-- prettier-ignore -->
+      {% set section_title_text = "Location" %}
+      {% set use_h3 = true %}
+      {% include "./section-title.html" %}
       <p>SLC, UT</p>
     </div>
     <div class="details-block">
-      <h3 class="details-block__header h5">
-        <span class="hero-color--secondary">//</span> Local Time
-      </h3>
+      <!-- prettier-ignore -->
+      {% set section_title_text = "Local Time" %}
+      {% set use_h3 = true %}
+      {% include "./section-title.html" %}
       <time datetime="" data-timezone="America/Denver">
         Local time loading...
       </time>

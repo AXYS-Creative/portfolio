@@ -984,6 +984,27 @@ textarea {
   }
 }
 
+.section-title {
+  // text-transform: uppercase;
+
+  &__abstract {
+    color: var(--hero-color--secondary);
+  }
+
+  // &--h3 {
+  //   font-size: 16px;
+
+  //   @include mq-max("lg") {
+  //     font-size: 14px;
+  //   }
+
+  //   .section-title__abstract {
+  //     // color: var(--accent-color--tertiary);
+  //     color: var(--hero-color--secondary);
+  //   }
+  // }
+}
+
 #skip-to-content {
   position: fixed;
   top: -40px;

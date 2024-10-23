@@ -212,18 +212,17 @@ $min-breakpoints: (
   text-transform: initial;
 }
 
-// Focus card titles
+// Focus card titles & Form fields
 .h4 {
   @include heading(40px, 32px, 32px, 32px, 6.8vw);
 }
 
-// Little title
+// Section Title
 .h5 {
   @include heading(20px, 18px, 18px, 18px, 16px);
-  // font-family: $font-family-secondary;
 }
 
-// ?
+// cta--large
 .h6 {
   @include heading(32px, 28px, 24px, 20px, 20px);
 
