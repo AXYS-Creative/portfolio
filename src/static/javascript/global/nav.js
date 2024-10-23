@@ -1,8 +1,8 @@
 const siteHeader = document.querySelector(".site-header"),
   navMenu = document.querySelector(".nav-menu"),
   menuBtn = document.querySelector(".menu-btn"),
-  skipToContent = document.querySelector("#skip-to-content"),
-  contentStart = document.querySelector("#content-start");
+  skipToContent = document.querySelector(".skip-to-content"),
+  contentStart = document.querySelector(".content-start"); // keep as class for contact form page
 
 const navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
@@ -75,5 +75,6 @@ window.addEventListener("resize", handleResize);
 menuBtn.addEventListener("click", toggleNav);
 
 skipToContent.addEventListener("click", () => {
-  contentStart.focus();
+  console.log("skipping to main content");
+  contentStart?.focus();
 });

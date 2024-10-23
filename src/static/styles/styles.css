@@ -1267,7 +1267,7 @@ textarea {
   color: var(--hero-color--secondary);
 }
 
-#skip-to-content {
+.skip-to-content {
   position: fixed;
   top: -40px;
   left: 0;
@@ -1276,11 +1276,11 @@ textarea {
   z-index: 100;
   transition: top 0.3s ease;
 }
-#skip-to-content:focus {
+.skip-to-content:focus {
   top: 0;
 }
 @media screen and (max-width: 1200px) {
-  #skip-to-content {
+  .skip-to-content {
     display: none;
   }
 }
@@ -2324,12 +2324,10 @@ textarea {
 }
 .contact-form .form-block {
   --block-height: 64px;
+  --block-border-width: 2px;
   position: relative;
   height: var(--block-height);
   width: 100%;
-}
-.contact-form .form-block:hover .label, .contact-form .form-block:focus-within .label {
-  opacity: 1;
 }
 @media screen and (max-width: 1512px) {
   .contact-form .form-block {
@@ -2340,6 +2338,25 @@ textarea {
   .contact-form .form-block {
     --block-height: 48px;
   }
+}
+.contact-form .form-block:hover::before, .contact-form .form-block:focus-within::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.contact-form .form-block:hover .label, .contact-form .form-block:focus-within .label {
+  opacity: 1;
+}
+.contact-form .form-block::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: var(--block-border-width);
+  z-index: 1;
+  background-color: var(--hero-color--primary);
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 .contact-form .form-block:has(.textarea) {
   align-items: flex-start;
@@ -2365,7 +2382,7 @@ textarea {
 }
 .contact-form .input {
   background: transparent;
-  border-bottom: 2px solid var(--accent-color--primary);
+  border-bottom: var(--block-border-width) solid var(--accent-color--primary);
 }
 .contact-form .label {
   display: flex;

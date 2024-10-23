@@ -39,7 +39,7 @@ path: contact
 
     <div class="form-block">
       <input
-        class="input"
+        class="input main-content content-start"
         id="name"
         type="text"
         aria-label="Please enter your first and last name"
@@ -113,7 +113,11 @@ path: contact
       {% set use_h3 = true %}
       {% include "./_includes/partials/section-title.html" %}
 
-      <a class="classic-link" href="mailto:aaronegarcia1@gmail.com">
+      <a
+        class="classic-link"
+        href="mailto:aaronegarcia1@gmail.com"
+        aria-label="Aaron E Garcia 1 at Gmail.com"
+      >
         aaronegarcia1@gmail.com
       </a>
     </div>

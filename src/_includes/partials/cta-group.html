@@ -2,10 +2,7 @@
   {% if cta_1_text %}
   <!-- prettier-ignore -->
   <a
-    {% if content_start %}
-    id="content-start"
-    {% endif %}
-    class="cta-1 tab-element-page magnet magnet-wide-btn"
+    class="cta-1 tab-element-page magnet magnet-wide-btn {% if content_start %}content-start{% endif %}"
     href="{{ cta_1_url }}"
     {% if cta_1_target %}
     target="{{ cta_1_target }}"

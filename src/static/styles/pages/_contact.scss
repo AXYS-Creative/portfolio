@@ -46,17 +46,11 @@
 
     .form-block {
       --block-height: 64px;
+      --block-border-width: 2px;
 
       position: relative;
       height: var(--block-height);
       width: 100%;
-
-      &:hover,
-      &:focus-within {
-        .label {
-          opacity: 1;
-        }
-      }
 
       @include mq-max("xxl") {
         --block-height: 56px;
@@ -64,6 +58,33 @@
 
       @include mq-max("lg") {
         --block-height: 48px;
+      }
+
+      &:hover,
+      &:focus-within {
+        &::before {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+        .label {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: var(--block-border-width);
+        z-index: 1;
+
+        // background-color: var(--hero-color--secondary);
+        background-color: var(--hero-color--primary);
+
+        transition: 0.6s $cubic-ease;
       }
 
       &:has(.textarea) {
@@ -102,7 +123,8 @@
 
     .input {
       background: transparent;
-      border-bottom: 2px solid var(--accent-color--primary);
+      border-bottom: var(--block-border-width) solid
+        var(--accent-color--primary);
     }
 
     .label {
