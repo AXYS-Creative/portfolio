@@ -51,6 +51,13 @@
       height: var(--block-height);
       width: 100%;
 
+      &:hover,
+      &:focus-within {
+        .label {
+          opacity: 1;
+        }
+      }
+
       @include mq-max("xxl") {
         --block-height: 56px;
       }
@@ -78,7 +85,6 @@
       width: 100%;
       height: 100%;
       color: var(--font-color--primary);
-      border-bottom: 2px solid var(--accent-color--primary);
     }
 
     .textarea {
@@ -96,11 +102,47 @@
 
     .input {
       background: transparent;
-      color: slateblue;
+      border-bottom: 2px solid var(--accent-color--primary);
     }
 
     .label {
+      display: flex;
+      align-items: center;
       pointer-events: none;
+      opacity: 0.5;
+
+      transition: 0.6s $cubic-ease;
+
+      .nested-label {
+        font-size: 14px;
+        translate: 12px -6px;
+        font-style: oblique;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.6s $cubic-ease, opacity 0s;
+      }
+    }
+
+    .input:focus ~ .label,
+    .input:not(:placeholder-shown).input:not(focus) ~ .label,
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      @extend .h5;
+      translate: 0 -80%;
+      opacity: 1;
+    }
+    .textarea:focus ~ .label,
+    .textarea:not(:placeholder-shown).textarea:not(focus) ~ .label {
+      translate: 0 -100%;
+
+      .nested-label {
+        translate: 8px -1px;
+        opacity: 1;
+        visibility: visible;
+
+        transition: 0.6s $cubic-ease, opacity 0.6s $cubic-ease 0.4s;
+      }
     }
 
     .cta-1 {
@@ -135,7 +177,9 @@
 }
 
 .pre-footer-contact {
-  h2 {
+  h2.h1 {
+    @include column-center;
+
     .color-text {
       .word:nth-of-type(1) {
         color: var(--font-color--primary);

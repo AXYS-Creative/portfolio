@@ -38,18 +38,47 @@ path: contact
     <input type="hidden" name="bot-field" />
 
     <div class="form-block">
-      <input class="input" id="name" type="text" required />
+      <input
+        class="input"
+        id="name"
+        type="text"
+        aria-label="Please enter your first and last name"
+        placeholder=" "
+        required
+      />
       <label class="label" for="name">Name</label>
     </div>
 
     <div class="form-block">
-      <input class="input" id="email" type="text" required />
+      <input
+        class="input"
+        id="email"
+        type="text"
+        aria-label="Please enter your email address"
+        placeholder=" "
+        required
+      />
       <label class="label" for="email">Email</label>
     </div>
 
     <div class="form-block">
-      <textarea class="input textarea" id="message" required></textarea>
-      <label class="label" for="message">Message</label>
+      <textarea
+        class="input textarea"
+        id="message"
+        maxlength="120"
+        spellcheck="true"
+        aria-label="Please enter your message here"
+        placeholder=" "
+        required
+      ></textarea>
+      <label class="label" for="message">
+        Message
+        <span class="nested-label">
+          <span>— Max</span>
+          <span class="remaining-characters">120</span>
+          <span>characters</span>
+        </span>
+      </label>
     </div>
 
     <button

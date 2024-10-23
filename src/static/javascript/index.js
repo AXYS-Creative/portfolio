@@ -1,4 +1,5 @@
 import "./utility.js";
+import "./contact-form.js";
 
 import "./global/animations.js";
 import "./global/magnet.js";

@@ -159,29 +159,34 @@
   }
 }
 
-.h5, h5 {
+.h5, .contact-form .input:focus ~ .label,
+.contact-form .input:not(:placeholder-shown).input:not(focus) ~ .label, .contact-form:-webkit-autofill, .contact-form:-webkit-autofill:hover, .contact-form:-webkit-autofill:focus, h5 {
   font-family: "Safiro", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
 }
 @media screen and (max-width: 1512px) {
-  .h5, h5 {
+  .h5, .contact-form .input:focus ~ .label,
+  .contact-form .input:not(:placeholder-shown).input:not(focus) ~ .label, .contact-form:-webkit-autofill, .contact-form:-webkit-autofill:hover, .contact-form:-webkit-autofill:focus, h5 {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .h5, h5 {
+  .h5, .contact-form .input:focus ~ .label,
+  .contact-form .input:not(:placeholder-shown).input:not(focus) ~ .label, .contact-form:-webkit-autofill, .contact-form:-webkit-autofill:hover, .contact-form:-webkit-autofill:focus, h5 {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  .h5, h5 {
+  .h5, .contact-form .input:focus ~ .label,
+  .contact-form .input:not(:placeholder-shown).input:not(focus) ~ .label, .contact-form:-webkit-autofill, .contact-form:-webkit-autofill:hover, .contact-form:-webkit-autofill:focus, h5 {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 480px) {
-  .h5, h5 {
+  .h5, .contact-form .input:focus ~ .label,
+  .contact-form .input:not(:placeholder-shown).input:not(focus) ~ .label, .contact-form:-webkit-autofill, .contact-form:-webkit-autofill:hover, .contact-form:-webkit-autofill:focus, h5 {
     font-size: 16px;
   }
 }
@@ -2323,6 +2328,9 @@ textarea {
   height: var(--block-height);
   width: 100%;
 }
+.contact-form .form-block:hover .label, .contact-form .form-block:focus-within .label {
+  opacity: 1;
+}
 @media screen and (max-width: 1512px) {
   .contact-form .form-block {
     --block-height: 56px;
@@ -2350,7 +2358,6 @@ textarea {
   width: 100%;
   height: 100%;
   color: var(--font-color--primary);
-  border-bottom: 2px solid var(--accent-color--primary);
 }
 .contact-form .textarea {
   resize: none;
@@ -2358,10 +2365,48 @@ textarea {
 }
 .contact-form .input {
   background: transparent;
-  color: slateblue;
+  border-bottom: 2px solid var(--accent-color--primary);
 }
 .contact-form .label {
+  display: flex;
+  align-items: center;
   pointer-events: none;
+  opacity: 0.5;
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
+}
+.contact-form .label .nested-label {
+  font-size: 14px;
+  translate: 12px -6px;
+  font-style: oblique;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0s;
+}
+.contact-form .input:focus ~ .label,
+.contact-form .input:not(:placeholder-shown).input:not(focus) ~ .label, .contact-form:-webkit-autofill, .contact-form:-webkit-autofill:hover, .contact-form:-webkit-autofill:focus {
+  translate: 0 -80%;
+  opacity: 1;
+}
+.contact-form .textarea:not(:-moz-placeholder-shown).textarea:not(focus) ~ .label {
+  translate: 0 -100%;
+}
+.contact-form .textarea:focus ~ .label,
+.contact-form .textarea:not(:placeholder-shown).textarea:not(focus) ~ .label {
+  translate: 0 -100%;
+}
+.contact-form .textarea:not(:-moz-placeholder-shown).textarea:not(focus) ~ .label .nested-label {
+  translate: 8px -1px;
+  opacity: 1;
+  visibility: visible;
+  -moz-transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.4s;
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.4s;
+}
+.contact-form .textarea:focus ~ .label .nested-label,
+.contact-form .textarea:not(:placeholder-shown).textarea:not(focus) ~ .label .nested-label {
+  translate: 8px -1px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.4s;
 }
 .contact-form .cta-1 {
   margin-block-start: calc(var(--content-spacing) - var(--form-gap));
@@ -2397,13 +2442,19 @@ textarea {
   gap: 16px;
 }
 
-.pre-footer-contact h2 .color-text .word:nth-of-type(1) {
+.pre-footer-contact h2.h1, .pre-footer-contact nav .nav-links h2.nav-link, nav .nav-links .pre-footer-contact h2.nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pre-footer-contact h2.h1 .color-text .word:nth-of-type(1), .pre-footer-contact nav .nav-links h2.nav-link .color-text .word:nth-of-type(1), nav .nav-links .pre-footer-contact h2.nav-link .color-text .word:nth-of-type(1) {
   color: var(--font-color--primary);
 }
-.pre-footer-contact h2 .color-text .word:nth-of-type(2) {
+.pre-footer-contact h2.h1 .color-text .word:nth-of-type(2), .pre-footer-contact nav .nav-links h2.nav-link .color-text .word:nth-of-type(2), nav .nav-links .pre-footer-contact h2.nav-link .color-text .word:nth-of-type(2) {
   color: var(--hero-color--secondary);
 }
-.pre-footer-contact h2 .color-text .word:nth-of-type(3) {
+.pre-footer-contact h2.h1 .color-text .word:nth-of-type(3), .pre-footer-contact nav .nav-links h2.nav-link .color-text .word:nth-of-type(3), nav .nav-links .pre-footer-contact h2.nav-link .color-text .word:nth-of-type(3) {
   color: var(--hero-color--secondary);
 }
 
