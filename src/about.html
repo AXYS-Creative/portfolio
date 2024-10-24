@@ -49,6 +49,9 @@ cta_2_target: _blank
 
     <!-- prettier-ignore -->
     {% set content_start = false %}
+    {% set cta_2_text = "View resumé" %}
+    {% set cta_2_url = "/" %}
+    {% set cta_2_no_tooltip = true %}
     {% include "./_includes/partials/cta-group.html" %}
   </div>
 
@@ -80,6 +83,9 @@ cta_2_target: _blank
 {% include "./_includes/partials/get-in-touch.html" %}
 
 <!-- prettier-ignore -->
+{% set cta_2_text = "Book a call" %}
+{% set cta_2_url = "https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10" %}
+{% set cta_2_no_tooltip = false %}
 {% set hero = false %}
 {% set left_align = false %}
 {% set heading_markup = '
