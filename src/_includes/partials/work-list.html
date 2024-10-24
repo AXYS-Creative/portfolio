@@ -4,9 +4,14 @@
 >
   {% if section_title_text %}
   <header class="work-list__header">
-    {% include "./section-title.html" %} {% if is_archive != true %}
+    <!-- prettier-ignore -->
+    {% set sup_text = section_title_text_sup_text %} 
+    {% include "./section-title.html" %}
+
+    <!-- prettier-ignore -->
+    {% if is_archive != true %}
     <a class="classic-link tab-element-page" href="/archive">
-      Visit archive ({{ work_list.work_items.length }})
+      Visit archive [{{ work_list.work_items.length }}]
     </a>
     {% endif %}
   </header>
@@ -61,6 +66,7 @@
     {% endif %} {% endfor %}
   </div>
 
+  <!-- for single cta -->
   {% if section_cta_text %}
   <footer class="work-list__footer">
     <a
@@ -71,4 +77,11 @@
     </a>
   </footer>
   {% endif %}
+
+  <!-- prettier-ignore -->
+  <footer class="work-list__footer">
+     {% if full_cta == true %}
+       {% include "./cta-group.html" %} 
+     {% endif %}
+   </footer>
 </section>

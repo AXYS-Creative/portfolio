@@ -4,6 +4,11 @@
   &__header {
     @include row-center(space-between);
     margin-block-end: var(--content-spacing);
+
+    .section-title__super-text {
+      display: inline-flex;
+      translate: 0 -2px;
+    }
   }
 
   &__projects {
@@ -103,6 +108,10 @@
         display: none;
       }
     }
+
+    .service-divider--archive {
+      display: none;
+    }
   }
 
   &__footer {
@@ -143,14 +152,13 @@
   }
 
   &--archive {
+    .service-divider--archive {
+      display: block;
+    }
+
     .work-item {
       &__logo {
         display: block;
-
-        @include mq-max("lg") {
-          width: 250px;
-          margin-block: 64px 24px;
-        }
       }
 
       &__showcase {

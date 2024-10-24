@@ -18,11 +18,11 @@ cta_2_target: _blank
 {% set hero = true %}
 {% set left_align = true %}
 {% set heading_markup = '
-<span class="magnet-text" aria-hidden="true">Archived work</span>
 <span aria-hidden="true">
-  <span class="magnet-text color-text">vintage treasures</span>
-  <span class="emoji">💡</span>
+  <span class="magnet-text" aria-hidden="true">Archived work</span>
+  <span class="emoji">📦</span>
 </span>
+<span class="magnet-text color-text">All previous projects</span>
 ' %}
 <!-- prettier-ignore -->
 {% set heading_aria_label = 'Creating memorable web experiences' %}
@@ -30,6 +30,7 @@ cta_2_target: _blank
 
 <!-- prettier-ignore -->
 {% set section_title_text = "Work archive" %}
+{% set section_title_text_sup_text = work_list.work_items.length %}
 {% set show_all = true %}
 {% set is_archive = true %}
 {% include "./_includes/partials/work-list.html" %}

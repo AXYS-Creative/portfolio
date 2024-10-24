@@ -31,9 +31,21 @@ work_items:
     badges:
       ["Visual Design", "Interaction Design", "Development", "Form Handling"]
     archive: false
+  - title: All Solutions Heating and Air conditioning
+    logo: /static/img/list-logo-all-solutions-hvac.svg
+    image: /static/img/list-img-all-solutions-hvac.webp
+    url: https://all-solutions-hvac.netlify.app/
+    badges: ["Development", "Interaction Design", "Form Handling"]
+    archive: true
+  - title: Iconic Creative
+    logo: /static/img/list-logo-iconic-creative.svg
+    image: /static/img/list-img-iconic-creative.webp
+    url: https://iconiccreative.netlify.app/
+    badges: ["Development", "Interaction Design"]
+    archive: true
   - title: Bonnie’s Dance School
-    logo: /static/img/list-logo-core.svg
-    image: /static/img/list-img-core.png
+    logo: /static/img/list-logo-bonnies-dance-school.svg
+    image: /static/img/list-img-bonnies-dance-school.png
     url: https://bonniesdanceschool.com
-    badges: ["UX Design", "Interaction Design", "Development"]
+    badges: ["Visual Design", "Interaction Design", "Development"]
     archive: true

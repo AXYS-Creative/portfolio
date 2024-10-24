@@ -12,6 +12,11 @@
 <h2 class="section-title h5" aria-label="{{ section_title_text }}">
   <span class="section-title__abstract" aria-hidden="true">//</span>
   {{ section_title_text }}
+
+  <!-- prettier-ignore -->
+  {% if sup_text %}
+  <small class="section-title__super-text">[{{ sup_text }}]</small>
+  {% endif %}
 </h2>
 {% endif %}
 <!-- prettier-ignore -->

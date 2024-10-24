@@ -2108,6 +2108,10 @@ textarea {
   align-items: center;
   margin-block-end: var(--content-spacing);
 }
+.work-list__header .section-title__super-text {
+  display: inline-flex;
+  translate: 0 -2px;
+}
 .work-list__projects {
   display: flex;
   flex-direction: column;
@@ -2199,6 +2203,9 @@ textarea {
 .work-list__projects .work-item--archive {
   display: none;
 }
+.work-list__projects .service-divider--archive {
+  display: none;
+}
 .work-list__footer {
   display: flex;
   justify-content: center;
@@ -2224,14 +2231,11 @@ textarea {
 .work-list--limit-count .work-list__projects .work-item__logo {
   width: 250px;
 }
-.work-list--archive .work-item__logo {
+.work-list--archive .service-divider--archive {
   display: block;
 }
-@media screen and (max-width: 1024px) {
-  .work-list--archive .work-item__logo {
-    width: 250px;
-    margin-block: 64px 24px;
-  }
+.work-list--archive .work-item__logo {
+  display: block;
 }
 .work-list--archive .work-item__showcase {
   display: none;
@@ -2339,6 +2343,17 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 480px) {
+  .hero-archive h1.h1, .hero-archive nav .nav-links h1.nav-link, nav .nav-links .hero-archive h1.nav-link, .hero-archive h1 {
+    display: inline;
+  }
+}
+.hero-archive h1.h1 .color-text .word:nth-of-type(2), .hero-archive h1 .color-text .word:nth-of-type(2),
+.hero-archive h1.h1 .color-text .word:last-of-type,
+.hero-archive h1 .color-text .word:last-of-type {
+  color: var(--accent-color--tertiary);
 }
 
 .hero-home h1 .color-text .word:first-of-type {
