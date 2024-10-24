@@ -600,8 +600,9 @@ hr {
   background: var(--accent-color--primary);
 }
 
-abbr[title] {
+abbr[aria-label] {
   text-decoration: underline solid;
+  cursor: help;
 }
 
 input,
@@ -905,12 +906,9 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-  width: min(20vw, 420px);
-  aspect-ratio: 1.6 / 1;
   pointer-events: none;
   transition: 0.6s $cubic-ease, opacity 0.3s ease;
-  opacity: 0;
-  z-index: -1;
+  z-index: 1;
 
   @media all {
     @include mq-touch {
@@ -928,25 +926,57 @@ textarea {
 
   &__image {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: min(20vw, 420px);
+    aspect-ratio: 1.6 / 1;
     object-fit: cover;
     top: 0;
     left: 0;
+    translate: -50% -50%;
+    opacity: 0;
     transform-origin: center;
 
     @include mq-motion-allow {
-      transition: opacity 0.3s ease, 0.8s $cubic-ease;
+      transition: 0.8s $cubic-ease, opacity 0.3s ease;
+    }
+
+    &.show-img {
+      opacity: 1;
     }
   }
 
-  &.img-active {
+  &__tooltip {
+    @include body-font-styles;
+    @include absolute-center;
+    @include row-center;
+    background: var(--accent-color--primary);
+    color: var(--background-color);
+    translate: 36px 28px;
+    border-radius: 0 $radius $radius $radius;
+    padding: 4px;
+    white-space: nowrap;
+    padding: 8px 24px 8px 16px;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0.6;
+    rotate: 12deg;
+    transition: 0.6s $cubic-ease, rotate 0.6s $cubic-ease 0.4s;
+
+    &.show-tooltip {
+      opacity: 1;
+      visibility: visible;
+      scale: 1;
+      rotate: 0deg;
+      transition: 0.6s $cubic-ease, rotate 0.6s $cubic-ease 0s;
+    }
+  }
+
+  &.show-cursor {
     opacity: 1;
   }
 
   &.cursor-contrast {
     opacity: 0;
-    width: min(18vw, 380px);
+    scale: 0.7;
   }
 }
 

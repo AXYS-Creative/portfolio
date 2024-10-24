@@ -14,9 +14,11 @@
   <!-- prettier-ignore -->
   {% if cta_2_text %}
   <a
-    class="tab-element-page classic-link"
+    class="tab-element-page classic-link tooltip-target"
     href="{{ cta_2_url }}"
     target="{{ cta_2_target}}"
+    aria-label="With AXYS Creative"
+    data-tooltip-title="With AXYS Creative"
   >
     {{ cta_2_text }}
   </a>

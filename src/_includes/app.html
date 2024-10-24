@@ -65,7 +65,9 @@
     {%include "./partials/footer.html" %}
     <!-- prettier-ignore -->
 
-    <div class="mouse-cursor" aria-hidden="true"></div>
+    <div class="mouse-cursor" aria-hidden="true">
+      <span class="mouse-cursor__tooltip">User experience</span>
+    </div>
 
     {% if path == "home" %}
     <!-- Netlify Identity Widget -->
@@ -74,6 +76,7 @@
       src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     ></script>
     {% endif %}
+
     <script src="/static/js/alpine.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
