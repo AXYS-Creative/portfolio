@@ -958,7 +958,7 @@ textarea {
     opacity: 0;
     visibility: hidden;
     scale: 0.6;
-    rotate: 12deg;
+    rotate: 8deg;
     transition: 0.6s $cubic-ease, rotate 0.6s $cubic-ease 0.4s;
 
     &.show-tooltip {
