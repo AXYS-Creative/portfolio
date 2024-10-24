@@ -116,6 +116,12 @@ collections:
                   default: ["UX Design", "Development"],
                   required: true,
                 }
+              - {
+                  name: "archive",
+                  label: "Archive",
+                  widget: "boolean",
+                  default: false,
+                }
       - name: "work_gallery"
         label: "Work Gallery"
         file: "src/_data/work_gallery.yaml"
@@ -170,13 +176,6 @@ collections:
                   required: true,
                   hint: /static/img/path-to-asset.avif,
                 }
-              # - {
-              #     name: "class",
-              #     label: "Custom Class",
-              #     widget: "string",
-              #     required: false,
-              #     hint: Target work item for unique styling,
-              #   }
   - name: "partials"
     label: "partials"
     description: >

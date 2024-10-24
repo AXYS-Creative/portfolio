@@ -1,0 +1,50 @@
+---
+layout: app
+path: archive
+
+title: Archive // Aaron Garcia Creative
+description: View my work throughout the years.
+author: Aaron Garcia
+
+# master props for cta-group
+cta_1_text: Contact me
+cta_1_url: /contact
+cta_2_text: Book a call
+cta_2_url: https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10
+cta_2_target: _blank
+---
+
+<!-- prettier-ignore -->
+{% set hero = true %}
+{% set left_align = true %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Archived work</span>
+<span aria-hidden="true">
+  <span class="magnet-text color-text">vintage treasures</span>
+  <span class="emoji">💡</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Creating memorable web experiences' %}
+{% include "./_includes/partials/hero.html" %}
+
+<!-- prettier-ignore -->
+{% set section_title_text = "Work archive" %}
+{% set show_all = true %}
+{% set is_archive = true %}
+{% include "./_includes/partials/work-list.html" %}
+
+<!-- prettier-ignore -->
+{% set hero = false %}
+{% set left_align = false %}
+{% set heading_markup = '
+<span class="magnet-text" aria-hidden="true">Have a project in mind?</span>
+<span aria-hidden="true">
+  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+  <span class="magnet-text color-text">Let’s collaborate!</span>
+  <span class="emoji">🤝</span>
+</span>
+' %}
+<!-- prettier-ignore -->
+{% set heading_aria_label = 'Have a project in mind? Let’s collaborate' %}
+{% include "./_includes/partials/hero.html" %}

@@ -1,22 +1,27 @@
 <section
-  class="work-list {% if show_all == false %}work-list--limit-count{%endif%}"
+  class="work-list {% if show_all == false %}work-list--limit-count{%endif%} {% if is_archive == true %}work-list--archive{%endif%}"
   id="work-list"
 >
   {% if section_title_text %}
   <header class="work-list__header">
-    {% include "./section-title.html" %}
-
+    {% include "./section-title.html" %} {% if is_archive != true %}
     <a class="classic-link tab-element-page" href="/archive">
       Visit archive ({{ work_list.work_items.length }})
     </a>
+    {% endif %}
   </header>
   {% endif %}
 
   <div class="work-list__projects">
     {% for project in work_list.work_items %}
-    <hr class="service-divider gsap-animate" aria-hidden="true" />
+    <hr
+      class="service-divider gsap-animate {%if project.archive == true%}service-divider--archive{%endif%}"
+      aria-hidden="true"
+    />
 
-    <div class="work-item">
+    <div
+      class="work-item {%if project.archive == true%}work-item--archive{%endif%}"
+    >
       <img
         class="work-item__logo"
         src="{{ project.logo }}"

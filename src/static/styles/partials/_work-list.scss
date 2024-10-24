@@ -13,7 +13,8 @@
     .work-item {
       display: flex;
       align-items: center;
-      padding-block: 48px;
+      // padding-block: 48px;
+      padding-block: 32px;
 
       @include mq-max("lg") {
         flex-direction: column;
@@ -24,7 +25,8 @@
 
       &__logo {
         // not using flex: 1 0 250px for mouse image hover. Flex extended element
-        width: 250px;
+        // width: 250px;
+        width: 216px;
         margin-inline-end: 24%;
         padding-inline-end: 48px;
 
@@ -72,6 +74,7 @@
         width: 520px;
         padding-inline-end: 128px;
         flex-shrink: 0;
+        // scale: 0.9;
 
         @media all {
           @include mq-max("xxl") {
@@ -94,6 +97,10 @@
 
       &__cta {
         flex-shrink: 0;
+      }
+
+      &--archive {
+        display: none;
       }
     }
   }
@@ -119,6 +126,39 @@
         &:nth-of-type(3) {
           display: flex;
         }
+      }
+
+      .work-item {
+        padding-block: 48px;
+
+        &__logo {
+          width: 250px;
+        }
+
+        // &__badges {
+        //   scale: 1;
+        // }
+      }
+    }
+  }
+
+  &--archive {
+    .work-item {
+      &__logo {
+        display: block;
+
+        @include mq-max("lg") {
+          width: 250px;
+          margin-block: 64px 24px;
+        }
+      }
+
+      &__showcase {
+        display: none;
+      }
+
+      &--archive {
+        display: flex;
       }
     }
   }

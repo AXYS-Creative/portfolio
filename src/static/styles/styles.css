@@ -1206,11 +1206,6 @@ textarea {
     display: none;
   }
 }
-@media screen and (max-width: 1024px) {
-  .mouse-cursor {
-    display: none;
-  }
-}
 .mouse-cursor__image {
   position: absolute;
   width: min(20vw, 420px);
@@ -1226,6 +1221,11 @@ textarea {
 @media (prefers-reduced-motion: no-preference) {
   .mouse-cursor__image {
     transition: 0.8s cubic-bezier(0.18, 0.97, 0.47, 1), opacity 0.3s ease;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .mouse-cursor__image {
+    display: none;
   }
 }
 .mouse-cursor__image.show-img {
@@ -1264,6 +1264,12 @@ textarea {
 @media screen and (max-width: 768px) {
   .mouse-cursor__tooltip {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mouse-cursor__tooltip {
+    translate: -12px 24px;
+    padding: 6px 18px 6px 12px;
   }
 }
 .mouse-cursor__tooltip.show-tooltip {
@@ -2109,7 +2115,7 @@ textarea {
 .work-list__projects .work-item {
   display: flex;
   align-items: center;
-  padding-block: 48px;
+  padding-block: 32px;
 }
 @media screen and (max-width: 1024px) {
   .work-list__projects .work-item {
@@ -2120,7 +2126,7 @@ textarea {
   }
 }
 .work-list__projects .work-item__logo {
-  width: 250px;
+  width: 216px;
   margin-inline-end: 24%;
   padding-inline-end: 48px;
 }
@@ -2190,6 +2196,9 @@ textarea {
 .work-list__projects .work-item__cta {
   flex-shrink: 0;
 }
+.work-list__projects .work-item--archive {
+  display: none;
+}
 .work-list__footer {
   display: flex;
   justify-content: center;
@@ -2207,6 +2216,27 @@ textarea {
 .work-list--limit-count .work-list__projects .work-item:nth-of-type(1),
 .work-list--limit-count .work-list__projects .work-item:nth-of-type(2),
 .work-list--limit-count .work-list__projects .work-item:nth-of-type(3) {
+  display: flex;
+}
+.work-list--limit-count .work-list__projects .work-item {
+  padding-block: 48px;
+}
+.work-list--limit-count .work-list__projects .work-item__logo {
+  width: 250px;
+}
+.work-list--archive .work-item__logo {
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  .work-list--archive .work-item__logo {
+    width: 250px;
+    margin-block: 64px 24px;
+  }
+}
+.work-list--archive .work-item__showcase {
+  display: none;
+}
+.work-list--archive .work-item--archive {
   display: flex;
 }
 
@@ -2400,7 +2430,7 @@ textarea {
   width: 0;
   height: var(--block-border-width);
   z-index: 1;
-  background-color: var(--hero-color--primary);
+  background-color: var(--font-color--primary);
   transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 .contact-form .form-block:has(.textarea) {

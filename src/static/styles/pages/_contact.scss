@@ -82,7 +82,8 @@
         z-index: 1;
 
         // background-color: var(--hero-color--secondary);
-        background-color: var(--hero-color--primary);
+        // background-color: var(--hero-color--primary);
+        background-color: var(--font-color--primary);
 
         transition: 0.6s $cubic-ease;
       }
