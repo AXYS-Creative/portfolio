@@ -778,6 +778,31 @@ textarea {
   }
 }
 
+a.tooltip-target {
+  position: relative;
+
+  &:focus-visible {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      scale: 1;
+      rotate: 0deg;
+    }
+  }
+
+  &::after {
+    @include tooltip;
+    content: attr(data-tooltip-title);
+
+    translate: 52px 20px;
+    transition: 0.6s $cubic-ease;
+
+    @include mq-max("md") {
+      translate: -12px 24px;
+    }
+  }
+}
+
 .cta-group {
   @include row-center;
   gap: 24px;
@@ -945,25 +970,26 @@ textarea {
   }
 
   &__tooltip {
-    @include body-font-styles;
-    @include absolute-center;
-    @include row-center;
-    background: var(--accent-color--primary);
-    color: var(--background-color);
+    @include tooltip;
+    // @include body-font-styles;
+    // @include absolute-center;
+    // @include row-center;
+    // background: var(--accent-color--primary);
+    // color: var(--background-color);
     translate: 36px 28px;
-    border-radius: 0 $radius $radius $radius;
-    padding: 4px;
-    white-space: nowrap;
-    padding: 8px 24px 8px 16px;
-    opacity: 0;
-    visibility: hidden;
-    scale: 0.6;
-    rotate: 8deg;
+    // border-radius: 0 $radius $radius $radius;
+    // padding: 4px;
+    // white-space: nowrap;
+    // padding: 8px 24px 8px 16px;
+    // opacity: 0;
+    // visibility: hidden;
+    // scale: 0.6;
+    // rotate: 8deg;
     transition: 0.6s $cubic-ease, rotate 0.6s $cubic-ease 0.4s;
 
     @include mq-max("md") {
       translate: -12px 24px;
-      padding: 6px 18px 6px 12px;
+      // padding: 6px 18px 6px 12px;
     }
 
     &.show-tooltip {

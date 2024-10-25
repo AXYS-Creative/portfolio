@@ -10,7 +10,11 @@
 
     <!-- prettier-ignore -->
     {% if is_archive != true %}
-    <a class="classic-link tab-element-page" href="/archive">
+    <a
+      class="classic-link tab-element-page"
+      href="/archive"
+      aria-label="Visit archive ({{ work_list.work_items.length }}) items"
+    >
       Visit archive [{{ work_list.work_items.length }}]
     </a>
     {% endif %}
@@ -52,6 +56,7 @@
         class="work-item__cta cta-1 magnet magnet-wide-btn tab-element-page"
         href="{{ project.url }}"
         target="_blank"
+        aria-label="Visit {{ project.title }}’s website"
       >
         Visit site
       </a>

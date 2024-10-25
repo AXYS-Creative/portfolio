@@ -13,12 +13,15 @@
   {% endif %}
   <!-- prettier-ignore -->
   {% if cta_2_text %}
+  <!-- prettier-ignore -->
   <a
-    class="tab-element-page classic-link {% if cta_2_no_tooltip != true %}tooltip-target{%endif%}"
-    href="{{ cta_2_url }}"
-    target="{{ cta_2_target}}"
-    aria-label="With AXYS Creative"
+  class="tab-element-page classic-link {% if cta_2_no_tooltip != true %}tooltip-target{%endif%}"
+  href="{{ cta_2_url }}"
+  target="{{ cta_2_target}}"
+  {% if cta_2_no_tooltip != true %}
+    aria-label="Book a call with AXYS Creative"
     data-tooltip-title="💡 With AXYS Creative"
+  {% endif %}
   >
     {{ cta_2_text }}
   </a>
