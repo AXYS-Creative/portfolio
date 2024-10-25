@@ -5,15 +5,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#fdfaf5" />
+    <meta name="theme-color" content="{{ meta_data.theme_color }}" />
     <meta name="author" content="{{ author }}" />
     <meta name="description" content="{{ description }}" />
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ open_graph.item.image_src }}" />
-    <meta property="og:url" content="essentialism.netlify.app" />
+    <meta property="og:image" content="{{ meta_data.open_graph.image_src }}" />
+    <meta property="og:url" content="{{ meta_data.open_graph.base_url }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:site_name" content="{{ author }}" />
 
@@ -36,18 +36,18 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "AXYS Creative",
-        "url": "https://aarongarciacreative.com",
-        "logo": "https://aarongarciacreative.com/public/axys-logo-192.png",
-        "image": "https://aarongarciacreative.com/public/axys-creative-og.png",
+        "name": "Aaron Garcia Creative",
+        "url": "{{ meta_data.open_graph.base_url }}",
+        "logo": "{{ meta_data.open_graph.base_url }}/static/img/axys-logo-192.png",
+        "image": "{{ meta_data.open_graph.base_url }}/static/img/open-graph-image.png",
         "sameAs": [
-          "https://www.instagram.com/axyscreative/",
+          "https://www.instagram.com/aaron_garcia_creative/",
           "https://twitter.com/AXYSCreative",
           "https://dribbble.com/axyscreative"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "email": "info@axyscreative.com",
+          "email": "aaronegarcia1@gmail.com",
           "contactType": "Support"
         }
       }
