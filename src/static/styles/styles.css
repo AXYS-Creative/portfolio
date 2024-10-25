@@ -908,8 +908,11 @@ textarea {
   white-space: nowrap;
 }
 .availability__text {
+  font-family: "Atyp Display", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.1ch;
 }
 @media screen and (max-width: 1512px) {
   .availability__text {
@@ -1077,14 +1080,19 @@ a.tooltip-target::after {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   a.tooltip-target::after {
     padding: 6px 18px 6px 12px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   a.tooltip-target::after {
     translate: -12px 24px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  a.tooltip-target::after {
+    display: none;
   }
 }
 
@@ -1131,6 +1139,7 @@ a.tooltip-target::after {
 }
 .hero .heading-wrapper,
 .pre-footer .heading-wrapper {
+  isolation: isolate;
   position: relative;
   text-align: center;
 }
@@ -1171,34 +1180,55 @@ a.tooltip-target::after {
   display: inline-block;
   translate: 0 -25%;
 }
-.hero .heading-wrapper .background-ball,
-.pre-footer .heading-wrapper .background-ball {
+.hero .heading-wrapper .background-ball-group,
+.pre-footer .heading-wrapper .background-ball-group {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 12px;
-  height: 12px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 120%;
+  height: 20%;
   z-index: -1;
+  animation: hero-glow-ball-group 40s cubic-bezier(0.69, 0.05, 0.47, 1.19) infinite alternate;
 }
-.hero .heading-wrapper .background-ball__glow,
-.pre-footer .heading-wrapper .background-ball__glow {
+@media screen and (max-width: 768px) {
+  .hero .heading-wrapper .background-ball-group,
+  .pre-footer .heading-wrapper .background-ball-group {
+    width: 80%;
+  }
+}
+.hero .heading-wrapper .background-ball-group .background-ball,
+.pre-footer .heading-wrapper .background-ball-group .background-ball {
   padding: 8vw;
   border-radius: 50%;
   filter: blur(64px);
-  opacity: 0.25;
+  opacity: 0.2;
 }
 @media screen and (max-width: 1512px) {
-  .hero .heading-wrapper .background-ball__glow,
-  .pre-footer .heading-wrapper .background-ball__glow {
+  .hero .heading-wrapper .background-ball-group .background-ball,
+  .pre-footer .heading-wrapper .background-ball-group .background-ball {
     filter: blur(48px);
   }
 }
 @media screen and (max-width: 480px) {
-  .hero .heading-wrapper .background-ball__glow,
-  .pre-footer .heading-wrapper .background-ball__glow {
+  .hero .heading-wrapper .background-ball-group .background-ball,
+  .pre-footer .heading-wrapper .background-ball-group .background-ball {
     filter: blur(24px);
+    opacity: 0.25;
   }
+}
+.hero .heading-wrapper .background-ball-group .background-ball--bluey,
+.pre-footer .heading-wrapper .background-ball-group .background-ball--bluey {
+  background: var(--accent-color--primary);
+  animation: hero-glow-ball-1 18s cubic-bezier(0.18, 0.97, 0.47, 1) infinite alternate;
+}
+.hero .heading-wrapper .background-ball-group .background-ball--bingo,
+.pre-footer .heading-wrapper .background-ball-group .background-ball--bingo {
+  background: var(--accent-color--secondary);
+  animation: hero-glow-ball-2 18s cubic-bezier(0.18, 0.97, 0.47, 1) infinite alternate;
 }
 .hero.left-align,
 .pre-footer.left-align {
@@ -1322,12 +1352,12 @@ a.tooltip-target::after {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .mouse-cursor__tooltip {
     padding: 6px 18px 6px 12px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .mouse-cursor__tooltip {
     translate: -12px 24px;
   }
@@ -1579,6 +1609,27 @@ a.tooltip-target::after {
   }
   to {
     opacity: 0;
+  }
+}
+@keyframes hero-glow-ball-group {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes hero-glow-ball-1 {
+  from {
+    translate: 50% 0;
+  }
+  to {
+    translate: -20% 0;
+  }
+}
+@keyframes hero-glow-ball-2 {
+  from {
+    translate: -50% 0;
+  }
+  to {
+    translate: 20% 0;
   }
 }
 @keyframes cta-pop {

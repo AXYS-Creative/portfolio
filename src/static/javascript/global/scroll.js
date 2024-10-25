@@ -7,8 +7,6 @@ const scrollFromTop = (() => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > 120) {
-      siteHeader.classList.add("away-from-top");
-
       if (currentScrollY > lastScrollY) {
         // Scrolling down
         siteHeader.classList.add("scrolling-down");
@@ -16,8 +14,6 @@ const scrollFromTop = (() => {
         // Scrolling up
         siteHeader.classList.remove("scrolling-down");
       }
-    } else {
-      siteHeader.classList.remove("away-from-top"); // Restore on scroll up
     }
 
     lastScrollY = currentScrollY;

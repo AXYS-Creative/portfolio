@@ -17,6 +17,31 @@
   }
 }
 
+// hero glow balls
+@keyframes hero-glow-ball-group {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes hero-glow-ball-1 {
+  from {
+    translate: 50% 0;
+  }
+  to {
+    translate: -20% 0;
+  }
+}
+
+@keyframes hero-glow-ball-2 {
+  from {
+    translate: -50% 0;
+  }
+  to {
+    translate: 20% 0;
+  }
+}
+
 // cta-1
 @keyframes cta-pop {
   0%,

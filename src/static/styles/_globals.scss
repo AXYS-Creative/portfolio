@@ -149,10 +149,6 @@ body {
     }
   }
 
-  // &.away-from-top {
-
-  // }
-
   &.scrolling-down {
     .header-links {
       translate: -50% -128px;
@@ -209,7 +205,6 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
-  // background: var(--background-color);
   background: #271f1f;
   width: 620px;
   height: 100vh;
@@ -217,7 +212,6 @@ nav {
   min-height: 420px;
   overflow: auto;
   z-index: 4;
-  // box-shadow: 0 0 12px #212121b2;
 
   translate: 100% 0;
   border-top-left-radius: $nav-radius;
@@ -619,11 +613,11 @@ textarea {
   white-space: nowrap;
 
   &__text {
-    // font-family: $font-family-secondary;
+    font-family: $font-family-secondary;
     font-size: 14px;
-    // font-weight: 400;
+    font-weight: 400;
     text-transform: uppercase;
-    // letter-spacing: 0.1ch;
+    letter-spacing: 0.1ch;
 
     @include mq-max("xxl") {
       font-size: 13px;
@@ -696,15 +690,6 @@ textarea {
   padding: 12px 28px;
   border-radius: $radius;
 
-  // &::after {
-  //   @include absolute-center;
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   border-radius: $radius;
-  //   border: 1px solid transparent;
-  // }
-
   &:hover,
   &:focus-visible {
     background-color: var(--cta-color-bg--hover);
@@ -713,14 +698,6 @@ textarea {
       // animation: cta-pop 0.4s $cubic-ease forwards;
       animation: cta-pop 0.24s linear forwards;
     }
-
-    // &::after {
-    //   width: 120%;
-    //   height: 160%;
-    //   opacity: 0;
-    //   border: 1px solid var(--cta-color-bg--hover);
-    //   transition: 0.32s ease;
-    // }
   }
 
   &--large {
@@ -778,6 +755,7 @@ textarea {
   }
 }
 
+// cta-2
 a.tooltip-target {
   position: relative;
 
@@ -797,8 +775,12 @@ a.tooltip-target {
     translate: 52px 20px;
     transition: 0.6s $cubic-ease;
 
-    @include mq-max("md") {
+    @include mq-max("lg") {
       translate: -12px 24px;
+    }
+
+    @include mq-touch {
+      display: none;
     }
   }
 }
@@ -834,6 +816,7 @@ a.tooltip-target {
   }
 
   .heading-wrapper {
+    isolation: isolate;
     position: relative;
     text-align: center;
 
@@ -856,31 +839,47 @@ a.tooltip-target {
       display: inline-flex;
     }
 
-    // make this global?
     .emoji {
       font-size: 0.5em;
       display: inline-block;
       translate: 0 -25%;
     }
 
-    .background-ball {
-      @include row-center;
-      position: absolute;
-      width: 12px;
-      height: 12px;
+    .background-ball-group {
+      @include row-center(space-between);
+      @include absolute-center;
+      width: 120%;
+      height: 20%;
       z-index: -1;
+      animation: hero-glow-ball-group 40s cubic-bezier(0.69, 0.05, 0.47, 1.19)
+        infinite alternate;
 
-      &__glow {
+      @include mq-max("md") {
+        width: 80%;
+      }
+
+      .background-ball {
         padding: 8vw;
         border-radius: 50%;
         filter: blur(64px);
-        opacity: 0.25;
+        opacity: 0.2;
 
         @include mq-max("xxl") {
           filter: blur(48px);
         }
         @include mq-max("sm") {
           filter: blur(24px);
+          opacity: 0.25;
+        }
+
+        &--bluey {
+          background: var(--accent-color--primary);
+          animation: hero-glow-ball-1 18s $cubic-ease infinite alternate;
+        }
+
+        &--bingo {
+          background: var(--accent-color--secondary);
+          animation: hero-glow-ball-2 18s $cubic-ease infinite alternate;
         }
       }
     }
@@ -971,25 +970,11 @@ a.tooltip-target {
 
   &__tooltip {
     @include tooltip;
-    // @include body-font-styles;
-    // @include absolute-center;
-    // @include row-center;
-    // background: var(--accent-color--primary);
-    // color: var(--background-color);
     translate: 36px 28px;
-    // border-radius: 0 $radius $radius $radius;
-    // padding: 4px;
-    // white-space: nowrap;
-    // padding: 8px 24px 8px 16px;
-    // opacity: 0;
-    // visibility: hidden;
-    // scale: 0.6;
-    // rotate: 8deg;
     transition: 0.6s $cubic-ease, rotate 0.6s $cubic-ease 0.4s;
 
-    @include mq-max("md") {
+    @include mq-max("lg") {
       translate: -12px 24px;
-      // padding: 6px 18px 6px 12px;
     }
 
     &.show-tooltip {
@@ -1046,24 +1031,9 @@ a.tooltip-target {
 }
 
 .section-title {
-  // text-transform: uppercase;
-
   &__abstract {
     color: var(--hero-color--secondary);
   }
-
-  // &--h3 {
-  //   font-size: 16px;
-
-  //   @include mq-max("lg") {
-  //     font-size: 14px;
-  //   }
-
-  //   .section-title__abstract {
-  //     // color: var(--accent-color--tertiary);
-  //     color: var(--hero-color--secondary);
-  //   }
-  // }
 }
 
 .skip-to-content {
