@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="{{ meta_data.theme_color }}" />
-    <meta name="author" content="{{ author }}" />
+    <meta name="author" content="{{ meta_data.author }}" />
     <meta name="description" content="{{ description }}" />
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{ meta_data.og_img }}" />
     <meta property="og:url" content="{{ meta_data.url }}" />
-    <meta property="og:description" content="{{ description }}" />
-    <meta property="og:site_name" content="{{ author }}" />
+    <meta property="og:site_name" content="{{ meta_data.site_name }}" />
 
     {% block head %}{% endblock %}
 
     <title>{{ title }}</title>
 
+    <link rel="canonical" href="{{ page.url | url }}" />
     <link rel="stylesheet" type="text/css" href="/static/styles/styles.css" />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />

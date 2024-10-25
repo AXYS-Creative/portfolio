@@ -1,5 +1,8 @@
 # title per page
 # description per page
+
+author: Aaron Garcia
 theme_color: "#1E2932"
 url: "https://aarongarciacreative.com"
-og_img: "https://aarongarciacreative.com/static/img/open-graph-image.png"
+og_img: "https://aarongarciacreative.com/static/img/open-graph.png"
+site_name: "Aaron Garcia Creative"
