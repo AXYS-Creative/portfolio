@@ -1,5 +1,5 @@
+# title per page
+# description per page
 theme_color: "#1E2932"
-
-open_graph:
-  image_src: "/static/img/open-graph-image.png"
-  base_url: "https://aarongarciacreative.com"
+url: "https://aarongarciacreative.com"
+og_img: "https://aarongarciacreative.com/static/img/open-graph-image.png"
