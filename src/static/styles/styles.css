@@ -1189,10 +1189,16 @@ a.tooltip-target::after {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: 120%;
+  width: 112%;
   height: 20%;
   z-index: -1;
   animation: hero-glow-ball-group 40s cubic-bezier(0.69, 0.05, 0.47, 1.19) infinite alternate;
+}
+@media screen and (max-width: 1512px) {
+  .hero .heading-wrapper .background-ball-group,
+  .pre-footer .heading-wrapper .background-ball-group {
+    width: 96%;
+  }
 }
 @media screen and (max-width: 768px) {
   .hero .heading-wrapper .background-ball-group,
@@ -1255,6 +1261,10 @@ a.tooltip-target::after {
     align-items: center;
     text-wrap: balance;
   }
+}
+.hero.left-align .background-ball-group,
+.pre-footer.left-align .background-ball-group {
+  translate: 64px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -1612,8 +1622,11 @@ a.tooltip-target::after {
   }
 }
 @keyframes hero-glow-ball-group {
-  to {
-    rotate: 360deg;
+  0% {
+    rotate: 20deg;
+  }
+  100% {
+    rotate: 380deg;
   }
 }
 @keyframes hero-glow-ball-1 {

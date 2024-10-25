@@ -848,11 +848,15 @@ a.tooltip-target {
     .background-ball-group {
       @include row-center(space-between);
       @include absolute-center;
-      width: 120%;
+      width: 112%;
       height: 20%;
       z-index: -1;
       animation: hero-glow-ball-group 40s cubic-bezier(0.69, 0.05, 0.47, 1.19)
         infinite alternate;
+
+      @include mq-max("xxl") {
+        width: 96%;
+      }
 
       @include mq-max("md") {
         width: 80%;
@@ -901,6 +905,10 @@ a.tooltip-target {
         align-items: center;
         text-wrap: balance;
       }
+    }
+
+    .background-ball-group {
+      translate: 64px 0;
     }
   }
 }

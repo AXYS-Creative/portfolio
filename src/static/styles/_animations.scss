@@ -19,8 +19,12 @@
 
 // hero glow balls
 @keyframes hero-glow-ball-group {
-  to {
-    rotate: 360deg;
+  0% {
+    rotate: 20deg;
+  }
+
+  100% {
+    rotate: 380deg;
   }
 }
 
