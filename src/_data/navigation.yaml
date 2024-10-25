@@ -9,7 +9,7 @@ items:
     url: "/about"
     target: ""
   - text: Resumé
-    url: "/documents/aaron_garcia_resume.pdf"
+    url: "/static/documents/aaron_garcia_resume.pdf"
     target: "_blank"
   - text: AXYS Creative
     url: "https://axyscreative.com"

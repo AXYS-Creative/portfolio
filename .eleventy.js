@@ -29,12 +29,7 @@ module.exports = function (eleventyConfig) {
     "./src/admin/config.yml": "./admin/config.yml",
     "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
   });
-  eleventyConfig.addPassthroughCopy("src/static/styles");
-  eleventyConfig.addPassthroughCopy("src/static/fonts");
-  eleventyConfig.addPassthroughCopy("src/static/documents");
-  eleventyConfig.addPassthroughCopy("src/static/img");
-  eleventyConfig.addPassthroughCopy("src/static/vid");
-  eleventyConfig.addPassthroughCopy("src/static/javascript");
+  eleventyConfig.addPassthroughCopy("src/static");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   //
