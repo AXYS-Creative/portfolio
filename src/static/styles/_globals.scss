@@ -871,7 +871,7 @@ a.tooltip-target {
         @include mq-max("xxl") {
           filter: blur(48px);
         }
-        @include mq-max("sm") {
+        @include mq-max("md") {
           filter: blur(24px);
           opacity: 0.25;
         }
@@ -908,7 +908,20 @@ a.tooltip-target {
     }
 
     .background-ball-group {
-      translate: 64px 0;
+      --offset: 480px;
+      translate: calc(-50% + var(--offset)) -50%;
+
+      @include mq-max("xxl") {
+        --offset: 248px;
+      }
+
+      @include mq-max("lg") {
+        --offset: 96px;
+      }
+
+      @include mq-max("md") {
+        translate: -50% -50%;
+      }
     }
   }
 }

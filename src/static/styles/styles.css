@@ -1219,7 +1219,7 @@ a.tooltip-target::after {
     filter: blur(48px);
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .hero .heading-wrapper .background-ball-group .background-ball,
   .pre-footer .heading-wrapper .background-ball-group .background-ball {
     filter: blur(24px);
@@ -1264,7 +1264,26 @@ a.tooltip-target::after {
 }
 .hero.left-align .background-ball-group,
 .pre-footer.left-align .background-ball-group {
-  translate: 64px 0;
+  --offset: 480px;
+  translate: calc(-50% + var(--offset)) -50%;
+}
+@media screen and (max-width: 1512px) {
+  .hero.left-align .background-ball-group,
+  .pre-footer.left-align .background-ball-group {
+    --offset: 248px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .hero.left-align .background-ball-group,
+  .pre-footer.left-align .background-ball-group {
+    --offset: 96px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero.left-align .background-ball-group,
+  .pre-footer.left-align .background-ball-group {
+    translate: -50% -50%;
+  }
 }
 
 @media screen and (max-width: 768px) {
