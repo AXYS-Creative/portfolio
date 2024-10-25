@@ -150,6 +150,13 @@ collections:
                   hint: /static/img/path-to-asset.avif,
                 }
               - {
+                  name: "poster",
+                  label: "Video Poster",
+                  widget: "string",
+                  required: true,
+                  hint: /static/img/path-to-asset.avif,
+                }
+              - {
                   name: "class",
                   label: "Custom Class",
                   widget: "string",

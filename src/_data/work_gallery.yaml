@@ -1,28 +1,36 @@
 axys_clients:
   - title: Flavors of Alchemy
     media: /static/img/gallery-img-foa.avif
-    class: ""
+    poster:
+    class:
   - title: Join Sunder
     media: /static/img/gallery-vid-sunder.mp4
+    poster: /static/img/gallery-poster-sunder.png
     class: "sunder-video"
   - title: Essence
     media: /static/img/gallery-img-essence.avif
-    class: ""
+    poster:
+    class:
   - title: AXYS Creative
     media: /static/img/gallery-vid-axys.mp4
-    class: ""
+    poster: /static/img/gallery-poster-axys.png
+    class:
   - title: Essence
     media: /static/img/gallery-vid-essence.mp4
-    class: ""
+    poster: /static/img/gallery-poster-essence.webp
+    class:
   - title: AXYS Creative
     media: /static/img/gallery-img-axys.avif
-    class: ""
+    poster:
+    class:
   - title: Flavors of Alchemy
     media: /static/img/gallery-vid-foa.mp4
-    class: ""
+    poster: /static/img/gallery-poster-foa.png
+    class:
   - title: Join Sunder
     media: /static/img/gallery-img-sunder.avif
-    class: ""
+    poster:
+    class:
 
 rainfocus_clients:
   - title: akamai
