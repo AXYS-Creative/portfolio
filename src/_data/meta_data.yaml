@@ -9,9 +9,3 @@ og_title: Aaron Garcia // Creative Web Design & Development
 og_description: Aaron Garcia is your partner in web design & development, committed to setting high standards and crafting impactful digital experiences that resonate with your audience.
 og_img: "https://aarongarciacreative.com/static/img/open-graph.png"
 site_name: Aaron Garcia Creative
-
-# Schema Markup / Rich Results
-same_as_links:
-  - same_as_url: "https://www.instagram.com/aaron_garcia_creative/"
-  - same_as_url: "https://twitter.com/AXYSCreative"
-  - same_as_url: "https://dribbble.com/axyscreative"

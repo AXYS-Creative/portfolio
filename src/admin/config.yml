@@ -236,7 +236,7 @@ collections:
   - name: "meta_data"
     label: "Meta Data"
     description: >
-      Edit the site's meta data here.
+      Edit the site's meta data here. Open Graph dimensions: 1200x630. Open graph file name: open-graph.png
     files:
       - name: "meta_data"
         label: "Meta Data"
@@ -284,14 +284,3 @@ collections:
             widget: "string"
             required: true
             hint: "Sample Business Co"
-          - name: "same_as_links"
-            label: "Same As Links"
-            widget: "list"
-            required: true
-            fields:
-              - {
-                  name: "same_as_url",
-                  label: "Same As URL",
-                  widget: "string",
-                  required: true,
-                }
