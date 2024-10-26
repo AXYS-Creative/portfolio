@@ -1,7 +1,16 @@
 author: Aaron Garcia
+contact_email: aaronegarcia1@gmail.com
 theme_color: "#1E2932"
+
+# Open Graph Protocol
 url: "https://aarongarciacreative.com"
 og_title: Aaron Garcia // Creative Web Design & Development
 og_description: Aaron Garcia is your partner in web design & development, committed to setting high standards and crafting impactful digital experiences that resonate with your audience.
 og_img: "https://aarongarciacreative.com/static/img/open-graph.png"
 site_name: Aaron Garcia Creative
+
+# Rich Results Schema
+same_as:
+  - https://www.instagram.com/aaron_garcia_creative/
+  - https://twitter.com/AXYSCreative
+  - https://dribbble.com/axyscreative

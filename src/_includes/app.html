@@ -47,11 +47,11 @@
         "name": "{{ meta_data.site_name }}",
         "url": "{{ meta_data.url }}",
         "logo": "{{ meta_data.url }}/favicon.ico",
-        "image": "{{ meta_data.url }}{{ meta_data.og_img }}",
+        "image": "{{ meta_data.og_img }}",
         "sameAs": [
-          "https://www.instagram.com/aaron_garcia_creative/",
-          "https://twitter.com/AXYSCreative",
-          "https://dribbble.com/axyscreative"
+          {% for same_as in meta_data.same_as %}
+          "{{ same_as }}",
+          {% endfor %}
         ],
         "contactPoint": {
           "@type": "ContactPoint",
