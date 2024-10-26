@@ -49,8 +49,8 @@
         "logo": "{{ meta_data.url }}/favicon.ico",
         "image": "{{ meta_data.og_img }}",
         "sameAs": [
-          {% for same_as in meta_data.same_as %}
-          "{{ same_as }}",
+          {% for same_as_link in meta_data.same_as_links %}
+          "{{ same_as_link.same_as_url }}",
           {% endfor %}
         ],
         "contactPoint": {
