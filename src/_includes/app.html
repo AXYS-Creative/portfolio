@@ -12,8 +12,8 @@
     <!-- Open Graph Tags -->
     <meta property="og:title" content="{{ meta_data.og_title }}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:type" content="website" />
     <meta property="og:image" content="{{ meta_data.og_img }}" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ meta_data.url }}" />
     <meta property="og:site_name" content="{{ meta_data.site_name }}" />
 
@@ -24,11 +24,18 @@
     <link rel="canonical" href="{{ page.url | url }}" />
     <link rel="stylesheet" type="text/css" href="/static/styles/styles.css" />
 
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <!-- prettier-ignore -->
-    <link rel="icon" href="/static/img/logo-light.svg" media="(prefers-color-scheme: dark)">
-    <!-- prettier-ignore -->
-    <link rel="icon" href="/static/img/logo-dark.svg" media="(prefers-color-scheme: light)">
+    <link
+      rel="icon"
+      href="/static/img/logo-light.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      href="/static/img/logo-dark.svg"
+      media="(prefers-color-scheme: light)"
+    />
 
     <script src="../static/javascript/index.js" type="module" defer></script>
 
@@ -37,7 +44,7 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Aaron Garcia Creative",
+        "name": "{{ meta_data.site_name }}",
         "url": "{{ meta_data.url }}",
         "logo": "{{ meta_data.url }}/favicon.ico",
         "image": "{{ meta_data.url }}{{ meta_data.og_img }}",
