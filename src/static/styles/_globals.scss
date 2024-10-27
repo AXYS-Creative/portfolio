@@ -51,6 +51,7 @@ body {
 
     &__icon {
       width: 32px;
+      height: auto;
       transition: 0.2s ease;
 
       @include mq-max("xxl") {
@@ -586,6 +587,7 @@ figure {
 img,
 video {
   width: 100%;
+  height: auto;
 }
 
 hr {

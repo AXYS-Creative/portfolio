@@ -1,34 +1,34 @@
 axys_clients:
   - title: Flavors of Alchemy
-    media: /static/img/gallery-img-foa.avif
+    media: /static/img/gallery-img-foa.webp
     poster:
     class:
   - title: Join Sunder
     media: /static/img/gallery-vid-sunder.mp4
-    poster: /static/img/gallery-poster-sunder.png
+    poster: /static/img/gallery-poster-sunder.webp
     class: "sunder-video"
   - title: Essence
-    media: /static/img/gallery-img-essence.avif
+    media: /static/img/gallery-img-essence.webp
     poster:
     class:
   - title: AXYS Creative
     media: /static/img/gallery-vid-axys.mp4
-    poster: /static/img/gallery-poster-axys.png
+    poster: /static/img/gallery-poster-axys.webp
     class:
   - title: Essence
     media: /static/img/gallery-vid-essence.mp4
     poster: /static/img/gallery-poster-essence.webp
     class:
   - title: AXYS Creative
-    media: /static/img/gallery-img-axys.avif
+    media: /static/img/gallery-img-axys.webp
     poster:
     class:
   - title: Flavors of Alchemy
     media: /static/img/gallery-vid-foa.mp4
-    poster: /static/img/gallery-poster-foa.png
+    poster: /static/img/gallery-poster-foa.webp
     class:
   - title: Join Sunder
-    media: /static/img/gallery-img-sunder.avif
+    media: /static/img/gallery-img-sunder.webp
     poster:
     class:
 

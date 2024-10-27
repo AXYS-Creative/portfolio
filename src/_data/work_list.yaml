@@ -1,32 +1,32 @@
 work_items:
   - title: AXYS Creative
     logo: /static/img/list-logo-axys.svg
-    image: /static/img/list-img-axys.png
+    image: /static/img/list-img-axys.webp
     url: https://axyscreative.com
     badges: ["UX Design", "Visual Design", "Development", "Form Handling"]
     archive: false
   - title: Join Sunder
     logo: /static/img/list-logo-sunder.svg
-    image: /static/img/list-img-sunder.png
+    image: /static/img/list-img-sunder.webp
     url: https://joinsunder.com
     badges:
       ["Interaction Design", "Form Handling", "Development", "Site Analytics"]
     archive: false
   - title: ESSENCE
     logo: /static/img/list-logo-essence.svg
-    image: /static/img/list-img-essence.png
+    image: /static/img/list-img-essence.webp
     url: https://essentialism.netlify.app
     badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
     archive: false
   - title: Flavors of Alchemy
     logo: /static/img/list-logo-foa.svg
-    image: /static/img/list-img-foa.png
+    image: /static/img/list-img-foa.webp
     url: https://flavorsofalchemy.netlify.app
     badges: ["UX Design", "Visual Design", "Development", "CMS Setup"]
     archive: false
   - title: CORE
     logo: /static/img/list-logo-core.svg
-    image: /static/img/list-img-core.png
+    image: /static/img/list-img-core.webp
     url: https://coreapp.netlify.app
     badges:
       ["Visual Design", "Interaction Design", "Development", "Form Handling"]
@@ -45,7 +45,7 @@ work_items:
     archive: true
   - title: Bonnie’s Dance School
     logo: /static/img/list-logo-bonnies-dance-school.svg
-    image: /static/img/list-img-bonnies-dance-school.png
+    image: /static/img/list-img-bonnies-dance-school.webp
     url: https://bonniesdanceschool.com
     badges: ["Visual Design", "Interaction Design", "Development"]
     archive: true

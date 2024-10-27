@@ -13,7 +13,7 @@
     <a
       class="classic-link tab-element-page"
       href="/archive"
-      aria-label="Visit archive ({{ work_list.work_items.length }}) items"
+      aria-label="Visit archive, {{ work_list.work_items.length }} items total"
     >
       Visit archive [{{ work_list.work_items.length }}]
     </a>
@@ -35,6 +35,9 @@
         class="work-item__logo"
         src="{{ project.logo }}"
         alt="{{ project.title }} logo"
+        loading="lazy"
+        width="250"
+        height="100"
       />
 
       <figure class="work-item__showcase {{ project.background }}">
@@ -42,6 +45,9 @@
           class="work-item__showcase-img"
           src="{{ project.image }}"
           alt="{{ project.title }} hero section"
+          loading="lazy"
+          width="300"
+          height="200"
         />
       </figure>
 

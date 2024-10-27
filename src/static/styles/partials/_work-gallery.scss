@@ -68,25 +68,30 @@
         width: var(--figure-width);
         padding: calc(var(--figure-width) / 14);
 
-        @include mq-max("xxl") {
-          --figure-width: 420px;
-        }
+        @media all {
+          @include mq-max("xxl") {
+            --figure-width: 420px;
+          }
 
-        @include mq-max("xl") {
-          --figure-width: 360px;
-        }
+          @include mq-max("xl") {
+            --figure-width: 360px;
+          }
 
-        @include mq-max("lg") {
-          --figure-width: 320px;
-        }
+          @include mq-max("lg") {
+            --figure-width: 320px;
+          }
 
-        @include mq-max("md") {
-          --figure-width: 248px;
+          @include mq-max("md") {
+            --figure-width: 248px;
+          }
         }
       }
 
-      // asset is a mix of images and videos
+      // img/video elements. These have explicit width/height attributes
       &__asset {
+        object-fit: cover;
+        // height: auto;
+
         &.sunder-video {
           position: relative;
 

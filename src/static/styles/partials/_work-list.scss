@@ -65,13 +65,15 @@
         @include mq-max("lg") {
           display: block;
           width: min(100%, 500px);
+          height: auto;
           object-fit: cover;
           // aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
         }
 
-        img {
-          width: 100%;
-        }
+        // img {
+        //   width: 100%;
+        //   height: auto;
+        // }
       }
 
       &__badges {

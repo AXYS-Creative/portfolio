@@ -286,6 +286,7 @@ body > * {
 }
 .site-header .header-logo__icon {
   width: 32px;
+  height: auto;
   transition: 0.2s ease;
 }
 @media screen and (max-width: 1512px) {
@@ -880,6 +881,7 @@ figure {
 img,
 video {
   width: 100%;
+  height: auto;
 }
 
 hr {
@@ -2183,6 +2185,10 @@ a.tooltip-target::after {
     --figure-width: 248px;
   }
 }
+.work-gallery .showreel .showreel-slider__asset {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .work-gallery .showreel .showreel-slider__asset.sunder-video {
   position: relative;
 }
@@ -2308,12 +2314,10 @@ a.tooltip-target::after {
   .work-list__projects .work-item__showcase {
     display: block;
     width: min(100%, 500px);
+    height: auto;
     -o-object-fit: cover;
        object-fit: cover;
   }
-}
-.work-list__projects .work-item__showcase img {
-  width: 100%;
 }
 .work-list__projects .work-item__badges {
   margin-left: auto;

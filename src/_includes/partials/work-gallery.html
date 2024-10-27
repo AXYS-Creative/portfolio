@@ -104,12 +104,14 @@
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
       
-          {% if file_extension == 'avif' or file_extension == 'png' %}
+        {% if file_extension == 'avif' or file_extension == 'webp' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
           alt="{{ asset.title }}"
           loading="lazy"
+          width="300"
+          height="200"
         />
         {% elseif file_extension == 'mov' or file_extension == 'mp4' %}
         <div class="showreel-slider__asset {{ asset.class }}">
@@ -122,6 +124,8 @@
             muted
             loading="lazy"
             aria-label="{{ asset.title }} animation showcase"
+            width="300"
+            height="200"
           ></video>
         </div>
         {% endif %}
@@ -135,12 +139,14 @@
         <!-- prettier-ignore -->
         {% set file_extension = asset.media | split('.') | last %}
       
-          {% if file_extension == 'avif' or file_extension == 'png' %}
+        {% if file_extension == 'avif' or file_extension == 'webp' %}
         <img
           class="showreel-slider__asset {{ asset.class }}"
           src="{{ asset.media }}"
           alt="{{ asset.title }}"
           loading="lazy"
+          width="300"
+          height="200"
         />
         {% elseif file_extension == 'mov' or file_extension == 'mp4' %}
         <div class="showreel-slider__asset {{ asset.class }}">
@@ -152,6 +158,8 @@
             loop
             muted
             loading="lazy"
+            width="300"
+            height="200"
           ></video>
         </div>
         {% endif %}
