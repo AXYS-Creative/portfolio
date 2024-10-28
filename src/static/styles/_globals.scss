@@ -766,6 +766,10 @@ textarea {
     @include mq-max("lg") {
       translate: -12px 24px;
     }
+
+    @include mq-max("sm") {
+      translate: -18px 20px;
+    }
   }
 }
 

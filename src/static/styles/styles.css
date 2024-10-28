@@ -1085,6 +1085,11 @@ textarea {
     translate: -12px 24px;
   }
 }
+@media screen and (max-width: 480px) {
+  .tooltip-target::after {
+    translate: -18px 20px;
+  }
+}
 
 a.tooltip-target:focus-visible::after {
   opacity: 1;
