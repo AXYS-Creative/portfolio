@@ -890,12 +890,6 @@ hr {
   background: var(--accent-color--primary);
 }
 
-abbr[aria-label] {
-  -webkit-text-decoration: underline solid;
-          text-decoration: underline solid;
-  cursor: help;
-}
-
 input,
 textarea {
   border: none;
@@ -1037,16 +1031,10 @@ textarea {
   pointer-events: none;
 }
 
-a.tooltip-target {
+.tooltip-target {
   position: relative;
 }
-a.tooltip-target:focus-visible::after {
-  opacity: 1;
-  visibility: visible;
-  scale: 1;
-  rotate: 0deg;
-}
-a.tooltip-target::after {
+.tooltip-target::after {
   color: var(--font-color--primary);
   font-family: "Safiro", sans-serif;
   font-size: 18px;
@@ -1073,28 +1061,50 @@ a.tooltip-target::after {
   transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 @media screen and (max-width: 1512px) {
-  a.tooltip-target::after {
+  .tooltip-target::after {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
-  a.tooltip-target::after {
+  .tooltip-target::after {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 1024px) {
-  a.tooltip-target::after {
+  .tooltip-target::after {
     padding: 6px 18px 6px 12px;
   }
 }
 @media screen and (max-width: 1024px) {
-  a.tooltip-target::after {
+  .tooltip-target::after {
     translate: -12px 24px;
   }
+}
+
+a.tooltip-target:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
+  rotate: 0deg;
 }
 @media (hover: none) and (pointer: coarse) {
   a.tooltip-target::after {
     display: none;
+  }
+}
+
+abbr.tooltip-target {
+  display: inline-flex;
+  -webkit-text-decoration: underline solid;
+          text-decoration: underline solid;
+  cursor: help;
+}
+@media (hover: none) and (pointer: coarse) {
+  abbr.tooltip-target:hover::after {
+    opacity: 1;
+    visibility: visible;
+    scale: 1;
+    rotate: 0deg;
   }
 }
 
