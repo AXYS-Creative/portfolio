@@ -338,6 +338,10 @@ $min-breakpoints: (
   @include mq-max("lg") {
     padding: 6px 18px 6px 12px;
   }
+
+  @include mq-max("sm") {
+    padding: 8px 14px 8px 8px;
+  }
 }
 
 @mixin tooltip--show {

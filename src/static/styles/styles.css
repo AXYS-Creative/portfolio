@@ -1075,6 +1075,11 @@ textarea {
     padding: 6px 18px 6px 12px;
   }
 }
+@media screen and (max-width: 480px) {
+  .tooltip-target::after {
+    padding: 8px 14px 8px 8px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .tooltip-target::after {
     translate: -12px 24px;
@@ -1396,6 +1401,11 @@ abbr.tooltip-target {
 @media screen and (max-width: 1024px) {
   .mouse-cursor__tooltip {
     padding: 6px 18px 6px 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mouse-cursor__tooltip {
+    padding: 8px 14px 8px 8px;
   }
 }
 @media screen and (max-width: 1024px) {
