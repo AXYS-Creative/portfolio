@@ -51,7 +51,6 @@
         />
       </figure>
 
-      <!-- <div class="no-cursor-img"> -->
       <ul class="badge-list work-item__badges">
         {% for badge in project.badges %}
         <li class="badge">{{ badge }}</li>
@@ -66,7 +65,6 @@
       >
         Visit site
       </a>
-      <!-- </div> -->
     </div>
 
     {% if loop.last %}
@@ -90,9 +88,7 @@
   {% endif %}
 
   <!-- prettier-ignore -->
-  <footer class="work-list__footer">
-     {% if full_cta == true %}
-       {% include "./cta-group.html" %} 
-     {% endif %}
-   </footer>
+  {% if full_cta == true %}
+  <footer class="work-list__footer">{% include "./cta-group.html" %}</footer>
+  {% endif %}
 </section>

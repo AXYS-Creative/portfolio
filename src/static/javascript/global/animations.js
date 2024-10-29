@@ -217,7 +217,7 @@ responsiveGsap.add(
               onLeave: () => el.classList.remove("swap-color"),
               onEnterBack: () => el.classList.add("swap-color"),
               onLeaveBack: () => el.classList.remove("swap-color"),
-              markers: false,
+              // markers: true,
             },
           });
         });
