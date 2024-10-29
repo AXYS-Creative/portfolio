@@ -2,6 +2,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 let responsiveGsap = gsap.matchMedia();
 
+let markers = {
+  startColor: "white",
+  endColor: "white",
+  indent: 128,
+};
+
 responsiveGsap.add(
   {
     maxSm: "(max-width: 480px)",
@@ -13,8 +19,8 @@ responsiveGsap.add(
   (context) => {
     let { maxSm, maxMd, maxXl, maxXxl, minMd } = context.conditions;
 
-    // SCOPED - Only for one work gallery instance per page
-    const workGalleryAnimation = (() => {
+    // SCOPED - Work gallery (one instance)
+    {
       const showreel = document.querySelector(".showreel-slider");
       const gallerAssetDistance = maxSm ? 16 : 5;
 
@@ -48,10 +54,10 @@ responsiveGsap.add(
           }
         );
       }
-    })();
+    }
 
-    // SCOPED - Only for one 'get in touch' instance per page
-    const getInTouchAnimations = (() => {
+    // SCOPED - Get in touch section (one instance)
+    {
       const getInTouchSection = document.querySelector(".get-in-touch");
 
       const pinDuration = "+=100%";
@@ -69,6 +75,7 @@ responsiveGsap.add(
             pin: true,
             start: "top top",
             end: pinDuration,
+            // markers: markers,
           },
         });
 
@@ -173,10 +180,10 @@ responsiveGsap.add(
           });
         }
       }
-    })();
+    }
 
     // GLOBAL - Easily toggle an 'animate' class on any element with '.gsap-animate' class
-    const globalGenerateAnimate = (() => {
+    {
       const targetElements = document.querySelectorAll(".gsap-animate");
 
       targetElements.forEach((targetElem) => {
@@ -192,10 +199,10 @@ responsiveGsap.add(
           },
         });
       });
-    })();
+    }
 
     // GLOBAL - Temporarily add mix-blend-mod to any element. Partially global, per one .invert-colors element per page
-    const colorSwap = (() => {
+    {
       const targetElements = document.querySelectorAll(".color-swap"),
         invertColorsTarget = document.querySelector(".invert-colors");
 
@@ -210,12 +217,12 @@ responsiveGsap.add(
               onLeave: () => el.classList.remove("swap-color"),
               onEnterBack: () => el.classList.add("swap-color"),
               onLeaveBack: () => el.classList.remove("swap-color"),
-              // markers: true,
+              markers: false,
             },
           });
         });
       }
-    })();
+    }
 
     // Game Changer! Keep in mind the scope of IIFE might affect whether it refreshes.
     // Refresh ScrollTrigger instances on page load and resize
