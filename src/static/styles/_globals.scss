@@ -880,7 +880,7 @@ abbr.tooltip-target {
       }
 
       .background-ball {
-        padding: 8vw;
+        padding: min(8vw, 128px);
         border-radius: 50%;
         filter: blur(64px);
         opacity: 0.2;

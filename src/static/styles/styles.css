@@ -1230,7 +1230,7 @@ abbr.tooltip-target {
 }
 .hero .heading-wrapper .background-ball-group .background-ball,
 .pre-footer .heading-wrapper .background-ball-group .background-ball {
-  padding: 8vw;
+  padding: min(8vw, 128px);
   border-radius: 50%;
   filter: blur(64px);
   opacity: 0.2;
@@ -1649,7 +1649,6 @@ abbr.tooltip-target {
 @font-face {
   font-family: "Atyp Display";
   src: url("../fonts/AtypDisplay-Medium.otf") format("opentype");
-  font-weight: 500;
 }
 @keyframes glow-dot {
   from {
