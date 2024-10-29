@@ -72,15 +72,21 @@ if (contactForm) {
 
 const textareaCount = (() => {
   const textarea = document.getElementById("message");
-  const charCountLabel = document.querySelector(".remaining-characters");
+  const charCountLabel = document.querySelector(".nested-label");
   const maxLength = textarea?.maxLength;
 
-  if (maxLength) {
-    charCountLabel.textContent = maxLength;
-  }
-
-  textarea?.addEventListener("input", () => {
+  const updateCharCount = () => {
     const remaining = maxLength - textarea.value.length;
-    charCountLabel.textContent = remaining;
-  });
+    charCountLabel.textContent =
+      remaining === maxLength
+        ? `Max — ${maxLength} characters`
+        : `${remaining} character${remaining === 1 ? "" : "s"} remaining`;
+
+    charCountLabel.classList.toggle("text-error", remaining === 0);
+  };
+
+  if (maxLength) {
+    updateCharCount();
+    textarea?.addEventListener("input", updateCharCount);
+  }
 })();
