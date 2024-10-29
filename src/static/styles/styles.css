@@ -707,7 +707,7 @@ section:has(.noise-bg) .noise-bg {
   width: 100vw;
   height: 100%;
   padding-inline: 0;
-  z-index: -1;
+  pointer-events: none;
   scale: 1.6;
 }
 section:has(.noise-bg) .noise-bg rect {
@@ -1645,10 +1645,12 @@ abbr.tooltip-target {
 @font-face {
   font-family: "Safiro";
   src: url("../fonts/safiro-medium.otf") format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Atyp Display";
   src: url("../fonts/AtypDisplay-Medium.otf") format("opentype");
+  font-display: swap;
 }
 @keyframes glow-dot {
   from {
