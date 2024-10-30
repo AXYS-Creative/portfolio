@@ -2211,9 +2211,12 @@ abbr.tooltip-target {
   }
 }
 .work-gallery .showreel .showreel-slider__asset {
+  width: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
+}
+.work-gallery .showreel .showreel-slider__asset video {
   height: auto;
 }
 .work-gallery .showreel .showreel-slider__asset.sunder-video {
@@ -2223,7 +2226,7 @@ abbr.tooltip-target {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 50%;
   height: 3%;
   background-color: #000014;
 }

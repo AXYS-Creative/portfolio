@@ -22,7 +22,7 @@ responsiveGsap.add(
     // SCOPED - Work gallery (one instance)
     {
       const showreel = document.querySelector(".showreel-slider");
-      const gallerAssetDistance = maxSm ? 16 : 5;
+      const gallerAssetDistance = maxSm ? 24 : 6;
 
       if (showreel) {
         gsap.fromTo(
@@ -224,14 +224,13 @@ responsiveGsap.add(
       }
     }
 
-    // Game Changer! Keep in mind the scope of IIFE might affect whether it refreshes.
     // Refresh ScrollTrigger instances on page load and resize
     window.addEventListener("load", () => {
       ScrollTrigger.refresh();
     });
 
-    // Greater than 520 so it doesn't refresh on  mobile(dvh)
-    if (window.innerWidth > 520) {
+    // Only run the logic on non-touch, non-mobile devices
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       window.addEventListener("resize", () => {
         ScrollTrigger.refresh();
       });
