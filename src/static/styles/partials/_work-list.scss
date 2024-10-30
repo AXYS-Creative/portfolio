@@ -70,10 +70,9 @@
           // aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
         }
 
-        // img {
-        //   width: 100%;
-        //   height: auto;
-        // }
+        img {
+          height: auto; // Don't make this mf global. Breaks gsap scrollTrigger
+        }
       }
 
       &__badges {

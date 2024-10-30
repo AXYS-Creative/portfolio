@@ -881,7 +881,6 @@ figure {
 img,
 video {
   width: 100%;
-  height: auto;
 }
 
 hr {
@@ -2344,6 +2343,9 @@ abbr.tooltip-target {
     -o-object-fit: cover;
        object-fit: cover;
   }
+}
+.work-list__projects .work-item__showcase img {
+  height: auto;
 }
 .work-list__projects .work-item__badges {
   margin-left: auto;
