@@ -13,14 +13,19 @@ cta_2_url: https://calendly.com/axyscreativeagency/15-min-intro?month=2024-10
 cta_2_target: _blank
 ---
 
+{% block head %}
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+{% endblock %}
+
 <!-- prettier-ignore -->
 {% set hero = true %}
 {% set left_align = true %}
 {% set heading_markup = '
-<span class="magnet-text" aria-hidden="true">Creating memorable</span>
+<span class="magnet-text" aria-hidden="true">Creative & memorable</span>
 <span aria-hidden="true">
   <span class="magnet-text color-text">web experiences</span>
-  <span class="emoji">💡</span>
+  <span class="emoji gsap-animate">🤩</span>
 </span>
 ' %}
 <!-- prettier-ignore -->
@@ -51,7 +56,7 @@ cta_2_target: _blank
 <span aria-hidden="true">
   <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
   <span class="magnet-text color-text">Let’s collaborate!</span>
-  <span class="emoji">🤝</span>
+  <span class="emoji gsap-animate">🤝</span>
 </span>
 ' %}
 <!-- prettier-ignore -->

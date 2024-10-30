@@ -808,6 +808,21 @@ abbr.tooltip-target {
   flex-shrink: 0;
 }
 
+.emoji {
+  @include mq-motion-allow {
+    opacity: 0;
+    scale: 0.75;
+    rotate: 24deg;
+
+    &.animate {
+      opacity: 1;
+      scale: 1;
+      rotate: 0deg;
+      transition: 0.8s $cubic-ease 0.12s;
+    }
+  }
+}
+
 .hero,
 .pre-footer {
   @include column-center;

@@ -1125,6 +1125,20 @@ abbr.tooltip-target {
   flex-shrink: 0;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .emoji {
+    opacity: 0;
+    scale: 0.75;
+    rotate: 24deg;
+  }
+  .emoji.animate {
+    opacity: 1;
+    scale: 1;
+    rotate: 0deg;
+    transition: 0.8s cubic-bezier(0.18, 0.97, 0.47, 1) 0.12s;
+  }
+}
+
 .hero,
 .pre-footer {
   display: flex;
@@ -1757,6 +1771,19 @@ abbr.tooltip-target {
 .focus-cards .focus-card {
   background-color: var(--neutral-dark);
   padding: 48px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .focus-cards .focus-card {
+    opacity: 0;
+    scale: 0.85;
+    rotate: 2deg;
+    transition: 1.2s cubic-bezier(0.18, 0.97, 0.47, 1);
+  }
+  .focus-cards .focus-card.animate {
+    opacity: 1;
+    scale: 1;
+    rotate: 0deg;
+  }
 }
 @media screen and (max-width: 1512px) {
   .focus-cards .focus-card {
