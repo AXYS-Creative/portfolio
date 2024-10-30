@@ -90,6 +90,8 @@
       // img/video elements. These have explicit width/height attributes
       &__asset {
         object-fit: cover;
+        width: 100%;
+        height: auto;
 
         &.sunder-video {
           position: relative;

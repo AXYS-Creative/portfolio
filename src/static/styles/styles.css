@@ -2213,6 +2213,8 @@ abbr.tooltip-target {
 .work-gallery .showreel .showreel-slider__asset {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 .work-gallery .showreel .showreel-slider__asset.sunder-video {
   position: relative;
