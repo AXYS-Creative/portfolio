@@ -2322,7 +2322,7 @@ abbr.tooltip-target {
   --btn-size: 48px;
   margin-inline: 160px;
   display: grid;
-  margin-block: var(--content-spacing);
+  margin-block: var(--content-spacing) calc(var(--content-spacing) / 2);
   width: var(--btn-size);
   height: var(--btn-size);
   border-radius: 50%;

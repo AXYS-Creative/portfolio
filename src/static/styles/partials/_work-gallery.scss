@@ -167,7 +167,7 @@
 
       @include horizontal-margin;
       display: grid;
-      margin-block: var(--content-spacing);
+      margin-block: var(--content-spacing) calc(var(--content-spacing) / 2);
       // align-self: flex-end;
       width: var(--btn-size);
       height: var(--btn-size);
