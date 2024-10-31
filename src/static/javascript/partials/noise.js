@@ -1,8 +1,6 @@
-const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+import { isSafari, isTouchDevice } from "../utility.js";
 
-const noise = document.querySelector(".noise-bg");
-
-if (isTouchDevice) {
+if (isTouchDevice || isSafari()) {
   const specularLightings = document.querySelectorAll("feSpecularLighting");
 
   specularLightings.forEach((lighting) => {

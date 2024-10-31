@@ -35,3 +35,27 @@ const getLocalTime = (() => {
 
   setInterval(updateTime, 1000);
 })();
+
+// Check if touch device
+export const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+// Check if Safari
+export const isSafari = () => {
+  let ua = navigator.userAgent.toLowerCase();
+  return ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1;
+};
+
+// Custom classes for Safari. Just add the class to the element in the list.
+const safariClasses = (() => {
+  const elementList = [".social-media-link"];
+
+  if (isSafari()) {
+    elementList.forEach((element) => {
+      const elements = document.querySelectorAll(element);
+
+      elements.forEach((el) => {
+        el.classList.add("safari-styles");
+      });
+    });
+  }
+})();

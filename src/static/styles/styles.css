@@ -2079,6 +2079,9 @@ abbr.tooltip-target {
 .strap .social-media-links .social-media-link:hover .social-media-icon:last-of-type, .strap .social-media-links .social-media-link:focus-visible .social-media-icon:last-of-type {
   translate: 0 0;
 }
+.strap .social-media-links .social-media-link.safari-styles {
+  border-radius: 0;
+}
 @media screen and (min-width: 1921px) {
   .strap--page {
     right: calc(50% - 960px);

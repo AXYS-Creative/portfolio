@@ -1,3 +1,5 @@
+import { isSafari } from "../utility.js";
+
 if (window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
   const cursor = document.querySelector(".mouse-cursor"),
     tooltip = document.querySelector(".mouse-cursor__tooltip");
@@ -99,10 +101,6 @@ if (window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
   });
 
   // Hide Mouse cursor on Safari ... glitched the animation
-  const isSafari = () => {
-    let ua = navigator.userAgent.toLowerCase();
-    return ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1;
-  };
 
   if (isSafari()) {
     cursor.style.display = "none";
