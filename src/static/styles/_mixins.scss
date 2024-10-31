@@ -131,6 +131,22 @@ $min-breakpoints: (
   }
 }
 
+@mixin horizontal-margin {
+  margin-inline: $body-padding * 2.5;
+
+  @include mq-max("xxl") {
+    margin-inline: $body-padding-xxl * 3;
+  }
+
+  @include mq-max("xl") {
+    margin-inline: $body-padding-xxl * 2.4;
+  }
+
+  @include mq-max("md") {
+    margin-inline: $body-padding-md;
+  }
+}
+
 // header logo, nav items
 @mixin left-spacing {
   left: $body-padding;

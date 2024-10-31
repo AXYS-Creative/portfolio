@@ -38,7 +38,9 @@ const marqueeTweens = initializeMarquee(
   window.innerWidth > 768 ? 16 : 12
 );
 
+//
 // Work Gallery Carousel
+//
 const carouselHandler = (() => {
   const cubicEase = getComputedStyle(root).getPropertyValue("--cubic-ease"),
     carouselGap = getComputedStyle(root).getPropertyValue("--carousel-gap");
@@ -46,6 +48,9 @@ const carouselHandler = (() => {
   const gapValue = parseFloat(carouselGap); // Convert the gap to a number from string with 'px'
 
   const sliders = document.querySelectorAll(".carousel-slider");
+
+  let intervalIds = []; // Array to store all interval IDs
+  let isPlaying = true;
 
   sliders.forEach((slider, index) => {
     const figuresCount =
@@ -70,17 +75,46 @@ const carouselHandler = (() => {
       if (Math.abs(currentOffset) >= sliderWidth + step) {
         slider.style.transition = "none";
         currentOffset = 0;
-
         slider.style.transform = `translateX(${currentOffset}px)`;
-
         slider.offsetHeight; // This snaps the reset vs vintage rewind
-
         slider.style.transition = `transform 1.8s ${cubicEase}`;
       } else {
         slider.style.transform = `translateX(${currentOffset}px)`;
       }
     };
 
-    setInterval(moveSlider, 2400);
+    intervalIds[index] = setInterval(moveSlider, 2400);
+
+    // Set up the button handler once
+    if (index === 0) {
+      const carouselBtn = document.querySelector(".carousel__btn");
+      carouselBtn.addEventListener("click", () => {
+        isPlaying = !isPlaying;
+        carouselBtn.classList.toggle("paused", !isPlaying);
+        carouselBtn.setAttribute(
+          "aria-label",
+          isPlaying ? "Pause carousel" : "Play carousel"
+        );
+        carouselBtn.setAttribute("aria-pressed", isPlaying ? "false" : "true");
+
+        if (isPlaying) {
+          // Restart all sliders using their original moveSlider functions
+          sliders.forEach((_, i) => {
+            intervalIds[i] = setInterval(
+              document.querySelector(`.carousel-slider:nth-child(${i + 1})`)
+                .__moveSlider,
+              2400
+            );
+          });
+        } else {
+          // Stop all sliders
+          intervalIds.forEach((id) => clearInterval(id));
+          intervalIds = [];
+        }
+      });
+    }
+
+    // Store the moveSlider function on the slider element for later use
+    slider.__moveSlider = moveSlider;
   });
 })();

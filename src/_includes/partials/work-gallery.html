@@ -90,6 +90,16 @@
       {% endfor %}
     </div>
 
+    <button
+      class="carousel__btn cta-1 magnet magnet-strong tooltip-target"
+      aria-label="Pause carousel"
+      aria-pressed="false"
+      data-tooltip-title="💡 Toggle the carousel"
+    >
+      <span class="carousel__btn-icon carousel__btn-icon--playing"></span>
+      <span class="carousel__btn-icon carousel__btn-icon--paused"></span>
+    </button>
+
     {%else%}
 
     <div class="showreel-slider">

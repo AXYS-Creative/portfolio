@@ -35,7 +35,7 @@
     overflow: hidden;
   }
 
-  // axys clients
+  // axys clients - home & work pages
   .showreel {
     --showreel-gap: 64px;
 
@@ -113,7 +113,7 @@
     }
   }
 
-  // rainfocus clients
+  // rainfocus clients - about page
   .carousel {
     gap: var(--carousel-gap);
 
@@ -156,6 +156,87 @@
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: contain;
+      }
+    }
+
+    &__btn {
+      --btn-size: 48px;
+      $icon-swap-scale: 0.5;
+      $icon-swap-duration: 0.3s;
+      $icon-swap-delay: 0.2s;
+
+      @include horizontal-margin;
+      display: grid;
+      margin-block: var(--content-spacing);
+      // align-self: flex-end;
+      width: var(--btn-size);
+      height: var(--btn-size);
+      border-radius: 50%;
+      padding: 12px;
+      scroll-margin-top: 520px;
+
+      @include mq-max("xxl") {
+        scroll-margin-top: 360px;
+      }
+
+      @include mq-max("lg") {
+        --btn-size: 40px;
+        padding: 10px;
+      }
+
+      @include mq-max("sm") {
+        --btn-size: 36px;
+        padding: 10px;
+      }
+
+      &-icon {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        background: var(--font-color--primary);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+
+        &--playing {
+          mask-image: url("/static/img/icon-pause.svg");
+          opacity: 1;
+          scale: 1;
+
+          @include mq-motion-allow {
+            transition: $icon-swap-duration $cubic-ease $icon-swap-delay;
+          }
+        }
+
+        &--paused {
+          mask-image: url("/static/img/icon-play.svg");
+          opacity: 0;
+          scale: $icon-swap-scale;
+
+          @include mq-motion-allow {
+            transition: $icon-swap-duration $cubic-ease 0s;
+          }
+        }
+      }
+
+      &.paused {
+        .carousel__btn-icon--playing {
+          opacity: 0;
+          scale: $icon-swap-scale;
+
+          @include mq-motion-allow {
+            transition: $icon-swap-duration $cubic-ease 0s;
+          }
+        }
+
+        .carousel__btn-icon--paused {
+          opacity: 1;
+          scale: 1;
+
+          @include mq-motion-allow {
+            transition: $icon-swap-duration $cubic-ease $icon-swap-delay;
+          }
+        }
       }
     }
   }
