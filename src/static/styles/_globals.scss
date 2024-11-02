@@ -199,8 +199,8 @@ body {
 
 // TYPE - Hybrid Mobile
 nav {
-  $default-transition: translate 0.9s $cubic-ease 0s;
-  $active-transition: translate 0.9s $cubic-ease;
+  $default-transition: translate 0.9s $cubic-ease 0s, visibility 0s ease 0.9s;
+  $active-transition: translate 0.9s $cubic-ease, visibility 0s ease 0s;
   $nav-radius: 40px;
 
   position: fixed;
@@ -213,6 +213,7 @@ nav {
   min-height: 420px;
   overflow: auto;
   z-index: 4;
+  visibility: hidden;
 
   translate: 100% 0;
   border-top-left-radius: $nav-radius;
@@ -346,6 +347,7 @@ nav {
   &[aria-hidden="false"] {
     translate: 0 0;
     transition: $active-transition;
+    visibility: visible;
 
     .nav-links {
       li {
@@ -818,7 +820,7 @@ abbr.tooltip-target {
       opacity: 1;
       scale: 1;
       rotate: 0deg;
-      transition: 0.8s $cubic-ease-back 0.12s;
+      transition: 0.8s $cubic-ease-back 0.12s, font-size 0s;
     }
   }
 }

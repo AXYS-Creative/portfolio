@@ -437,10 +437,11 @@ nav {
   min-height: 420px;
   overflow: auto;
   z-index: 4;
+  visibility: hidden;
   translate: 100% 0;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  transition: translate 0.9s cubic-bezier(0.18, 0.97, 0.47, 1) 0s;
+  transition: translate 0.9s cubic-bezier(0.18, 0.97, 0.47, 1) 0s, visibility 0s ease 0.9s;
 }
 @media screen and (min-width: 1201px) {
   nav {
@@ -600,7 +601,8 @@ nav .nav-footer-links li .nav-footer-link {
 }
 nav[aria-hidden=false] {
   translate: 0 0;
-  transition: translate 0.9s cubic-bezier(0.18, 0.97, 0.47, 1);
+  transition: translate 0.9s cubic-bezier(0.18, 0.97, 0.47, 1), visibility 0s ease 0s;
+  visibility: visible;
 }
 nav[aria-hidden=false] .nav-links li {
   opacity: 1;
@@ -1135,7 +1137,7 @@ abbr.tooltip-target {
     opacity: 1;
     scale: 1;
     rotate: 0deg;
-    transition: 0.8s cubic-bezier(0.5, 0.01, 0.32, 1.41) 0.12s;
+    transition: 0.8s cubic-bezier(0.5, 0.01, 0.32, 1.41) 0.12s, font-size 0s;
   }
 }
 
@@ -1658,12 +1660,10 @@ abbr.tooltip-target {
 @font-face {
   font-family: "Safiro";
   src: url("../fonts/safiro-medium.otf") format("opentype");
-  font-display: swap;
 }
 @font-face {
   font-family: "Atyp Display";
   src: url("../fonts/AtypDisplay-Medium.otf") format("opentype");
-  font-display: swap;
 }
 @keyframes glow-dot {
   from {
