@@ -15,6 +15,10 @@
 
 html {
   scroll-behavior: smooth;
+
+  &:has(.site-loading) {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -754,56 +758,6 @@ textarea {
   }
 }
 
-// All tooltip targets, including cta-2 and abbr text
-.tooltip-target {
-  position: relative;
-
-  &::after {
-    @include tooltip;
-    content: attr(data-tooltip-title);
-
-    translate: 52px 20px;
-    transition: 0.6s $cubic-ease;
-
-    @include mq-max("lg") {
-      translate: -12px 24px;
-    }
-
-    @include mq-max("sm") {
-      translate: -18px 20px;
-    }
-  }
-}
-
-// cta-2
-a.tooltip-target {
-  &:focus-visible {
-    &::after {
-      @include tooltip--show;
-    }
-  }
-
-  &::after {
-    @include mq-touch {
-      display: none;
-    }
-  }
-}
-
-abbr.tooltip-target {
-  display: inline-flex;
-  text-decoration: underline solid;
-  cursor: help;
-
-  @include mq-touch {
-    &:hover {
-      &::after {
-        @include tooltip--show;
-      }
-    }
-  }
-}
-
 .cta-group {
   @include row-center;
   gap: 24px;
@@ -981,6 +935,57 @@ abbr.tooltip-target {
   }
 }
 
+.loader {
+  // border: $test;
+  @include row-center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--background-color);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s $cubic-ease 0.25s;
+
+  &__content-group {
+    @include column-center;
+    gap: 40px;
+
+    @include mq-max("lg") {
+      gap: 24px;
+    }
+  }
+
+  &__svg {
+    width: 64px;
+    height: auto;
+
+    @include mq-max("lg") {
+      width: 48px;
+    }
+
+    &-elem {
+      stroke: var(--font-color--primary);
+      stroke-dashoffset: 191.77481079101562px;
+      stroke-dasharray: 191.77481079101562px;
+
+      animation: loader-svg-elem 1.8s $cubic-ease 0.2s alternate infinite;
+    }
+  }
+
+  &__text {
+    @extend h6;
+    color: var(--font-color--primary);
+  }
+
+  &.site-loading {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
 .mouse-cursor {
   position: fixed;
   top: 0;
@@ -1103,5 +1108,55 @@ abbr.tooltip-target {
 
   @include mq-max("xl") {
     display: none;
+  }
+}
+
+// All tooltip targets, including cta-2 and abbr text
+.tooltip-target {
+  position: relative;
+
+  &::after {
+    @include tooltip;
+    content: attr(data-tooltip-title);
+
+    translate: 52px 20px;
+    transition: 0.6s $cubic-ease;
+
+    @include mq-max("lg") {
+      translate: -12px 24px;
+    }
+
+    @include mq-max("sm") {
+      translate: -18px 20px;
+    }
+  }
+}
+
+// cta-2
+a.tooltip-target {
+  &:focus-visible {
+    &::after {
+      @include tooltip--show;
+    }
+  }
+
+  &::after {
+    @include mq-touch {
+      display: none;
+    }
+  }
+}
+
+abbr.tooltip-target {
+  display: inline-flex;
+  text-decoration: underline solid;
+  cursor: help;
+
+  @include mq-touch {
+    &:hover {
+      &::after {
+        @include tooltip--show;
+      }
+    }
   }
 }

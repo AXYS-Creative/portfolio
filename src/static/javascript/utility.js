@@ -45,7 +45,10 @@ export const isSafari = () => {
   return ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1;
 };
 
-// Custom classes for Safari. Just add the class to the element in the list.
+/**
+ * Custom classes for Safari. Add any element’s class to the array below.
+ * This class will now have a customizable 'safari-styles' class you can target.
+ */
 const safariClasses = (() => {
   const elementList = [".social-media-link"];
 

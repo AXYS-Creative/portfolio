@@ -1,11 +1,11 @@
+import { root } from "../utility.js";
+
 const strap = document.querySelector(".strap"),
   strapIcon = document.querySelector(".strap-icon");
 
-const rootElem = document.documentElement; // For CSS variables
-
 const updateIconWidth = () => {
   let strapWidth = strap.getBoundingClientRect().width;
-  rootElem.style.setProperty("--strap-width", `${strapWidth}px`);
+  root.style.setProperty("--strap-width", `${strapWidth}px`);
 };
 
 updateIconWidth(); // Invoke on page load

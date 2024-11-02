@@ -100,3 +100,10 @@
     translate: -50% 0;
   }
 }
+
+// loader
+@keyframes loader-svg-elem {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
