@@ -1,3 +1,5 @@
+import { lenis } from "../utility.js";
+
 const siteHeader = document.querySelector(".site-header"),
   navMenu = document.querySelector(".nav-menu"),
   menuBtn = document.querySelector(".menu-btn"),
@@ -33,7 +35,12 @@ const toggleNav = () => {
     el.setAttribute("tabindex", isNavOpen ? "0" : "-1")
   );
 
-  document.body.style.overflowY = isNavOpen ? "hidden" : "auto";
+  // document.body.style.overflowY = isNavOpen ? "hidden" : "auto";
+  if (isNavOpen) {
+    lenis.stop();
+  } else {
+    lenis.start();
+  }
 };
 
 const closeNav = () => {
@@ -48,7 +55,8 @@ const closeNav = () => {
   tabElementsPage.forEach((el) => el.setAttribute("tabindex", "0"));
   tabElementsNav.forEach((el) => el.setAttribute("tabindex", "-1"));
 
-  document.body.style.overflowY = "auto";
+  // document.body.style.overflowY = "auto";
+  lenis.start();
 };
 
 // Click event listener for closing the nav when clicking outside of it

@@ -234,9 +234,6 @@
   -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 html:has(.site-loading) {
   overflow: hidden;
 }
@@ -1550,6 +1547,24 @@ abbr.tooltip-target {
   }
 }
 
+@media all {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
 .classic-link {
   position: relative;
   color: var(--link-color);
@@ -1593,6 +1608,9 @@ abbr.tooltip-target {
 }
 .magnet:is(span) {
   transition: translate 0.8s cubic-bezier(0.09, 0.9, 0.5, 1);
+}
+.magnet.safari-styles {
+  transition: 0.3s ease, translate 0.2s cubic-bezier(0.09, 0.9, 0.5, 1);
 }
 
 .hero-color--primary {

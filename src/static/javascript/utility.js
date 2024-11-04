@@ -50,7 +50,7 @@ export const isSafari = () => {
  * This class will now have a customizable 'safari-styles' class you can target.
  */
 const safariClasses = (() => {
-  const elementList = [".social-media-link"];
+  const elementList = [".magnet", ".social-media-link"];
 
   if (isSafari()) {
     elementList.forEach((element) => {
@@ -61,4 +61,20 @@ const safariClasses = (() => {
       });
     });
   }
+})();
+
+// Lenis
+export const lenis = new Lenis();
+
+const handleLenis = (() => {
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 })();

@@ -14,7 +14,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 
   &:has(.site-loading) {
     overflow: hidden;
@@ -698,7 +698,6 @@ textarea {
     background-color: var(--cta-color-bg--hover);
 
     @include mq-motion-allow {
-      // animation: cta-pop 0.4s $cubic-ease forwards;
       animation: cta-pop 0.24s linear forwards;
     }
   }
@@ -1158,5 +1157,29 @@ abbr.tooltip-target {
         @include tooltip--show;
       }
     }
+  }
+}
+
+// Lenis
+@media all {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
   }
 }
