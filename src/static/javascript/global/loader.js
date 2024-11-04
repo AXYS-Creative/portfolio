@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.querySelector(".loader");
-  const loaderSvg = document.querySelector(".loader__svg");
 
   const minDisplayTime = 1600;
   const startTime = Date.now();
