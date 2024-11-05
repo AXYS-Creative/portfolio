@@ -1751,10 +1751,12 @@ abbr.tooltip-target {
 @font-face {
   font-family: "Safiro";
   src: url("../fonts/safiro-medium.otf") format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Atyp Display";
   src: url("../fonts/AtypDisplay-Medium.otf") format("opentype");
+  font-display: swap;
 }
 @keyframes glow-dot {
   from {
@@ -2589,10 +2591,14 @@ abbr.tooltip-target {
     height: auto;
     -o-object-fit: cover;
        object-fit: cover;
+    aspect-ratio: 1.64/1;
   }
 }
 .work-list__projects .work-item__showcase img {
+  width: 100%;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .work-list__projects .work-item__badges {
   margin-left: auto;

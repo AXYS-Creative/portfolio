@@ -65,11 +65,13 @@
           width: min(100%, 500px);
           height: auto;
           object-fit: cover;
-          // aspect-ratio: 1.64 / 1; // fixes bottom cropping issue, chrome mobile
+          aspect-ratio: 1.64 / 1;
         }
 
         img {
-          height: auto; // Don't make this mf global. Breaks gsap scrollTrigger
+          width: 100%;
+          height: auto; // Don't make this global... issue with color-swap/gsap but scoped works when scoped... 🤨
+          object-fit: cover;
         }
       }
 
