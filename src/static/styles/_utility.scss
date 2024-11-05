@@ -32,6 +32,12 @@
       background-color: var(--link-color-hover);
     }
   }
+
+  // &.fully-animate {
+  //   &::before {
+  //     animation: classic-link-interaction 0.3s $cubic-ease-slow-finish forwards;
+  //   }
+  // }
 }
 
 .classic-list {

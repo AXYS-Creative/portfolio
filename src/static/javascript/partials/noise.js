@@ -1,6 +1,6 @@
-import { isSafari, isTouchDevice } from "../utility.js";
+import { isSafari, isFirefox, isTouchDevice } from "../utility.js";
 
-if (isTouchDevice || isSafari()) {
+if (isTouchDevice || isSafari() || isFirefox()) {
   const specularLightings = document.querySelectorAll("feSpecularLighting");
 
   specularLightings.forEach((lighting) => {

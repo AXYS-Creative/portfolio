@@ -1,14 +1,30 @@
 <header class="site-header" aria-label="Site Header">
   <button class="color-swap skip-to-content">Skip to main content</button>
 
-  <a class="header-logo color-swap" href="{{ settings.url }}">
-    <img
+  <a class="header-logo color-swap full-animation" href="{{ settings.url }}">
+    <!-- <img
       class="header-logo__icon"
       src="/static/img/logo-light.svg"
       alt="{{ settings.name }} logo"
       width="32"
       height="28"
-    />
+    /> -->
+    <svg
+      width="70"
+      height="59"
+      viewBox="0 0 70 59"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="header-logo__icon"
+    >
+      <path
+        d="M34.5 4L66 55H47L25.5 20L4 55H23.5L28 47"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="header-logo__icon-path"
+      ></path>
+    </svg>
   </a>
 
   {% if navigation.items %}

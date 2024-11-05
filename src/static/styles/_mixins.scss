@@ -210,7 +210,7 @@ $min-breakpoints: (
 
 // Hero & Prefooter
 .h1 {
-  @include heading(80px, 5.4vw, 6.4vw, 7vw, 40px);
+  @include heading(80px, 5.4vw, 6.4vw, 7vw, 38px);
   letter-spacing: -2px;
   text-transform: initial;
 }
@@ -353,6 +353,10 @@ $min-breakpoints: (
 
   @include mq-max("lg") {
     padding: 6px 18px 6px 12px;
+  }
+
+  @include mq-max("md") {
+    translate: -12px 24px;
   }
 
   @include mq-max("sm") {

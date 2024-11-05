@@ -50,7 +50,7 @@ export const isSafari = () => {
  * This class will now have a customizable 'safari-styles' class you can target.
  */
 const safariClasses = (() => {
-  const elementList = [".magnet", ".social-media-link"];
+  const elementList = [".magnet", ".social-media-link", ".header-logo"];
 
   if (isSafari()) {
     elementList.forEach((element) => {
@@ -62,6 +62,12 @@ const safariClasses = (() => {
     });
   }
 })();
+
+// Check if Firefox
+export const isFirefox = () => {
+  let ua = navigator.userAgent.toLowerCase();
+  return ua.indexOf("firefox") !== -1;
+};
 
 // Lenis
 export const lenis = new Lenis();

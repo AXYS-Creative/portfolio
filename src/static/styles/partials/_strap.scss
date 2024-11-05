@@ -46,6 +46,10 @@
       @include mq-max("md") {
         gap: 12px;
       }
+
+      @include mq-max("xs") {
+        gap: 4px;
+      }
     }
 
     .social-media-link {
@@ -53,10 +57,6 @@
       border-radius: 50%;
       overflow: hidden;
       transition: 0.25s ease;
-
-      // @include mq-min("sm") {
-      //   overflow: hidden;
-      // }
 
       .social-media-icon {
         grid-area: 1 / 1;
@@ -70,12 +70,13 @@
           transition: all 0.48s $cubic-ease, background 0.48s $cubic-ease 0.2s;
         }
 
+        @include mq-max("xs") {
+          width: 36px;
+          height: 36px;
+        }
+
         &:last-of-type {
           translate: 0 100%;
-
-          // @include mq-max("sm") {
-          //   display: none;
-          // }
         }
       }
 

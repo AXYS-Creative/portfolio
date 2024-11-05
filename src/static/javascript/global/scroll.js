@@ -39,7 +39,6 @@ largeCta?.addEventListener("focus", () => {
 // Fix broken pinning for large-cta
 const pinningCorrection = (() => {
   let isHoveringLargeCta = false;
-  let scrollTimeout;
 
   largeCta?.addEventListener("mouseenter", () => {
     isHoveringLargeCta = true;

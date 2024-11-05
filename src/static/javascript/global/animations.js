@@ -237,3 +237,26 @@ responsiveGsap.add(
     }
   }
 );
+
+// Complete Animation Hover and Focus
+const completeAnimationHoverFocus = (() => {
+  const animationElements = document.querySelectorAll(".full-animation");
+
+  const animationNames = ["logo-interaction"];
+
+  animationElements.forEach((el) => {
+    const addAnimation = () => {
+      el.classList.add("fully-animate");
+    };
+
+    const removeAnimation = (event) => {
+      if (animationNames.includes(event.animationName)) {
+        el.classList.remove("fully-animate");
+      }
+    };
+
+    el.addEventListener("mouseenter", addAnimation);
+    el.addEventListener("focus", addAnimation);
+    el.addEventListener("animationend", removeAnimation);
+  });
+})();

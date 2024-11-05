@@ -14,7 +14,7 @@
 }
 
 html {
-  // scroll-behavior: smooth;
+  // scroll-behavior: smooth; // Using Lenis instead
 
   &:has(.site-loading) {
     overflow: hidden;
@@ -56,10 +56,41 @@ body {
     &__icon {
       width: 32px;
       height: auto;
-      transition: 0.2s ease;
+      transition: 0.6s ease;
 
       @include mq-max("xxl") {
         width: 28px;
+      }
+
+      &-path {
+        stroke: var(--font-color--primary);
+        stroke-dashoffset: 0px; // No Trail
+        stroke-dasharray: 196px; // No Trail
+
+        @include mq-motion-allow {
+          transition: 0.4s $cubic-ease 0s;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      .header-logo__icon-path {
+        stroke: var(--cta-color-bg--hover);
+        transition: 0.4s $cubic-ease 0.4s;
+      }
+    }
+
+    &.fully-animate {
+      .header-logo__icon-path {
+        animation: logo-interaction 0.6s cubic-bezier(0.86, 0.41, 0.51, 1)
+          forwards;
+      }
+    }
+
+    &.safari-styles {
+      .header-logo__icon-path {
+        animation: none;
       }
     }
   }
@@ -935,7 +966,6 @@ textarea {
 }
 
 .loader {
-  // border: $test;
   @include row-center;
   position: fixed;
   top: 0;
@@ -970,7 +1000,7 @@ textarea {
       stroke-dashoffset: 191.77481079101562px;
       stroke-dasharray: 191.77481079101562px;
 
-      animation: loader-svg-elem 1.8s $cubic-ease 0.2s alternate infinite;
+      animation: loader-svg-elem 1s $cubic-ease 0.12s alternate infinite;
     }
   }
 
@@ -1031,10 +1061,6 @@ textarea {
     @include tooltip;
     translate: 36px 28px;
     transition: 0.6s $cubic-ease, rotate 0.6s $cubic-ease 0.4s;
-
-    @include mq-max("lg") {
-      translate: -12px 24px;
-    }
 
     &.show-tooltip {
       @include tooltip--show;
@@ -1121,10 +1147,6 @@ textarea {
     translate: 52px 20px;
     transition: 0.6s $cubic-ease;
 
-    @include mq-max("lg") {
-      translate: -12px 24px;
-    }
-
     @include mq-max("sm") {
       translate: -18px 20px;
     }
@@ -1160,6 +1182,7 @@ abbr.tooltip-target {
   }
 }
 
+//
 // Lenis
 @media all {
   html.lenis,
