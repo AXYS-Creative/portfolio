@@ -51,11 +51,12 @@
     .social-media-link {
       display: grid;
       border-radius: 50%;
+      overflow: hidden;
       transition: 0.25s ease;
 
-      @include mq-min("sm") {
-        overflow: hidden;
-      }
+      // @include mq-min("sm") {
+      //   overflow: hidden;
+      // }
 
       .social-media-icon {
         grid-area: 1 / 1;
@@ -72,9 +73,9 @@
         &:last-of-type {
           translate: 0 100%;
 
-          @include mq-max("sm") {
-            display: none;
-          }
+          // @include mq-max("sm") {
+          //   display: none;
+          // }
         }
       }
 

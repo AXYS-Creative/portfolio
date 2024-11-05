@@ -2126,12 +2126,8 @@ abbr.tooltip-target {
 .strap .social-media-links .social-media-link {
   display: grid;
   border-radius: 50%;
+  overflow: hidden;
   transition: 0.25s ease;
-}
-@media screen and (min-width: 481px) {
-  .strap .social-media-links .social-media-link {
-    overflow: hidden;
-  }
 }
 .strap .social-media-links .social-media-link .social-media-icon {
   grid-area: 1/1;
@@ -2150,11 +2146,6 @@ abbr.tooltip-target {
 }
 .strap .social-media-links .social-media-link .social-media-icon:last-of-type {
   translate: 0 100%;
-}
-@media screen and (max-width: 480px) {
-  .strap .social-media-links .social-media-link .social-media-icon:last-of-type {
-    display: none;
-  }
 }
 .strap .social-media-links .social-media-link:hover .social-media-icon, .strap .social-media-links .social-media-link:focus-visible .social-media-icon {
   translate: 0 -100%;
@@ -2616,9 +2607,6 @@ abbr.tooltip-target {
 }
 .work-list--limit-count .work-list__projects .work-item {
   padding-block: 48px;
-}
-.work-list--limit-count .work-list__projects .work-item__logo {
-  width: 250px;
 }
 .work-list--archive .service-divider--archive {
   display: block;

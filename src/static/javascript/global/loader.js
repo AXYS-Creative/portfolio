@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.querySelector(".loader");
 
-  const minDisplayTime = 1600;
+  // const minDisplayTime = 1600;
+  const minDisplayTime = 0;
   const startTime = Date.now();
 
   window.addEventListener("load", () => {
