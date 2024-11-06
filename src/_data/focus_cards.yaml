@@ -1,16 +1,16 @@
 # section_title: Areas I focus on, to help you <span class="hero-color--secondary">stand out</span>
-section_title: Areas I focus on, to help you stand out!
+section_title: Areas I focus on to help you stand out!
 
 cards:
-  - title: Design <span>✍️</span>
+  - title: Design <span aria-hidden="true">✍️</span>
     title_color: "primary"
-    subtitle: <span class="hero-color--secondary">//</span> Responsive and accessible web design, centered around your users' experience.
+    subtitle: <span class="hero-color--secondary" aria-hidden="true">//</span> Responsive and accessible web design, centered around your users' experience.
     description: Design is the foundation of everything—it’s essential to get it right from the start. Too many brands struggle to communicate their value and get overlooked as a result.
-  - title: Development <span>🛠️</span>
+  - title: Development <span aria-hidden="true">🛠️</span>
     title_color: "secondary"
-    subtitle: <span class="hero-color--secondary">//</span> Modern and high-performing web development, critical for captivating your audience.
+    subtitle: <span class="hero-color--secondary" aria-hidden="true">//</span> Modern and high-performing web development, critical for captivating your audience.
     description: Development is my other core passion that enhances design. I’m never satisfied with just a mockup; I need to build it and bring it to life on the web.
-  # - title: Full Package <span>✨</span>
+  # - title: Full Package <span aria-hidden="true">✨</span>
   #   title_color: "tertiary"
   #   subtitle: <span class="hero-color--secondary">//</span> Get a website from concept to launch.
   #   description: My passion for design and development go hand-in-hand in bringing to life strong and memorable web experiences. Reach out to get started!

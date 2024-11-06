@@ -3,5 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("load", () => {
     loader.classList.remove("site-loading");
+    loader.setAttribute("aria-hidden", "true");
   });
 });

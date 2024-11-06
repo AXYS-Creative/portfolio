@@ -2,8 +2,12 @@
   {% include "./noise.html" %}
 
   <header class="work-gallery__header">
-    <h2 class="work-gallery__header-title h3">
+    <h2
+      class="work-gallery__header-title h3"
+      aria-label="{%if show_brands %}Brands I’ve been honored to work with.{%else%}Awe-inspiring results. Every time.{%endif%}"
+    >
       <!-- prettier-ignore -->
+      <span aria-hidden="true">
       {%if show_brands %} 
         Brands I’ve been 
       {%else%} 
@@ -16,6 +20,7 @@
       {%else%} 
         Every time. 
       {%endif%}
+      </span>
     </h2>
 
     <p class="work-gallery__header-description">
@@ -23,7 +28,7 @@
       {%if show_brands %}
         As a UI developer at
       <a href="https://rainfocus.com" target="_blank" class="classic-link"
-        >Rainfocus</a
+        >RainFocus</a
       >, I’ve had the privilege of working with prestigious companies and
       businesses from around the world. {%else%} I focus on the small details
       that make a big difference, ensuring every project is WCAG-compliant for

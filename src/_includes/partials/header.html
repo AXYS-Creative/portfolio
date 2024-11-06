@@ -10,6 +10,7 @@
       xmlns="http://www.w3.org/2000/svg"
       class="header-logo__icon"
     >
+      <title>Aaron Garcia Creative Logo</title>
       <path
         d="M34.5 4L66 55H47L25.5 20L4 55H23.5L28 47"
         stroke-width="8"
@@ -21,13 +22,18 @@
   </a>
 
   {% if navigation.items %}
-  <ul class="header-links color-swap">
+  <ul
+    class="header-links color-swap"
+    aria-label="Header navigation"
+    role="navigation"
+  >
     {% for item in navigation.items %}
     <li>
+      <!-- prettier-ignore -->
       <a
         class="header-links__link classic-link"
         href="{{ item.url }}"
-        target="{{ item.target }}"
+        {% if item.target %}target="{{ item.target }}"{%endif%}
       >
         {{ item.text }}
       </a>

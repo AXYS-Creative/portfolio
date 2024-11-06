@@ -1,5 +1,5 @@
 <footer class="site-footer">
-  <ul class="site-footer__links">
+  <ul class="site-footer__links" role="navigation">
     {% for item in navigation.items %}{% if item.text != 'Resumé' %}
     <li>
       <a
@@ -13,8 +13,13 @@
     {% endif %}{% endfor %}
   </ul>
 
-  <p class="copyright">
-    &copy;&nbsp;<span class="year-text"></span>&nbsp;| aarongarciacreative
+  <p class="copyright" aria-label="Copyright 2024, aaron garcia creative">
+    <span aria-hidden="true">
+      <span>&copy;</span>
+      <span class="year-text"></span>
+      <span>|</span>
+      <span>aarongarciacreative</span>
+    </span>
   </p>
 
   <div class="site-footer__details">
@@ -23,7 +28,9 @@
       {% set section_title_text = "Location" %}
       {% set use_h3 = true %}
       {% include "./section-title.html" %}
-      <p>SLC, UT</p>
+      <p aria-label="Salt Lake City, Utah">
+        <span aria-hidden="true">SLC, UT</span>
+      </p>
     </div>
     <div class="details-block">
       <!-- prettier-ignore -->

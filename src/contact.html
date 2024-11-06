@@ -42,6 +42,7 @@ description: Let’s collaborate to take your brand’s web presence to new heig
         id="name"
         name="name"
         type="text"
+        title="Please enter your first and last name"
         aria-label="Please enter your first and last name"
         placeholder=" "
         required
@@ -55,6 +56,7 @@ description: Let’s collaborate to take your brand’s web presence to new heig
         id="email"
         name="email"
         type="text"
+        title="Please enter your email address"
         aria-label="Please enter your email address"
         placeholder=" "
         required
@@ -69,11 +71,18 @@ description: Let’s collaborate to take your brand’s web presence to new heig
         name="message"
         maxlength="250"
         spellcheck="true"
-        aria-label="Please enter your message here"
+        title="Please enter your message here."
+        aria-label="Please enter your message here."
+        aria-describedby="message-label"
         placeholder=" "
         required
       ></textarea>
-      <label class="label" for="message">
+      <label
+        class="label form-message-label"
+        id="message-label"
+        for="message"
+        aria-live="assertive"
+      >
         Message
         <span class="nested-label"></span>
       </label>
