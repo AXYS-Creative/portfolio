@@ -13,12 +13,14 @@
     {% endif %}{% endfor %}
   </ul>
 
-  <div class="copyright" aria-label="Set via JavaScript">
-    <span aria-hidden="true">&copy;</span>
-    <span aria-hidden="true" class="year-text"></span>
-    <span aria-hidden="true" class="divider">|</span>
-    <span aria-hidden="true">aarongarciacreative</span>
-  </div>
+  <p class="copyright">
+    <span>&copy;</span>
+    <span class="year-text"></span>
+    <span class="divider">|</span>
+    <span aria-label="Aaron Garcia Creative">
+      <span aria-hidden="true">aarongarciacreative</span>
+    </span>
+  </p>
 
   <div class="site-footer__details">
     <div class="details-block">
@@ -27,9 +29,9 @@
       {% set use_h3 = true %}
       {% include "./section-title.html" %}
 
-      <div aria-label="Salt Lake City, Utah">
+      <abbr title="Salt Lake City, Utah">
         <span aria-hidden="true">SLC, UT</span>
-      </div>
+      </abbr>
     </div>
     <div class="details-block">
       <!-- prettier-ignore -->

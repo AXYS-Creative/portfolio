@@ -864,7 +864,7 @@ section:has(+ .invert-colors) {
 .site-footer__details .details-block h3 {
   padding-block-end: var(--side-group-gap-y);
 }
-.site-footer__details div[aria-label] {
+.site-footer__details abbr {
   color: var(--font-color--primary);
   font-family: "Safiro", sans-serif;
   font-size: 18px;
@@ -872,12 +872,12 @@ section:has(+ .invert-colors) {
   text-decoration: none;
 }
 @media screen and (max-width: 1512px) {
-  .site-footer__details div[aria-label] {
+  .site-footer__details abbr {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
-  .site-footer__details div[aria-label] {
+  .site-footer__details abbr {
     font-size: 14px;
   }
 }

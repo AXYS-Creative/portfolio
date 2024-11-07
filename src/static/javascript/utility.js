@@ -2,18 +2,12 @@ export const root = document.documentElement;
 
 // Get Current Year for Copyright
 const getCurrentYear = (() => {
-  const yearText = document.querySelector(".year-text"),
-    copyright = document.querySelector(".copyright");
+  const yearText = document.querySelector(".year-text");
 
   const currentYear = new Date().getFullYear();
 
   yearText.innerHTML = currentYear;
   yearText.setAttribute("datetime", currentYear);
-
-  copyright.setAttribute(
-    "aria-label",
-    `Copyright ${currentYear}, Aaron Garcia Creative`
-  );
 })();
 
 // Fetch local time
