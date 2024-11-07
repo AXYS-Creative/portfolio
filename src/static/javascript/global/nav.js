@@ -83,6 +83,5 @@ window.addEventListener("resize", handleResize);
 menuBtn.addEventListener("click", toggleNav);
 
 skipToContent.addEventListener("click", () => {
-  console.log("skipping to main content");
   contentStart?.focus();
 });
