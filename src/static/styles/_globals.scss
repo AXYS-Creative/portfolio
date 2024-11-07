@@ -17,7 +17,9 @@ html {
   // scroll-behavior: smooth; // Using Lenis instead
 
   &:has(.site-loading) {
-    overflow: hidden;
+    @include mq-min("sm") {
+      overflow: hidden;
+    }
   }
 }
 
@@ -984,7 +986,7 @@ textarea {
   height: 100vh;
   height: 100dvh;
   background: var(--background-color);
-  z-index: 15;
+  z-index: 15; // Highest z-index
   opacity: 0;
   pointer-events: none;
   transition: 0.5s $cubic-ease 0.25s;

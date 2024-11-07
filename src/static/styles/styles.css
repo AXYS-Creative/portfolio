@@ -234,8 +234,10 @@
   -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
 }
 
-html:has(.site-loading) {
-  overflow: hidden;
+@media screen and (min-width: 481px) {
+  html:has(.site-loading) {
+    overflow: hidden;
+  }
 }
 
 body {

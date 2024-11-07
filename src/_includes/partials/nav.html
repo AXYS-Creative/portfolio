@@ -10,7 +10,11 @@
     {% for item in navigation.items %} 
     {% if item.text != "Resumé" and item.text != "AXYS Creative" %}
     <li>
-      <a class="nav-link tab-element-nav" href="{{ item.url }}">
+      <!-- prettier-ignore -->
+      <a
+        class="nav-link tab-element-nav test"
+        href="{{ item.url }}"
+      >
         {{ item.text }}
       </a>
     </li>
@@ -38,6 +42,7 @@
       <a
         class="nav-footer-link classic-link tab-element-nav"
         href="https://axyscreative.com"
+        target="_blank"
       >
         AXYS Creative
       </a>
