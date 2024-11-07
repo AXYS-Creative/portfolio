@@ -31,30 +31,6 @@ largeCta?.addEventListener("focus", () => {
 
     window.scrollTo({
       top: window.scrollY + preFooterTop - window.innerHeight,
-      behavior: "smooth",
     });
   }
 });
-
-// Fix broken pinning for large-cta
-const pinningCorrection = (() => {
-  let isHoveringLargeCta = false;
-
-  largeCta?.addEventListener("mouseenter", () => {
-    isHoveringLargeCta = true;
-  });
-  largeCta?.addEventListener("mouseleave", () => {
-    isHoveringLargeCta = false;
-  });
-
-  // Listen for scroll events
-  window.addEventListener("scroll", () => {
-    if (isHoveringLargeCta) {
-      largeCta.classList.add("no-interaction");
-
-      setTimeout(() => {
-        largeCta.classList.remove("no-interaction");
-      }, 400);
-    }
-  });
-})();
