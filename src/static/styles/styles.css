@@ -1317,7 +1317,7 @@ textarea {
   height: 100vh;
   height: 100dvh;
   background: var(--background-color);
-  z-index: 10;
+  z-index: 15;
   opacity: 0;
   pointer-events: none;
   transition: 0.5s cubic-bezier(0.18, 0.97, 0.47, 1) 0.25s;
@@ -1400,6 +1400,10 @@ textarea {
 .mouse-cursor__image.show-img {
   opacity: 1;
 }
+.mouse-cursor__image.hide-within {
+  opacity: 0;
+  scale: 0.8;
+}
 .mouse-cursor__tooltip {
   color: var(--font-color--primary);
   font-family: "Safiro", sans-serif;
@@ -1457,13 +1461,6 @@ textarea {
   rotate: 0deg;
   transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1), rotate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0s;
 }
-.mouse-cursor.show-cursor {
-  opacity: 1;
-}
-.mouse-cursor.cursor-contrast {
-  opacity: 0;
-  scale: 0.7;
-}
 
 .portrait-sm {
   width: 96px;
@@ -1502,7 +1499,7 @@ textarea {
   left: 0;
   color: #fff;
   padding: 8px;
-  z-index: 100;
+  z-index: 10;
   transition: top 0.3s ease;
 }
 .skip-to-content:focus {

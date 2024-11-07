@@ -3,9 +3,10 @@
     {% for item in navigation.items %}{% if item.text != 'Resumé' %}
     <li>
       <a
-        class="header-links__link classic-link tab-element-page"
+        class="header-links__link classic-link tab-element-page {% if item.text == 'AXYS Creative' %}tooltip-target tooltip-target--footer{%endif%}"
         href="{{ item.url }}"
-        target="{{ item.target }}"
+        {%if item.target %}target="{{ item.target }}"{%endif%}
+        {%if item.text == 'AXYS Creative' %}data-tooltip-title="💡 Unlimited Services"{%endif%}
       >
         {{ item.text }}
       </a>

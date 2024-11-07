@@ -27,9 +27,10 @@
     <li>
       <!-- prettier-ignore -->
       <a
-        class="header-links__link classic-link"
+        class="header-links__link classic-link {% if item.text == 'AXYS Creative' %}tooltip-target{%endif%}"
         href="{{ item.url }}"
-        {% if item.target %}target="{{ item.target }}"{%endif%}
+        {%if item.target %}target="{{ item.target }}"{%endif%}
+        {%if item.text == 'AXYS Creative' %}data-tooltip-title="💡 Unlimited Services"{%endif%}
       >
         {{ item.text }}
       </a>
