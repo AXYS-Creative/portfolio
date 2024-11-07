@@ -532,6 +532,7 @@ section {
   }
 
   .copyright {
+    @include body-font-styles;
     @include row-center;
     position: absolute;
     left: 50%;
@@ -549,6 +550,10 @@ section {
         left: $body-padding-md;
         translate: 0 12px;
       }
+    }
+
+    .divider {
+      margin-inline: 0.5ch;
     }
   }
 
@@ -568,6 +573,11 @@ section {
       h3 {
         padding-block-end: var(--side-group-gap-y);
       }
+    }
+
+    div[aria-label] {
+      @include body-font-styles;
+      text-decoration: none;
     }
   }
 }

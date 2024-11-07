@@ -11,7 +11,7 @@ description: Let’s collaborate to take your brand’s web presence to new heig
 {% set page = path %}
 {% set heading_markup = '
 <span aria-hidden="true" class="color-text">
-  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+  <img class="portrait-sm" src="' ~ settings.portrait_url ~ '" alt="" />
   <span class="magnet-text">Let’s get started!</span>
   <span class="emoji gsap-animate">🚀</span>
 </span>
@@ -112,7 +112,7 @@ description: Let’s collaborate to take your brand’s web presence to new heig
   </form>
 
   <aside class="contact-details">
-    <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+    <img class="portrait-sm" src="{{ settings.portrait_url }}" alt="" />
 
     <div class="contact-details__group">
       <!-- prettier-ignore -->
@@ -167,7 +167,7 @@ description: Let’s collaborate to take your brand’s web presence to new heig
 {% set heading_markup = '
 <span class="magnet-text" aria-hidden="true">Book a call with me</span>
 <span aria-hidden="true">
-  <img class="portrait-sm" src="/static/img/portrait.avif" alt="" />
+  <img class="portrait-sm" src="' ~ settings.portrait_url ~ '" alt="" />
   <span class="magnet-text color-text">to learn more</span>
   <span class="emoji gsap-animate">🗓️</span>
 </span>
