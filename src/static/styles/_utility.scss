@@ -6,6 +6,22 @@
     transition: 0.32s ease;
   }
 
+  &:hover,
+  &:focus-visible {
+    color: var(--link-color-hover);
+
+    &::before {
+      width: 0;
+      left: auto;
+      right: 0;
+      background-color: var(--link-color-hover);
+    }
+
+    .letter-group {
+      translate: 0 -100%;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -21,23 +37,33 @@
     }
   }
 
-  &:hover,
-  &:focus-visible {
-    color: var(--link-color-hover);
-
-    &::before {
-      width: 0;
-      left: auto;
-      right: 0;
-      background-color: var(--link-color-hover);
-    }
+  &__content {
+    // overflow hidden on parent was hiding the tooltip on focus
+    display: inline-flex;
+    overflow: hidden;
   }
 
-  // &.fully-animate {
-  //   &::before {
-  //     animation: classic-link-interaction 0.3s $cubic-ease-slow-finish forwards;
-  //   }
-  // }
+  .letter-group {
+    display: grid;
+
+    @for $i from 1 through 25 {
+      &:nth-of-type(#{$i}) {
+        transition: 0.6s $cubic-ease $i * 0.02s;
+      }
+    }
+
+    .letter {
+      grid-area: 1 / 1;
+
+      &:nth-of-type(2) {
+        translate: 0 100%;
+      }
+    }
+
+    &.space {
+      margin-inline-start: 0.5ch;
+    }
+  }
 }
 
 .classic-list {

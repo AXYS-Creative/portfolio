@@ -260,3 +260,31 @@ const completeAnimationHoverFocus = (() => {
     el.addEventListener("animationend", removeAnimation);
   });
 })();
+
+// .classic-link hover animation
+const classicLinkHover = (() => {
+  document.querySelectorAll(".classic-link").forEach((el) => {
+    const text = el.textContent;
+    el.setAttribute("aria-label", text);
+
+    // Wrap all letter groups inside a single span with the class "text-content"
+    el.innerHTML =
+      `<span class="classic-link__content">` +
+      Array.from(text)
+        .map((char) => {
+          if (char === " ") {
+            return `<span class="letter-group space" aria-hidden="true"> </span>`;
+          }
+          return `
+            <span class="letter-group">
+              <span class="letter">${char}</span>
+              <span class="letter">${char}</span>
+            </span>
+          `;
+        })
+        .join("") +
+      `</span>`;
+
+    el.addEventListener("mouseenter", () => el.classList.add("hover"));
+  });
+})();
