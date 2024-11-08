@@ -62,6 +62,10 @@
 
     &.space {
       margin-inline-start: 0.5ch;
+
+      &:last-of-type {
+        display: none; // Hides extra space character for social media on contact page
+      }
     }
   }
 }

@@ -1742,6 +1742,9 @@ abbr.tooltip-target {
 .classic-link .letter-group.space {
   margin-inline-start: 0.5ch;
 }
+.classic-link .letter-group.space:last-of-type {
+  display: none;
+}
 
 .classic-list {
   list-style: initial;
