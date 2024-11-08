@@ -48,7 +48,7 @@
 
     @for $i from 1 through 25 {
       &:nth-of-type(#{$i}) {
-        transition: 0.6s $cubic-ease $i * 0.02s;
+        transition: translate 0.6s $cubic-ease $i * 0.02s;
       }
     }
 

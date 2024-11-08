@@ -618,9 +618,6 @@ nav .nav-footer-links li:nth-of-type(3) {
 nav .nav-footer-links li:nth-of-type(4) {
   transition: 0s ease 1s;
 }
-nav .nav-footer-links li .nav-footer-link {
-  padding: 3px 0;
-}
 nav[aria-hidden=false] {
   translate: 0 0;
   transition: translate 0.9s cubic-bezier(0.18, 0.97, 0.47, 1), visibility 0s ease 0s;
@@ -1662,79 +1659,79 @@ abbr.tooltip-target {
   display: grid;
 }
 .classic-link .letter-group:nth-of-type(1) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.02s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.02s;
 }
 .classic-link .letter-group:nth-of-type(2) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.04s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.04s;
 }
 .classic-link .letter-group:nth-of-type(3) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.06s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.06s;
 }
 .classic-link .letter-group:nth-of-type(4) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.08s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.08s;
 }
 .classic-link .letter-group:nth-of-type(5) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.1s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.1s;
 }
 .classic-link .letter-group:nth-of-type(6) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.12s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.12s;
 }
 .classic-link .letter-group:nth-of-type(7) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.14s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.14s;
 }
 .classic-link .letter-group:nth-of-type(8) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.16s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.16s;
 }
 .classic-link .letter-group:nth-of-type(9) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.18s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.18s;
 }
 .classic-link .letter-group:nth-of-type(10) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.2s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.2s;
 }
 .classic-link .letter-group:nth-of-type(11) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.22s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.22s;
 }
 .classic-link .letter-group:nth-of-type(12) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.24s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.24s;
 }
 .classic-link .letter-group:nth-of-type(13) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.26s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.26s;
 }
 .classic-link .letter-group:nth-of-type(14) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.28s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.28s;
 }
 .classic-link .letter-group:nth-of-type(15) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.3s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.3s;
 }
 .classic-link .letter-group:nth-of-type(16) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.32s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.32s;
 }
 .classic-link .letter-group:nth-of-type(17) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.34s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.34s;
 }
 .classic-link .letter-group:nth-of-type(18) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.36s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.36s;
 }
 .classic-link .letter-group:nth-of-type(19) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.38s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.38s;
 }
 .classic-link .letter-group:nth-of-type(20) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.4s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.4s;
 }
 .classic-link .letter-group:nth-of-type(21) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.42s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.42s;
 }
 .classic-link .letter-group:nth-of-type(22) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.44s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.44s;
 }
 .classic-link .letter-group:nth-of-type(23) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.46s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.46s;
 }
 .classic-link .letter-group:nth-of-type(24) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.48s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.48s;
 }
 .classic-link .letter-group:nth-of-type(25) {
-  transition: 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.5s;
+  transition: translate 0.6s cubic-bezier(0.18, 0.97, 0.47, 1) 0.5s;
 }
 .classic-link .letter-group .letter {
   grid-area: 1/1;
