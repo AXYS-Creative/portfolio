@@ -1615,6 +1615,10 @@ abbr.tooltip-target {
     pointer-events: none;
   }
 }
+.formswift-button {
+  display: none;
+}
+
 .classic-link {
   position: relative;
   color: var(--link-color);

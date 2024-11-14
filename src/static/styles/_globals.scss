@@ -1210,3 +1210,10 @@ abbr.tooltip-target {
     pointer-events: none;
   }
 }
+
+// FromSwift PDF Editor. Browser Extension — See chrome store
+.formswift-button {
+  display: none; // There's nothing for them to sign / open (link will do this)
+}
+
+// Also look into the "Dark Reader" chrome extension?
