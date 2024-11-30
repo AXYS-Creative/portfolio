@@ -371,3 +371,13 @@ $min-breakpoints: (
   rotate: 0deg;
   // transition unique per element (mouse cursor vs cta-2)
 }
+
+// Removes hover state on mobile. Covers hover/focus for desktop
+@mixin desktop-hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
+      @content;
+    }
+  }
+}

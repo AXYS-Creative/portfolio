@@ -265,7 +265,8 @@ const completeAnimationHoverFocus = (() => {
 const classicLinkHover = (() => {
   document.querySelectorAll(".classic-link").forEach((el) => {
     const text = el.textContent;
-    el.setAttribute("aria-label", text);
+    const tooltip = el.getAttribute("data-tooltip-title") || "";
+    el.setAttribute("aria-label", `${text}${tooltip ? ` ${tooltip}` : ""}`);
 
     // Wrap all letter groups inside a single span with the class "text-content"
     el.innerHTML =
@@ -277,8 +278,7 @@ const classicLinkHover = (() => {
           }
           return `
             <span class="letter-group">
-              <span class="letter">${char}</span>
-              <span class="letter">${char}</span>
+              <span class="letter" data-title="${char}">${char}</span>
             </span>
           `;
         })

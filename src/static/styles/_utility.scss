@@ -6,8 +6,7 @@
     transition: 0.32s ease;
   }
 
-  &:hover,
-  &:focus-visible {
+  @include desktop-hover {
     color: var(--link-color-hover);
 
     &::before {
@@ -53,11 +52,18 @@
     }
 
     .letter {
+      position: relative;
       grid-area: 1 / 1;
 
-      &:nth-of-type(2) {
-        translate: 0 100%;
+      &::after {
+        content: attr(data-title);
+        position: absolute;
+        bottom: -100%;
+        left: 0;
       }
+      // &:nth-of-type(2) {
+      //   translate: 0 100%;
+      // }
     }
 
     &.space {
