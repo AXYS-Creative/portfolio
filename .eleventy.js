@@ -7,6 +7,10 @@ module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
+  // Explicitly ignore unminified CSS
+  eleventyConfig.ignores.add("src/static/styles/styles.css");
+  eleventyConfig.ignores.add("src/static/styles/styles.css.map");
+
   // Merge data instead of overriding
   eleventyConfig.setDataDeepMerge(true);
 

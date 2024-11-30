@@ -1,2 +1,7 @@
 node_modules
 README.md
+
+# Ignore unminified CSS and source maps
+
+src/static/styles/styles.css
+src/static/styles/styles.css.map
