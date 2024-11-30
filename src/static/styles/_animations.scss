@@ -101,16 +101,6 @@
   }
 }
 
-// get in touch (fade in bg-text for a11y score)
-@keyframes low-fade {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.02;
-  }
-}
-
 // loader
 @keyframes loader-svg-elem {
   to {

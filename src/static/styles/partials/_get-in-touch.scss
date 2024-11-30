@@ -19,8 +19,8 @@
       font-size: min(12vw, 256px);
       display: inline-flex;
       text-wrap: nowrap;
+      opacity: 0.02;
       line-height: 1;
-      animation: low-fade 0.1s ease forwards; // Attempt to fix a11y score
 
       @media all {
         @include mq-min("xxxl") {
