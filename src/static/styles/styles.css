@@ -1971,6 +1971,14 @@ abbr.tooltip-target {
     translate: -50% 0;
   }
 }
+@keyframes low-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.02;
+  }
+}
 @keyframes loader-svg-elem {
   to {
     stroke-dashoffset: 0;
@@ -2099,8 +2107,8 @@ abbr.tooltip-target {
   font-size: min(12vw, 256px);
   display: inline-flex;
   text-wrap: nowrap;
-  opacity: 0.02;
   line-height: 1;
+  animation: low-fade 0.1s ease forwards;
 }
 @media screen and (min-width: 1921px) {
   .get-in-touch .bg-text__text {
