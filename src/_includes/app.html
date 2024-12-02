@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if path == "404" %}
+    <meta name="robots" content="noindex, nofollow" />
+    {% else %}
     <meta name="robots" content="index, follow" />
+    {% endif %}
     <meta name="theme-color" content="{{ meta_data.theme_color }}" />
     <meta name="author" content="{{ meta_data.author }}" />
     <meta name="description" content="{{ description }}" />
@@ -26,7 +30,12 @@
 
     <title>{{ title }}</title>
 
-    <link rel="canonical" href="{{ meta_data.url }}" />
+    {% if path != '404' %}
+    <link
+      rel="canonical"
+      href="{{ meta_data.url }}{%if path != 'home'%}/{{ path }}{%endif%}"
+    />
+    {% endif %}
     <link rel="stylesheet" type="text/css" href="/static/styles/styles.css" />
 
     <!-- Favicons, place .svg above .ico -->
