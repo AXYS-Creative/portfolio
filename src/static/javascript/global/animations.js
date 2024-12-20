@@ -224,6 +224,40 @@ responsiveGsap.add(
       }
     }
 
+    // Social Media posts - Animating each letter per word via 'character-split' utility class. Also add 'gsap-animate' to the element
+    const characterSplit = (() => {
+      const spanCharactersInSentence = (words) => {
+        const text = words.textContent || words.innerText;
+        words.setAttribute("aria-label", text); // Provide the full text for screen readers
+        const wordsArray = text.split(" "); // Split the text into words
+
+        const wrappedWords = wordsArray
+          .map((word) => {
+            const wrappedLetters = word
+              .split("")
+              .map(
+                (letter) =>
+                  `<span class="character-split__letter">${letter}</span>`
+              )
+              .join("");
+
+            return `<span class="character-split__word">${wrappedLetters}</span>`;
+          })
+          .join(
+            '<span class="character-split__space" aria-hidden="true"> </span>'
+          ); // Join words with space span
+
+        words.innerHTML = wrappedWords;
+      };
+
+      const splitCharactersGlobally = (globalClass) => {
+        const sentences = document.querySelectorAll(globalClass);
+        sentences.forEach((sentence) => spanCharactersInSentence(sentence));
+      };
+
+      splitCharactersGlobally(".character-split");
+    })();
+
     // Refresh ScrollTrigger instances on page load and resize
     window.addEventListener("load", () => {
       ScrollTrigger.refresh();

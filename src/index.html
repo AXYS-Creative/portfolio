@@ -35,6 +35,18 @@ cta_2_target: _blank
 {% include "./_includes/partials/marquee.html" %}
 
 <!-- prettier-ignore -->
+{% if social_media_posts.show_frame %}
+<div class="social-post social-post--instagram">
+  <p class="pre-title">
+    <span class="green">//</span>
+    Here are three free tools you can use to <br />
+    check your website’s accessibility metrics.
+  </p>
+  <div class="character-split">Is your website ♿️ accessible?</div>
+</div>
+{% endif %}
+
+<!-- prettier-ignore -->
 {% set section_title_text = "Goal oriented" %}
 {% include "./_includes/partials/goal-oriented.html" %}
 
