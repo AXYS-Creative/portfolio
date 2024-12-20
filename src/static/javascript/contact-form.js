@@ -72,7 +72,6 @@ if (contactForm) {
 
 const textareaCount = (() => {
   const textarea = document.getElementById("message");
-  // const formMessageLabel = document.querySelector(".form-message-label");
   const charCountLabel = document.querySelector(".nested-label");
   const maxLength = textarea?.maxLength;
 
