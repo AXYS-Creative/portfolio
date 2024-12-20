@@ -42,6 +42,9 @@ rainfocus_clients:
   - title: blueyonder
     media: /static/img/rf-client-blueyonder.svg
     class: ""
+  - title: canva
+    media: /static/img/rf-client-canva.svg
+    class: ""
   - title: cyberark
     media: /static/img/rf-client-cyberark.svg
     class: ""
