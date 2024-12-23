@@ -19,6 +19,47 @@ responsiveGsap.add(
   (context) => {
     let { maxSm, maxMd, maxXl, maxXxl, minMd } = context.conditions;
 
+    // Goal Oriented
+    {
+      const emojis = document.querySelector(".goal-oriented__emojis");
+
+      if (emojis) {
+        gsap.to(emojis, {
+          scrollTrigger: {
+            trigger: ".goal-oriented__paragraph-textblock-1",
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => emojis.classList.add("animate-1"),
+            onLeave: () => emojis.classList.remove("animate-1"),
+            onEnterBack: () => emojis.classList.add("animate-1"),
+            // onLeaveBack: () => emojis.classList.remove("animate-1"),
+          },
+        });
+        gsap.to(emojis, {
+          scrollTrigger: {
+            trigger: ".goal-oriented__paragraph-textblock-2",
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => emojis.classList.add("animate-2"),
+            onLeave: () => emojis.classList.remove("animate-2"),
+            onEnterBack: () => emojis.classList.add("animate-2"),
+            onLeaveBack: () => emojis.classList.remove("animate-2"),
+          },
+        });
+        gsap.to(emojis, {
+          scrollTrigger: {
+            trigger: ".goal-oriented__paragraph-textblock-3",
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => emojis.classList.add("animate-3"),
+            // onLeave: () => emojis.classList.remove("animate-3"),
+            onEnterBack: () => emojis.classList.add("animate-3"),
+            onLeaveBack: () => emojis.classList.remove("animate-3"),
+          },
+        });
+      }
+    }
+
     // SCOPED - Work gallery (one instance)
     {
       const showreel = document.querySelector(".showreel-slider");

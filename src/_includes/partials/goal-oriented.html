@@ -1,33 +1,54 @@
 <section class="goal-oriented">
-  <!-- prettier-ignore -->
-  {% set section_title_text = section_title_text %}
-  {% include "./section-title.html" %}
+  <div class="goal-oriented__text">
+    <!-- prettier-ignore -->
+    {% set section_title_text = section_title_text %}
+    {% include "./section-title.html" %}
 
-  <p class="goal-oriented__paragraph h3">
-    <span>
-      Your brand deserves a
-      <br aria-hidden="true" />
-      strong web experience.
-    </span>
-    <span>
-      My goal is to deliver <br aria-hidden="true" />
-      lasting impressions <br aria-hidden="true" />
-      & memorable
-      <abbr
-        class="tooltip-target"
-        aria-label="User experience"
-        data-tooltip-title="💡 User experience"
+    <p class="goal-oriented__paragraph h3">
+      <span
+        class="goal-oriented__paragraph-textblock goal-oriented__paragraph-textblock-1"
       >
-        UX</abbr
-      >.
-    </span>
-    <span>
-      Together, we’ll set <br aria-hidden="true" />
-      the standards high.
-    </span>
-  </p>
+        Your brand deserves a
+        <br aria-hidden="true" />
+        strong web experience.
+      </span>
+      <span
+        class="goal-oriented__paragraph-textblock goal-oriented__paragraph-textblock-2"
+      >
+        My goal is to deliver <br aria-hidden="true" />
+        lasting impressions <br aria-hidden="true" />
+        & memorable
+        <abbr
+          class="tooltip-target"
+          aria-label="User experience"
+          data-tooltip-title="💡 User experience"
+        >
+          UX</abbr
+        >.
+      </span>
+      <span
+        class="goal-oriented__paragraph-textblock goal-oriented__paragraph-textblock-3"
+      >
+        Together, we’ll set <br aria-hidden="true" />
+        the standards high.
+      </span>
+    </p>
 
-  <!-- prettier-ignore -->
-  {% set content_start = false %}
-  {% include "./cta-group.html" %}
+    <!-- prettier-ignore -->
+    {% set content_start = false %}
+    {% include "./cta-group.html" %}
+  </div>
+  <div class="goal-oriented__emojis">
+    <div class="goal-oriented__emojis-slider">
+      <div class="goal-oriented__emojis-emoji goal-oriented__emojis-emoji-1">
+        ✨
+      </div>
+      <div class="goal-oriented__emojis-emoji goal-oriented__emojis-emoji-2">
+        🎯
+      </div>
+      <div class="goal-oriented__emojis-emoji goal-oriented__emojis-emoji-3">
+        📈
+      </div>
+    </div>
+  </div>
 </section>

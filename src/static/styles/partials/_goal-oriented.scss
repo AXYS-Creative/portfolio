@@ -1,20 +1,115 @@
 .goal-oriented {
+  @include row-start(space-between);
+
   .section-title {
     margin-block-end: var(--content-spacing);
   }
 
   &__paragraph {
+    --gap: var(--content-spacing);
+
     @include column-start;
-    gap: var(--content-spacing);
     text-wrap: balance;
 
     @include mq-max("xl") {
-      gap: 48px;
+      --gap: 48px;
+    }
+
+    &-textblock {
+      padding-block: calc(var(--gap) / 2);
+
+      &:first-of-type {
+        padding-block-start: 0;
+      }
+      &:last-of-type {
+        padding-block-end: 0;
+      }
     }
   }
 
   .cta-group {
     justify-content: flex-start;
     margin-block-start: var(--content-spacing);
+  }
+
+  &__emojis {
+    --right-distance: -96px;
+
+    position: sticky;
+    top: 50vh;
+    translate: var(--right-distance) -50%;
+    margin-block: 128px -64px;
+    padding-block: 24px;
+    width: 45%;
+    overflow: hidden;
+
+    @include mq-max("xxl") {
+      --right-distance: -48px;
+    }
+    @include mq-max("xl") {
+      --right-distance: 0;
+    }
+
+    @include mq-max("md") {
+      display: none;
+    }
+
+    &-slider {
+      @include row-center(space-between);
+      translate: 66% 0;
+      transition: 0.25s ease;
+    }
+
+    &-emoji {
+      @include row-center;
+      border-radius: 12px;
+      padding: 24px 48px;
+      border: 2px solid var(--accent-color--primary);
+      // background-color: var(--neutral-dark);
+      // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      font-size: 8em;
+      opacity: 0;
+      scale: 0.75;
+      rotate: 12deg;
+      transition: 0.75s ease;
+
+      @include mq-max("xxl") {
+        font-size: 6em;
+        padding: 24px 40px;
+      }
+
+      @include mq-max("xl") {
+        font-size: 5em;
+        padding: 24px;
+      }
+    }
+
+    &.animate-1 {
+      .goal-oriented__emojis-slider {
+        translate: 33% 0;
+      }
+
+      .goal-oriented__emojis-emoji-1 {
+        @include show-emoji;
+      }
+    }
+    &.animate-2 {
+      .goal-oriented__emojis-slider {
+        translate: 0 0;
+      }
+
+      .goal-oriented__emojis-emoji-2 {
+        @include show-emoji;
+      }
+    }
+    &.animate-3 {
+      .goal-oriented__emojis-slider {
+        translate: -33% 0;
+      }
+
+      .goal-oriented__emojis-emoji-3 {
+        @include show-emoji;
+      }
+    }
   }
 }

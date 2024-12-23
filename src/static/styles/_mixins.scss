@@ -381,3 +381,10 @@ $min-breakpoints: (
     }
   }
 }
+
+// Emoji slider
+@mixin show-emoji {
+  opacity: 1;
+  scale: 1;
+  rotate: 0deg;
+}
