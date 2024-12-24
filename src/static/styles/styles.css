@@ -2487,7 +2487,8 @@ abbr.tooltip-target {
   align-items: center;
   border-radius: 12px;
   padding: 24px 48px;
-  border: 2px solid var(--accent-color--primary);
+  background-color: var(--neutral-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   font-size: 8em;
   opacity: 0;
   scale: 0.75;
@@ -2529,6 +2530,9 @@ abbr.tooltip-target {
   opacity: 1;
   scale: 1;
   rotate: 0deg;
+}
+.goal-oriented__emojis.animate-complete .goal-oriented__emojis-slider {
+  translate: -66% 0;
 }
 
 .strap {

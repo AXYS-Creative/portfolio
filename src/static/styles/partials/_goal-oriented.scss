@@ -64,9 +64,9 @@
       @include row-center;
       border-radius: 12px;
       padding: 24px 48px;
-      border: 2px solid var(--accent-color--primary);
-      // background-color: var(--neutral-dark);
-      // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      // border: 2px solid var(--accent-color--primary);
+      background-color: var(--neutral-dark);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
       font-size: 8em;
       opacity: 0;
       scale: 0.75;
@@ -109,6 +109,11 @@
 
       .goal-oriented__emojis-emoji-3 {
         @include show-emoji;
+      }
+    }
+    &.animate-complete {
+      .goal-oriented__emojis-slider {
+        translate: -66% 0;
       }
     }
   }

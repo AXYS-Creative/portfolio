@@ -32,7 +32,7 @@ responsiveGsap.add(
             onEnter: () => emojis.classList.add("animate-1"),
             onLeave: () => emojis.classList.remove("animate-1"),
             onEnterBack: () => emojis.classList.add("animate-1"),
-            // onLeaveBack: () => emojis.classList.remove("animate-1"),
+            onLeaveBack: () => emojis.classList.remove("animate-1"), // toggle this to keep or remove emoji
           },
         });
         gsap.to(emojis, {
@@ -52,8 +52,14 @@ responsiveGsap.add(
             start: "top center",
             end: "bottom center",
             onEnter: () => emojis.classList.add("animate-3"),
-            // onLeave: () => emojis.classList.remove("animate-3"),
-            onEnterBack: () => emojis.classList.add("animate-3"),
+            onLeave: () => {
+              emojis.classList.remove("animate-3");
+              emojis.classList.add("animate-complete");
+            }, // toggle this to keep or remove emoji
+            onEnterBack: () => {
+              emojis.classList.remove("animate-complete");
+              emojis.classList.add("animate-3");
+            },
             onLeaveBack: () => emojis.classList.remove("animate-3"),
           },
         });
