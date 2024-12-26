@@ -27,7 +27,7 @@ responsiveGsap.add(
         gsap.to(emojis, {
           scrollTrigger: {
             trigger: ".goal-oriented__paragraph-textblock-1",
-            start: "top center",
+            start: "-50% center",
             end: "bottom center",
             onEnter: () => emojis.classList.add("animate-1"),
             onLeave: () => emojis.classList.remove("animate-1"),
@@ -50,7 +50,7 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".goal-oriented__paragraph-textblock-3",
             start: "top center",
-            end: "bottom center",
+            end: "150% center",
             onEnter: () => emojis.classList.add("animate-3"),
             onLeave: () => {
               emojis.classList.remove("animate-3");
