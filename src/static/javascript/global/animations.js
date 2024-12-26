@@ -5,7 +5,7 @@ let responsiveGsap = gsap.matchMedia();
 let markers = {
   startColor: "white",
   endColor: "white",
-  indent: 128,
+  indent: 96,
 };
 
 responsiveGsap.add(
@@ -27,12 +27,12 @@ responsiveGsap.add(
         gsap.to(emojis, {
           scrollTrigger: {
             trigger: ".goal-oriented__paragraph-textblock-1",
-            start: "-50% center",
+            start: "-100% center",
             end: "bottom center",
             onEnter: () => emojis.classList.add("animate-1"),
             onLeave: () => emojis.classList.remove("animate-1"),
             onEnterBack: () => emojis.classList.add("animate-1"),
-            onLeaveBack: () => emojis.classList.remove("animate-1"), // toggle this to keep or remove emoji
+            onLeaveBack: () => emojis.classList.remove("animate-1"),
           },
         });
         gsap.to(emojis, {
@@ -50,12 +50,12 @@ responsiveGsap.add(
           scrollTrigger: {
             trigger: ".goal-oriented__paragraph-textblock-3",
             start: "top center",
-            end: "150% center",
+            end: "200% center",
             onEnter: () => emojis.classList.add("animate-3"),
             onLeave: () => {
               emojis.classList.remove("animate-3");
               emojis.classList.add("animate-complete");
-            }, // toggle this to keep or remove emoji
+            },
             onEnterBack: () => {
               emojis.classList.remove("animate-complete");
               emojis.classList.add("animate-3");
