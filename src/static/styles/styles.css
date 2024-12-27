@@ -431,12 +431,15 @@ body:has(.social-post) .loader {
   .site-header.scrolling-down .strap-icon {
     translate: 58% 0;
   }
-  .site-header.scrolling-down .strap:hover, .site-header.scrolling-down .strap:focus-within, .site-header.scrolling-down .strap.strap-hover,
+  .site-header.scrolling-down .strap:hover, .site-header.scrolling-down .strap:focus-within,
   .site-header.scrolling-down .strap-icon:hover,
-  .site-header.scrolling-down .strap-icon:focus-within,
-  .site-header.scrolling-down .strap-icon.strap-hover {
+  .site-header.scrolling-down .strap-icon:focus-within {
     translate: 0 0;
   }
+}
+.site-header.scrolling-down .strap-icon:has(+ .strap:hover),
+.site-header.scrolling-down .strap-icon:has(+ .strap:focus-within) {
+  translate: 0 0;
 }
 .site-header.nav-active .menu-btn-line-wrapper {
   rotate: 90deg;

@@ -211,11 +211,14 @@ body {
         translate: 58% 0;
 
         &:hover,
-        &:focus-within,
-        &.strap-hover {
+        &:focus-within {
           translate: 0 0;
         }
       }
+    }
+    .strap-icon:has(+ .strap:hover),
+    .strap-icon:has(+ .strap:focus-within) {
+      translate: 0 0;
     }
   }
 
