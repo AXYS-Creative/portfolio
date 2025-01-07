@@ -271,7 +271,7 @@ responsiveGsap.add(
       }
     }
 
-    // Social Media posts - Animating each letter per word via 'character-split' utility class. Also add 'gsap-animate' to the element
+    // Social Media posts - Animating each letter per word via 'character-split' utility class.
     const characterSplit = (() => {
       const spanCharactersInSentence = (words) => {
         const text = words.textContent || words.innerText;
@@ -284,7 +284,7 @@ responsiveGsap.add(
               .split("")
               .map(
                 (letter) =>
-                  `<span class="character-split__letter">${letter}</span>`
+                  `<span class="character-split__letter" data-letter="${letter}">${letter}</span>`
               )
               .join("");
 

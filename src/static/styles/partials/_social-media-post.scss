@@ -4,8 +4,8 @@
   @include column-start(space-between);
   position: relative;
   background-color: $navy;
-  // scale: 0.8;
   margin: auto;
+  // scale: 0.8;
 
   // used with --swipe-top || --swiper-left modifier classes
   &::before {
@@ -26,20 +26,47 @@
   .pre-title {
     font-size: 32px;
 
-    opacity: 0;
-    animation: fade-in 0.75s ease calc($delay + 0.5s) forwards;
+    &.fade {
+      opacity: 0;
+      animation: fade-in 0.75s ease calc($delay + 0.5s) forwards;
 
-    @keyframes fade-in {
-      to {
-        opacity: 1;
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+        }
       }
     }
   }
 
-  .character-split {
+  .watermark {
+    position: absolute;
+  }
+
+  .title {
     @extend .h1;
     font-size: 164px;
+    position: relative;
+    text-wrap: balance;
 
+    &::before {
+      content: "🐇";
+      position: absolute;
+      top: 0;
+      left: 0;
+      translate: 0 -125%;
+      transform: scaleX(-1);
+      scale: 1.25;
+    }
+    &::after {
+      content: "🐢";
+      position: absolute;
+      bottom: 2ch;
+      right: 2.5ch;
+      scale: 1.25;
+    }
+  }
+
+  .character-split {
     &__word {
       display: inline-flex;
       white-space: nowrap;
@@ -47,29 +74,91 @@
 
     &__letter {
       display: inline-flex;
-      scale: 0;
-      rotate: 45deg;
-      animation: letter-spin 0.7s $cubic-ease-slow-finish forwards;
+    }
 
-      @for $i from 1 through 20 {
-        &:nth-of-type(#{$i}) {
-          animation-delay: $delay + 0.05s * $i;
+    &.cycle {
+      $ease: cubic-bezier(0.73, 0.22, 0.21, 1.28);
+
+      .character-split__word {
+        overflow: hidden;
+        line-height: 1.125;
+      }
+      .character-split__letter {
+        position: relative;
+
+        @for $i from 1 through 25 {
+          &:nth-of-type(#{$i}) {
+            // animation: cycle 2s $ease 0.1s * $i infinite;
+            animation: cycle 4s $ease 0.1s * $i infinite;
+          }
+        }
+
+        &::after {
+          content: attr(data-letter);
+          position: absolute;
+          bottom: -100%;
         }
       }
 
-      @keyframes letter-spin {
-        to {
-          scale: 1;
-          rotate: 0deg;
+      // @keyframes cycle {
+      //   0% {
+      //     translate: 0 0;
+      //   }
+      //   40% {
+      //     translate: 0 -100%;
+      //   }
+      //   100% {
+      //     translate: 0 -100%;
+      //   }
+      // }
+      @keyframes cycle {
+        0% {
+          translate: 0 0;
+        }
+        25% {
+          translate: 0 -100%;
+        }
+        100% {
+          translate: 0 -100%;
+        }
+      }
+    }
+
+    &.fade {
+      .character-split__letter {
+        display: inline-flex;
+        scale: 0;
+        rotate: 45deg;
+        animation: letter-spin 0.7s $cubic-ease-slow-finish forwards;
+
+        @for $i from 1 through 20 {
+          &:nth-of-type(#{$i}) {
+            animation-delay: $delay + 0.05s * $i;
+          }
+        }
+
+        @keyframes letter-spin {
+          to {
+            scale: 1;
+            rotate: 0deg;
+          }
         }
       }
     }
   }
 
   &--instagram {
+    $padding: 48px;
+
     width: 1080px;
     height: 1080px;
-    padding: 48px;
+    padding: $padding;
+
+    .watermark {
+      top: $padding;
+      right: $padding;
+      width: 5ch;
+    }
   }
 
   &--top-swipe {
