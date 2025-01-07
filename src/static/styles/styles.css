@@ -2517,6 +2517,7 @@ abbr.tooltip-target {
   position: relative;
   background-color: #1e2932;
   margin: auto;
+  scale: 0.75;
 }
 .social-post::before {
   content: "";
@@ -2555,16 +2556,14 @@ abbr.tooltip-target {
   position: absolute;
   top: 0;
   left: 0;
-  translate: 0 -125%;
+  translate: 0 -100%;
   transform: scaleX(-1);
-  scale: 1.25;
 }
 .social-post .title::after {
   content: "🐢";
   position: absolute;
   bottom: 2ch;
-  right: 2.5ch;
-  scale: 1.25;
+  right: 3ch;
 }
 .social-post .character-split__word {
   display: inline-flex;
@@ -2575,7 +2574,7 @@ abbr.tooltip-target {
 }
 .social-post .character-split.cycle .character-split__word {
   overflow: hidden;
-  line-height: 1.125;
+  line-height: 1.126;
 }
 .social-post .character-split.cycle .character-split__letter {
   position: relative;

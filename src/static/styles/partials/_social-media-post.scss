@@ -1,3 +1,6 @@
+// Remember to record on Mac for the best resolution.
+// Also, upload from your phone so it'll count as a reel.
+
 .social-post {
   $delay: 1s;
 
@@ -5,7 +8,7 @@
   position: relative;
   background-color: $navy;
   margin: auto;
-  // scale: 0.8;
+  scale: 0.75; // Record on mac screen! 808x808
 
   // used with --swipe-top || --swiper-left modifier classes
   &::before {
@@ -53,16 +56,14 @@
       position: absolute;
       top: 0;
       left: 0;
-      translate: 0 -125%;
+      translate: 0 -100%;
       transform: scaleX(-1);
-      scale: 1.25;
     }
     &::after {
       content: "🐢";
       position: absolute;
       bottom: 2ch;
-      right: 2.5ch;
-      scale: 1.25;
+      right: 3ch;
     }
   }
 
@@ -81,7 +82,7 @@
 
       .character-split__word {
         overflow: hidden;
-        line-height: 1.125;
+        line-height: 1.126;
       }
       .character-split__letter {
         position: relative;
