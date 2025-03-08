@@ -2091,6 +2091,7 @@ abbr.tooltip-target {
 .get-in-touch {
   padding: 0;
   overflow: hidden;
+  width: 99.2%;
 }
 .get-in-touch .gsap-scale {
   position: relative;
@@ -2175,7 +2176,7 @@ abbr.tooltip-target {
 
 .marquee {
   padding-block: 128px;
-  width: 100vw;
+  width: 100%;
   max-width: 1920px;
   overflow: hidden;
 }

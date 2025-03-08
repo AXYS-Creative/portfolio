@@ -1,7 +1,7 @@
 // Uses JS for the animation
 .marquee {
   @include vertical-padding;
-  width: 100vw;
+  width: 100%;
   max-width: $content-width;
   overflow: hidden;
 
